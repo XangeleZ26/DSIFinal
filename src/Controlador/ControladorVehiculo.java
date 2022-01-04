@@ -12,7 +12,7 @@ public class ControladorVehiculo implements ActionListener{
     public ControladorVehiculo(Vehiculo modeloVehiculo, frmRegistro vistaVehiculo){
         this.modeloVehiculo = modeloVehiculo;
         this.vistaVehiculo = vistaVehiculo;
-        vistaVehiculo.iniciarVehiculo();
+//        vistaVehiculo.iniciarVehiculo();    ???????
         
         this.vistaVehiculo.btnSiguiente1.addActionListener(this);
     }

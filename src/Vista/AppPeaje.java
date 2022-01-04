@@ -222,21 +222,23 @@ public class AppPeaje {
         
         
         frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
-        ArregloClientes mClientes = new ArregloClientes();
-        ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(mClientes, fPrincipal);
-        //ctrlPrincipal.iniciarPrincipal();
-        frmCliente fCliente = new frmCliente();
-        ControladorCliente ctrlCliente = new ControladorCliente(mClientes, fCliente);
-        //ctrlCliente.iniciarCliente();
-        frmEntrega fEntrega = new frmEntrega();
-        Direccion mEntrega = new Direccion();
-        ControladorEntrega ctrlEntrega = new ControladorEntrega(mEntrega, fEntrega);
-        //ctrlEntrega.iniciarEntrega();
-        frmRecargaOpcional fRecargaOpc = new frmRecargaOpcional();
-        Cuenta mCuenta = new Cuenta();
-        Tarjeta mTarjeta = new Tarjeta();
-        ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(mCuenta, mTarjeta, fRecargaOpc);
-        ctrlRecargaOpc.iniciarRecargaOpc();
+      ArregloClientes mClientes = new ArregloClientes();
+     ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
+     ctrlPrincipal.iniciar();
+//        frmCliente fCliente = new frmCliente();
+//        ControladorCliente ctrlCliente = new ControladorCliente(mClientes, fCliente);
+//        //ctrlCliente.iniciarCliente();
+//        frmEntrega fEntrega = new frmEntrega();
+//        Direccion mEntrega = new Direccion();
+//        ControladorEntrega ctrlEntrega = new ControladorEntrega(mEntrega, fEntrega);
+//        //ctrlEntrega.iniciarEntrega();
+//        frmRecargaOpcional fRecargaOpc = new frmRecargaOpcional();
+//        Cuenta mCuenta = new Cuenta();
+//        Tarjeta mTarjeta = new Tarjeta();
+//        ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(mCuenta, mTarjeta, fRecargaOpc);
+//        ctrlRecargaOpc.iniciarRecargaOpc();
+        
+        
     }
     
 }

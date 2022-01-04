@@ -50,24 +50,20 @@ public class frmLogin extends javax.swing.JFrame {
         PContenidoLogin.setBackground(new java.awt.Color(121, 127, 139));
 
         lblUsuarioLogin.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblUsuarioLogin.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuarioLogin.setText("Usuario:");
 
         txtUsuarioLogin.setBackground(new java.awt.Color(121, 127, 139));
         txtUsuarioLogin.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtUsuarioLogin.setForeground(new java.awt.Color(0, 0, 0));
         txtUsuarioLogin.setBorder(null);
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
 
         lblContraseñaLogin.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblContraseñaLogin.setForeground(new java.awt.Color(0, 0, 0));
         lblContraseñaLogin.setText("Contraseña:");
 
         txtContraseñaLogin.setBackground(new java.awt.Color(121, 127, 139));
         txtContraseñaLogin.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtContraseñaLogin.setForeground(new java.awt.Color(0, 0, 0));
         txtContraseñaLogin.setBorder(null);
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
@@ -146,7 +142,7 @@ public class frmLogin extends javax.swing.JFrame {
                     .add(PContenidoLoginLayout.createSequentialGroup()
                         .add(18, 18, 18)
                         .add(btnIniciarSesion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(15, Short.MAX_VALUE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PGeneralLogin.add(PContenidoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 540, 360));
@@ -203,7 +199,7 @@ public class frmLogin extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PContenidoLogin;
     private javax.swing.JPanel PGeneralLogin;
-    private javax.swing.JButton btnAtras;
+    public javax.swing.JButton btnAtras;
     private javax.swing.JButton btnIniciarSesion;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
