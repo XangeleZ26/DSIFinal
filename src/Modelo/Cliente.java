@@ -166,7 +166,7 @@ public class Cliente {
         boolean result = false;
         Date fechaActual = new Date();
         SimpleDateFormat fecha = new SimpleDateFormat("yyyy/MM"); 
-        if(tarjeta.verificarValidezTajeta()==true && tarjeta.verificarVigenciaTarjeta(fecha.format(fechaActual))){
+        if(tarjeta.verificarValidezTajeta()==true && tarjeta.verificarVigenciaTarjeta(fecha.format(fechaActual)) && tarjeta.verificarValidezCVV(tarjeta.getCvv(), tarjeta.getMedioPago())==true){
             this.cuenta = new Cuenta (tarjeta);
             result = true;
         }

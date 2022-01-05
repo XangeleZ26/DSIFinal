@@ -8,7 +8,6 @@ public class Tarjeta {
 
     private String medioPago;
     private String numTarjeta;
-    private String claveTarjeta;
     private String fechaVencimiento;
     private String cvv;
 
@@ -33,14 +32,6 @@ public class Tarjeta {
         this.numTarjeta = numTarjeta;
     }
 
-    public String getClaveTarjeta() {
-        return claveTarjeta;
-    }
-
-    public void setClaveTarjeta(String claveTarjeta) {
-        this.claveTarjeta = claveTarjeta;
-    }
-
     public String getFechaVencimiento() {
         return fechaVencimiento;
     }
@@ -58,18 +49,17 @@ public class Tarjeta {
     }
     
     //CONSTRUCTORES
-    public Tarjeta(String medioPago, String numTarjeta, String claveTarjeta, String fechaVencimiento, String cvv) {
+    public Tarjeta(String medioPago, String numTarjeta, String fechaVencimiento, String cvv) {
         this.medioPago = medioPago;
         this.numTarjeta = numTarjeta;
-        this.claveTarjeta = claveTarjeta;
         this.fechaVencimiento = fechaVencimiento;
         this.cvv = cvv;
     }
 
-    public Tarjeta(String medioPago, String numTarjeta, String claveTarjeta) {
+    public Tarjeta(String medioPago, String numTarjeta, String cvv) {
         this.medioPago = medioPago;
         this.numTarjeta = numTarjeta;
-        this.claveTarjeta = claveTarjeta;
+        this.cvv = cvv;
     }
     
     //MÉTODOS DEL FUNCIONAMIENTO DE LA CLASE
@@ -77,9 +67,9 @@ public class Tarjeta {
         //Revisar este método, es posible que sea innecesario
     }
 
-    public boolean verificarDatosTarjeta(String numTarjeta, String claveTarjeta) {
+    public boolean verificarDatosTarjeta(String numTarjeta, String cvv) {
         boolean result = false;
-        if(numTarjeta == this.numTarjeta && claveTarjeta == this.claveTarjeta){
+        if(numTarjeta == this.numTarjeta && cvv == this.cvv){
             result = true;
         }
         return result;
@@ -132,6 +122,28 @@ public class Tarjeta {
         }
         return result;
     }
+    //CVV de Visa y Mastercard posee 3 dígitos
+    //CVV de american express y diners card 4 dígitos
+    public boolean verificarValidezCVV(String cvv, String medioPago){
+        boolean result = false;
+        if(cvv.length() == 3){
+            if(medioPago.compareTo("VISA")==0){
+                result = true;
+            }
+            else if(medioPago.compareTo("MASTER CARD")==0){
+                result = true;
+            }
+        }
+        else if(cvv.length() == 4){
+            if(medioPago.compareTo("AMERICAN EXPRESS")==0){
+                result = true;
+            }
+            else if(medioPago.compareTo("DINERS CLUB")==0){
+                result = true;
+            }
+        }
+        return result;
+    }
     
     //REVISAR FUNCIONAMIENTO
     public boolean verificarVigenciaTarjeta(String fechaActual) {
@@ -149,7 +161,6 @@ public class Tarjeta {
         return "***Datos de Tarjeta***" + "\n" +
                 "Medio de Pago: " + medioPago + "\n" +
                 "Número de Tarjeta: " + numTarjeta + "\n" +
-                "Clave de Tarjeta: " + claveTarjeta + "\n" +
                 "Fecha de Vencimiento: " + fechaVencimiento + "\n" +
                 "CVV: " + cvv;
     }

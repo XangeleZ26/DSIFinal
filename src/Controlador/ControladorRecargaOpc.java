@@ -59,7 +59,6 @@ public class ControladorRecargaOpc implements ActionListener{
                 Tarjeta tarjeta = new Tarjeta(
                                 vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString(),
                                 vistaRecargaOpc.txtNumeroTarjeta.getText(),
-                                vistaRecargaOpc.txtClaveTarjeta.getText(),
                                 fechaVencimiento,
                                 vistaRecargaOpc.txtCVV.getText());
                 Date fechaActual = new Date();
