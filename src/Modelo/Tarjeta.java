@@ -65,7 +65,12 @@ public class Tarjeta {
         this.fechaVencimiento = fechaVencimiento;
         this.cvv = cvv;
     }
-
+public Tarjeta(String medioPago, String numTarjeta, String fechaVencimiento, String cvv) {
+        this.medioPago = medioPago;
+        this.numTarjeta = numTarjeta;
+        this.fechaVencimiento = fechaVencimiento;
+        this.cvv = cvv;
+    }
     public Tarjeta(String medioPago, String numTarjeta, String claveTarjeta) {
         this.medioPago = medioPago;
         this.numTarjeta = numTarjeta;

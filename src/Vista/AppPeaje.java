@@ -77,6 +77,7 @@ public class AppPeaje {
         
         //CREAMOS LA CUENTA DEL CLIENTE
         SimpleDateFormat fecha = new SimpleDateFormat("yyyy/MM"); 
+        Date fechaVen=new Date();
         Date fechaVencimiento1 = new Date(2025-1900, 12-1, 6);
         Date fechaVencimiento2 = new Date(2020-1900, 7-1, 6);
         

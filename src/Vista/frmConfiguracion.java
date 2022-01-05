@@ -1,20 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 package Vista;
 
-/**
- *
- * @author Yesenia
- */
+import java.awt.Image;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+
 public class frmConfiguracion extends javax.swing.JFrame {
 
-    /** Creates new form frmConfiguracion */
+   
     public frmConfiguracion() {
         initComponents();
+         
+        //enviar un usuario a este frm
+        ocultar();
+        OjoCerrado.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -31,22 +31,26 @@ public class frmConfiguracion extends javax.swing.JFrame {
         lblConfiguracion = new javax.swing.JLabel();
         PContenidoConfiguracion = new javax.swing.JPanel();
         lblUsuario = new javax.swing.JLabel();
-        txtUsuario = new javax.swing.JTextField();
         lblTipoDoc = new javax.swing.JLabel();
-        txtTipoDoc = new javax.swing.JTextField();
         lblNumDoc = new javax.swing.JLabel();
-        txtNumDoc = new javax.swing.JTextField();
         lblTarjeta = new javax.swing.JLabel();
-        txtTarjeta = new javax.swing.JTextField();
         lblNumTarjeta = new javax.swing.JLabel();
-        txtNumTarjeta = new javax.swing.JTextField();
         lblCorreo = new javax.swing.JLabel();
-        txtCorreo = new javax.swing.JTextField();
-        btnCambioContraseña = new javax.swing.JButton();
-        btnCambioCorreo = new javax.swing.JButton();
-        btnCerrarSesion = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
-        btnCambioCorreo1 = new javax.swing.JButton();
+        lblCorreo1 = new javax.swing.JLabel();
+        OjoCerrado = new javax.swing.JLabel();
+        OjoAbierto = new javax.swing.JLabel();
+        btnCerrar = new javax.swing.JButton();
+        btnCambioContrasena = new javax.swing.JButton();
+        btnCambioTarjet = new javax.swing.JButton();
+        btnCambioCorreo = new javax.swing.JButton();
+        txtContrasena = new javax.swing.JTextField();
+        txtUsuario = new javax.swing.JTextField();
+        txtTipoDoc = new javax.swing.JTextField();
+        txtNumDoc = new javax.swing.JTextField();
+        txtTarjeta = new javax.swing.JTextField();
+        txtNumTarjeta = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,7 +59,6 @@ public class frmConfiguracion extends javax.swing.JFrame {
         PTituloConfiguracion.setBackground(new java.awt.Color(159, 162, 178));
 
         lblConfiguracion.setFont(new java.awt.Font("Britannic Bold", 0, 48)); // NOI18N
-        lblConfiguracion.setForeground(new java.awt.Color(0, 0, 0));
         lblConfiguracion.setText("Configuración de la cuenta");
 
         org.jdesktop.layout.GroupLayout PTituloConfiguracionLayout = new org.jdesktop.layout.GroupLayout(PTituloConfiguracion);
@@ -78,197 +81,117 @@ public class frmConfiguracion extends javax.swing.JFrame {
         PGeneralConfiguracion.add(PTituloConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         PContenidoConfiguracion.setBackground(new java.awt.Color(121, 127, 139));
+        PContenidoConfiguracion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblUsuario.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblUsuario.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuario.setText("Usuario: ");
-
-        txtUsuario.setBackground(new java.awt.Color(121, 127, 139));
-        txtUsuario.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtUsuario.setForeground(new java.awt.Color(0, 0, 0));
-        txtUsuario.setBorder(null);
+        PContenidoConfiguracion.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(173, 37, 92, -1));
 
         lblTipoDoc.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblTipoDoc.setForeground(new java.awt.Color(0, 0, 0));
         lblTipoDoc.setText("Tipo de documento:");
-
-        txtTipoDoc.setBackground(new java.awt.Color(121, 127, 139));
-        txtTipoDoc.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtTipoDoc.setForeground(new java.awt.Color(0, 0, 0));
-        txtTipoDoc.setBorder(null);
+        PContenidoConfiguracion.add(lblTipoDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 86, 201, -1));
 
         lblNumDoc.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblNumDoc.setForeground(new java.awt.Color(0, 0, 0));
         lblNumDoc.setText("N° de documento:");
-
-        txtNumDoc.setBackground(new java.awt.Color(121, 127, 139));
-        txtNumDoc.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtNumDoc.setForeground(new java.awt.Color(0, 0, 0));
-        txtNumDoc.setBorder(null);
+        PContenidoConfiguracion.add(lblNumDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(81, 134, -1, -1));
 
         lblTarjeta.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblTarjeta.setForeground(new java.awt.Color(0, 0, 0));
         lblTarjeta.setText("Tarjeta:");
-
-        txtTarjeta.setBackground(new java.awt.Color(121, 127, 139));
-        txtTarjeta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtTarjeta.setForeground(new java.awt.Color(0, 0, 0));
-        txtTarjeta.setBorder(null);
+        PContenidoConfiguracion.add(lblTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(181, 182, -1, -1));
 
         lblNumTarjeta.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblNumTarjeta.setForeground(new java.awt.Color(0, 0, 0));
         lblNumTarjeta.setText("N° de tarjeta:");
-
-        txtNumTarjeta.setBackground(new java.awt.Color(121, 127, 139));
-        txtNumTarjeta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtNumTarjeta.setForeground(new java.awt.Color(0, 0, 0));
-        txtNumTarjeta.setBorder(null);
+        PContenidoConfiguracion.add(lblNumTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 230, -1, -1));
 
         lblCorreo.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblCorreo.setForeground(new java.awt.Color(0, 0, 0));
         lblCorreo.setText("Correo:");
-
-        txtCorreo.setBackground(new java.awt.Color(121, 127, 139));
-        txtCorreo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtCorreo.setForeground(new java.awt.Color(0, 0, 0));
-        txtCorreo.setBorder(null);
-
-        btnCambioContraseña.setBackground(new java.awt.Color(114, 0, 51));
-        btnCambioContraseña.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnCambioContraseña.setForeground(new java.awt.Color(255, 255, 255));
-        btnCambioContraseña.setText("Cambiar contraseña");
-        btnCambioContraseña.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnCambioContraseña.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        btnCambioCorreo.setBackground(new java.awt.Color(114, 0, 51));
-        btnCambioCorreo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnCambioCorreo.setForeground(new java.awt.Color(255, 255, 255));
-        btnCambioCorreo.setText("Cambiar correo");
-        btnCambioCorreo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnCambioCorreo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        btnCerrarSesion.setBackground(new java.awt.Color(114, 0, 51));
-        btnCerrarSesion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnCerrarSesion.setForeground(new java.awt.Color(255, 255, 255));
-        btnCerrarSesion.setText("Cerrar sesión");
-        btnCerrarSesion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnCerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCerrarSesionActionPerformed(evt);
-            }
-        });
+        PContenidoConfiguracion.add(lblCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(182, 278, -1, -1));
 
         btnAtras.setBackground(new java.awt.Color(121, 127, 139));
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
         btnAtras.setBorder(null);
         btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContenidoConfiguracion.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(601, 466, -1, -1));
 
-        btnCambioCorreo1.setBackground(new java.awt.Color(114, 0, 51));
-        btnCambioCorreo1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnCambioCorreo1.setForeground(new java.awt.Color(255, 255, 255));
-        btnCambioCorreo1.setText("Cambiar tarjeta");
-        btnCambioCorreo1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnCambioCorreo1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnCambioCorreo1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCambioCorreo1ActionPerformed(evt);
+        lblCorreo1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblCorreo1.setText("Contraseña:");
+        PContenidoConfiguracion.add(lblCorreo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, -1, -1));
+
+        OjoCerrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
+        OjoCerrado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OjoCerradoMouseClicked(evt);
             }
         });
+        PContenidoConfiguracion.add(OjoCerrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, 30, 30));
 
-        org.jdesktop.layout.GroupLayout PContenidoConfiguracionLayout = new org.jdesktop.layout.GroupLayout(PContenidoConfiguracion);
-        PContenidoConfiguracion.setLayout(PContenidoConfiguracionLayout);
-        PContenidoConfiguracionLayout.setHorizontalGroup(
-            PContenidoConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoConfiguracionLayout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(PContenidoConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(PContenidoConfiguracionLayout.createSequentialGroup()
-                        .add(lblUsuario, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 92, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(txtUsuario, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 368, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(PContenidoConfiguracionLayout.createSequentialGroup()
-                        .add(PContenidoConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(lblTipoDoc, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(lblNumDoc)
-                            .add(lblTarjeta)
-                            .add(lblNumTarjeta)
-                            .add(lblCorreo))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(PContenidoConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(txtTipoDoc)
-                            .add(txtNumDoc)
-                            .add(txtTarjeta)
-                            .add(txtNumTarjeta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 271, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(txtCorreo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 271, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                .add(88, 88, 88))
-            .add(PContenidoConfiguracionLayout.createSequentialGroup()
-                .add(117, 117, 117)
-                .add(PContenidoConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(PContenidoConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                        .add(PContenidoConfiguracionLayout.createSequentialGroup()
-                            .add(btnCambioCorreo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 174, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(btnCerrarSesion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 182, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(PContenidoConfiguracionLayout.createSequentialGroup()
-                            .add(btnCambioContraseña, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 174, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 243, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                    .add(btnCambioCorreo1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 174, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 46, Short.MAX_VALUE)
-                .add(btnAtras)
-                .add(24, 24, 24))
-        );
-        PContenidoConfiguracionLayout.setVerticalGroup(
-            PContenidoConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoConfiguracionLayout.createSequentialGroup()
-                .add(PContenidoConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(PContenidoConfiguracionLayout.createSequentialGroup()
-                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(btnAtras))
-                    .add(PContenidoConfiguracionLayout.createSequentialGroup()
-                        .add(37, 37, 37)
-                        .add(PContenidoConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(lblUsuario)
-                            .add(txtUsuario, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(18, 18, 18)
-                        .add(PContenidoConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(lblTipoDoc)
-                            .add(txtTipoDoc, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(18, 18, 18)
-                        .add(PContenidoConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(lblNumDoc)
-                            .add(txtNumDoc, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(18, 18, 18)
-                        .add(PContenidoConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(lblTarjeta)
-                            .add(txtTarjeta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(18, 18, 18)
-                        .add(PContenidoConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(lblNumTarjeta)
-                            .add(txtNumTarjeta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(18, 18, 18)
-                        .add(PContenidoConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(lblCorreo)
-                            .add(txtCorreo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(18, 18, 18)
-                        .add(PContenidoConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(PContenidoConfiguracionLayout.createSequentialGroup()
-                                .add(btnCambioContraseña, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .add(18, 18, 18)
-                                .add(btnCambioCorreo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .add(btnCerrarSesion, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .add(18, 18, 18)
-                        .add(btnCambioCorreo1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .add(70, 70, 70))
-        );
+        OjoAbierto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ver_32px.png"))); // NOI18N
+        OjoAbierto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OjoAbiertoMouseClicked(evt);
+            }
+        });
+        PContenidoConfiguracion.add(OjoAbierto, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, 30, -1));
 
-        PGeneralConfiguracion.add(PContenidoConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 104, 664, 450));
+        btnCerrar.setBackground(new java.awt.Color(22, 38, 46));
+        btnCerrar.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnCerrar.setForeground(new java.awt.Color(255, 255, 255));
+        btnCerrar.setText("Cerrar sesión");
+        PContenidoConfiguracion.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, 180, 80));
+
+        btnCambioContrasena.setBackground(new java.awt.Color(22, 38, 46));
+        btnCambioContrasena.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnCambioContrasena.setForeground(new java.awt.Color(255, 255, 255));
+        btnCambioContrasena.setText("Cambiar contraseña");
+        PContenidoConfiguracion.add(btnCambioContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, 180, 30));
+
+        btnCambioTarjet.setBackground(new java.awt.Color(22, 38, 46));
+        btnCambioTarjet.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnCambioTarjet.setForeground(new java.awt.Color(255, 255, 255));
+        btnCambioTarjet.setText("Cambiar tarjeta");
+        PContenidoConfiguracion.add(btnCambioTarjet, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 470, 180, 30));
+
+        btnCambioCorreo.setBackground(new java.awt.Color(22, 38, 46));
+        btnCambioCorreo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnCambioCorreo.setForeground(new java.awt.Color(255, 255, 255));
+        btnCambioCorreo.setText("Cambiar correo");
+        PContenidoConfiguracion.add(btnCambioCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, 180, 30));
+
+        txtContrasena.setEditable(false);
+        txtContrasena.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        PContenidoConfiguracion.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 280, 30));
+
+        txtUsuario.setEditable(false);
+        txtUsuario.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        PContenidoConfiguracion.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 280, 30));
+
+        txtTipoDoc.setEditable(false);
+        txtTipoDoc.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        PContenidoConfiguracion.add(txtTipoDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 80, 280, 30));
+
+        txtNumDoc.setEditable(false);
+        txtNumDoc.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        PContenidoConfiguracion.add(txtNumDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 130, 280, 30));
+
+        txtTarjeta.setEditable(false);
+        txtTarjeta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        PContenidoConfiguracion.add(txtTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 180, 280, 30));
+
+        txtNumTarjeta.setEditable(false);
+        txtNumTarjeta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        PContenidoConfiguracion.add(txtNumTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 230, 280, 30));
+
+        txtCorreo.setEditable(false);
+        txtCorreo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        PContenidoConfiguracion.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 280, 30));
+
+        PGeneralConfiguracion.add(PContenidoConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 690, 550));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PGeneralConfiguracion, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 664, Short.MAX_VALUE)
+            .add(PGeneralConfiguracion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 691, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -278,17 +201,27 @@ public class frmConfiguracion extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarSesionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCerrarSesionActionPerformed
+    private void OjoAbiertoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoAbiertoMouseClicked
+       OjoAbierto.setVisible(false);
+       OjoCerrado.setVisible(true);
+       txtContrasena.setText("XDDD");
+    }//GEN-LAST:event_OjoAbiertoMouseClicked
 
-    private void btnCambioCorreo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCambioCorreo1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnCambioCorreo1ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
+    private void OjoCerradoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoCerradoMouseClicked
+  
+        
+        OjoAbierto.setVisible(true);
+        OjoCerrado.setVisible(false);
+        ocultar();
+    }//GEN-LAST:event_OjoCerradoMouseClicked
+    public void ocultar(){
+        String contraOculta="•";
+         for(int i=1;i<4;i++){
+            contraOculta+="•";
+        }
+         txtContrasena.setText(contraOculta);
+    }
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -322,27 +255,31 @@ public class frmConfiguracion extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel OjoAbierto;
+    public javax.swing.JLabel OjoCerrado;
     private javax.swing.JPanel PContenidoConfiguracion;
     private javax.swing.JPanel PGeneralConfiguracion;
     private javax.swing.JPanel PTituloConfiguracion;
-    private javax.swing.JButton btnAtras;
-    private javax.swing.JButton btnCambioContraseña;
-    private javax.swing.JButton btnCambioCorreo;
-    private javax.swing.JButton btnCambioCorreo1;
-    private javax.swing.JButton btnCerrarSesion;
+    public javax.swing.JButton btnAtras;
+    public javax.swing.JButton btnCambioContrasena;
+    public javax.swing.JButton btnCambioCorreo;
+    public javax.swing.JButton btnCambioTarjet;
+    public javax.swing.JButton btnCerrar;
     private javax.swing.JLabel lblConfiguracion;
     private javax.swing.JLabel lblCorreo;
+    private javax.swing.JLabel lblCorreo1;
     private javax.swing.JLabel lblNumDoc;
     private javax.swing.JLabel lblNumTarjeta;
     private javax.swing.JLabel lblTarjeta;
     private javax.swing.JLabel lblTipoDoc;
     private javax.swing.JLabel lblUsuario;
-    private javax.swing.JTextField txtCorreo;
-    private javax.swing.JTextField txtNumDoc;
-    private javax.swing.JTextField txtNumTarjeta;
-    private javax.swing.JTextField txtTarjeta;
-    private javax.swing.JTextField txtTipoDoc;
-    private javax.swing.JTextField txtUsuario;
+    public javax.swing.JTextField txtContrasena;
+    public javax.swing.JTextField txtCorreo;
+    public javax.swing.JTextField txtNumDoc;
+    public javax.swing.JTextField txtNumTarjeta;
+    public javax.swing.JTextField txtTarjeta;
+    public javax.swing.JTextField txtTipoDoc;
+    public javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
 
 }

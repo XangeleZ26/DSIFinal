@@ -60,6 +60,21 @@ public class Cliente {
         this.contraseña = contraseña;
     }
     
+    //MÉTODO Contraseña
+    public int cambioContrasena(String contrasena,String novoContra,String verifContra){
+        int result=0;
+        if(!(this.contraseña.equals(contrasena))){
+            result=1;
+        }
+         if(!(novoContra.equals(verifContra))){
+            result=2;
+        }
+         if((!(this.contraseña.equals(contrasena)))&&(!(novoContra.equals(verifContra)))){
+             result=3;
+         }
+          return result;
+    }
+    
     //MÉTODOS ACCESORES
     public String getTipoDocumento() {
         return tipoDocumento;
