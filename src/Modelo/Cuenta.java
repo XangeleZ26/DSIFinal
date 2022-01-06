@@ -281,7 +281,7 @@ public class Cuenta {
     
     public boolean recargar(float monto, Tarjeta tarjeta, String fecha) {
         boolean result = false;
-        if(monto>0&&tarjeta.getClaveTarjeta().compareTo(this.tarjeta.getClaveTarjeta())==0){
+        if(monto>0&&tarjeta.getCvv().compareTo(this.tarjeta.getCvv())==0){
             this.saldoTotal = this.saldoTotal + monto;
             result = true;
         }
@@ -292,9 +292,9 @@ public class Cuenta {
         return result;
     }
     
-    public boolean recargar(float monto, String claveTarjeta, String fecha) {
+    public boolean recargar(float monto, String cvv, String fecha) {
         boolean result = false;
-        if(monto>0&&claveTarjeta.compareTo(this.tarjeta.getClaveTarjeta())==0){
+        if(monto>0&&cvv.compareTo(this.tarjeta.getCvv())==0){
             this.saldoTotal = this.saldoTotal + monto;
             result = true;
         }

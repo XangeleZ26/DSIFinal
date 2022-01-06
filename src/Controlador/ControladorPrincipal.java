@@ -6,6 +6,7 @@ import Modelo.ArregloClientes;
 import Modelo.Configuracion;
 import Modelo.Vehiculo;
 import Vista.frmPaginaPrincipal;
+import Vista.frmCliente;
 import Vista.frmLogin;
 import Vista.frmRegistro;
 
@@ -13,6 +14,7 @@ public class ControladorPrincipal implements ActionListener{
     private ArregloClientes modeloClientes;
     private frmPaginaPrincipal vistaPrincipal;
     Vehiculo mVehiculo;
+    frmCliente fCliente;
     frmRegistro fVehiculo;
     
     public ControladorPrincipal(frmPaginaPrincipal vistaPrincipal){
@@ -32,13 +34,15 @@ public class ControladorPrincipal implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vistaPrincipal.btnIngresa){
             
-            ControladorLogin controller=new ControladorLogin();
+            ControladorLogin controller = new ControladorLogin();
             controller.iniciar(); //se abre vista login
             vistaPrincipal.dispose(); //se cierra vista principal
         }
         else if(e.getSource() == vistaPrincipal.btnAfiliate){
             
-            //no sé exactamente que se abriría primero: registro o  frmCliente xd
+            //ControladorCliente ctrlCliente = new ControladorCliente(modeloClientes, fCliente);
+            //ctrlCliente.iniciarCliente();
+            //vistaPrincipal.dispose(); 
         }
     }
     

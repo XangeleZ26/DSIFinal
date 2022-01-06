@@ -69,25 +69,26 @@ public class Peaje {
     }
     
     //MÉTODOS DEL FUNCIONAMIENTO DE LA CLASE
-    public void agregarEstacion(String nombreEstacion, String codigoEstacion, float porcentajeVariacion, Peaje peaje){
+    public void agregarEstacion(String nombreEstacion, String codigoEstacion, Peaje peaje){
         this.ne++;
         this.oe=this.ne-1;
-        this.estaciones[oe] = new Estacion(nombreEstacion, codigoEstacion, porcentajeVariacion, peaje);
+        this.estaciones[oe] = new Estacion(nombreEstacion, codigoEstacion, peaje);
     }
     
     public void mostrarEstaciones(){
         float variacion;
-        System.out.format("%-25s%-10s%-10s%-25s\n", "Nombre", "Codigo", "Var.", "Peaje");
-        System.out.format("%-25s%-10s%-10s%-25s\n", "======", "======", "====", "=====");
+        System.out.format("%-25s%-10s%-25s\n", "Nombre", "Codigo", "Peaje");
+        System.out.format("%-25s%-10s%-25s\n", "======", "======", "=====");
         for(int i=0;i<ne;i++){
-            if(estaciones[i].getPorcentajeVariacion()>1){
+             System.out.format("%-25s%-10s%-25s\n", estaciones[i].getNombreEstacion(), estaciones[i].getCodigoEstacion(), estaciones[i].getPeaje().getNombrePeaje());
+            /*if(estaciones[i].getPorcentajeVariacion()>1){
                 variacion = ((float)Math.round((double)(estaciones[i].getPorcentajeVariacion()-1)*100))/100;
                 System.out.format("%-25s%-10s%-10s%-25s\n", estaciones[i].getNombreEstacion(), estaciones[i].getCodigoEstacion(), "+"+variacion+"%", estaciones[i].getPeaje().getNombrePeaje());
             }
             else if(estaciones[i].getPorcentajeVariacion()<1){
                 variacion = ((float)Math.round((double)(1-estaciones[i].getPorcentajeVariacion())*100))/100;
                 System.out.format("%-25s%-10s%-10s%-25s\n", estaciones[i].getNombreEstacion(), estaciones[i].getCodigoEstacion(), "-"+variacion+"%", estaciones[i].getPeaje().getNombrePeaje());
-            }
+            }*/
         }
     }
     

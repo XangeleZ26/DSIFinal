@@ -22,11 +22,11 @@ public class AppPeaje {
         Peaje peaje2 = new Peaje ("Panamericana Sur", (float)3.25, (float)3.6,(float)2.8);
         
         //DECLARAMOS LAS ESTACIONES DE CADA PEAJE
-        peaje1.agregarEstacion("Serpentin de Pasamayo", "1N001", (float)0.85, peaje1);
-        peaje1.agregarEstacion("Variante Pasamayo", "1N002", (float)0.7, peaje1);
-        peaje1.agregarEstacion("El Paraíso", "1N003", (float)1.15, peaje1);
-        peaje1.agregarEstacion("Fortaleza", "1N004", (float)1.05, peaje1);
-        peaje2.agregarEstacion("Chilca", "1S001", (float)0.9, peaje2);
+        peaje1.agregarEstacion("Serpentin de Pasamayo", "1N001", peaje1);
+        peaje1.agregarEstacion("Variante Pasamayo", "1N002", peaje1);
+        peaje1.agregarEstacion("El Paraíso", "1N003", peaje1);
+        peaje1.agregarEstacion("Fortaleza", "1N004", peaje1);
+        peaje2.agregarEstacion("Chilca", "1S001", peaje2);
         
         //MOSTRAMOS LA INFORMACIÓN DE CADA ESTACIÓN
         System.out.println("***Estaciones del peaje 1***");
@@ -81,11 +81,13 @@ public class AppPeaje {
         Date fechaVencimiento1 = new Date(2025-1900, 12-1, 6);
         Date fechaVencimiento2 = new Date(2020-1900, 7-1, 6);
         
-        Tarjeta tarjeta = new Tarjeta("VISA","5040808012345678","1793", fecha.format(fechaVencimiento1),"123");
+        Tarjeta tarjeta = new Tarjeta("VISA","5040808012345678", fecha.format(fechaVencimiento1),"125");
         System.out.println("Cuenta creada: "+clientes.getArregloCliente(0).crearCuenta(tarjeta));
-        tarjeta = new Tarjeta("VISA","4040808012345678","1793",fecha.format(fechaVencimiento2),"123");
+        tarjeta = new Tarjeta("VISA","4040808012345678", fecha.format(fechaVencimiento2),"123");
         System.out.println("Cuenta creada: "+clientes.getArregloCliente(0).crearCuenta(tarjeta));
-        tarjeta = new Tarjeta("VISA","4040808012345678","1793",fecha.format(fechaVencimiento1),"123");
+        tarjeta = new Tarjeta("VISA","4040808012345678",fecha.format(fechaVencimiento1),"1234");
+        System.out.println("Cuenta creada: "+clientes.getArregloCliente(0).crearCuenta(tarjeta));
+        tarjeta = new Tarjeta("VISA","4040808012345678",fecha.format(fechaVencimiento1),"124");
         System.out.println("Cuenta creada: "+clientes.getArregloCliente(0).crearCuenta(tarjeta));
         System.out.println("");
         System.out.println(clientes.getArregloCliente(0).getCuenta().getTarjeta().toString());
@@ -133,9 +135,9 @@ public class AppPeaje {
         System.out.println("");
         
         //MOVIMIENTOS: RECARGAS Y CONSUMOS
-        System.out.println("Recarga de 0 soles exitosa: "+clientes.getArregloCliente(0).getCuenta().recargar(0, "1793", "2021/12/28"));
-        System.out.println("Recarga de 30 soles exitosa: "+clientes.getArregloCliente(0).getCuenta().recargar(30, "1893", "2021/12/28"));
-        System.out.println("Recarga de 100 soles exitosa: "+clientes.getArregloCliente(0).getCuenta().recargar(100, "1793", "2021/12/28"));
+        System.out.println("Recarga de 0 soles exitosa: "+clientes.getArregloCliente(0).getCuenta().recargar(0, "124", "2021/12/28"));
+        System.out.println("Recarga de 30 soles exitosa: "+clientes.getArregloCliente(0).getCuenta().recargar(30, "124", "2021/12/28"));
+        System.out.println("Recarga de 100 soles exitosa: "+clientes.getArregloCliente(0).getCuenta().recargar(100, "124", "2021/12/28"));
         System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos(0).imprimirMovimientoSimple());
         System.out.println("Saldo total: "+clientes.getArregloCliente(0).getCuenta().getSaldoTotal());
         System.out.println("");
@@ -223,9 +225,9 @@ public class AppPeaje {
         
         
         frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
-      ArregloClientes mClientes = new ArregloClientes();
-     ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
-     ctrlPrincipal.iniciar();
+        ArregloClientes mClientes = new ArregloClientes();
+        ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
+       ctrlPrincipal.iniciar();
 //        frmCliente fCliente = new frmCliente();
 //        ControladorCliente ctrlCliente = new ControladorCliente(mClientes, fCliente);
 //        //ctrlCliente.iniciarCliente();
