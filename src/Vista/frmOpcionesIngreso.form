@@ -134,13 +134,11 @@
                       <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Component id="btnRecargar" pref="276" max="32767" attributes="0"/>
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="btnSaldo" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnPagar" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnMovimientos" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnVehiculos" alignment="0" max="32767" attributes="0"/>
-                              <Component id="btnConfiguracion" alignment="0" pref="276" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="btnSaldo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnPagar" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnMovimientos" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnVehiculos" alignment="0" max="32767" attributes="0"/>
+                          <Component id="btnConfiguracion" alignment="0" pref="276" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="btnAtras" min="-2" max="-2" attributes="0"/>
@@ -217,6 +215,9 @@
                   <Color id="Hand Cursor"/>
                 </Property>
               </Properties>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
+              </AuxValues>
             </Component>
             <Component class="javax.swing.JButton" name="btnMovimientos">
               <Properties>

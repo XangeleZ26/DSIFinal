@@ -51,14 +51,14 @@ public class AppPeaje {
         
         //AGREGAMOS CLIENTES
         ArregloClientes clientes = new ArregloClientes();
-        Date fechanacimiento1 = new Date(2000-1900, 11, 14);
+        Date fechanacimiento1 = new Date(2000-1900, 11-1, 14);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Cliente cliente = new Cliente("DNI","11112222","José Alonso","Tolentino","Tantaruna","Masculino", sdf.format(fechanacimiento1),"josealonso.tolentino@unmsm.edu.pe");
         System.out.println("Cliente agregado: "+clientes.agregarCliente(cliente));
-        Date fechanacimiento2 = new Date(2003-1900, 6, 25);
+        Date fechanacimiento2 = new Date(2003-1900, 6-1, 25);
         cliente = new Cliente("DNI","33334444","Esthefany","Meza","Meza","Femenino", sdf.format(fechanacimiento2), "esthefany.meza@gmail.com");
         System.out.println("Cliente agregado: "+clientes.agregarCliente(cliente));
-        Date fechanacimiento3 = new Date(1900-1900, 8, 10);
+        Date fechanacimiento3 = new Date(1900-1900, 8-1, 10);
         cliente = new Cliente("PASAPORTE","55556666","Sheldon Lee","Cooper","Fowler","Masculino", sdf.format(fechanacimiento3),"sheldon.cooper@gmail.com");
         System.out.println("Cliente agregado: "+clientes.agregarCliente(cliente));
         System.out.println("");

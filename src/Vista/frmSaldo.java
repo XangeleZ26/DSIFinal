@@ -31,22 +31,23 @@ public class frmSaldo extends javax.swing.JFrame {
         lblSimbolo1 = new javax.swing.JLabel();
         txtSaldoTotal = new javax.swing.JTextField();
         btnAtras = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtDescripcionLogin = new javax.swing.JTextPane();
+        btnRecargar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         PGeneralSaldo.setBackground(new java.awt.Color(121, 127, 139));
 
         lblDescripcionSaldo.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblDescripcionSaldo.setForeground(new java.awt.Color(0, 0, 0));
         lblDescripcionSaldo.setText("Usted cuenta con un saldo de:");
 
         lblSimbolo1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblSimbolo1.setForeground(new java.awt.Color(0, 0, 0));
         lblSimbolo1.setText("S/");
 
         txtSaldoTotal.setBackground(new java.awt.Color(121, 127, 139));
         txtSaldoTotal.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtSaldoTotal.setForeground(new java.awt.Color(0, 0, 0));
         txtSaldoTotal.setBorder(null);
 
         btnAtras.setBackground(new java.awt.Color(121, 127, 139));
@@ -54,25 +55,48 @@ public class frmSaldo extends javax.swing.JFrame {
         btnAtras.setBorder(null);
         btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+
+        txtDescripcionLogin.setEditable(false);
+        txtDescripcionLogin.setBackground(new java.awt.Color(121, 127, 139));
+        txtDescripcionLogin.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        txtDescripcionLogin.setText("¿Desea aumentar su saldo?");
+        jScrollPane1.setViewportView(txtDescripcionLogin);
+
+        btnRecargar.setBackground(new java.awt.Color(22, 38, 46));
+        btnRecargar.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnRecargar.setForeground(new java.awt.Color(255, 255, 255));
+        btnRecargar.setText("Recargar");
+
         org.jdesktop.layout.GroupLayout PGeneralSaldoLayout = new org.jdesktop.layout.GroupLayout(PGeneralSaldo);
         PGeneralSaldo.setLayout(PGeneralSaldoLayout);
         PGeneralSaldoLayout.setHorizontalGroup(
             PGeneralSaldoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PGeneralSaldoLayout.createSequentialGroup()
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, PGeneralSaldoLayout.createSequentialGroup()
                 .add(PGeneralSaldoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(PGeneralSaldoLayout.createSequentialGroup()
-                        .add(54, 54, 54)
-                        .add(lblDescripcionSaldo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 303, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(75, 75, 75)
+                        .add(btnRecargar))
+                    .add(PGeneralSaldoLayout.createSequentialGroup()
+                        .add(42, 42, 42)
+                        .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(btnAtras)
+                .add(16, 16, 16))
+            .add(PGeneralSaldoLayout.createSequentialGroup()
+                .add(PGeneralSaldoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(PGeneralSaldoLayout.createSequentialGroup()
                         .add(105, 105, 105)
                         .add(lblSimbolo1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(txtSaldoTotal, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 159, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(PGeneralSaldoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                            .add(jSeparator1)
+                            .add(txtSaldoTotal, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)))
+                    .add(PGeneralSaldoLayout.createSequentialGroup()
+                        .add(54, 54, 54)
+                        .add(lblDescripcionSaldo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 303, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(55, Short.MAX_VALUE))
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, PGeneralSaldoLayout.createSequentialGroup()
-                .add(0, 0, Short.MAX_VALUE)
-                .add(btnAtras)
-                .add(16, 16, 16))
         );
         PGeneralSaldoLayout.setVerticalGroup(
             PGeneralSaldoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -83,9 +107,19 @@ public class frmSaldo extends javax.swing.JFrame {
                 .add(PGeneralSaldoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(lblSimbolo1)
                     .add(txtSaldoTotal, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 70, Short.MAX_VALUE)
-                .add(btnAtras)
-                .add(16, 16, 16))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(PGeneralSaldoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(PGeneralSaldoLayout.createSequentialGroup()
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(btnAtras)
+                        .add(16, 16, 16))
+                    .add(PGeneralSaldoLayout.createSequentialGroup()
+                        .add(33, 33, 33)
+                        .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                        .add(btnRecargar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(28, Short.MAX_VALUE))))
         );
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
@@ -139,10 +173,14 @@ public class frmSaldo extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PGeneralSaldo;
-    private javax.swing.JButton btnAtras;
+    public javax.swing.JButton btnAtras;
+    public javax.swing.JButton btnRecargar;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel lblDescripcionSaldo;
     private javax.swing.JLabel lblSimbolo1;
-    private javax.swing.JTextField txtSaldoTotal;
+    private javax.swing.JTextPane txtDescripcionLogin;
+    public javax.swing.JTextField txtSaldoTotal;
     // End of variables declaration//GEN-END:variables
 
 }

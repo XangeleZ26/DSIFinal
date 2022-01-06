@@ -82,11 +82,11 @@ public class ConfigCambiarCorreo extends javax.swing.JFrame {
 
         jTextPane1.setEditable(false);
         jTextPane1.setBackground(new java.awt.Color(121, 127, 139));
-        jTextPane1.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        jTextPane1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextPane1.setText("Para poder cambiar su correo, necesita proporcionar su contraseña actual.\nSus otros datos registrados permanecerán intactos.");
         jScrollPane1.setViewportView(jTextPane1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 380, 50));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 440, 50));
 
         txtCorreo.setBackground(new java.awt.Color(121, 127, 139));
         txtCorreo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N

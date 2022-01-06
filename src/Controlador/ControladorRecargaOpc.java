@@ -55,12 +55,16 @@ public class ControladorRecargaOpc implements ActionListener{
         else if(e.getSource() == vistaRecargaOpc.btnFinalizar){
             SimpleDateFormat sdfVencimiento = new SimpleDateFormat("yyyy/MM");
             String fechaVencimiento = sdfVencimiento.format(vistaRecargaOpc.dcFechaVencimiento.getDate());
+            System.out.println(fechaVencimiento);
             if(modeloTarjeta.verificarVigenciaTarjeta(fechaVencimiento)){
+                
                 Tarjeta tarjeta = new Tarjeta(
                                 vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString(),
                                 vistaRecargaOpc.txtNumeroTarjeta.getText(),
                                 fechaVencimiento,
                                 vistaRecargaOpc.txtCVV.getText());
+                
+                
                 Date fechaActual = new Date();
                 SimpleDateFormat sdfActual = new SimpleDateFormat("dd/MM/yyyy");
                 modeloCuenta.recargar(Float.parseFloat(vistaRecargaOpc.txtMontoOpcional.getText()), 

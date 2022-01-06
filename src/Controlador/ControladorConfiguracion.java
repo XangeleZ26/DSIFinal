@@ -66,6 +66,14 @@ public class ControladorConfiguracion {
                vista.dispose();
             }
         });
+        this.vista.btnCambioTarjet.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              ControladorConfigCambiarTarjeta controller=new ControladorConfigCambiarTarjeta();
+               controller.iniciar();
+               vista.dispose();
+            }
+        });
     }
 
     //metodos

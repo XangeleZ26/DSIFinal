@@ -6,6 +6,8 @@
 
 package Vista;
 
+import java.text.SimpleDateFormat;
+
 /**
  *
  * @author Yesenia
@@ -335,44 +337,45 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
                     .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
                         .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
-                                .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(dcFechaVencimiento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(lblDescripcion6))
-                                .add(83, 83, 83)
-                                .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                        .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator5)
-                                        .add(org.jdesktop.layout.GroupLayout.LEADING, txtCVV, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(lblDescripcion7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 141, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                .add(0, 0, Short.MAX_VALUE))
-                            .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
-                                .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                        .add(org.jdesktop.layout.GroupLayout.LEADING, PContenidoRecargaOpcionalLayout.createSequentialGroup()
-                                            .add(lblMontoOpcional, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 87, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                            .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                                .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
-                                                    .add(lblSimbolo1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                                    .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                                    .add(txtMontoOpcional, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 99, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                                .add(jSeparator1)))
-                                        .add(lblComprobante, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .add(cbxComprobantePago, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                            .add(lblMedioPago, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 218, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                            .add(lblDescripcion3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 179, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                            .add(cbxMedioPago, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 243, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                                    .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                        .add(lblDescripcion4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(org.jdesktop.layout.GroupLayout.LEADING, txtNumeroTarjeta)
-                                        .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                                    .add(org.jdesktop.layout.GroupLayout.LEADING, PContenidoRecargaOpcionalLayout.createSequentialGroup()
+                                        .add(lblMontoOpcional, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 87, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                        .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                            .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
+                                                .add(lblSimbolo1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                                .add(txtMontoOpcional, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 99, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                            .add(jSeparator1)))
+                                    .add(lblComprobante, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(cbxComprobantePago, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                        .add(lblMedioPago, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 218, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(lblDescripcion3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 179, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(cbxMedioPago, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 243, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .add(PDatos, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoRecargaOpcionalLayout.createSequentialGroup()
                                 .add(0, 0, Short.MAX_VALUE)
                                 .add(btnFinalizar)
-                                .add(9, 9, 9)))
+                                .add(9, 9, 9))
+                            .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
+                                .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
+                                        .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                            .add(dcFechaVencimiento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                            .add(lblDescripcion6))
+                                        .add(83, 83, 83)
+                                        .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                            .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                                                .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator5)
+                                                .add(org.jdesktop.layout.GroupLayout.LEADING, txtCVV, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                            .add(lblDescripcion7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 141, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                    .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                                        .add(lblDescripcion4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(org.jdesktop.layout.GroupLayout.LEADING, txtNumeroTarjeta)
+                                        .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                .add(0, 0, Short.MAX_VALUE)))
                         .add(25, 25, 25))))
             .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                 .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
@@ -457,7 +460,7 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFinalizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinalizarActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_btnFinalizarActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed

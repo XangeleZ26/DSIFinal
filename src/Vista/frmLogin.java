@@ -72,7 +72,7 @@ public class frmLogin extends javax.swing.JFrame {
 
         txtDescripcionLogin.setEditable(false);
         txtDescripcionLogin.setBackground(new java.awt.Color(121, 127, 139));
-        txtDescripcionLogin.setFont(new java.awt.Font("Times New Roman", 0, 12)); // NOI18N
+        txtDescripcionLogin.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtDescripcionLogin.setText("IMPORTANTE\nUsuario: Ingrese su DNI, RUC o correo electrónico.\nSi está ingresando por primera vez su Usuario y Contraseña (provisional) es el número de documento de identidad con el cual se ha registrado en PEX.");
         jScrollPane1.setViewportView(txtDescripcionLogin);
 

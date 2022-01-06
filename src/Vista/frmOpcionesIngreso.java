@@ -142,12 +142,11 @@ public class frmOpcionesIngreso extends javax.swing.JFrame {
                 .add(88, 88, 88)
                 .add(PContenidoOpcionesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                     .add(btnRecargar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
-                    .add(PContenidoOpcionesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                        .add(org.jdesktop.layout.GroupLayout.LEADING, btnSaldo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(org.jdesktop.layout.GroupLayout.LEADING, btnPagar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(org.jdesktop.layout.GroupLayout.LEADING, btnMovimientos, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(org.jdesktop.layout.GroupLayout.LEADING, btnVehiculos, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(org.jdesktop.layout.GroupLayout.LEADING, btnConfiguracion, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)))
+                    .add(btnSaldo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(btnPagar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(btnMovimientos, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(btnVehiculos, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(btnConfiguracion, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE))
                 .add(18, 18, 18)
                 .add(btnAtras)
                 .addContainerGap(18, Short.MAX_VALUE))
@@ -234,7 +233,7 @@ public class frmOpcionesIngreso extends javax.swing.JFrame {
     private javax.swing.JButton btnMovimientos;
     private javax.swing.JButton btnPagar;
     private javax.swing.JButton btnRecargar;
-    private javax.swing.JButton btnSaldo;
+    public javax.swing.JButton btnSaldo;
     private javax.swing.JButton btnVehiculos;
     private javax.swing.JLabel lblBienvenido;
     private javax.swing.JLabel lblUsuario;

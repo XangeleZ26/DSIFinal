@@ -28,6 +28,14 @@ public class ControladorOpcionesIngreso {
                vista.dispose();
             }
         });
+        this.vista.btnSaldo.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               ControladorSaldo controller=new ControladorSaldo();
+               controller.iniciar();
+               vista.dispose();
+            }
+        });
     }
     
       public void iniciar(){

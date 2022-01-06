@@ -157,7 +157,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="140" y="60" width="380" height="50"/>
+              <AbsoluteConstraints x="110" y="60" width="440" height="50"/>
             </Constraint>
           </Constraints>
 
@@ -170,7 +170,7 @@
                   <Color blue="8b" green="7f" red="79" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Times New Roman" size="12" style="0"/>
+                  <Font name="Times New Roman" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Para poder cambiar su correo, necesita proporcionar su contrase&#xf1;a actual.&#xa;Sus otros datos registrados permanecer&#xe1;n intactos."/>
               </Properties>

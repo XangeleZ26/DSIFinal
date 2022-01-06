@@ -39,7 +39,6 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
         cbxMedioPago = new javax.swing.JComboBox<>();
         lblCorreo4 = new javax.swing.JLabel();
         lblCorreo5 = new javax.swing.JLabel();
-        lblCorreo6 = new javax.swing.JLabel();
         dcFechaVencimiento = new com.toedter.calendar.JDateChooser();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
@@ -66,26 +65,26 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
         btnAtras.setBorder(null);
         btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 300, -1, -1));
+        jPanel1.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 350, -1, -1));
 
         lblCorreo1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblCorreo1.setText("Medio de pago:");
-        jPanel1.add(lblCorreo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, -1, -1));
+        jPanel1.add(lblCorreo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
 
         lblCorreo3.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblCorreo3.setText("Fecha de vencimiento:");
-        jPanel1.add(lblCorreo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, -1, -1));
+        jPanel1.add(lblCorreo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, 30));
 
         txtContrasena.setBackground(new java.awt.Color(121, 127, 139));
         txtContrasena.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtContrasena.setBorder(null);
-        jPanel1.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 140, 260, 30));
+        jPanel1.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 260, 30));
 
         btnCambiar.setBackground(new java.awt.Color(22, 38, 46));
         btnCambiar.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnCambiar.setForeground(new java.awt.Color(255, 255, 255));
         btnCambiar.setText("Cambiar tarjeta");
-        jPanel1.add(btnCambiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 290, 190, 50));
+        jPanel1.add(btnCambiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 330, 190, 50));
 
         jPanel4.setBackground(new java.awt.Color(159, 162, 178));
 
@@ -93,46 +92,47 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 23, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 670, -1));
+        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 670, 40));
 
         txtCorreo.setBackground(new java.awt.Color(121, 127, 139));
         txtCorreo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtCorreo.setBorder(null);
-        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 90, 260, 30));
+        txtCorreo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCorreoActionPerformed(evt);
+            }
+        });
+        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 260, 30));
 
         cbxMedioPago.setBackground(new java.awt.Color(121, 127, 139));
         cbxMedioPago.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         cbxMedioPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "                                  ", "Visa (Crédito o débito)", "Master Card (Crédito o débito)", "American Express (Crédito)", "Diners Club (Crédito)", " " }));
         cbxMedioPago.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(cbxMedioPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 260, -1));
+        jPanel1.add(cbxMedioPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 280, -1));
 
         lblCorreo4.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblCorreo4.setText("Número de tarjeta:");
-        jPanel1.add(lblCorreo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 90, -1, -1));
+        jPanel1.add(lblCorreo4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, -1, -1));
 
         lblCorreo5.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblCorreo5.setText("CVV:");
-        jPanel1.add(lblCorreo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, -1, -1));
-
-        lblCorreo6.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblCorreo6.setText("CVV:");
-        jPanel1.add(lblCorreo6, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 140, -1, -1));
-        jPanel1.add(dcFechaVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 200, 260, 30));
+        jPanel1.add(lblCorreo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, -1));
+        jPanel1.add(dcFechaVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 260, 30));
 
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 120, 260, 10));
+        jPanel1.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, 260, 10));
 
         jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 170, 260, 10));
+        jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 260, 10));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -145,13 +145,15 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCorreoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -202,7 +204,6 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
     private javax.swing.JLabel lblCorreo3;
     private javax.swing.JLabel lblCorreo4;
     private javax.swing.JLabel lblCorreo5;
-    private javax.swing.JLabel lblCorreo6;
     public javax.swing.JPasswordField txtContrasena;
     public javax.swing.JTextField txtCorreo;
     // End of variables declaration//GEN-END:variables

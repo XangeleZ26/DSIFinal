@@ -50,7 +50,6 @@ public class frmPagar extends javax.swing.JFrame {
         PTituloPagar.setBackground(new java.awt.Color(159, 162, 178));
 
         lblPagar.setFont(new java.awt.Font("Britannic Bold", 0, 48)); // NOI18N
-        lblPagar.setForeground(new java.awt.Color(0, 0, 0));
         lblPagar.setText("Pagar peaje");
 
         org.jdesktop.layout.GroupLayout PTituloPagarLayout = new org.jdesktop.layout.GroupLayout(PTituloPagar);
@@ -77,131 +76,64 @@ public class frmPagar extends javax.swing.JFrame {
         PGeneralPagar.add(PTituloPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, -1));
 
         PContenidoPagar.setBackground(new java.awt.Color(121, 127, 139));
+        PContenidoPagar.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblPeaje.setFont(new java.awt.Font("Times New Roman", 0, 28)); // NOI18N
-        lblPeaje.setForeground(new java.awt.Color(0, 0, 0));
         lblPeaje.setText("Peaje:");
+        PContenidoPagar.add(lblPeaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 77, -1));
 
         cbxPeaje.setBackground(new java.awt.Color(121, 127, 139));
         cbxPeaje.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        cbxPeaje.setForeground(new java.awt.Color(0, 0, 0));
         cbxPeaje.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "                                  ", "Panamericana Norte", "Panamericana Sur" }));
         cbxPeaje.setBorder(null);
         cbxPeaje.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContenidoPagar.add(cbxPeaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 239, -1));
 
         lblEstacion.setFont(new java.awt.Font("Times New Roman", 0, 28)); // NOI18N
-        lblEstacion.setForeground(new java.awt.Color(0, 0, 0));
         lblEstacion.setText("Estación:");
+        PContenidoPagar.add(lblEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 116, -1));
 
         cbxEstacion.setBackground(new java.awt.Color(121, 127, 139));
         cbxEstacion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        cbxEstacion.setForeground(new java.awt.Color(0, 0, 0));
         cbxEstacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "                                          ", "Serpentin de Pasamayo", "Variante de Pasamayo", "El paraíso", "Fortaleza", "Chilca" }));
         cbxEstacion.setBorder(null);
         cbxEstacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContenidoPagar.add(cbxEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, -1, -1));
 
         btnPagar.setBackground(new java.awt.Color(121, 127, 139));
         btnPagar.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        btnPagar.setForeground(new java.awt.Color(0, 0, 0));
         btnPagar.setText("Realizar pago");
         btnPagar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnPagar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContenidoPagar.add(btnPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 390, 150, 45));
 
         btnAtras.setBackground(new java.awt.Color(121, 127, 139));
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
         btnAtras.setBorder(null);
         btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContenidoPagar.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 387, -1, -1));
 
         lblFecha.setFont(new java.awt.Font("Times New Roman", 0, 28)); // NOI18N
-        lblFecha.setForeground(new java.awt.Color(0, 0, 0));
         lblFecha.setText("Fecha:");
+        PContenidoPagar.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 80, 20));
 
         dcFechaPago.setBackground(new java.awt.Color(121, 127, 139));
-        dcFechaPago.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoPagar.add(dcFechaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 240, 30));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoPagar.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 239, 10));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoPagar.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 225, 10));
 
         lblFecha1.setFont(new java.awt.Font("Times New Roman", 0, 28)); // NOI18N
-        lblFecha1.setForeground(new java.awt.Color(0, 0, 0));
         lblFecha1.setText("Vehiculos:");
+        PContenidoPagar.add(lblFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 127, -1));
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        org.jdesktop.layout.GroupLayout PContenidoPagarLayout = new org.jdesktop.layout.GroupLayout(PContenidoPagar);
-        PContenidoPagar.setLayout(PContenidoPagarLayout);
-        PContenidoPagarLayout.setHorizontalGroup(
-            PContenidoPagarLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PContenidoPagarLayout.createSequentialGroup()
-                .add(72, 72, 72)
-                .add(PContenidoPagarLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoPagarLayout.createSequentialGroup()
-                        .add(0, 0, Short.MAX_VALUE)
-                        .add(btnAtras)
-                        .add(27, 27, 27))
-                    .add(PContenidoPagarLayout.createSequentialGroup()
-                        .add(PContenidoPagarLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(PContenidoPagarLayout.createSequentialGroup()
-                                .add(lblFecha1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 127, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(jComboBox1, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .add(PContenidoPagarLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 225, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(PContenidoPagarLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                    .add(PContenidoPagarLayout.createSequentialGroup()
-                                        .add(lblEstacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                                        .add(cbxEstacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoPagarLayout.createSequentialGroup()
-                                        .add(lblPeaje, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 77, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(51, 51, 51)
-                                        .add(PContenidoPagarLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                            .add(jSeparator1)
-                                            .add(cbxPeaje, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                            .add(PContenidoPagarLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                .add(btnPagar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 150, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(PContenidoPagarLayout.createSequentialGroup()
-                                    .add(lblFecha, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 116, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(18, 18, 18)
-                                    .add(dcFechaPago, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 133, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                        .addContainerGap(69, Short.MAX_VALUE))))
-        );
-        PContenidoPagarLayout.setVerticalGroup(
-            PContenidoPagarLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PContenidoPagarLayout.createSequentialGroup()
-                .add(50, 50, 50)
-                .add(PContenidoPagarLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblPeaje)
-                    .add(cbxPeaje, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(34, 34, 34)
-                .add(PContenidoPagarLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblEstacion)
-                    .add(cbxEstacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(35, 35, 35)
-                .add(PContenidoPagarLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblFecha1)
-                    .add(jComboBox1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(40, 40, 40)
-                .add(PContenidoPagarLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(lblFecha)
-                    .add(dcFechaPago, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(PContenidoPagarLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(PContenidoPagarLayout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(btnAtras)
-                        .add(22, 22, 22))
-                    .add(PContenidoPagarLayout.createSequentialGroup()
-                        .add(41, 41, 41)
-                        .add(btnPagar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 45, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(61, Short.MAX_VALUE))))
-        );
+        PContenidoPagar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 240, 30));
 
         PGeneralPagar.add(PContenidoPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 99, 510, 470));
 
