@@ -19,7 +19,7 @@ public class ControladorConfiguracion {
 
     public ControladorConfiguracion(Cliente user) {
         this.user=user;
-        this.vista = new frmConfiguracion();
+        this.vista = new frmConfiguracion(user);
 
         this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
@@ -70,12 +70,12 @@ public class ControladorConfiguracion {
 
     //metodos
     public void llenarDatos() {
-        this.vista.txtUsuario.setText("Xavi villa prueba");
-        this.vista.txtTipoDoc.setText("DNI");
-        this.vista.txtNumDoc.setText("12345678");
-        this.vista.txtCorreo.setText("xd@gmail.com");
-        this.vista.txtTarjeta.setText("Interbank");
-        this.vista.txtNumTarjeta.setText("12345534432323");
+        this.vista.txtUsuario.setText(user.getNombres()+" "+user.getApPaterno()+" "+user.getApMaterno());
+        this.vista.txtTipoDoc.setText(user.getTipoDocumento());
+        this.vista.txtNumDoc.setText(user.getNumDocumento());
+        this.vista.txtCorreo.setText(user.getCorreo());
+        this.vista.txtTarjeta.setText(user.getCuenta().getTarjeta().getMedioPago());
+        this.vista.txtNumTarjeta.setText(user.getCuenta().getTarjeta().getNumTarjeta());
 
     }
 

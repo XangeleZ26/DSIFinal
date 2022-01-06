@@ -28,21 +28,28 @@ public class ControladorLogin {
         this.vista.btnIniciarSesion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //aqui tenemos que poner una condición de "Si el nombre escrito es igual a nombre registrado, accede
-                try {
-                    String contrasena=String.valueOf(vista.txtContrasena.getPassword());
-                    Cliente clientela=Configuracion.arrClientes.buscarCliente(vista.txtUsuarioLogin.getText(),String.valueOf(vista.txtContrasena.getPassword()));
-                    ControladorOpcionesIngreso controller = new ControladorOpcionesIngreso(clientela);
-                    controller.iniciar();
-                    vista.dispose();
-                    System.out.println(contrasena);
-                } catch (ArrayIndexOutOfBoundsException z) {
-                    JOptionPane.showMessageDialog(null, "Datos incorrectos.");
+                if (isValido()) {
+                    try {
+                        String contrasena = String.valueOf(vista.txtContrasena.getPassword());
+                        Cliente clientela = Configuracion.arrClientes.buscarCliente(vista.txtUsuarioLogin.getText(), String.valueOf(vista.txtContrasena.getPassword()));
+                        ControladorOpcionesIngreso controller = new ControladorOpcionesIngreso(clientela);
+                        controller.iniciar();
+                        vista.dispose();
+                        System.out.println(contrasena);
+                    } catch (ArrayIndexOutOfBoundsException z) {
+                        JOptionPane.showMessageDialog(null, "Datos incorrectos.");
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(null, "Debe llenar todos los campos!");
                 }
-
             }
         });
 
+    }
+
+    private boolean isValido() {
+        return (this.vista.txtUsuarioLogin.getText().trim().length() != 0
+                && String.valueOf(this.vista.txtContrasena.getPassword()).trim().length() != 0);
     }
 
     public void iniciar() {

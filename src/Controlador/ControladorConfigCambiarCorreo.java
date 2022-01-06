@@ -28,10 +28,10 @@ public class ControladorConfigCambiarCorreo {
         this.vista.btnCambiar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(vista.txtContrasena.getPassword().equals("XDDD")){
+                if(isValido()){
+                if((String.valueOf(vista.txtContrasena.getPassword())).equals(user.getContraseña())){
                  JOptionPane.showMessageDialog(null,"Cambios registrados.");
-                 //meter code donde cambiamos el email
-                 
+                 user.cambiarCorreo(vista.txtCorreo.getText());
                 ControladorConfiguracion controller = new ControladorConfiguracion(user);
                 controller.iniciar();
                 vista.dispose();   
@@ -39,8 +39,15 @@ public class ControladorConfigCambiarCorreo {
                 else{
                     JOptionPane.showMessageDialog(null,"Contraseña de cuenta incorrecta.");
                 }
+                }else{
+                     JOptionPane.showMessageDialog(null,"Debe llenar todos los campos!"); 
+                }
             }
         });
+    }
+        private boolean isValido() {
+        return ( this.vista.txtCorreo.getText().trim().length() != 0
+                && String.valueOf(this.vista.txtContrasena.getPassword()).trim().length() != 0);
     }
         public void iniciar() {
         vista.setLocationRelativeTo(null);

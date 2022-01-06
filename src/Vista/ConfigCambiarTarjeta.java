@@ -32,16 +32,16 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
         btnAtras = new javax.swing.JButton();
         lblCorreo1 = new javax.swing.JLabel();
         lblCorreo3 = new javax.swing.JLabel();
-        txtContrasena = new javax.swing.JPasswordField();
         btnCambiar = new javax.swing.JButton();
         jPanel4 = new javax.swing.JPanel();
-        txtCorreo = new javax.swing.JTextField();
+        txtNumTarjet = new javax.swing.JTextField();
         cbxMedioPago = new javax.swing.JComboBox<>();
         lblCorreo4 = new javax.swing.JLabel();
         lblCorreo5 = new javax.swing.JLabel();
         dcFechaVencimiento = new com.toedter.calendar.JDateChooser();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
+        txtCvv = new javax.swing.JTextField();
 
         jPanel2.setBackground(new java.awt.Color(159, 162, 178));
 
@@ -75,11 +75,6 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
         lblCorreo3.setText("Fecha de vencimiento:");
         jPanel1.add(lblCorreo3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, 30));
 
-        txtContrasena.setBackground(new java.awt.Color(121, 127, 139));
-        txtContrasena.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtContrasena.setBorder(null);
-        jPanel1.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 260, 30));
-
         btnCambiar.setBackground(new java.awt.Color(22, 38, 46));
         btnCambiar.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnCambiar.setForeground(new java.awt.Color(255, 255, 255));
@@ -101,15 +96,15 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
 
         jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -10, 670, 40));
 
-        txtCorreo.setBackground(new java.awt.Color(121, 127, 139));
-        txtCorreo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtCorreo.setBorder(null);
-        txtCorreo.addActionListener(new java.awt.event.ActionListener() {
+        txtNumTarjet.setBackground(new java.awt.Color(121, 127, 139));
+        txtNumTarjet.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtNumTarjet.setBorder(null);
+        txtNumTarjet.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtCorreoActionPerformed(evt);
+                txtNumTarjetActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 260, 30));
+        jPanel1.add(txtNumTarjet, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 260, 30));
 
         cbxMedioPago.setBackground(new java.awt.Color(121, 127, 139));
         cbxMedioPago.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -134,6 +129,10 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 210, 260, 10));
 
+        txtCvv.setBackground(new java.awt.Color(121, 127, 139));
+        txtCvv.setBorder(null);
+        jPanel1.add(txtCvv, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 260, 30));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -151,9 +150,9 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtCorreoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCorreoActionPerformed
+    private void txtNumTarjetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNumTarjetActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtCorreoActionPerformed
+    }//GEN-LAST:event_txtNumTarjetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,7 +203,7 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
     private javax.swing.JLabel lblCorreo3;
     private javax.swing.JLabel lblCorreo4;
     private javax.swing.JLabel lblCorreo5;
-    public javax.swing.JPasswordField txtContrasena;
-    public javax.swing.JTextField txtCorreo;
+    public javax.swing.JTextField txtCvv;
+    public javax.swing.JTextField txtNumTarjet;
     // End of variables declaration//GEN-END:variables
 }
