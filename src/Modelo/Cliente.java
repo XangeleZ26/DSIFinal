@@ -1,3 +1,4 @@
+
 package Modelo;
 
 import java.text.SimpleDateFormat;
@@ -58,6 +59,21 @@ public class Cliente {
         this.numDocumento = numDocumento;
         this.correo = correo;
         this.contraseña = contraseña;
+    }
+    
+    //MÉTODO Contraseña
+    public int cambioContrasena(String contrasena,String novoContra,String verifContra){
+        int result=0;
+        if(!(this.contraseña.equals(contrasena))){
+            result=1;
+        }
+         if(!(novoContra.equals(verifContra))){
+            result=2;
+        }
+         if((!(this.contraseña.equals(contrasena)))&&(!(novoContra.equals(verifContra)))){
+             result=3;
+         }
+          return result;
     }
     
     //MÉTODOS ACCESORES
@@ -166,7 +182,7 @@ public class Cliente {
         boolean result = false;
         Date fechaActual = new Date();
         SimpleDateFormat fecha = new SimpleDateFormat("yyyy/MM"); 
-        if(tarjeta.verificarValidezTajeta()==true && tarjeta.verificarVigenciaTarjeta(fecha.format(fechaActual)) && tarjeta.verificarValidezCVV(tarjeta.getCvv(), tarjeta.getMedioPago())==true){
+        if(tarjeta.verificarValidezTajeta()==true && tarjeta.verificarVigenciaTarjeta(fecha.format(fechaActual))){
             this.cuenta = new Cuenta (tarjeta);
             result = true;
         }

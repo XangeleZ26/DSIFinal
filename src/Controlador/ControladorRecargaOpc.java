@@ -1,3 +1,4 @@
+
 package Controlador;
 
 import java.awt.event.ActionEvent;
@@ -35,7 +36,6 @@ public class ControladorRecargaOpc implements ActionListener{
         vistaRecargaOpc.txtNumeroTarjeta.setText(null);
         vistaRecargaOpc.txtMontoRecarga.setText(null);
         vistaRecargaOpc.txtTotal.setText(null);
-        vistaRecargaOpc.txtClaveTarjeta.setText(null);
         vistaRecargaOpc.dcFechaVencimiento.setDate(null);
         vistaRecargaOpc.txtCVV.setText(null);       
     }

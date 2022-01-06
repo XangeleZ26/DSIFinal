@@ -47,16 +47,13 @@ public class frmOpcionesIngreso extends javax.swing.JFrame {
         PTituloOpciones.setBackground(new java.awt.Color(159, 162, 178));
 
         lblBienvenido.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        lblBienvenido.setForeground(new java.awt.Color(0, 0, 0));
         lblBienvenido.setText("¡Bienvenido a tu cuenta PEX!");
 
         lblUsuario.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        lblUsuario.setForeground(new java.awt.Color(0, 0, 0));
         lblUsuario.setText("Usuario:");
 
         txtNombreUsuario.setBackground(new java.awt.Color(159, 162, 178));
         txtNombreUsuario.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
-        txtNombreUsuario.setForeground(new java.awt.Color(0, 0, 0));
         txtNombreUsuario.setBorder(null);
 
         org.jdesktop.layout.GroupLayout PTituloOpcionesLayout = new org.jdesktop.layout.GroupLayout(PTituloOpciones);
@@ -143,24 +140,17 @@ public class frmOpcionesIngreso extends javax.swing.JFrame {
             PContenidoOpcionesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(PContenidoOpcionesLayout.createSequentialGroup()
                 .add(88, 88, 88)
-                .add(PContenidoOpcionesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(PContenidoOpcionesLayout.createSequentialGroup()
-                        .add(60, 60, 60)
-                        .add(PContenidoOpcionesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(btnRecargar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(btnSaldo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(btnPagar, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 161, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                    .add(PContenidoOpcionesLayout.createSequentialGroup()
-                        .add(19, 19, 19)
-                        .add(btnMovimientos, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 241, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(PContenidoOpcionesLayout.createSequentialGroup()
-                        .add(36, 36, 36)
-                        .add(btnVehiculos, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 205, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(PContenidoOpcionesLayout.createSequentialGroup()
-                        .add(btnConfiguracion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 276, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(btnAtras)))
-                .addContainerGap(19, Short.MAX_VALUE))
+                .add(PContenidoOpcionesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(btnRecargar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                    .add(PContenidoOpcionesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                        .add(org.jdesktop.layout.GroupLayout.LEADING, btnSaldo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(org.jdesktop.layout.GroupLayout.LEADING, btnPagar, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(org.jdesktop.layout.GroupLayout.LEADING, btnMovimientos, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(org.jdesktop.layout.GroupLayout.LEADING, btnVehiculos, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(org.jdesktop.layout.GroupLayout.LEADING, btnConfiguracion, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)))
+                .add(18, 18, 18)
+                .add(btnAtras)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         PContenidoOpcionesLayout.setVerticalGroup(
             PContenidoOpcionesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -175,15 +165,13 @@ public class frmOpcionesIngreso extends javax.swing.JFrame {
                 .add(btnMovimientos, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(18, 18, 18)
                 .add(btnVehiculos, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(PContenidoOpcionesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(PContenidoOpcionesLayout.createSequentialGroup()
-                        .add(18, 18, 18)
-                        .add(btnConfiguracion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoOpcionesLayout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 67, Short.MAX_VALUE)
-                        .add(btnAtras)
-                        .add(14, 14, 14))))
+                .add(18, 18, 18)
+                .add(btnConfiguracion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoOpcionesLayout.createSequentialGroup()
+                .addContainerGap(385, Short.MAX_VALUE)
+                .add(btnAtras)
+                .add(14, 14, 14))
         );
 
         PGeneralOpciones.add(PContenidoOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 88, 461, 460));
@@ -242,7 +230,7 @@ public class frmOpcionesIngreso extends javax.swing.JFrame {
     private javax.swing.JPanel PGeneralOpciones;
     private javax.swing.JPanel PTituloOpciones;
     private javax.swing.JButton btnAtras;
-    private javax.swing.JButton btnConfiguracion;
+    public javax.swing.JButton btnConfiguracion;
     private javax.swing.JButton btnMovimientos;
     private javax.swing.JButton btnPagar;
     private javax.swing.JButton btnRecargar;

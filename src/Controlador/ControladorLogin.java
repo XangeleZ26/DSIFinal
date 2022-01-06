@@ -20,6 +20,17 @@ public class ControladorLogin {
                vista.dispose();
             }
         });
+        this.vista.btnIniciarSesion.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //aqui tenemos que poner una condición de "Si el nombre escrito es igual a nombre registrado, accede
+               
+                ControladorOpcionesIngreso controller=new ControladorOpcionesIngreso();
+               controller.iniciar();
+               vista.dispose();
+            }
+        });
+        
     }
     public void iniciar(){
         vista.setLocationRelativeTo(null);
