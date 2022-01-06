@@ -20,6 +20,8 @@ public class AppPeaje {
         //DECLARAMOS LOS PEAJES
         Peaje peaje1 = new Peaje ("Panamericana Norte", (float)3, (float)3.5,(float)2.9);
         Peaje peaje2 = new Peaje ("Panamericana Sur", (float)3.25, (float)3.6,(float)2.8);
+        Peaje peaje3 = new Peaje ("Huaylas", (float)2.5, (float)3,(float)2.5);
+        Peaje peaje4 = new Peaje ("Separadora Industrial", (float)3.2, (float)2.6,(float)1.5);
         
         //DECLARAMOS LAS ESTACIONES DE CADA PEAJE
         peaje1.agregarEstacion("Serpentin de Pasamayo", "1N001", peaje1);
@@ -27,6 +29,11 @@ public class AppPeaje {
         peaje1.agregarEstacion("El Paraíso", "1N003", peaje1);
         peaje1.agregarEstacion("Fortaleza", "1N004", peaje1);
         peaje2.agregarEstacion("Chilca", "1S001", peaje2);
+        peaje3.agregarEstacion("Alto Lampas", "1H001", peaje3);
+        peaje3.agregarEstacion("Cahuish", "1H002", peaje3);
+        peaje4.agregarEstacion("Mayorazgo", "1I001", peaje4);
+        peaje4.agregarEstacion("Parque industrial", "1I002", peaje4);
+        peaje4.agregarEstacion("Central industrial", "1I003", peaje4);
         
         //MOSTRAMOS LA INFORMACIÓN DE CADA ESTACIÓN
         System.out.println("***Estaciones del peaje 1***");
@@ -34,6 +41,12 @@ public class AppPeaje {
         System.out.println("");
         System.out.println("***Estaciones del peaje 2***");
         peaje2.mostrarEstaciones();
+        System.out.println("");
+        System.out.println("***Estaciones del peaje 3***");
+        peaje3.mostrarEstaciones();
+        System.out.println("");
+        System.out.println("***Estaciones del peaje 4***");
+        peaje4.mostrarEstaciones();
         System.out.println("");
         
         //AGREGAMOS CLIENTES
@@ -195,6 +208,24 @@ public class AppPeaje {
         System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos(6).imprimirMovimientoSimple());
         System.out.println("");
         
+        System.out.println("Peaje del vehículo '"+clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getPlaca()+
+                           " "+clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getMarca()+
+                           " "+clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getModelo()+"' en la estación '"+
+                           peaje3.getEstaciones(1).getNombreEstacion()+"' pagado: "+
+                           clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/31", clientes.getArregloCliente(0).getCuenta().getVehiculos(2), peaje3.getEstaciones(1)));
+        System.out.println("Saldo total: "+clientes.getArregloCliente(0).getCuenta().getSaldoTotal());
+        System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos(7).imprimirMovimientoSimple());
+        System.out.println("");
+        
+        System.out.println("Peaje del vehículo '"+clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getPlaca()+
+                           " "+clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getMarca()+
+                           " "+clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getModelo()+"' en la estación '"+
+                           peaje4.getEstaciones(2).getNombreEstacion()+"' pagado: "+
+                           clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/31", clientes.getArregloCliente(0).getCuenta().getVehiculos(2), peaje4.getEstaciones(2)));
+        System.out.println("Saldo total: "+clientes.getArregloCliente(0).getCuenta().getSaldoTotal());
+        System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos(7).imprimirMovimientoSimple());
+        System.out.println("");
+        
         //MOSTRAR MOVIMIENTOS
         System.out.println("***Movimientos del cliente***");
         clientes.getArregloCliente(0).getCuenta().mostrarMovimientos();
@@ -220,8 +251,12 @@ public class AppPeaje {
         clientes.getArregloCliente(0).getCuenta().ordenarMovimientosXEstacion();
         System.out.println("");
         
-        //Trabajo de vista y controladores
+        //Ingreso a la cuenta.
         
+        
+        
+        
+        //Trabajo de vista y controladores
         
         frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
         ArregloClientes mClientes = new ArregloClientes();

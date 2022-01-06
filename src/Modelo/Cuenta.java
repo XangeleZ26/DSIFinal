@@ -470,4 +470,11 @@ public class Cuenta {
             }
         }
     }
+    /*
+    public boolean ingresarCuenta(String usuario, String contraseña){
+        boolean result = false;
+        if(usuario.equals())
+        return result;
+    }
+*/
 }
