@@ -36,9 +36,42 @@ public class ControladorOpcionesIngreso {
                vista.dispose();
             }
         });
+        this.vista.btnMovimientos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              ControladorMovimientos controller=new ControladorMovimientos(user);
+               controller.iniciar();
+               vista.dispose();
+            }
+        });
+        this.vista.btnPagar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              ControladorPagar controller=new ControladorPagar(user);
+               controller.iniciar();
+               vista.dispose();
+            }
+        });
+        this.vista.btnRecargar.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              ControladorRecarga controller=new ControladorRecarga(user);
+               controller.iniciar();
+               vista.dispose();
+            }
+        });
+        this.vista.btnVehiculos.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+              ControladorVehiculos controller=new ControladorVehiculos(user);
+               controller.iniciar();
+               vista.dispose();
+            }
+        });
     }
     
       public void iniciar(){
+          vista.txtNombreUsuario.setText(this.user.getNombres()+" "+this.user.getApPaterno());
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     }

@@ -27,7 +27,7 @@ public class ControladorSaldo {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ControladorRecarga controller=new ControladorRecarga();
+                ControladorRecarga controller=new ControladorRecarga(user);
                 controller.iniciar();
                 vista.dispose();
             }

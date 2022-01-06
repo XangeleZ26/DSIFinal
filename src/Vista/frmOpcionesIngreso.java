@@ -38,7 +38,6 @@ public class frmOpcionesIngreso extends javax.swing.JFrame {
         btnVehiculos = new javax.swing.JButton();
         btnPagar = new javax.swing.JButton();
         btnConfiguracion = new javax.swing.JButton();
-        btnAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -52,6 +51,7 @@ public class frmOpcionesIngreso extends javax.swing.JFrame {
         lblUsuario.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         lblUsuario.setText("Usuario:");
 
+        txtNombreUsuario.setEditable(false);
         txtNombreUsuario.setBackground(new java.awt.Color(159, 162, 178));
         txtNombreUsuario.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         txtNombreUsuario.setBorder(null);
@@ -125,14 +125,9 @@ public class frmOpcionesIngreso extends javax.swing.JFrame {
         btnConfiguracion.setBackground(new java.awt.Color(22, 38, 46));
         btnConfiguracion.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         btnConfiguracion.setForeground(new java.awt.Color(255, 255, 255));
-        btnConfiguracion.setText("Configuración de la cuenta");
+        btnConfiguracion.setText("Opciones de cuenta");
         btnConfiguracion.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         btnConfiguracion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        btnAtras.setBackground(new java.awt.Color(121, 127, 139));
-        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
-        btnAtras.setBorder(null);
-        btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         org.jdesktop.layout.GroupLayout PContenidoOpcionesLayout = new org.jdesktop.layout.GroupLayout(PContenidoOpciones);
         PContenidoOpciones.setLayout(PContenidoOpcionesLayout);
@@ -147,9 +142,7 @@ public class frmOpcionesIngreso extends javax.swing.JFrame {
                     .add(btnMovimientos, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(btnVehiculos, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .add(btnConfiguracion, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE))
-                .add(18, 18, 18)
-                .add(btnAtras)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
         PContenidoOpcionesLayout.setVerticalGroup(
             PContenidoOpcionesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -166,11 +159,7 @@ public class frmOpcionesIngreso extends javax.swing.JFrame {
                 .add(btnVehiculos, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(18, 18, 18)
                 .add(btnConfiguracion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 44, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoOpcionesLayout.createSequentialGroup()
-                .addContainerGap(385, Short.MAX_VALUE)
-                .add(btnAtras)
-                .add(14, 14, 14))
+                .addContainerGap(79, Short.MAX_VALUE))
         );
 
         PGeneralOpciones.add(PContenidoOpciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 88, 461, 460));
@@ -228,7 +217,6 @@ public class frmOpcionesIngreso extends javax.swing.JFrame {
     private javax.swing.JPanel PContenidoOpciones;
     private javax.swing.JPanel PGeneralOpciones;
     private javax.swing.JPanel PTituloOpciones;
-    public javax.swing.JButton btnAtras;
     public javax.swing.JButton btnConfiguracion;
     public javax.swing.JButton btnMovimientos;
     public javax.swing.JButton btnPagar;

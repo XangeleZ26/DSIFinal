@@ -1,16 +1,16 @@
 
 package Controlador;
 
+import Modelo.Cliente;
 import Vista.frmRecarga;
 
 
 public class ControladorRecarga {
     private frmRecarga vista;
-     //aqui tambn agregar como atributo un Cliente, ya q se entiende que el cliente q seleccionamos desde Login, llegará aquí
-    public ControladorRecarga(){
+    private Cliente user;
+    public ControladorRecarga(Cliente user){
         this.vista=new frmRecarga();
-        
-        
+        this.user=user;
     }
        public void iniciar() {
         vista.setLocationRelativeTo(null);

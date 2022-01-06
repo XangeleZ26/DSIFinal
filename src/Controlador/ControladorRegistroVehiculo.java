@@ -1,17 +1,18 @@
 package Controlador;
 
+import Modelo.Cliente;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Modelo.Vehiculo;
-import Vista.frmRegistro;
+import Vista.frmRegistroVehiculo;
 
-public class ControladorVehiculo implements ActionListener{
+public class ControladorRegistroVehiculo implements ActionListener{
     private Vehiculo modeloVehiculo;
-    private frmRegistro vistaVehiculo;
-    
-    public ControladorVehiculo(Vehiculo modeloVehiculo, frmRegistro vistaVehiculo){
+    private frmRegistroVehiculo vistaVehiculo;
+    private Cliente user;
+    public ControladorRegistroVehiculo(Vehiculo modeloVehiculo){
         this.modeloVehiculo = modeloVehiculo;
-        this.vistaVehiculo = vistaVehiculo;
+        this.vistaVehiculo = new frmRegistroVehiculo();
 //        vistaVehiculo.iniciarVehiculo();    ???????
         
         this.vistaVehiculo.btnSiguiente1.addActionListener(this);

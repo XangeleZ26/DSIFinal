@@ -8,14 +8,14 @@ import Modelo.Vehiculo;
 import Vista.frmPaginaPrincipal;
 import Vista.frmCliente;
 import Vista.frmLogin;
-import Vista.frmRegistro;
+import Vista.frmRegistroVehiculo;
 
 public class ControladorPrincipal implements ActionListener{
     private ArregloClientes modeloClientes;
     private frmPaginaPrincipal vistaPrincipal;
     Vehiculo mVehiculo;
     frmCliente fCliente;
-    frmRegistro fVehiculo;
+    frmRegistroVehiculo fVehiculo;
     
     public ControladorPrincipal(frmPaginaPrincipal vistaPrincipal){
         this.modeloClientes = Configuracion.arrClientes;

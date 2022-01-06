@@ -10,10 +10,10 @@ package Vista;
  *
  * @author Yesenia
  */
-public class frmRegistro extends javax.swing.JFrame {
+public class frmRegistroVehiculo extends javax.swing.JFrame {
 
     /** Creates new form frmRegistro */
-    public frmRegistro() {
+    public frmRegistroVehiculo() {
         initComponents();
     }
 
@@ -64,7 +64,6 @@ public class frmRegistro extends javax.swing.JFrame {
         PTituloVehiculo.setBackground(new java.awt.Color(159, 162, 178));
 
         jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Datos del vehículo");
 
         org.jdesktop.layout.GroupLayout PTituloVehiculoLayout = new org.jdesktop.layout.GroupLayout(PTituloVehiculo);
@@ -87,15 +86,12 @@ public class frmRegistro extends javax.swing.JFrame {
         PGeneral.add(PTituloVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 110));
 
         PContenidoVehiculo.setBackground(new java.awt.Color(121, 127, 139));
-        PContenidoVehiculo.setForeground(new java.awt.Color(0, 0, 0));
 
         lblPlaca.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblPlaca.setForeground(new java.awt.Color(0, 0, 0));
         lblPlaca.setText("Placa:");
 
         txtPlaca.setBackground(new java.awt.Color(121, 127, 139));
         txtPlaca.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtPlaca.setForeground(new java.awt.Color(0, 0, 0));
         txtPlaca.setBorder(null);
         txtPlaca.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtPlaca.addActionListener(new java.awt.event.ActionListener() {
@@ -105,12 +101,10 @@ public class frmRegistro extends javax.swing.JFrame {
         });
 
         lblMarca.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblMarca.setForeground(new java.awt.Color(0, 0, 0));
         lblMarca.setText("Marca:");
 
         cbxMarca.setBackground(new java.awt.Color(121, 127, 139));
         cbxMarca.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        cbxMarca.setForeground(new java.awt.Color(0, 0, 0));
         cbxMarca.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "                             ", "ACS", "AG AUTOMOTRIZ", "ALELUYA", "ALYER", "ASIA", "AUDI", "AUTOCRAFT", "BAW", "BEIJING", "BMW", "BROWN", "BULLON", "Camc", "CEISA", "CEMAC", "CHERY", "CHEVROLET", "CHRYSLER", "CITROEN", "CLEMENT", "COCERVI", "CORENHA", "CORMAR", "CPR", "DAEWOO", "DAIHATSU", "DCMETAL", "DODGE", "DONG FENG", "DORSEY", "DUNHAM", "ESMECA", "FABRIMETAL", "FAMECA", "FIAT", "FMC", "FORD", "FOTON", "FREIGHTLINER", "FRUEHAUF", "FUFABRISAC", "G.H.INDUSTRIAL", "GDAN", "GM", "GMC", "GOLDEN DRAGON", "GRE & JHO", "GREAT DANE", "GREAT WALL", "GREYHOUND", "GUERRA", "HERCULES", "HINO", "HONDA", "HRT", "HUANGHAI", "INCAPER", "INCMENA", "INDIO", "INMEPO", "INTERNATIONAL", "INTERNATIONAL", "ISUZU", "IVECO", "JAC", "JEEP", "JINBEI", "JMC", "JMR INVERSIONES", "JOSELOF", "KENWORTH", "KIA", "KILIN", "King Long", "LAM", "LEON", "LIMA TRAYLERS", "MACK", "MAHINDRA", "MAN", "MARCO POLO", "MAZDA", "MCI", "MELGA", "Mercedes", "MERCEDES BENZ", "MERCEDES-BENZ", "MG", "MILLER", "MITSUBISHI", "MONTENEGRO", "NACIONAL", "NEOGAS", "NISSAN", "OGJ METAL", "PAZ DEL PERU", "PERTRA", "PEUGEOT", "PINES", "QUSCHMITZ", "RAJUNSA", "RANDON", "RECRUSUL", "REFRISS", "REMCASA", "RENAULT", "RMB", "RMB SATECI", "RODO", "ROFOSA", "SAN MARTIN", "SATECI", "SCANIA", "SEAT", "SERMET", "SERVIMET", "SIELSAC", "SINOTRUK", "STRIK", "SUBARU", "SUDENGA", "SUZUKI", "THEURER", "TIANJIN", "TOYOTA", "TRAIL TEK", "TRAILMOBILE", "TRAINPE", "TRAMASA", "TRIELHT", "UTILITY", "VALDERRAMA", "VERA", "VOLKSWAGEN", "VOLVO", "VRAMEL", "VW", "WHITE", "WHUE", "YAMAHA", "YUEJIN", "ZXAUTO" }));
         cbxMarca.setToolTipText("");
         cbxMarca.setBorder(null);
@@ -122,12 +116,10 @@ public class frmRegistro extends javax.swing.JFrame {
         });
 
         lblModelo.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblModelo.setForeground(new java.awt.Color(0, 0, 0));
         lblModelo.setText("Modelo:");
 
         txtModelo.setBackground(new java.awt.Color(121, 127, 139));
         txtModelo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtModelo.setForeground(new java.awt.Color(0, 0, 0));
         txtModelo.setBorder(null);
         txtModelo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtModelo.addActionListener(new java.awt.event.ActionListener() {
@@ -137,12 +129,10 @@ public class frmRegistro extends javax.swing.JFrame {
         });
 
         lblPesoBruto.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblPesoBruto.setForeground(new java.awt.Color(0, 0, 0));
         lblPesoBruto.setText("Peso bruto:");
 
         txtPesoBruto.setBackground(new java.awt.Color(121, 127, 139));
         txtPesoBruto.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtPesoBruto.setForeground(new java.awt.Color(0, 0, 0));
         txtPesoBruto.setBorder(null);
         txtPesoBruto.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtPesoBruto.addActionListener(new java.awt.event.ActionListener() {
@@ -152,7 +142,6 @@ public class frmRegistro extends javax.swing.JFrame {
         });
 
         lblCategoria.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblCategoria.setForeground(new java.awt.Color(0, 0, 0));
         lblCategoria.setText("Categoría:");
 
         cbxCategoria.setBackground(new java.awt.Color(121, 127, 139));
@@ -162,7 +151,6 @@ public class frmRegistro extends javax.swing.JFrame {
         cbxCategoria.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         lblTipoUso.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblTipoUso.setForeground(new java.awt.Color(0, 0, 0));
         lblTipoUso.setText("Tipo de uso:");
 
         cbxTipoUso.setBackground(new java.awt.Color(121, 127, 139));
@@ -172,7 +160,6 @@ public class frmRegistro extends javax.swing.JFrame {
         cbxTipoUso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         lblEjes.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblEjes.setForeground(new java.awt.Color(0, 0, 0));
         lblEjes.setText("N° de ejes:");
 
         cbxEjes.setBackground(new java.awt.Color(121, 127, 139));
@@ -182,12 +169,10 @@ public class frmRegistro extends javax.swing.JFrame {
         cbxEjes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         lblAño.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblAño.setForeground(new java.awt.Color(0, 0, 0));
         lblAño.setText("Año:");
 
         txtAño.setBackground(new java.awt.Color(121, 127, 139));
         txtAño.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtAño.setForeground(new java.awt.Color(0, 0, 0));
         txtAño.setBorder(null);
         txtAño.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
         txtAño.addActionListener(new java.awt.event.ActionListener() {
@@ -421,20 +406,21 @@ public class frmRegistro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmRegistroVehiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmRegistroVehiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmRegistroVehiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmRegistro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmRegistroVehiculo.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmRegistro().setVisible(true);
+                new frmRegistroVehiculo().setVisible(true);
             }
         });
     }

@@ -59,23 +59,23 @@ public class frmConfiguracion extends javax.swing.JFrame {
         PTituloConfiguracion.setBackground(new java.awt.Color(159, 162, 178));
 
         lblConfiguracion.setFont(new java.awt.Font("Britannic Bold", 0, 48)); // NOI18N
-        lblConfiguracion.setText("Configuración de la cuenta");
+        lblConfiguracion.setText("Opciones de cuenta");
 
         org.jdesktop.layout.GroupLayout PTituloConfiguracionLayout = new org.jdesktop.layout.GroupLayout(PTituloConfiguracion);
         PTituloConfiguracion.setLayout(PTituloConfiguracionLayout);
         PTituloConfiguracionLayout.setHorizontalGroup(
             PTituloConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(PTituloConfiguracionLayout.createSequentialGroup()
-                .add(49, 49, 49)
+                .add(145, 145, 145)
                 .add(lblConfiguracion)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addContainerGap(153, Short.MAX_VALUE))
         );
         PTituloConfiguracionLayout.setVerticalGroup(
             PTituloConfiguracionLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, PTituloConfiguracionLayout.createSequentialGroup()
-                .addContainerGap(32, Short.MAX_VALUE)
+            .add(PTituloConfiguracionLayout.createSequentialGroup()
+                .add(28, 28, 28)
                 .add(lblConfiguracion)
-                .add(30, 30, 30))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         PGeneralConfiguracion.add(PTituloConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
