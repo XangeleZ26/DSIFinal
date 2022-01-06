@@ -33,16 +33,23 @@ public class frmRecarga extends javax.swing.JFrame {
         lblMonto = new javax.swing.JLabel();
         lblSimbolo1 = new javax.swing.JLabel();
         txtMonto = new javax.swing.JTextField();
-        jSeparator1 = new javax.swing.JSeparator();
         lblComprobante = new javax.swing.JLabel();
-        btnBoleta = new javax.swing.JButton();
-        btnFactura = new javax.swing.JButton();
-        lblMedioPago = new javax.swing.JLabel();
-        lblDescripcion3 = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
         lblFecha = new javax.swing.JLabel();
         dcFechaPago = new com.toedter.calendar.JDateChooser();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jPanel1 = new javax.swing.JPanel();
+        lblMedioPago = new javax.swing.JLabel();
+        lblDescripcion4 = new javax.swing.JLabel();
+        lblDescripcion5 = new javax.swing.JLabel();
+        lblTarjeta = new javax.swing.JLabel();
+        lblNumberT = new javax.swing.JLabel();
+        lblDescripcion6 = new javax.swing.JLabel();
+        btnPagar = new javax.swing.JButton();
+        txtCVV = new javax.swing.JTextField();
+        jSeparator1 = new javax.swing.JSeparator();
+        btnFactura = new javax.swing.JButton();
+        btnBoleta = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -51,7 +58,6 @@ public class frmRecarga extends javax.swing.JFrame {
         PTituloRecarga.setBackground(new java.awt.Color(159, 162, 178));
 
         lblTituloRecarga.setFont(new java.awt.Font("Britannic Bold", 0, 48)); // NOI18N
-        lblTituloRecarga.setForeground(new java.awt.Color(0, 0, 0));
         lblTituloRecarga.setText("Recarga tu PEX");
 
         org.jdesktop.layout.GroupLayout PTituloRecargaLayout = new org.jdesktop.layout.GroupLayout(PTituloRecarga);
@@ -74,142 +80,107 @@ public class frmRecarga extends javax.swing.JFrame {
         PGeneralRecarga.add(PTituloRecarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, -1));
 
         PContenidoRecarga.setBackground(new java.awt.Color(121, 127, 139));
+        PContenidoRecarga.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblMonto.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblMonto.setForeground(new java.awt.Color(0, 0, 0));
         lblMonto.setText("Monto:");
+        PContenidoRecarga.add(lblMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 42, 87, -1));
 
         lblSimbolo1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblSimbolo1.setForeground(new java.awt.Color(0, 0, 0));
         lblSimbolo1.setText("S/");
+        PContenidoRecarga.add(lblSimbolo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 48, 20, -1));
 
         txtMonto.setBackground(new java.awt.Color(121, 127, 139));
         txtMonto.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtMonto.setForeground(new java.awt.Color(0, 0, 0));
         txtMonto.setBorder(null);
-
-        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoRecarga.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 48, 125, -1));
 
         lblComprobante.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        lblComprobante.setForeground(new java.awt.Color(0, 0, 0));
         lblComprobante.setText("Comprobante de pago");
-
-        btnBoleta.setBackground(new java.awt.Color(121, 127, 139));
-        btnBoleta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnBoleta.setForeground(new java.awt.Color(0, 0, 0));
-        btnBoleta.setText("Boleta");
-        btnBoleta.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnBoleta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        btnFactura.setBackground(new java.awt.Color(121, 127, 139));
-        btnFactura.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnFactura.setForeground(new java.awt.Color(0, 0, 0));
-        btnFactura.setText("Factura");
-        btnFactura.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnFactura.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        lblMedioPago.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        lblMedioPago.setForeground(new java.awt.Color(0, 0, 0));
-        lblMedioPago.setText("Datos de tarjeta");
-
-        lblDescripcion3.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
-        lblDescripcion3.setForeground(new java.awt.Color(0, 0, 0));
-        lblDescripcion3.setText("Contraseña de la tarjeta");
-        lblDescripcion3.setToolTipText("");
+        PContenidoRecarga.add(lblComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, -1));
 
         btnAtras.setBackground(new java.awt.Color(121, 127, 139));
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
         btnAtras.setBorder(null);
         btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContenidoRecarga.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(463, 441, -1, -1));
 
         lblFecha.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblFecha.setForeground(new java.awt.Color(0, 0, 0));
         lblFecha.setText("Fecha:");
+        PContenidoRecarga.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 120, -1, -1));
 
         dcFechaPago.setBackground(new java.awt.Color(121, 127, 139));
-        dcFechaPago.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoRecarga.add(dcFechaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 129, 151, -1));
 
-        jPasswordField1.setText("jPasswordField1");
+        jPanel1.setBackground(new java.awt.Color(159, 162, 178));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        org.jdesktop.layout.GroupLayout PContenidoRecargaLayout = new org.jdesktop.layout.GroupLayout(PContenidoRecarga);
-        PContenidoRecarga.setLayout(PContenidoRecargaLayout);
-        PContenidoRecargaLayout.setHorizontalGroup(
-            PContenidoRecargaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoRecargaLayout.createSequentialGroup()
-                .addContainerGap(158, Short.MAX_VALUE)
-                .add(PContenidoRecargaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoRecargaLayout.createSequentialGroup()
-                        .add(PContenidoRecargaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(lblComprobante)
-                            .add(PContenidoRecargaLayout.createSequentialGroup()
-                                .add(22, 22, 22)
-                                .add(PContenidoRecargaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(lblMedioPago)
-                                    .add(PContenidoRecargaLayout.createSequentialGroup()
-                                        .add(btnBoleta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 75, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(26, 26, 26)
-                                        .add(btnFactura, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 83, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                            .add(PContenidoRecargaLayout.createSequentialGroup()
-                                .add(9, 9, 9)
-                                .add(lblDescripcion3)))
-                        .add(166, 166, 166))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoRecargaLayout.createSequentialGroup()
-                        .add(btnAtras)
-                        .add(26, 26, 26))))
-            .add(PContenidoRecargaLayout.createSequentialGroup()
-                .add(PContenidoRecargaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(PContenidoRecargaLayout.createSequentialGroup()
-                        .add(149, 149, 149)
-                        .add(PContenidoRecargaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(lblMonto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 87, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(lblFecha))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(PContenidoRecargaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(PContenidoRecargaLayout.createSequentialGroup()
-                                .add(lblSimbolo1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(PContenidoRecargaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                    .add(jSeparator1)
-                                    .add(txtMonto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 125, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                            .add(dcFechaPago, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 151, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                    .add(PContenidoRecargaLayout.createSequentialGroup()
-                        .add(222, 222, 222)
-                        .add(jPasswordField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 66, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .add(0, 0, Short.MAX_VALUE))
-        );
-        PContenidoRecargaLayout.setVerticalGroup(
-            PContenidoRecargaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PContenidoRecargaLayout.createSequentialGroup()
-                .add(42, 42, 42)
-                .add(PContenidoRecargaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblMonto)
-                    .add(lblSimbolo1)
-                    .add(txtMonto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(33, 33, 33)
-                .add(PContenidoRecargaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(dcFechaPago, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(lblFecha))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 39, Short.MAX_VALUE)
-                .add(lblComprobante)
-                .add(18, 18, 18)
-                .add(PContenidoRecargaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(btnBoleta, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .add(btnFactura, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 39, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(18, 18, 18)
-                .add(lblMedioPago)
-                .add(18, 18, 18)
-                .add(lblDescripcion3)
-                .add(18, 18, 18)
-                .add(jPasswordField1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(42, 42, 42)
-                .add(btnAtras)
-                .add(18, 18, 18))
-        );
+        lblMedioPago.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblMedioPago.setText("Datos de tarjeta");
+        jPanel1.add(lblMedioPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 11, -1, -1));
 
-        PGeneralRecarga.add(PContenidoRecarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 104, 550, 520));
+        lblDescripcion4.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        lblDescripcion4.setText("Número de tarjeta:");
+        lblDescripcion4.setToolTipText("");
+        jPanel1.add(lblDescripcion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+        lblDescripcion5.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        lblDescripcion5.setText("Tarjeta:");
+        lblDescripcion5.setToolTipText("");
+        jPanel1.add(lblDescripcion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 52, -1, -1));
+
+        lblTarjeta.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        lblTarjeta.setText("jLabel1");
+        jPanel1.add(lblTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 51, 233, 19));
+
+        lblNumberT.setFont(new java.awt.Font("Times New Roman", 2, 12)); // NOI18N
+        lblNumberT.setText("jLabel1");
+        jPanel1.add(lblNumberT, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 78, 233, 23));
+
+        lblDescripcion6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        lblDescripcion6.setText("Ingrese su CVV para confirmar la recarga:");
+        lblDescripcion6.setToolTipText("");
+        jPanel1.add(lblDescripcion6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+
+        btnPagar.setBackground(new java.awt.Color(22, 38, 46));
+        btnPagar.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnPagar.setForeground(new java.awt.Color(255, 255, 255));
+        btnPagar.setText("Recargar");
+        jPanel1.add(btnPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 182, -1, 37));
+
+        txtCVV.setBackground(new java.awt.Color(159, 162, 178));
+        txtCVV.setText("jTextField1");
+        txtCVV.setBorder(null);
+        jPanel1.add(txtCVV, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 90, 20));
+
+        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 90, 10));
+
+        PContenidoRecarga.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 370, 240));
+
+        btnFactura.setBackground(new java.awt.Color(22, 38, 46));
+        btnFactura.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnFactura.setForeground(new java.awt.Color(255, 255, 255));
+        btnFactura.setText("Factura");
+        btnFactura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacturaActionPerformed(evt);
+            }
+        });
+        PContenidoRecarga.add(btnFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, -1, 37));
+
+        btnBoleta.setBackground(new java.awt.Color(22, 38, 46));
+        btnBoleta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnBoleta.setForeground(new java.awt.Color(255, 255, 255));
+        btnBoleta.setText("Boleta");
+        PContenidoRecarga.add(btnBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 90, 37));
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoRecarga.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 77, 125, 10));
+
+        PGeneralRecarga.add(PContenidoRecarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 104, 550, 560));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -224,6 +195,10 @@ public class frmRecarga extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFacturaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -264,20 +239,27 @@ public class frmRecarga extends javax.swing.JFrame {
     private javax.swing.JPanel PContenidoRecarga;
     private javax.swing.JPanel PGeneralRecarga;
     private javax.swing.JPanel PTituloRecarga;
-    private javax.swing.JButton btnAtras;
-    private javax.swing.JButton btnBoleta;
-    private javax.swing.JButton btnFactura;
-    private com.toedter.calendar.JDateChooser dcFechaPago;
-    private javax.swing.JPasswordField jPasswordField1;
+    public javax.swing.JButton btnAtras;
+    public javax.swing.JButton btnBoleta;
+    public javax.swing.JButton btnFactura;
+    public javax.swing.JButton btnPagar;
+    public com.toedter.calendar.JDateChooser dcFechaPago;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblComprobante;
-    private javax.swing.JLabel lblDescripcion3;
+    private javax.swing.JLabel lblDescripcion4;
+    private javax.swing.JLabel lblDescripcion5;
+    private javax.swing.JLabel lblDescripcion6;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblMedioPago;
     private javax.swing.JLabel lblMonto;
+    public javax.swing.JLabel lblNumberT;
     private javax.swing.JLabel lblSimbolo1;
+    public javax.swing.JLabel lblTarjeta;
     private javax.swing.JLabel lblTituloRecarga;
-    private javax.swing.JTextField txtMonto;
+    public javax.swing.JTextField txtCVV;
+    public javax.swing.JTextField txtMonto;
     // End of variables declaration//GEN-END:variables
 
 }

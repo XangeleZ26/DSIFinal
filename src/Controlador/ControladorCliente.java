@@ -53,7 +53,7 @@ public class ControladorCliente implements ActionListener{
                                     vistaCliente.txtApMaterno.getText(),
                                     vistaCliente.cbxSexo.getSelectedItem().toString(),
                                     fechaNacimiento,
-                                    vistaCliente.txtEmail.getText());
+                                    vistaCliente.txtEmail.getText(),vistaCliente.txtContrasena.getPassword().toString());
                     limpiarDatosCliente();
                 }
                 else{

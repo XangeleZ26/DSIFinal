@@ -43,7 +43,6 @@ public class frmCliente extends javax.swing.JFrame {
         lblSexo = new javax.swing.JLabel();
         cbxSexo = new javax.swing.JComboBox<>();
         lblEmail = new javax.swing.JLabel();
-        txtEmail = new javax.swing.JTextField();
         lblFechaNacimiento = new javax.swing.JLabel();
         dcFechaNacimiento = new com.toedter.calendar.JDateChooser();
         btnSiguiente2 = new javax.swing.JButton();
@@ -52,8 +51,18 @@ public class frmCliente extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
-        jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
+        PTituloPeronales1 = new javax.swing.JPanel();
+        lblEmail1 = new javax.swing.JLabel();
+        lblEmail2 = new javax.swing.JLabel();
+        txtEmail = new javax.swing.JTextField();
+        jSeparator8 = new javax.swing.JSeparator();
+        txtVerifContrasena = new javax.swing.JPasswordField();
+        txtContrasena = new javax.swing.JPasswordField();
+        OjoCerrado1 = new javax.swing.JLabel();
+        OjoAbierto1 = new javax.swing.JLabel();
+        OjoCerrado2 = new javax.swing.JLabel();
+        OjoAbierto2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -64,7 +73,6 @@ public class frmCliente extends javax.swing.JFrame {
         PTituloPeronales.setPreferredSize(new java.awt.Dimension(682, 110));
 
         lblPersonales.setFont(new java.awt.Font("Britannic Bold", 0, 48)); // NOI18N
-        lblPersonales.setForeground(new java.awt.Color(0, 0, 0));
         lblPersonales.setText("Datos personales ");
 
         org.jdesktop.layout.GroupLayout PTituloPeronalesLayout = new org.jdesktop.layout.GroupLayout(PTituloPeronales);
@@ -72,234 +80,203 @@ public class frmCliente extends javax.swing.JFrame {
         PTituloPeronalesLayout.setHorizontalGroup(
             PTituloPeronalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, PTituloPeronalesLayout.createSequentialGroup()
-                .addContainerGap(161, Short.MAX_VALUE)
+                .addContainerGap(151, Short.MAX_VALUE)
                 .add(lblPersonales)
-                .add(137, 137, 137))
+                .add(147, 147, 147))
         );
         PTituloPeronalesLayout.setVerticalGroup(
             PTituloPeronalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PTituloPeronalesLayout.createSequentialGroup()
-                .add(31, 31, 31)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, PTituloPeronalesLayout.createSequentialGroup()
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(lblPersonales)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        PGeneral2.add(PTituloPeronales, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, -1));
+        PGeneral2.add(PTituloPeronales, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 680, 70));
 
         PContenidoPersonales.setBackground(new java.awt.Color(121, 127, 139));
         PContenidoPersonales.setForeground(new java.awt.Color(121, 127, 139));
+        PContenidoPersonales.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTipoDocumento.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblTipoDocumento.setForeground(new java.awt.Color(0, 0, 0));
+        lblTipoDocumento.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblTipoDocumento.setText("Tipo de documento:");
+        PContenidoPersonales.add(lblTipoDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 201, -1));
 
         cbxTipoDocumento.setBackground(new java.awt.Color(121, 127, 139));
         cbxTipoDocumento.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        cbxTipoDocumento.setForeground(new java.awt.Color(0, 0, 0));
         cbxTipoDocumento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "                              ", "RUC", "DNI", "Carnet Extranjería", "Pasaporte" }));
         cbxTipoDocumento.setBorder(null);
         cbxTipoDocumento.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContenidoPersonales.add(cbxTipoDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, 201, -1));
 
-        lblNumeroDocumento.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblNumeroDocumento.setForeground(new java.awt.Color(0, 0, 0));
+        lblNumeroDocumento.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblNumeroDocumento.setText("N° de documento:");
+        PContenidoPersonales.add(lblNumeroDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 201, 30));
 
         txtNumeroDocumento.setBackground(new java.awt.Color(121, 127, 139));
         txtNumeroDocumento.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtNumeroDocumento.setForeground(new java.awt.Color(0, 0, 0));
         txtNumeroDocumento.setBorder(null);
+        PContenidoPersonales.add(txtNumeroDocumento, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 50, 209, 30));
 
-        lblNombres.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblNombres.setForeground(new java.awt.Color(0, 0, 0));
+        lblNombres.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblNombres.setText("Nombres:");
+        PContenidoPersonales.add(lblNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 100, 201, -1));
 
         txtNombres.setBackground(new java.awt.Color(121, 127, 139));
         txtNombres.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtNombres.setForeground(new java.awt.Color(0, 0, 0));
+        txtNombres.setText("sadas");
         txtNombres.setBorder(null);
+        PContenidoPersonales.add(txtNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 201, 30));
 
-        lblApPaterno.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblApPaterno.setForeground(new java.awt.Color(0, 0, 0));
+        lblApPaterno.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblApPaterno.setText("Apellido paterno:");
+        PContenidoPersonales.add(lblApPaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 100, 201, -1));
 
         txtApPaterno.setBackground(new java.awt.Color(121, 127, 139));
         txtApPaterno.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtApPaterno.setForeground(new java.awt.Color(0, 0, 0));
         txtApPaterno.setBorder(null);
+        PContenidoPersonales.add(txtApPaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(381, 130, 210, 30));
 
-        lblApMaterno.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblApMaterno.setForeground(new java.awt.Color(0, 0, 0));
+        lblApMaterno.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblApMaterno.setText("Apellido materno:");
+        PContenidoPersonales.add(lblApMaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 180, 201, -1));
 
         txtApMaterno.setBackground(new java.awt.Color(121, 127, 139));
         txtApMaterno.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtApMaterno.setForeground(new java.awt.Color(0, 0, 0));
         txtApMaterno.setBorder(null);
+        PContenidoPersonales.add(txtApMaterno, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 210, 201, 30));
 
-        lblSexo.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblSexo.setForeground(new java.awt.Color(0, 0, 0));
+        lblSexo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblSexo.setText("Sexo:");
+        PContenidoPersonales.add(lblSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 180, 201, -1));
 
         cbxSexo.setBackground(new java.awt.Color(121, 127, 139));
         cbxSexo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        cbxSexo.setForeground(new java.awt.Color(0, 0, 0));
         cbxSexo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "                 ", "Femenino", "Masculino" }));
         cbxSexo.setBorder(null);
         cbxSexo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContenidoPersonales.add(cbxSexo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 201, -1));
 
-        lblEmail.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblEmail.setForeground(new java.awt.Color(0, 0, 0));
-        lblEmail.setText("Email:");
+        lblEmail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblEmail.setText("Verificar contraseña:");
+        PContenidoPersonales.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 150, 30));
 
-        txtEmail.setBackground(new java.awt.Color(121, 127, 139));
-        txtEmail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtEmail.setForeground(new java.awt.Color(0, 0, 0));
-        txtEmail.setBorder(null);
-
-        lblFechaNacimiento.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblFechaNacimiento.setForeground(new java.awt.Color(0, 0, 0));
+        lblFechaNacimiento.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblFechaNacimiento.setText("Fecha nacimiento:");
+        PContenidoPersonales.add(lblFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 209, -1));
 
         dcFechaNacimiento.setBackground(new java.awt.Color(121, 127, 139));
-        dcFechaNacimiento.setForeground(new java.awt.Color(0, 0, 0));
         dcFechaNacimiento.setDateFormatString("dd/MM/yyyy");
+        PContenidoPersonales.add(dcFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 209, -1));
 
         btnSiguiente2.setBackground(new java.awt.Color(121, 127, 139));
         btnSiguiente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/siguienteBoton.png"))); // NOI18N
         btnSiguiente2.setBorder(null);
         btnSiguiente2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContenidoPersonales.add(btnSiguiente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(599, 475, 63, 64));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoPersonales.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 201, -1));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoPersonales.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 80, 209, 10));
 
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoPersonales.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 160, 201, 10));
 
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoPersonales.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, 209, 10));
 
         jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
-
-        jSeparator6.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoPersonales.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 240, 201, 10));
 
         jSeparator7.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoPersonales.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 240, 201, 10));
 
-        org.jdesktop.layout.GroupLayout PContenidoPersonalesLayout = new org.jdesktop.layout.GroupLayout(PContenidoPersonales);
-        PContenidoPersonales.setLayout(PContenidoPersonalesLayout);
-        PContenidoPersonalesLayout.setHorizontalGroup(
-            PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PContenidoPersonalesLayout.createSequentialGroup()
-                .add(79, 79, 79)
-                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(PContenidoPersonalesLayout.createSequentialGroup()
-                        .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(lblFechaNacimiento, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                            .add(dcFechaNacimiento, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .add(0, 0, Short.MAX_VALUE))
-                    .add(PContenidoPersonalesLayout.createSequentialGroup()
-                        .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                .add(jSeparator3)
-                                .add(lblTipoDocumento, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .add(cbxTipoDocumento, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .add(jSeparator1)
-                                .add(lblNombres, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                                .add(txtNombres)
-                                .add(lblSexo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                                .add(cbxSexo, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .add(jSeparator5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(105, 105, 105)
-                        .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                .add(txtApPaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(lblApPaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(lblNumeroDocumento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(txtNumeroDocumento, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 209, Short.MAX_VALUE)
-                                .add(jSeparator2)
-                                .add(jSeparator4))
-                            .add(txtApMaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(lblApMaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jSeparator7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(86, Short.MAX_VALUE))
-                    .add(PContenidoPersonalesLayout.createSequentialGroup()
-                        .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(lblEmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator6)
-                                .add(org.jdesktop.layout.GroupLayout.LEADING, txtEmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 301, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(btnSiguiente2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18))))
+        PTituloPeronales1.setBackground(new java.awt.Color(159, 162, 178));
+        PTituloPeronales1.setPreferredSize(new java.awt.Dimension(682, 110));
+
+        org.jdesktop.layout.GroupLayout PTituloPeronales1Layout = new org.jdesktop.layout.GroupLayout(PTituloPeronales1);
+        PTituloPeronales1.setLayout(PTituloPeronales1Layout);
+        PTituloPeronales1Layout.setHorizontalGroup(
+            PTituloPeronales1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 0, Short.MAX_VALUE)
         );
-        PContenidoPersonalesLayout.setVerticalGroup(
-            PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PContenidoPersonalesLayout.createSequentialGroup()
-                .add(31, 31, 31)
-                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblTipoDocumento)
-                    .add(lblNumeroDocumento))
-                .add(18, 18, 18)
-                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(txtNumeroDocumento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(cbxTipoDocumento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(18, 18, 18)
-                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(lblNombres)
-                    .add(lblApPaterno))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(txtNombres, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(txtApPaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jSeparator4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(18, 18, 18)
-                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(PContenidoPersonalesLayout.createSequentialGroup()
-                        .add(lblSexo)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(cbxSexo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(4, 4, 4)
-                        .add(jSeparator5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(PContenidoPersonalesLayout.createSequentialGroup()
-                        .add(lblApMaterno)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(txtApMaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jSeparator7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 13, Short.MAX_VALUE)
-                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(PContenidoPersonalesLayout.createSequentialGroup()
-                        .add(lblFechaNacimiento)
-                        .add(45, 45, 45))
-                    .add(dcFechaNacimiento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(PContenidoPersonalesLayout.createSequentialGroup()
-                        .add(52, 52, 52)
-                        .add(btnSiguiente2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 64, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoPersonalesLayout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(lblEmail)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(txtEmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jSeparator6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 22, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(16, 16, 16))))
+        PTituloPeronales1Layout.setVerticalGroup(
+            PTituloPeronales1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 0, Short.MAX_VALUE)
         );
 
-        PGeneral2.add(PContenidoPersonales, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 105, 680, 510));
+        PContenidoPersonales.add(PTituloPeronales1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 680, 10));
+
+        lblEmail1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblEmail1.setText("Email:");
+        PContenidoPersonales.add(lblEmail1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 50, 30));
+
+        lblEmail2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblEmail2.setText("Contraseña:");
+        PContenidoPersonales.add(lblEmail2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 411, 90, 30));
+
+        txtEmail.setBackground(new java.awt.Color(121, 127, 139));
+        txtEmail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtEmail.setText("sdads");
+        txtEmail.setBorder(null);
+        txtEmail.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtEmailActionPerformed(evt);
+            }
+        });
+        PContenidoPersonales.add(txtEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 360, 301, 30));
+
+        jSeparator8.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator8.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoPersonales.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 390, 301, 10));
+
+        txtVerifContrasena.setText("jPasswordField1");
+        PContenidoPersonales.add(txtVerifContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 460, 250, 30));
+
+        txtContrasena.setText("jPasswordField1");
+        PContenidoPersonales.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 410, 250, 30));
+
+        OjoCerrado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
+        OjoCerrado1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OjoCerrado1MouseClicked(evt);
+            }
+        });
+        PContenidoPersonales.add(OjoCerrado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 470, 30, 30));
+
+        OjoAbierto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ver_32px.png"))); // NOI18N
+        OjoAbierto1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OjoAbierto1MouseClicked(evt);
+            }
+        });
+        PContenidoPersonales.add(OjoAbierto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 470, 30, -1));
+
+        OjoCerrado2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
+        OjoCerrado2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OjoCerrado2MouseClicked(evt);
+            }
+        });
+        PContenidoPersonales.add(OjoCerrado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 410, 30, 30));
+
+        OjoAbierto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ver_32px.png"))); // NOI18N
+        OjoAbierto2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OjoAbierto2MouseClicked(evt);
+            }
+        });
+        PContenidoPersonales.add(OjoAbierto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 410, 30, -1));
+
+        PGeneral2.add(PContenidoPersonales, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 680, 600));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -314,6 +291,31 @@ public class frmCliente extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtEmailActionPerformed
+
+    private void OjoCerrado1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoCerrado1MouseClicked
+
+        OjoAbierto1.setVisible(true);
+        OjoCerrado1.setVisible(false);
+        txtContrasena.setEchoChar('•');
+    }//GEN-LAST:event_OjoCerrado1MouseClicked
+
+    private void OjoAbierto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoAbierto1MouseClicked
+        OjoAbierto1.setVisible(false);
+        OjoCerrado1.setVisible(true);
+        txtContrasena.setEchoChar((char) 0);
+    }//GEN-LAST:event_OjoAbierto1MouseClicked
+
+    private void OjoCerrado2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoCerrado2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OjoCerrado2MouseClicked
+
+    private void OjoAbierto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoAbierto2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_OjoAbierto2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -351,9 +353,14 @@ public class frmCliente extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JLabel OjoAbierto1;
+    public javax.swing.JLabel OjoAbierto2;
+    public javax.swing.JLabel OjoCerrado1;
+    public javax.swing.JLabel OjoCerrado2;
     private javax.swing.JPanel PContenidoPersonales;
     private javax.swing.JPanel PGeneral2;
     private javax.swing.JPanel PTituloPeronales;
+    private javax.swing.JPanel PTituloPeronales1;
     public javax.swing.JButton btnSiguiente2;
     public javax.swing.JComboBox<String> cbxSexo;
     public javax.swing.JComboBox<String> cbxTipoDocumento;
@@ -363,11 +370,13 @@ public class frmCliente extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
-    private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JLabel lblApMaterno;
     private javax.swing.JLabel lblApPaterno;
     private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblEmail1;
+    private javax.swing.JLabel lblEmail2;
     private javax.swing.JLabel lblFechaNacimiento;
     private javax.swing.JLabel lblNombres;
     private javax.swing.JLabel lblNumeroDocumento;
@@ -376,9 +385,11 @@ public class frmCliente extends javax.swing.JFrame {
     private javax.swing.JLabel lblTipoDocumento;
     public javax.swing.JTextField txtApMaterno;
     public javax.swing.JTextField txtApPaterno;
+    public javax.swing.JPasswordField txtContrasena;
     public javax.swing.JTextField txtEmail;
     public javax.swing.JTextField txtNombres;
     public javax.swing.JTextField txtNumeroDocumento;
+    public javax.swing.JPasswordField txtVerifContrasena;
     // End of variables declaration//GEN-END:variables
 
 }

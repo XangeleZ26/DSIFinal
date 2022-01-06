@@ -31,7 +31,7 @@ public class Cliente {
         this.contraseña = cliente.numDocumento;
     }
     
-    public Cliente(String tipoDocumento, String numDocumento, String nombres, String apPaterno, String apMaterno, String sexo, String fechaNacimiento, String correo) {
+    public Cliente(String tipoDocumento, String numDocumento, String nombres, String apPaterno, String apMaterno, String sexo, String fechaNacimiento, String correo,String contrasena) {
         this.tipoDocumento = tipoDocumento;
         this.numDocumento = numDocumento;
         this.nombres = nombres;
@@ -40,7 +40,7 @@ public class Cliente {
         this.sexo = sexo;
         this.fechaNacimiento = fechaNacimiento;
         this.correo = correo;
-        this.contraseña = numDocumento;             
+        this.contraseña = contrasena;             
     }
 
     public Cliente(String tipoDocumento, String numDocumento, String nombres, String apPaterno) {

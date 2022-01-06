@@ -2,6 +2,7 @@ package Controlador;
 
 
 import Controlador.ControladorOpcionesIngreso;
+import Modelo.Cliente;
 import Vista.frmSaldo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,15 +10,15 @@ import java.awt.event.ActionListener;
 
 public class ControladorSaldo {
     private frmSaldo vista;
-    
-    public ControladorSaldo(){
+    private Cliente user;
+    public ControladorSaldo(Cliente user){
         this.vista=new frmSaldo();
-        
+        this.user=user;
          this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ControladorOpcionesIngreso controller = new ControladorOpcionesIngreso();
+                ControladorOpcionesIngreso controller = new ControladorOpcionesIngreso(user);
                 controller.iniciar();
                 vista.dispose();
             }

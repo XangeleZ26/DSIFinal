@@ -21,6 +21,14 @@ public class ArregloClientes {
         this.arregloCliente = arregloCliente;
     }
 
+    public int getNc() {
+        return nc;
+    }
+
+    public int getOc() {
+        return oc;
+    }
+
     //MÉTODOS DE FUNCIONAMIENTO DE LA CLASE
     public boolean verificarExistenciaCliente(String tipoDoc, String numDoc) {
         boolean result = false;
@@ -45,25 +53,45 @@ public class ArregloClientes {
     
     public boolean agregarCliente(Cliente cliente){
         boolean result = false;
-        if(nc==0){
-            this.nc++;
-            this.oc=this.nc-1;
-            this.arregloCliente[this.oc] = cliente;
-            result = true;
-        }
-        else if(nc>=1){
+   
             if(verificarExistenciaCliente(cliente.getTipoDocumento(),cliente.getNumDocumento())==false){
+                if(estaLleno()){
+                    this.crecerArreglo();
+                }
                 this.nc++;
                 this.oc=this.nc-1;
                 this.arregloCliente[this.oc] = cliente;
                 result = true;
             }
-        }
+
         //Verificar si el agregado fue correcto
         /*if(result == false){
             this.nc--;
             this.oc = this.nc-1;
         }*/
+        return result;
+    }
+    public Cliente buscarCliente(String correo,String contrasena){
+        int indice=-2;
+        for(int i=0;i<nc;i++){
+            if(this.arregloCliente[i].getCorreo().equalsIgnoreCase(correo)&&this.arregloCliente[i].getContraseña().equalsIgnoreCase(contrasena)){
+                indice=i;
+            }
+        }
+        return this.arregloCliente[indice];
+    }
+    public void crecerArreglo(){
+        Cliente clientePlus[]=new Cliente[this.arregloCliente.length+2];
+        for(int i=0; i<this.arregloCliente.length; i++) {
+            clientePlus[i] = this.arregloCliente[i];
+        }
+        this.arregloCliente = clientePlus;
+    }
+    private boolean estaLleno() {
+        boolean result = false;
+        if(this.nc >=this.arregloCliente.length){
+            result = true;
+        }
         return result;
     }
     
@@ -78,18 +106,21 @@ public class ArregloClientes {
             }
         }
         //Una vez ubicado el orden del objeto, se borra copiando los objetos de adelante hacia atrás
-        for(int i=orden; i<nc; i++){
+        if(result==true){
+        for(int i=orden; i<nc-1; i++){
             this.arregloCliente[i] = this.arregloCliente[i+1];
         }
         //Se borra el espacio en memoria sobrante y se modifica la cantidad y el orden de objetos
-        this.arregloCliente[this.nc] = null;
+        this.arregloCliente[this.nc-1] = null;
         this.nc--;
         this.oc=this.nc-1;
-        //Verificar si el eliminado fue correcto
-        if(result == false){
-            this.nc++;
-            this.oc = this.nc-1;
         }
+        
+//        Verificar si el eliminado fue correcto
+//        if(result == false){
+//            this.nc++;
+//            this.oc = this.nc-1;
+//        }
         return result;
     }
     
@@ -99,6 +130,15 @@ public class ArregloClientes {
         for(int i=0;i<nc;i++){
             System.out.format("%-12s%-12s%-15s%-15s%-15s%-12s%-14s%-40s%-25s\n",arregloCliente[i].getTipoDocumento(),arregloCliente[i].getNumDocumento(),arregloCliente[i].getNombres(),arregloCliente[i].getApPaterno(),arregloCliente[i].getApMaterno(),arregloCliente[i].getSexo(),arregloCliente[i].getFechaNacimiento(),arregloCliente[i].getCorreo(),arregloCliente[i].getContraseña());
         }
+    }
+
+    @Override
+    public String toString() {
+        String contenido = "";
+         for(int i=0;i<this.nc;i++){
+             contenido+=this.arregloCliente[i]+"\n";
+         }
+         return contenido;
     }
     
 }

@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Modelo.Cliente;
 import Vista.ConfigCambiarContra;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,14 +14,14 @@ import javax.swing.JOptionPane;
 public class ControladorConfigCambiarContra {
 
     private ConfigCambiarContra vista;
-
-    public ControladorConfigCambiarContra() {
+    private Cliente user;
+    public ControladorConfigCambiarContra(Cliente user) {
         this.vista = new ConfigCambiarContra();
-
+        this.user=user;
         this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorConfiguracion controller = new ControladorConfiguracion();
+                ControladorConfiguracion controller = new ControladorConfiguracion(user);
                 controller.iniciar();
                 vista.dispose();
                

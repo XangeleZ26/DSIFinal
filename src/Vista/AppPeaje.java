@@ -53,13 +53,13 @@ public class AppPeaje {
         ArregloClientes clientes = new ArregloClientes();
         Date fechanacimiento1 = new Date(2000-1900, 11-1, 14);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        Cliente cliente = new Cliente("DNI","11112222","José Alonso","Tolentino","Tantaruna","Masculino", sdf.format(fechanacimiento1),"josealonso.tolentino@unmsm.edu.pe");
+        Cliente cliente = new Cliente("DNI","11112222","José Alonso","Tolentino","Tantaruna","Masculino", sdf.format(fechanacimiento1),"xd","123");
         System.out.println("Cliente agregado: "+clientes.agregarCliente(cliente));
         Date fechanacimiento2 = new Date(2003-1900, 6-1, 25);
-        cliente = new Cliente("DNI","33334444","Esthefany","Meza","Meza","Femenino", sdf.format(fechanacimiento2), "esthefany.meza@gmail.com");
+        cliente = new Cliente("DNI","33334444","Esthefany","Meza","Meza","Femenino", sdf.format(fechanacimiento2), "esthefany.meza@gmail.com","123");
         System.out.println("Cliente agregado: "+clientes.agregarCliente(cliente));
         Date fechanacimiento3 = new Date(1900-1900, 8-1, 10);
-        cliente = new Cliente("PASAPORTE","55556666","Sheldon Lee","Cooper","Fowler","Masculino", sdf.format(fechanacimiento3),"sheldon.cooper@gmail.com");
+        cliente = new Cliente("PASAPORTE","55556666","Sheldon Lee","Cooper","Fowler","Masculino", sdf.format(fechanacimiento3),"sheldon.cooper@gmail.com","123");
         System.out.println("Cliente agregado: "+clientes.agregarCliente(cliente));
         System.out.println("");
         System.out.println("***Clientes del sistema***");
@@ -255,6 +255,16 @@ public class AppPeaje {
         //Ingreso a la cuenta.
         
         
+        //ZONA EXPERIMENTAL********************************
+        
+            //esto es para prueba, debido a que el cliente 0 registró dirección,tarjeta y carros,
+            //lo estoy considerando como "cliente debidamente registrado" y lo estoy agregando a este arreglo estático para su uso en el programa visual
+        Configuracion.arrClientes.agregarCliente(clientes.getArregloCliente(0));
+        System.out.println("USAR PARA LOGIN EN EL SISTEMA (ES MOMENTANEO)");
+            System.out.println("Correo experimental: xd");
+            System.out.println("contraseña experimental: 123");
+             
+             //ZONA EXPERIMENTAL********************************
         
         
         //Trabajo de vista y controladores

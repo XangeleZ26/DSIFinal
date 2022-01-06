@@ -17,15 +17,15 @@ public class ControladorConfiguracion {
     private Cliente user;
     private frmConfiguracion vista;
 
-    public ControladorConfiguracion(/*Cliente user*/) {
-//        this.user=user;
+    public ControladorConfiguracion(Cliente user) {
+        this.user=user;
         this.vista = new frmConfiguracion();
 
         this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ControladorOpcionesIngreso controller = new ControladorOpcionesIngreso();
+                ControladorOpcionesIngreso controller = new ControladorOpcionesIngreso(user);
                 controller.iniciar();
                 vista.dispose();
             }
@@ -35,7 +35,7 @@ public class ControladorConfiguracion {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ControladorConfigCambiarContra controller = new ControladorConfigCambiarContra();
+                ControladorConfigCambiarContra controller = new ControladorConfigCambiarContra(user);
                 controller.iniciar();
                 vista.dispose();
             }
@@ -50,18 +50,10 @@ public class ControladorConfiguracion {
             }
         });
 
-        this.vista.btnCambioTarjet.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-
-//               controller.iniciar();
-//               vista.dispose();
-            }
-        });
         this.vista.btnCambioCorreo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorConfigCambiarCorreo controller=new ControladorConfigCambiarCorreo();
+                ControladorConfigCambiarCorreo controller=new ControladorConfigCambiarCorreo(user);
                controller.iniciar();
                vista.dispose();
             }
@@ -69,7 +61,7 @@ public class ControladorConfiguracion {
         this.vista.btnCambioTarjet.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              ControladorConfigCambiarTarjeta controller=new ControladorConfigCambiarTarjeta();
+              ControladorConfigCambiarTarjeta controller=new ControladorConfigCambiarTarjeta(user);
                controller.iniciar();
                vista.dispose();
             }

@@ -228,16 +228,16 @@ public class frmOpcionesIngreso extends javax.swing.JFrame {
     private javax.swing.JPanel PContenidoOpciones;
     private javax.swing.JPanel PGeneralOpciones;
     private javax.swing.JPanel PTituloOpciones;
-    private javax.swing.JButton btnAtras;
+    public javax.swing.JButton btnAtras;
     public javax.swing.JButton btnConfiguracion;
-    private javax.swing.JButton btnMovimientos;
-    private javax.swing.JButton btnPagar;
-    private javax.swing.JButton btnRecargar;
+    public javax.swing.JButton btnMovimientos;
+    public javax.swing.JButton btnPagar;
+    public javax.swing.JButton btnRecargar;
     public javax.swing.JButton btnSaldo;
-    private javax.swing.JButton btnVehiculos;
+    public javax.swing.JButton btnVehiculos;
     private javax.swing.JLabel lblBienvenido;
     private javax.swing.JLabel lblUsuario;
-    private javax.swing.JTextField txtNombreUsuario;
+    public javax.swing.JTextField txtNombreUsuario;
     // End of variables declaration//GEN-END:variables
 
 }

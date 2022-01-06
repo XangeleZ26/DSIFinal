@@ -50,7 +50,7 @@ public class frmLogin extends javax.swing.JFrame {
         PContenidoLogin.setBackground(new java.awt.Color(121, 127, 139));
 
         lblUsuarioLogin.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblUsuarioLogin.setText("Usuario:");
+        lblUsuarioLogin.setText("Correo:");
 
         txtUsuarioLogin.setBackground(new java.awt.Color(121, 127, 139));
         txtUsuarioLogin.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -100,8 +100,9 @@ public class frmLogin extends javax.swing.JFrame {
                             .add(txtContraseñaLogin)
                             .add(jSeparator2)))
                     .add(PContenidoLoginLayout.createSequentialGroup()
-                        .add(lblUsuarioLogin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 92, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 38, Short.MAX_VALUE)
+                        .add(0, 0, Short.MAX_VALUE)
+                        .add(lblUsuarioLogin)
+                        .add(18, 18, 18)
                         .add(PContenidoLoginLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                             .add(jSeparator1)
                             .add(txtUsuarioLogin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
@@ -109,7 +110,7 @@ public class frmLogin extends javax.swing.JFrame {
             .add(PContenidoLoginLayout.createSequentialGroup()
                 .add(76, 76, 76)
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 386, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(78, Short.MAX_VALUE))
             .add(PContenidoLoginLayout.createSequentialGroup()
                 .add(192, 192, 192)
                 .add(btnIniciarSesion)
@@ -134,17 +135,14 @@ public class frmLogin extends javax.swing.JFrame {
                 .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(27, 27, 27)
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(27, 27, 27)
                 .add(PContenidoLoginLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(PContenidoLoginLayout.createSequentialGroup()
-                        .add(27, 27, 27)
-                        .add(btnAtras))
-                    .add(PContenidoLoginLayout.createSequentialGroup()
-                        .add(18, 18, 18)
-                        .add(btnIniciarSesion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .add(btnAtras)
+                    .add(btnIniciarSesion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(17, Short.MAX_VALUE))
         );
 
-        PGeneralLogin.add(PContenidoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 540, 360));
+        PGeneralLogin.add(PContenidoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 540, 390));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,9 +204,9 @@ public class frmLogin extends javax.swing.JFrame {
     private javax.swing.JLabel lblContraseñaLogin;
     private javax.swing.JLabel lblTituloLogin;
     private javax.swing.JLabel lblUsuarioLogin;
-    private javax.swing.JTextField txtContraseñaLogin;
+    public javax.swing.JTextField txtContraseñaLogin;
     private javax.swing.JTextPane txtDescripcionLogin;
-    private javax.swing.JTextField txtUsuarioLogin;
+    public javax.swing.JTextField txtUsuarioLogin;
     // End of variables declaration//GEN-END:variables
 
 }

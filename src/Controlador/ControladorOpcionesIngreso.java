@@ -16,14 +16,14 @@ public class ControladorOpcionesIngreso {
     private Cliente user;
     private frmOpcionesIngreso vista;
     
-    public ControladorOpcionesIngreso(/*Cliente user*/){
-//        this.user=user;
+    public ControladorOpcionesIngreso(Cliente user){
+       this.user=user;
         this.vista=new frmOpcionesIngreso(); 
         
         this.vista.btnConfiguracion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               ControladorConfiguracion controller=new ControladorConfiguracion();
+               ControladorConfiguracion controller=new ControladorConfiguracion(user);
                controller.iniciar();
                vista.dispose();
             }
@@ -31,7 +31,7 @@ public class ControladorOpcionesIngreso {
         this.vista.btnSaldo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               ControladorSaldo controller=new ControladorSaldo();
+               ControladorSaldo controller=new ControladorSaldo(user);
                controller.iniciar();
                vista.dispose();
             }
