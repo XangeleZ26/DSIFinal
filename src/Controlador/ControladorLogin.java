@@ -30,11 +30,12 @@ public class ControladorLogin {
             public void actionPerformed(ActionEvent e) {
                 //aqui tenemos que poner una condición de "Si el nombre escrito es igual a nombre registrado, accede
                 try {
-                    Cliente clientela=Configuracion.arrClientes.buscarCliente(vista.txtUsuarioLogin.getText(), vista.txtContraseñaLogin.getText());
+                    String contrasena=String.valueOf(vista.txtContrasena.getPassword());
+                    Cliente clientela=Configuracion.arrClientes.buscarCliente(vista.txtUsuarioLogin.getText(),String.valueOf(vista.txtContrasena.getPassword()));
                     ControladorOpcionesIngreso controller = new ControladorOpcionesIngreso(clientela);
                     controller.iniciar();
                     vista.dispose();
-
+                    System.out.println(contrasena);
                 } catch (ArrayIndexOutOfBoundsException z) {
                     JOptionPane.showMessageDialog(null, "Datos incorrectos.");
                 }

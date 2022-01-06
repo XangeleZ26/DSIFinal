@@ -6,15 +6,13 @@
 
 package Vista;
 
-/**
- *
- * @author Yesenia
- */
+
 public class frmLogin extends javax.swing.JFrame {
 
-    /** Creates new form frmLogin */
+
     public frmLogin() {
         initComponents();
+        OjoCerrado.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -33,12 +31,13 @@ public class frmLogin extends javax.swing.JFrame {
         txtUsuarioLogin = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         lblContraseñaLogin = new javax.swing.JLabel();
-        txtContraseñaLogin = new javax.swing.JTextField();
-        jSeparator2 = new javax.swing.JSeparator();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDescripcionLogin = new javax.swing.JTextPane();
         btnIniciarSesion = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
+        txtContrasena = new javax.swing.JPasswordField();
+        OjoCerrado = new javax.swing.JLabel();
+        OjoAbierto = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -48,27 +47,24 @@ public class frmLogin extends javax.swing.JFrame {
         PGeneralLogin.add(lblTituloLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, -1));
 
         PContenidoLogin.setBackground(new java.awt.Color(121, 127, 139));
+        PContenidoLogin.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblUsuarioLogin.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblUsuarioLogin.setText("Correo:");
+        PContenidoLogin.add(lblUsuarioLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 50, -1, -1));
 
         txtUsuarioLogin.setBackground(new java.awt.Color(121, 127, 139));
         txtUsuarioLogin.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtUsuarioLogin.setBorder(null);
+        PContenidoLogin.add(txtUsuarioLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 45, 216, 30));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoLogin.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 216, 10));
 
         lblContraseñaLogin.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblContraseñaLogin.setText("Contraseña:");
-
-        txtContraseñaLogin.setBackground(new java.awt.Color(121, 127, 139));
-        txtContraseñaLogin.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtContraseñaLogin.setBorder(null);
-
-        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        jSeparator2.setEnabled(false);
+        PContenidoLogin.add(lblContraseñaLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, -1, 40));
 
         txtDescripcionLogin.setEditable(false);
         txtDescripcionLogin.setBackground(new java.awt.Color(121, 127, 139));
@@ -76,71 +72,36 @@ public class frmLogin extends javax.swing.JFrame {
         txtDescripcionLogin.setText("IMPORTANTE\nUsuario: Ingrese su DNI, RUC o correo electrónico.\nSi está ingresando por primera vez su Usuario y Contraseña (provisional) es el número de documento de identidad con el cual se ha registrado en PEX.");
         jScrollPane1.setViewportView(txtDescripcionLogin);
 
+        PContenidoLogin.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 190, 386, -1));
+
         btnIniciarSesion.setBackground(new java.awt.Color(22, 38, 46));
         btnIniciarSesion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesion.setText("Iniciar sesión");
+        PContenidoLogin.add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 316, -1, 37));
 
         btnAtras.setBackground(new java.awt.Color(121, 127, 139));
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
         btnAtras.setBorder(null);
         btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContenidoLogin.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 316, -1, -1));
+        PContenidoLogin.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 124, 213, 30));
 
-        org.jdesktop.layout.GroupLayout PContenidoLoginLayout = new org.jdesktop.layout.GroupLayout(PContenidoLogin);
-        PContenidoLogin.setLayout(PContenidoLoginLayout);
-        PContenidoLoginLayout.setHorizontalGroup(
-            PContenidoLoginLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoLoginLayout.createSequentialGroup()
-                .add(90, 90, 90)
-                .add(PContenidoLoginLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(PContenidoLoginLayout.createSequentialGroup()
-                        .add(lblContraseñaLogin)
-                        .add(18, 18, 18)
-                        .add(PContenidoLoginLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(txtContraseñaLogin)
-                            .add(jSeparator2)))
-                    .add(PContenidoLoginLayout.createSequentialGroup()
-                        .add(0, 0, Short.MAX_VALUE)
-                        .add(lblUsuarioLogin)
-                        .add(18, 18, 18)
-                        .add(PContenidoLoginLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(jSeparator1)
-                            .add(txtUsuarioLogin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                .add(104, 104, 104))
-            .add(PContenidoLoginLayout.createSequentialGroup()
-                .add(76, 76, 76)
-                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 386, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(78, Short.MAX_VALUE))
-            .add(PContenidoLoginLayout.createSequentialGroup()
-                .add(192, 192, 192)
-                .add(btnIniciarSesion)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(btnAtras)
-                .add(22, 22, 22))
-        );
-        PContenidoLoginLayout.setVerticalGroup(
-            PContenidoLoginLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PContenidoLoginLayout.createSequentialGroup()
-                .add(48, 48, 48)
-                .add(PContenidoLoginLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblUsuarioLogin)
-                    .add(txtUsuarioLogin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(27, 27, 27)
-                .add(PContenidoLoginLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblContraseñaLogin)
-                    .add(txtContraseñaLogin, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(27, 27, 27)
-                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(27, 27, 27)
-                .add(PContenidoLoginLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(btnAtras)
-                    .add(btnIniciarSesion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(17, Short.MAX_VALUE))
-        );
+        OjoCerrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
+        OjoCerrado.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OjoCerradoMouseClicked(evt);
+            }
+        });
+        PContenidoLogin.add(OjoCerrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 30, 40));
+
+        OjoAbierto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ver_32px.png"))); // NOI18N
+        OjoAbierto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OjoAbiertoMouseClicked(evt);
+            }
+        });
+        PContenidoLogin.add(OjoAbierto, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 30, 40));
 
         PGeneralLogin.add(PContenidoLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 540, 390));
 
@@ -157,6 +118,19 @@ public class frmLogin extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void OjoCerradoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoCerradoMouseClicked
+
+        OjoAbierto.setVisible(true);
+        OjoCerrado.setVisible(false);
+txtContrasena.setEchoChar('•');
+    }//GEN-LAST:event_OjoCerradoMouseClicked
+
+    private void OjoAbiertoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoAbiertoMouseClicked
+        OjoAbierto.setVisible(false);
+        OjoCerrado.setVisible(true);
+        txtContrasena.setEchoChar((char) 0);
+    }//GEN-LAST:event_OjoAbiertoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -194,17 +168,18 @@ public class frmLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel OjoAbierto;
+    private javax.swing.JLabel OjoCerrado;
     private javax.swing.JPanel PContenidoLogin;
     private javax.swing.JPanel PGeneralLogin;
     public javax.swing.JButton btnAtras;
     public javax.swing.JButton btnIniciarSesion;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblContraseñaLogin;
     private javax.swing.JLabel lblTituloLogin;
     private javax.swing.JLabel lblUsuarioLogin;
-    public javax.swing.JTextField txtContraseñaLogin;
+    public javax.swing.JPasswordField txtContrasena;
     private javax.swing.JTextPane txtDescripcionLogin;
     public javax.swing.JTextField txtUsuarioLogin;
     // End of variables declaration//GEN-END:variables
