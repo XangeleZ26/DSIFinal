@@ -46,6 +46,7 @@ public class frmSaldo extends javax.swing.JFrame {
         lblSimbolo1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblSimbolo1.setText("S/");
 
+        txtSaldoTotal.setEditable(false);
         txtSaldoTotal.setBackground(new java.awt.Color(121, 127, 139));
         txtSaldoTotal.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtSaldoTotal.setBorder(null);
@@ -91,8 +92,8 @@ public class frmSaldo extends javax.swing.JFrame {
                         .add(lblSimbolo1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(PGeneralSaldoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(jSeparator1)
-                            .add(txtSaldoTotal, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)))
+                            .add(txtSaldoTotal, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                            .add(jSeparator1)))
                     .add(PGeneralSaldoLayout.createSequentialGroup()
                         .add(54, 54, 54)
                         .add(lblDescripcionSaldo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 303, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
@@ -107,14 +108,14 @@ public class frmSaldo extends javax.swing.JFrame {
                 .add(PGeneralSaldoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(lblSimbolo1)
                     .add(txtSaldoTotal, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(PGeneralSaldoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(PGeneralSaldoLayout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 73, Short.MAX_VALUE)
                         .add(btnAtras)
                         .add(16, 16, 16))
                     .add(PGeneralSaldoLayout.createSequentialGroup()
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                        .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(33, 33, 33)
                         .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)

@@ -6,15 +6,18 @@
 
 package Vista;
 
+import java.awt.Color;
+
 /**
  *
  * @author Yesenia
  */
 public class frmRecarga extends javax.swing.JFrame {
 
-    /** Creates new form frmRecarga */
+   private int opcionComprobante;
     public frmRecarga() {
         initComponents();
+        this.opcionComprobante=0;
     }
 
     /** This method is called from within the constructor to
@@ -93,7 +96,7 @@ public class frmRecarga extends javax.swing.JFrame {
         txtMonto.setBackground(new java.awt.Color(121, 127, 139));
         txtMonto.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtMonto.setBorder(null);
-        PContenidoRecarga.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 48, 125, -1));
+        PContenidoRecarga.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 48, 150, -1));
 
         lblComprobante.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblComprobante.setText("Comprobante de pago");
@@ -110,7 +113,7 @@ public class frmRecarga extends javax.swing.JFrame {
         PContenidoRecarga.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 120, -1, -1));
 
         dcFechaPago.setBackground(new java.awt.Color(121, 127, 139));
-        PContenidoRecarga.add(dcFechaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 129, 151, -1));
+        PContenidoRecarga.add(dcFechaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 180, 30));
 
         jPanel1.setBackground(new java.awt.Color(159, 162, 178));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -119,23 +122,23 @@ public class frmRecarga extends javax.swing.JFrame {
         lblMedioPago.setText("Datos de tarjeta");
         jPanel1.add(lblMedioPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 11, -1, -1));
 
-        lblDescripcion4.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        lblDescripcion4.setFont(new java.awt.Font("Times New Roman", 2, 16)); // NOI18N
         lblDescripcion4.setText("Número de tarjeta:");
         lblDescripcion4.setToolTipText("");
         jPanel1.add(lblDescripcion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
 
-        lblDescripcion5.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        lblDescripcion5.setFont(new java.awt.Font("Times New Roman", 2, 16)); // NOI18N
         lblDescripcion5.setText("Tarjeta:");
         lblDescripcion5.setToolTipText("");
-        jPanel1.add(lblDescripcion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(71, 52, -1, -1));
+        jPanel1.add(lblDescripcion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
 
-        lblTarjeta.setFont(new java.awt.Font("Times New Roman", 2, 14)); // NOI18N
+        lblTarjeta.setFont(new java.awt.Font("Times New Roman", 2, 16)); // NOI18N
         lblTarjeta.setText("jLabel1");
-        jPanel1.add(lblTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 51, 233, 19));
+        jPanel1.add(lblTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 200, 19));
 
-        lblNumberT.setFont(new java.awt.Font("Times New Roman", 2, 12)); // NOI18N
+        lblNumberT.setFont(new java.awt.Font("Times New Roman", 2, 16)); // NOI18N
         lblNumberT.setText("jLabel1");
-        jPanel1.add(lblNumberT, new org.netbeans.lib.awtextra.AbsoluteConstraints(127, 78, 233, 23));
+        jPanel1.add(lblNumberT, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 200, 23));
 
         lblDescripcion6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblDescripcion6.setText("Ingrese su CVV para confirmar la recarga:");
@@ -146,23 +149,33 @@ public class frmRecarga extends javax.swing.JFrame {
         btnPagar.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnPagar.setForeground(new java.awt.Color(255, 255, 255));
         btnPagar.setText("Recargar");
-        jPanel1.add(btnPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 182, -1, 37));
+        jPanel1.add(btnPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 182, 130, 50));
 
         txtCVV.setBackground(new java.awt.Color(159, 162, 178));
-        txtCVV.setText("jTextField1");
+        txtCVV.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         txtCVV.setBorder(null);
+        txtCVV.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCVVActionPerformed(evt);
+            }
+        });
         jPanel1.add(txtCVV, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 90, 20));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 90, 10));
 
-        PContenidoRecarga.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 370, 240));
+        PContenidoRecarga.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 380, 250));
 
         btnFactura.setBackground(new java.awt.Color(22, 38, 46));
         btnFactura.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnFactura.setForeground(new java.awt.Color(255, 255, 255));
         btnFactura.setText("Factura");
+        btnFactura.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnFacturaMouseClicked(evt);
+            }
+        });
         btnFactura.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFacturaActionPerformed(evt);
@@ -174,11 +187,16 @@ public class frmRecarga extends javax.swing.JFrame {
         btnBoleta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnBoleta.setForeground(new java.awt.Color(255, 255, 255));
         btnBoleta.setText("Boleta");
+        btnBoleta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBoletaMouseClicked(evt);
+            }
+        });
         PContenidoRecarga.add(btnBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 90, 37));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        PContenidoRecarga.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 77, 125, 10));
+        PContenidoRecarga.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 160, 10));
 
         PGeneralRecarga.add(PContenidoRecarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 104, 550, 560));
 
@@ -197,8 +215,24 @@ public class frmRecarga extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturaActionPerformed
-        // TODO add your handling code here:
+         btnFactura.setBackground(new Color(64,103,105));
+        btnBoleta.setBackground(new Color(22,38,46));
+        this.opcionComprobante=1;
     }//GEN-LAST:event_btnFacturaActionPerformed
+
+    private void txtCVVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCVVActionPerformed
+        
+    }//GEN-LAST:event_txtCVVActionPerformed
+
+    private void btnBoletaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBoletaMouseClicked
+           btnBoleta.setBackground(new Color(64,103,105));
+        btnFactura.setBackground(new Color(22,38,46));
+        this.opcionComprobante=2;
+    }//GEN-LAST:event_btnBoletaMouseClicked
+
+    private void btnFacturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFacturaMouseClicked
+        
+    }//GEN-LAST:event_btnFacturaMouseClicked
 
     /**
      * @param args the command line arguments
@@ -233,6 +267,14 @@ public class frmRecarga extends javax.swing.JFrame {
                 new frmRecarga().setVisible(true);
             }
         });
+    }
+    
+    public int getOpcionComprobante() {
+        return opcionComprobante;
+    }
+
+    public void setOpcionComprobante(int opcionComprobante) {
+        this.opcionComprobante = opcionComprobante;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -33,9 +33,9 @@ public class ControladorSaldo {
             }
         });
     }
-    //crear un método que imprima el saldo del cliente al momento de invocar este controlador
     
     public void iniciar() {
+        vista.txtSaldoTotal.setText(String.valueOf(user.getCuenta().getSaldoTotal()));
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     }
