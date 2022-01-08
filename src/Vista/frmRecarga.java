@@ -133,11 +133,9 @@ public class frmRecarga extends javax.swing.JFrame {
         jPanel1.add(lblDescripcion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
 
         lblTarjeta.setFont(new java.awt.Font("Times New Roman", 2, 16)); // NOI18N
-        lblTarjeta.setText("jLabel1");
         jPanel1.add(lblTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 200, 19));
 
         lblNumberT.setFont(new java.awt.Font("Times New Roman", 2, 16)); // NOI18N
-        lblNumberT.setText("jLabel1");
         jPanel1.add(lblNumberT, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 200, 23));
 
         lblDescripcion6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
@@ -149,6 +147,11 @@ public class frmRecarga extends javax.swing.JFrame {
         btnPagar.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnPagar.setForeground(new java.awt.Color(255, 255, 255));
         btnPagar.setText("Recargar");
+        btnPagar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPagarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(131, 182, 130, 50));
 
         txtCVV.setBackground(new java.awt.Color(159, 162, 178));
@@ -192,6 +195,11 @@ public class frmRecarga extends javax.swing.JFrame {
                 btnBoletaMouseClicked(evt);
             }
         });
+        btnBoleta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBoletaActionPerformed(evt);
+            }
+        });
         PContenidoRecarga.add(btnBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 90, 37));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
@@ -233,6 +241,14 @@ public class frmRecarga extends javax.swing.JFrame {
     private void btnFacturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFacturaMouseClicked
         
     }//GEN-LAST:event_btnFacturaMouseClicked
+
+    private void btnBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBoletaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBoletaActionPerformed
+
+    private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPagarActionPerformed
 
     /**
      * @param args the command line arguments

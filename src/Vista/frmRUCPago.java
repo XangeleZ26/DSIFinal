@@ -10,10 +10,10 @@ package Vista;
  *
  * @author Yesenia
  */
-public class frmRUC extends javax.swing.JFrame {
+public class frmRUCPago extends javax.swing.JFrame {
 
-    /** Creates new form frmRUC */
-    public frmRUC() {
+    /** Creates new form frmRUCPago */
+    public frmRUCPago() {
         initComponents();
     }
 
@@ -26,7 +26,7 @@ public class frmRUC extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        PGeneral = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         PTitulo = new javax.swing.JPanel();
         lblTitulo = new javax.swing.JLabel();
         PContenido = new javax.swing.JPanel();
@@ -36,31 +36,27 @@ public class frmRUC extends javax.swing.JFrame {
         txtRazonSocial = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        btnNext = new javax.swing.JButton();
-        lblCorreo = new javax.swing.JLabel();
-        txtCorreo = new javax.swing.JTextField();
-        jSeparator3 = new javax.swing.JSeparator();
-        btnVolverCliente = new javax.swing.JButton();
-        btnRegistrarClienteRUC = new javax.swing.JButton();
+        btnRecargaOpc = new javax.swing.JButton();
+        btnOK = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        PGeneral.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         PTitulo.setBackground(new java.awt.Color(159, 162, 178));
 
         lblTitulo.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(0, 0, 0));
-        lblTitulo.setText("Digite los datos de su RUC");
+        lblTitulo.setText("Digite los datos para la factura");
 
         org.jdesktop.layout.GroupLayout PTituloLayout = new org.jdesktop.layout.GroupLayout(PTitulo);
         PTitulo.setLayout(PTituloLayout);
         PTituloLayout.setHorizontalGroup(
             PTituloLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, PTituloLayout.createSequentialGroup()
-                .addContainerGap(90, Short.MAX_VALUE)
+            .add(PTituloLayout.createSequentialGroup()
+                .add(65, 65, 65)
                 .add(lblTitulo)
-                .add(76, 76, 76))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         PTituloLayout.setVerticalGroup(
             PTituloLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -70,7 +66,7 @@ public class frmRUC extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        PGeneral.add(PTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 70));
+        jPanel1.add(PTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 70));
 
         PContenido.setBackground(new java.awt.Color(121, 127, 139));
 
@@ -98,65 +94,40 @@ public class frmRUC extends javax.swing.JFrame {
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
 
-        btnNext.setBackground(new java.awt.Color(121, 127, 139));
-        btnNext.setForeground(new java.awt.Color(0, 0, 0));
-        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/siguienteBoton.png"))); // NOI18N
-        btnNext.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnNext.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnRecargaOpc.setBackground(new java.awt.Color(121, 127, 139));
+        btnRecargaOpc.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnRecargaOpc.setForeground(new java.awt.Color(0, 0, 0));
+        btnRecargaOpc.setText("Volver");
+        btnRecargaOpc.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        lblCorreo.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
-        lblCorreo.setForeground(new java.awt.Color(0, 0, 0));
-        lblCorreo.setText("Correo:");
-
-        txtCorreo.setBackground(new java.awt.Color(121, 127, 139));
-        txtCorreo.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        txtCorreo.setForeground(new java.awt.Color(0, 0, 0));
-        txtCorreo.setBorder(null);
-
-        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
-
-        btnVolverCliente.setBackground(new java.awt.Color(121, 127, 139));
-        btnVolverCliente.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnVolverCliente.setForeground(new java.awt.Color(0, 0, 0));
-        btnVolverCliente.setText("Volver");
-        btnVolverCliente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
-        btnRegistrarClienteRUC.setBackground(new java.awt.Color(104, 113, 153));
-        btnRegistrarClienteRUC.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnRegistrarClienteRUC.setForeground(new java.awt.Color(0, 0, 0));
-        btnRegistrarClienteRUC.setText("Registrar datos");
-        btnRegistrarClienteRUC.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnRegistrarClienteRUC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnOK.setBackground(new java.awt.Color(104, 113, 153));
+        btnOK.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnOK.setForeground(new java.awt.Color(0, 0, 0));
+        btnOK.setText("OK");
+        btnOK.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnOK.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         org.jdesktop.layout.GroupLayout PContenidoLayout = new org.jdesktop.layout.GroupLayout(PContenido);
         PContenido.setLayout(PContenidoLayout);
         PContenidoLayout.setHorizontalGroup(
             PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(PContenidoLayout.createSequentialGroup()
-                .add(23, 23, 23)
                 .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoLayout.createSequentialGroup()
+                    .add(PContenidoLayout.createSequentialGroup()
+                        .add(23, 23, 23)
                         .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                             .add(lblRazonSocial)
-                            .add(lblRUC)
-                            .add(lblCorreo))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED))
+                            .add(lblRUC)))
                     .add(PContenidoLayout.createSequentialGroup()
-                        .add(btnVolverCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .add(34, 34, 34)
+                        .add(btnRecargaOpc, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(PContenidoLayout.createSequentialGroup()
-                        .add(btnRegistrarClienteRUC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(75, 75, 75)
-                        .add(btnNext))
-                    .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                        .add(txtRazonSocial)
-                        .add(jSeparator2)
-                        .add(txtRUC, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
-                        .add(jSeparator1)
-                        .add(txtCorreo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
-                        .add(jSeparator3)))
+                    .add(txtRazonSocial)
+                    .add(jSeparator2)
+                    .add(txtRUC, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
+                    .add(jSeparator1)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, btnOK, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 50, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
         PContenidoLayout.setVerticalGroup(
@@ -174,36 +145,24 @@ public class frmRUC extends javax.swing.JFrame {
                     .add(txtRazonSocial, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(33, 33, 33)
-                .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblCorreo)
-                    .add(txtCorreo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 37, Short.MAX_VALUE)
                 .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(PContenidoLayout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(btnNext)
-                        .addContainerGap(20, Short.MAX_VALUE))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoLayout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(btnVolverCliente)
-                            .add(btnRegistrarClienteRUC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 35, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(28, 28, 28))))
+                    .add(btnOK, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 35, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(btnRecargaOpc))
+                .add(19, 19, 19))
         );
 
-        PGeneral.add(PContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 440, 320));
+        jPanel1.add(PContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 440, 250));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PGeneral, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+            .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PGeneral, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+            .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -226,39 +185,35 @@ public class frmRUC extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmRUC.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmRUCPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmRUC.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmRUCPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmRUC.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmRUCPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmRUC.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmRUCPago.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmRUC().setVisible(true);
+                new frmRUCPago().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PContenido;
-    private javax.swing.JPanel PGeneral;
     private javax.swing.JPanel PTitulo;
-    public javax.swing.JButton btnNext;
-    public javax.swing.JButton btnRegistrarClienteRUC;
-    public javax.swing.JButton btnVolverCliente;
+    public javax.swing.JButton btnOK;
+    public javax.swing.JButton btnRecargaOpc;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    public javax.swing.JSeparator jSeparator3;
-    public javax.swing.JLabel lblCorreo;
     private javax.swing.JLabel lblRUC;
     private javax.swing.JLabel lblRazonSocial;
     private javax.swing.JLabel lblTitulo;
-    public javax.swing.JTextField txtCorreo;
     public javax.swing.JTextField txtRUC;
     public javax.swing.JTextField txtRazonSocial;
     // End of variables declaration//GEN-END:variables

@@ -204,9 +204,9 @@ public class Cliente {
     
     public boolean crearCuenta(Tarjeta tarjeta){
         boolean result = false;
-        Date fechaActual = new Date();
-        SimpleDateFormat fecha = new SimpleDateFormat("yyyy/MM"); 
-        if(tarjeta.verificarValidezTajeta()==true && tarjeta.verificarVigenciaTarjeta(fecha.format(fechaActual))){
+        if(tarjeta.verificarValidezTajeta(tarjeta.getNumTarjeta(), tarjeta.getMedioPago())==true && 
+                tarjeta.verificarVigenciaTarjeta(tarjeta.getFechaVencimiento()) == true && 
+                tarjeta.verificarValidezCVV(tarjeta.getCvv(), tarjeta.getMedioPago())==true){
             this.cuenta = new Cuenta (tarjeta);
             result = true;
         }

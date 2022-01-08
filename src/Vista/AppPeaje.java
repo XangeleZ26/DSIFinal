@@ -274,7 +274,7 @@ public class AppPeaje {
         ArregloClientes mClientes = new ArregloClientes();
         mClientes.toString();
         ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
-       ctrlPrincipal.iniciar();
+       //ctrlPrincipal.iniciar();
 //        frmCliente fCliente = new frmCliente();
 //        ControladorCliente ctrlCliente = new ControladorCliente(mClientes, fCliente);
 //        //ctrlCliente.iniciarCliente();
@@ -283,10 +283,10 @@ public class AppPeaje {
 //        //ControladorEntrega ctrlEntrega = new ControladorEntrega(mClientes);
 //        //ctrlEntrega.iniciarEntrega();
 //        frmRecargaOpcional fRecargaOpc = new frmRecargaOpcional();
-//        Cuenta mCuenta = new Cuenta();
-//        Tarjeta mTarjeta = new Tarjeta();
-//        ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(mCuenta, mTarjeta, fRecargaOpc);
-//        ctrlRecargaOpc.iniciarRecargaOpc();
+        Cuenta mCuenta = new Cuenta();
+        Tarjeta mTarjeta = new Tarjeta();
+        ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(mCuenta, mTarjeta);
+        ctrlRecargaOpc.iniciarRecargaOpc();
         
         
     }

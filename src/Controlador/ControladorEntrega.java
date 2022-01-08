@@ -3,6 +3,8 @@ package Controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Modelo.Direccion;
+import Modelo.Tarjeta;
+import Modelo.Cuenta;
 import Vista.frmEntrega;
 import Modelo.ArregloClientes;
 import javax.swing.JOptionPane;
@@ -10,6 +12,8 @@ import javax.swing.JOptionPane;
 public class ControladorEntrega{
     private Direccion modeloDireccion;
     private frmEntrega vistaEntrega;
+    Tarjeta mTarjeta = new Tarjeta();
+    Cuenta mCuenta = new Cuenta(mTarjeta);
     private ArregloClientes modeloCliente = new ArregloClientes();
     
     public ControladorEntrega(ArregloClientes modeloCliente){
@@ -20,9 +24,12 @@ public class ControladorEntrega{
         this.vistaEntrega.btnSiguiente3.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                
+                ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(mCuenta, mTarjeta);
+                ctrlRecargaOpc.iniciarRecargaOpc();
+                vistaEntrega.dispose();
             }
         });
+        
         this.vistaEntrega.btnRegistrarDireccion.addActionListener(new ActionListener(){
            @Override
            public void actionPerformed(ActionEvent e){
