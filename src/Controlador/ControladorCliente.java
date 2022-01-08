@@ -4,30 +4,42 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import Modelo.Cliente;
+import Modelo.Configuracion;
 import Modelo.ArregloClientes; 
 import Vista.frmCliente;
 import java.text.SimpleDateFormat;
 
 public class ControladorCliente{
     private ArregloClientes modeloCliente;
+    private ArregloClientes clientes;
     private frmCliente vistaCliente;
-    
+    Cliente mCliente = new Cliente();
     public ControladorCliente(ArregloClientes modeloCliente){
         this.vistaCliente = new frmCliente();
         this.modeloCliente = modeloCliente;
-        
+        this.clientes = Configuracion.arrClientes;
+        this.vistaCliente.btnOpcionRUC.addActionListener(new ActionListener(){
+           @Override
+           public void actionPerformed(ActionEvent e){
+               ControladorRUC ctrlRUC = new ControladorRUC(clientes, mCliente);
+               ctrlRUC.iniciarRUC();
+               vistaCliente.dispose(); 
+           }
+        });
         this.vistaCliente.btnSiguiente2.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
                 if(datosLlenosCliente()){
+                    
                     if(!modeloCliente.verificarExistenciaCliente(
                     vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
                     vistaCliente.txtNumeroDocumento.getText())){
                         if(!modeloCliente.verificarExistenciaCorreo(vistaCliente.txtEmail.getText())){
-                            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                            //String fechaNacimiento = sdf.format(vistaCliente.dcFechaNacimiento.getDate());
                             String contra = String.valueOf(vistaCliente.txtContrasena.getPassword());
                             String contraVerif = String.valueOf(vistaCliente.txtVerifContrasena.getPassword());
+                            
+                            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                            //String fechaNacimiento = sdf.format(vistaCliente.dcFechaNacimiento.getDate());
                             if(contra != null){
                                 if(contra.compareTo(contraVerif) == 0){
                                     Cliente cliente = new Cliente(
@@ -48,14 +60,14 @@ public class ControladorCliente{
                             }
                             else{
                                 Cliente cliente = new Cliente(
-                                                    vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
-                                                    vistaCliente.txtNumeroDocumento.getText(),
-                                                    vistaCliente.txtNombres.getText(),
-                                                    vistaCliente.txtApPaterno.getText(),
-                                                    vistaCliente.txtApMaterno.getText(),
-                                                    vistaCliente.cbxSexo.getSelectedItem().toString(),
-                                                    sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
-                                                    vistaCliente.txtEmail.getText());
+                                                vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
+                                                vistaCliente.txtNumeroDocumento.getText(),
+                                                vistaCliente.txtNombres.getText(),
+                                                vistaCliente.txtApPaterno.getText(),
+                                                vistaCliente.txtApMaterno.getText(),
+                                                vistaCliente.cbxSexo.getSelectedItem().toString(),
+                                                sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
+                                                vistaCliente.txtEmail.getText());
                                 modeloCliente.agregarCliente(cliente);
                             }
                         }

@@ -17,8 +17,12 @@ public class Cliente {
     private Direccion direccion;
     //private Tarjeta tarjeta;
     private Cuenta cuenta;
+    private String razonSocial;
     
     //CONSTRUCTORES
+    public Cliente(){
+        
+    }
     public Cliente(Cliente cliente){
         this.tipoDocumento = cliente.tipoDocumento;
         this.numDocumento = cliente.numDocumento;
@@ -53,12 +57,21 @@ public class Cliente {
         this.correo = correo;
         this.contraseña = numDocumento;             
     }
-
-    public Cliente(String tipoDocumento, String numDocumento, String nombres, String apPaterno) {
+    
+    public Cliente(String tipoDocumento, String numDocumento, String correo, String razonSocial){
         this.tipoDocumento = tipoDocumento;
         this.numDocumento = numDocumento;
-        this.nombres = nombres;
-        this.apPaterno = apPaterno;
+        this.correo = correo;
+        this.razonSocial = razonSocial;
+        this.contraseña = numDocumento;
+    }
+    
+    public Cliente(String tipoDocumento, String numDocumento, String correo, String razonSocial, String contraseña){
+        this.tipoDocumento = tipoDocumento;
+        this.numDocumento = numDocumento;
+        this.correo = correo;
+        this.razonSocial = razonSocial;
+        this.contraseña = contraseña;
     }
 
     public Cliente(String numDocumento, String correo) {
@@ -212,6 +225,29 @@ public class Cliente {
         this.contraseña = nuevaContraseña;
     }
 
+    public boolean verificarValidezRUC(String RUC){
+        boolean result = false;
+        if(RUC.length() == 11){
+            if(RUC.charAt(0) == '2' && RUC.charAt(1) == '0'){
+               result = true; 
+            }
+            else if(RUC.charAt(0) == '1'){
+                switch(RUC.charAt(1)){
+                    case '0':
+                    case '5':
+                    case '7': result = true;
+                        break;
+                    default: result = false;
+                        break;
+                }
+            }
+        }
+        else{
+            result = false;
+        }
+        return result;
+    }
+    
     @Override
     public String toString() {
         return "***Datos de Usuario***" + "\n" +
