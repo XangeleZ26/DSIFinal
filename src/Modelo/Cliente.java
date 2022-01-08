@@ -42,6 +42,17 @@ public class Cliente {
         this.correo = correo;
         this.contraseña = contrasena;             
     }
+    public Cliente(String tipoDocumento, String numDocumento, String nombres, String apPaterno, String apMaterno, String sexo, String fechaNacimiento, String correo) {
+        this.tipoDocumento = tipoDocumento;
+        this.numDocumento = numDocumento;
+        this.nombres = nombres;
+        this.apPaterno = apPaterno;
+        this.apMaterno = apMaterno;
+        this.sexo = sexo;
+        this.fechaNacimiento = fechaNacimiento;
+        this.correo = correo;
+        this.contraseña = numDocumento;             
+    }
 
     public Cliente(String tipoDocumento, String numDocumento, String nombres, String apPaterno) {
         this.tipoDocumento = tipoDocumento;

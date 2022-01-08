@@ -88,6 +88,7 @@ public class frmLogin extends javax.swing.JFrame {
         PContenidoLogin.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 124, 213, 30));
 
         OjoCerrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
+        OjoCerrado.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         OjoCerrado.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 OjoCerradoMouseClicked(evt);
@@ -96,6 +97,7 @@ public class frmLogin extends javax.swing.JFrame {
         PContenidoLogin.add(OjoCerrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 30, 40));
 
         OjoAbierto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ver_32px.png"))); // NOI18N
+        OjoAbierto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         OjoAbierto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 OjoAbiertoMouseClicked(evt);
@@ -168,8 +170,8 @@ txtContrasena.setEchoChar('•');
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel OjoAbierto;
-    private javax.swing.JLabel OjoCerrado;
+    public javax.swing.JLabel OjoAbierto;
+    public javax.swing.JLabel OjoCerrado;
     private javax.swing.JPanel PContenidoLogin;
     private javax.swing.JPanel PGeneralLogin;
     public javax.swing.JButton btnAtras;

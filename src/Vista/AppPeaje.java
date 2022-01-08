@@ -271,6 +271,7 @@ public class AppPeaje {
         
         frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
         ArregloClientes mClientes = new ArregloClientes();
+        mClientes.toString();
         ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
        ctrlPrincipal.iniciar();
 //        frmCliente fCliente = new frmCliente();
