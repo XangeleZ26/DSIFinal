@@ -10,23 +10,31 @@ import Vista.frmCliente;
 import java.text.SimpleDateFormat;
 
 public class ControladorCliente{
-    private ArregloClientes modeloCliente;
-    private ArregloClientes clientes;
+    private ArregloClientes modeloCliente = new ArregloClientes();
+    //private ArregloClientes clientes;
+    //private Vehiculo vehiculo;
     private frmCliente vistaCliente;
     Cliente mCliente = new Cliente();
     public ControladorCliente(ArregloClientes modeloCliente){
         this.vistaCliente = new frmCliente();
         this.modeloCliente = modeloCliente;
-        this.clientes = Configuracion.arrClientes;
         this.vistaCliente.btnOpcionRUC.addActionListener(new ActionListener(){
            @Override
            public void actionPerformed(ActionEvent e){
-               ControladorRUC ctrlRUC = new ControladorRUC(clientes, mCliente);
+               ControladorRUC ctrlRUC = new ControladorRUC(modeloCliente, mCliente);
                ctrlRUC.iniciarRUC();
                vistaCliente.dispose(); 
            }
         });
         this.vistaCliente.btnSiguiente2.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(modeloCliente);
+                ctrlVehiculo.iniciarVehiculo();
+                vistaCliente.dispose(); 
+           }
+        });
+        this.vistaCliente.btnRegistrarCliente.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
                 if(datosLlenosCliente()){
@@ -53,6 +61,7 @@ public class ControladorCliente{
                                                     vistaCliente.txtEmail.getText(),
                                                     vistaCliente.txtContrasena.getPassword().toString());
                                     modeloCliente.agregarCliente(cliente);
+                                    JOptionPane.showMessageDialog(null, "Datos del cliente registrados, puede continuar con su registro.");
                                 }
                                 else{
                                     JOptionPane.showMessageDialog(null, "Verificación de contraseña incorrecta.");
@@ -75,6 +84,7 @@ public class ControladorCliente{
                             JOptionPane.showMessageDialog(vistaCliente, "Correo ya registrado. Ingrese otra dirección de correo.");
                             vistaCliente.txtEmail.setText(null);
                         }
+                        
                     }
                     else{
                         JOptionPane.showMessageDialog(vistaCliente, "Cliente ya registrado. Ingrese nuevos datos.");
@@ -84,6 +94,7 @@ public class ControladorCliente{
                 else{
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos, por favor.");
                 }
+                
             }
         });
     }

@@ -9,7 +9,7 @@ import Vista.frmRUC;
 
 public class ControladorRUC {
     private frmRUC vistaRUC;
-    private ArregloClientes modeloClientes;
+    private ArregloClientes modeloClientes = new ArregloClientes();
     private Cliente user;
     
     public ControladorRUC(ArregloClientes modeloCliente, Cliente user){
@@ -25,14 +25,22 @@ public class ControladorRUC {
            }
         });
         this.vistaRUC.btnNext.addActionListener(new ActionListener(){
+           @Override
+           public void actionPerformed(ActionEvent e){
+                ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(modeloCliente);
+                ctrlVehiculo.iniciarVehiculo();
+                vistaRUC.dispose(); 
+           }
+        });
+        this.vistaRUC.btnRegistrarClienteRUC.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
                 if(datosLlenosCliente()){
                     if(user.verificarValidezRUC(vistaRUC.txtRUC.getText())){
                          if(!modeloClientes.verificarExistenciaCliente(
                             "RUC", vistaRUC.txtRUC.getText())){
-                             Cliente cliente = new Cliente("RUC", vistaRUC.txtRUC.getText(), vistaRUC.txtCorreo.getText(), vistaRUC.txtCorreo.getText());
-                             modeloClientes.agregarCliente(cliente);
+                            Cliente cliente = new Cliente("RUC", vistaRUC.txtRUC.getText(), vistaRUC.txtCorreo.getText(), vistaRUC.txtCorreo.getText());
+                            modeloClientes.agregarCliente(cliente);
                          }
                          else{
                             limpiarDatosRUC();

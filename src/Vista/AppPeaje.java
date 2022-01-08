@@ -264,6 +264,7 @@ public class AppPeaje {
             System.out.println("Correo experimental: xd");
             System.out.println("contraseña experimental: 123");
              System.out.println("CVV de tarjeta activa: 124");
+             clientes.mostrarClientes();
              //ZONA EXPERIMENTAL********************************
         
         
