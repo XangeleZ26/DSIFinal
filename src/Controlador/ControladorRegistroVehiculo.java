@@ -16,10 +16,17 @@ public class ControladorRegistroVehiculo{
     
     public ControladorRegistroVehiculo(ArregloClientes clientes){
         this.modeloCliente = modeloCliente;
-        //this.modeloVehiculo = modeloVehiculo;
         this.vistaVehiculo = new frmRegistroVehiculo();
         
         this.vistaVehiculo.btnSiguiente1.addActionListener(new ActionListener(){
+           @Override
+           public void actionPerformed(ActionEvent e){
+               ControladorEntrega ctrlEntrega = new ControladorEntrega(modeloCliente);
+               ctrlEntrega.iniciarEntrega();
+               vistaVehiculo.dispose();
+           }
+        });
+        this.vistaVehiculo.btnRegistrarVehiculo.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
                 if(datosLlenosVehiculo()){
@@ -34,6 +41,7 @@ public class ControladorRegistroVehiculo{
                                                 Float.parseFloat(vistaVehiculo.txtPesoBruto.getText()),
                                                 Integer.parseInt(vistaVehiculo.txtAño.getText()),
                                                 clientes.getArregloCliente(clientes.getOc()));
+                    JOptionPane.showMessageDialog(null, "Datos del vehículo registrados, puede continuar con su registro.");
                 }
                 else{
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos, por favor.");

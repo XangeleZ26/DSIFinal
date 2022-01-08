@@ -15,6 +15,7 @@ public class frmEntrega extends javax.swing.JFrame {
     /** Creates new form frmEntrega */
     public frmEntrega() {
         initComponents();
+        txtDistrito.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -36,7 +37,7 @@ public class frmEntrega extends javax.swing.JFrame {
         lblDepartamento = new javax.swing.JLabel();
         txtDepartamento = new javax.swing.JTextField();
         lblProvincia = new javax.swing.JLabel();
-        txtProvincia = new javax.swing.JTextField();
+        txtDistrito = new javax.swing.JTextField();
         lblAvenida = new javax.swing.JLabel();
         txtAvenida = new javax.swing.JTextField();
         lblDistrito = new javax.swing.JLabel();
@@ -55,6 +56,9 @@ public class frmEntrega extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
+        btnRegistrarDireccion = new javax.swing.JButton();
+        txtProvincia = new javax.swing.JTextField();
+        jSeparator8 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -88,8 +92,10 @@ public class frmEntrega extends javax.swing.JFrame {
         PGeneralEntrega.add(PTituloEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         PContenidoEntrega.setBackground(new java.awt.Color(121, 127, 139));
+        PContenidoEntrega.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblIconEntrega.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/entrega.png"))); // NOI18N
+        PContenidoEntrega.add(lblIconEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 38, 85, -1));
 
         txtDescripcion.setBackground(new java.awt.Color(121, 127, 139));
         txtDescripcion.setBorder(null);
@@ -99,36 +105,50 @@ public class frmEntrega extends javax.swing.JFrame {
         txtDescripcion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(txtDescripcion);
 
+        PContenidoEntrega.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(168, 43, 444, -1));
+
         lblDepartamento.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
         lblDepartamento.setForeground(new java.awt.Color(0, 0, 0));
         lblDepartamento.setText("Departamento:");
+        PContenidoEntrega.add(lblDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 126, 209, -1));
 
         txtDepartamento.setBackground(new java.awt.Color(121, 127, 139));
         txtDepartamento.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtDepartamento.setForeground(new java.awt.Color(0, 0, 0));
         txtDepartamento.setBorder(null);
+        PContenidoEntrega.add(txtDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 158, 245, -1));
 
         lblProvincia.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
         lblProvincia.setForeground(new java.awt.Color(0, 0, 0));
         lblProvincia.setText("Provincia:");
+        PContenidoEntrega.add(lblProvincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 126, 209, -1));
 
-        txtProvincia.setBackground(new java.awt.Color(121, 127, 139));
-        txtProvincia.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtProvincia.setForeground(new java.awt.Color(0, 0, 0));
-        txtProvincia.setBorder(null);
+        txtDistrito.setBackground(new java.awt.Color(121, 127, 139));
+        txtDistrito.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtDistrito.setForeground(new java.awt.Color(0, 0, 0));
+        txtDistrito.setBorder(null);
+        txtDistrito.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtDistritoMouseClicked(evt);
+            }
+        });
+        PContenidoEntrega.add(txtDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 245, -1));
 
         lblAvenida.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
         lblAvenida.setForeground(new java.awt.Color(0, 0, 0));
         lblAvenida.setText("Calle, Jirón, Avenida:");
+        PContenidoEntrega.add(lblAvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 207, 209, -1));
 
         txtAvenida.setBackground(new java.awt.Color(121, 127, 139));
         txtAvenida.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtAvenida.setForeground(new java.awt.Color(0, 0, 0));
         txtAvenida.setBorder(null);
+        PContenidoEntrega.add(txtAvenida, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 241, 245, -1));
 
         lblDistrito.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
         lblDistrito.setForeground(new java.awt.Color(0, 0, 0));
         lblDistrito.setText("Distrito:");
+        PContenidoEntrega.add(lblDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 207, 209, -1));
 
         cbxDistrito.setBackground(new java.awt.Color(121, 127, 139));
         cbxDistrito.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -136,169 +156,97 @@ public class frmEntrega extends javax.swing.JFrame {
         cbxDistrito.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "                                                           ", "ANCON", "ATE", "BARRANCO", "BELLAVISTA", "BREÑA", "CARABAYLLO", "CARMEN DE LA LEGUA REYNOSO", "CHACLACAYO", "CHORRILLOS", "CIENEGUILLA", "COMAS", "EL AGUSTINO", "INDEPENDENCIA", "JESUS MARIA", "LA MOLINA", "LA PERLA", "LA PUNTA", "LA VICTORIA", "LIMA", "LINCE", "LOS OLIVOS", "LURIGANCHO", "LURIN", "MAGDALENA DEL MAR", "MIRAFLORES", "PACHACAMAC", "PUCUSANA", "PUEBLO LIBRE", "PUENTE PIEDRA", "PUNTA HERMOSA", "PUNTA NEGRA", "RIMAC", "SAN BARTOLO", "SAN BORJA", "SAN ISIDRO", "SAN JUAN DE LURIGANCHO", "SAN JUAN DE MIRAFLORES", "SAN LUIS", "SAN MARTIN DE PORRES", "SAN MIGUEL", "SANTA ANITA", "SANTA MARIA DEL MAR", "SANTA ROSA", "SANTIAGO DE SURCO", "SURQUILLO", "VENTANILLA", "VILLA EL SALVADOR", "VILLA MARIA DEL TRIUNFO" }));
         cbxDistrito.setBorder(null);
         cbxDistrito.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cbxDistrito.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cbxDistritoMouseClicked(evt);
+            }
+        });
+        PContenidoEntrega.add(cbxDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 239, -1, -1));
 
         lblNumero.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
         lblNumero.setForeground(new java.awt.Color(0, 0, 0));
         lblNumero.setText("Número:");
+        PContenidoEntrega.add(lblNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 292, 209, -1));
 
         txtNumero.setBackground(new java.awt.Color(121, 127, 139));
         txtNumero.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtNumero.setForeground(new java.awt.Color(0, 0, 0));
         txtNumero.setBorder(null);
+        PContenidoEntrega.add(txtNumero, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 324, 245, -1));
 
         lblTeleforno.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
         lblTeleforno.setForeground(new java.awt.Color(0, 0, 0));
         lblTeleforno.setText("Teléfono de contacto:");
+        PContenidoEntrega.add(lblTeleforno, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 292, 209, -1));
 
         txtTelefono.setBackground(new java.awt.Color(121, 127, 139));
         txtTelefono.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtTelefono.setForeground(new java.awt.Color(0, 0, 0));
         txtTelefono.setBorder(null);
+        PContenidoEntrega.add(txtTelefono, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 324, 245, -1));
 
         lblReferencia.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
         lblReferencia.setForeground(new java.awt.Color(0, 0, 0));
         lblReferencia.setText("Referencia:");
+        PContenidoEntrega.add(lblReferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 367, 209, -1));
 
         txtReferencia.setBackground(new java.awt.Color(121, 127, 139));
         txtReferencia.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtReferencia.setForeground(new java.awt.Color(0, 0, 0));
         txtReferencia.setBorder(null);
+        PContenidoEntrega.add(txtReferencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 399, 589, -1));
 
         btnSiguiente3.setBackground(new java.awt.Color(121, 127, 139));
         btnSiguiente3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/siguienteBoton.png"))); // NOI18N
         btnSiguiente3.setBorder(null);
         btnSiguiente3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContenidoEntrega.add(btnSiguiente3, new org.netbeans.lib.awtextra.AbsoluteConstraints(604, 448, -1, -1));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoEntrega.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 270, 245, 10));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoEntrega.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 270, 324, 10));
 
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoEntrega.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 351, 245, 10));
 
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoEntrega.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 426, 589, 10));
 
         jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoEntrega.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 351, 245, 10));
 
         jSeparator6.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator6.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoEntrega.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 185, 245, 10));
 
         jSeparator7.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoEntrega.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 245, 10));
 
-        org.jdesktop.layout.GroupLayout PContenidoEntregaLayout = new org.jdesktop.layout.GroupLayout(PContenidoEntrega);
-        PContenidoEntrega.setLayout(PContenidoEntregaLayout);
-        PContenidoEntregaLayout.setHorizontalGroup(
-            PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PContenidoEntregaLayout.createSequentialGroup()
-                .add(65, 65, 65)
-                .add(lblIconEntrega, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 85, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(18, 18, 18)
-                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 444, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoEntregaLayout.createSequentialGroup()
-                .addContainerGap(45, Short.MAX_VALUE)
-                .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoEntregaLayout.createSequentialGroup()
-                        .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator4)
-                                .add(org.jdesktop.layout.GroupLayout.LEADING, txtReferencia, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 589, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                .add(jSeparator6)
-                                .add(org.jdesktop.layout.GroupLayout.LEADING, lblDepartamento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 209, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(txtDepartamento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 245, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(PContenidoEntregaLayout.createSequentialGroup()
-                                .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                        .add(jSeparator1)
-                                        .add(org.jdesktop.layout.GroupLayout.LEADING, lblAvenida, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 209, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(txtAvenida, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 245, Short.MAX_VALUE))
-                                    .add(lblNumero, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 209, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                        .add(txtNumero, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 245, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 245, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                                .add(28, 28, 28)
-                                .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(lblTeleforno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 209, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                                        .add(txtTelefono, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 245, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(jSeparator5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 245, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                        .add(lblDistrito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 209, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(cbxDistrito, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .add(jSeparator2))
-                                    .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                        .add(jSeparator7)
-                                        .add(org.jdesktop.layout.GroupLayout.LEADING, lblProvincia, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 209, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(txtProvincia, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 245, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                            .add(lblReferencia, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 209, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(38, 38, 38))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoEntregaLayout.createSequentialGroup()
-                        .add(btnSiguiente3)
-                        .add(26, 26, 26))))
-        );
-        PContenidoEntregaLayout.setVerticalGroup(
-            PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PContenidoEntregaLayout.createSequentialGroup()
-                .add(38, 38, 38)
-                .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(lblIconEntrega)
-                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(18, 18, 18)
-                .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoEntregaLayout.createSequentialGroup()
-                        .add(lblDepartamento)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(txtDepartamento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jSeparator6, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoEntregaLayout.createSequentialGroup()
-                        .add(lblProvincia)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(txtProvincia, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jSeparator7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblAvenida)
-                    .add(lblDistrito))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(txtAvenida, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(cbxDistrito, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(PContenidoEntregaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(PContenidoEntregaLayout.createSequentialGroup()
-                        .add(lblNumero)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(txtNumero, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(PContenidoEntregaLayout.createSequentialGroup()
-                        .add(lblTeleforno)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(txtTelefono, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jSeparator5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(lblReferencia)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(txtReferencia, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jSeparator4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(btnSiguiente3)
-                .addContainerGap(12, Short.MAX_VALUE))
-        );
+        btnRegistrarDireccion.setBackground(new java.awt.Color(104, 113, 153));
+        btnRegistrarDireccion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnRegistrarDireccion.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegistrarDireccion.setText("Registrar datos");
+        btnRegistrarDireccion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegistrarDireccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContenidoEntrega.add(btnRegistrarDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 448, 132, 35));
+
+        txtProvincia.setBackground(new java.awt.Color(121, 127, 139));
+        txtProvincia.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtProvincia.setForeground(new java.awt.Color(0, 0, 0));
+        txtProvincia.setBorder(null);
+        PContenidoEntrega.add(txtProvincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 245, -1));
+
+        jSeparator8.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator8.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoEntrega.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 185, 245, 10));
 
         PGeneralEntrega.add(PContenidoEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 105, 680, 510));
 
@@ -315,6 +263,36 @@ public class frmEntrega extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cbxDistritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxDistritoMouseClicked
+        if(txtDepartamento.getText().compareTo("Lima") == 0 && txtProvincia.getText().compareTo("Lima") == 0){
+            cbxDistrito.setVisible(true);
+            jSeparator2.setVisible(true);
+            txtDistrito.setVisible(false);
+            jSeparator7.setVisible(false);
+        }
+        else{
+            cbxDistrito.setVisible(false);
+            jSeparator2.setVisible(false);
+            txtDistrito.setVisible(true);
+            jSeparator7.setVisible(true);
+        }
+    }//GEN-LAST:event_cbxDistritoMouseClicked
+
+    private void txtDistritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDistritoMouseClicked
+        if(txtDepartamento.getText().compareTo("Lima") == 0 && txtProvincia.getText().compareTo("Lima") == 0){
+            cbxDistrito.setVisible(true);
+            jSeparator2.setVisible(true);
+            txtDistrito.setVisible(false);
+            jSeparator7.setVisible(false);
+        }
+        else{
+            cbxDistrito.setVisible(false);
+            jSeparator2.setVisible(false);
+            txtDistrito.setVisible(true);
+            jSeparator7.setVisible(true);
+        }
+    }//GEN-LAST:event_txtDistritoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -355,16 +333,18 @@ public class frmEntrega extends javax.swing.JFrame {
     private javax.swing.JPanel PContenidoEntrega;
     private javax.swing.JPanel PGeneralEntrega;
     private javax.swing.JPanel PTituloEntrega;
+    public javax.swing.JButton btnRegistrarDireccion;
     public javax.swing.JButton btnSiguiente3;
     public javax.swing.JComboBox<String> cbxDistrito;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JSeparator jSeparator2;
+    public javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSeparator jSeparator7;
+    public javax.swing.JSeparator jSeparator7;
+    private javax.swing.JSeparator jSeparator8;
     private javax.swing.JLabel lblAvenida;
     private javax.swing.JLabel lblDepartamento;
     private javax.swing.JLabel lblDistrito;
@@ -376,6 +356,7 @@ public class frmEntrega extends javax.swing.JFrame {
     public javax.swing.JTextField txtAvenida;
     public javax.swing.JTextField txtDepartamento;
     private javax.swing.JTextPane txtDescripcion;
+    public javax.swing.JTextField txtDistrito;
     public javax.swing.JTextField txtNumero;
     public javax.swing.JTextField txtProvincia;
     public javax.swing.JTextField txtReferencia;

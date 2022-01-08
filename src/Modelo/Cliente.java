@@ -198,8 +198,8 @@ public class Cliente {
     }
     
     //MÉTODOS DEL FUNCIONAMIENTO DE LA CLASE
-    public void registrarDireccion(String departamento, String provincia, String distrito, String avenida, int numero, String telefono){
-        this.direccion = new Direccion(departamento,provincia,distrito,avenida,numero,telefono);
+    public void registrarDireccion(String departamento, String provincia, String distrito, String avenida, int numero, String referencia, String telefono){
+        this.direccion = new Direccion(departamento,provincia,distrito,avenida,numero, referencia, telefono);
     }
     
     public boolean crearCuenta(Tarjeta tarjeta){

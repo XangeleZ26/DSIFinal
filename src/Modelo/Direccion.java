@@ -13,13 +13,13 @@ public class Direccion {
         
     }
     
-    public Direccion(String departamento, String provincia, String distrito, String avenida, int numero, String telefono) {
+    public Direccion(String departamento, String provincia, String distrito, String avenida, int numero, String referencia, String telefono) {
         this.departamento = departamento;
         this.provincia = provincia;
         this.distrito = distrito;
         this.avenida = avenida;
         this.numero = numero;
-        //this.referencia = referencia;
+        this.referencia = referencia;
         this.telefono = telefono;
     }
 
@@ -87,7 +87,7 @@ public class Direccion {
                "Distrito: " + distrito + "\n" +
                "Avenida: " + avenida + "\n" +
                "Numero: " + numero + "\n" +
-               //"Referencia: " + referencia + "\n" +
+               "Referencia: " + referencia + "\n" +
                "Telefono: " + telefono;
     }
     

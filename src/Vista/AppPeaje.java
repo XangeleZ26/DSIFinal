@@ -84,7 +84,7 @@ public class AppPeaje {
         System.out.println("");
         
         //REGISTRAMOS DIRECCIÓN AL CLIENTE
-        clientes.getArregloCliente(0).registrarDireccion("Lima", "Lima", "S.M.P.", "Av.Perú", 3085, "980798331");
+        clientes.getArregloCliente(0).registrarDireccion("Lima", "Lima", "S.M.P.", "Av.Perú", 3085, "Portón marrón", "980798331");
         System.out.println(clientes.getArregloCliente(0).getDireccion().toString());
         System.out.println("");
         
@@ -280,7 +280,7 @@ public class AppPeaje {
 //        //ctrlCliente.iniciarCliente();
 //        frmEntrega fEntrega = new frmEntrega();
 //        Direccion mEntrega = new Direccion();
-//        ControladorEntrega ctrlEntrega = new ControladorEntrega(mEntrega, fEntrega);
+//        //ControladorEntrega ctrlEntrega = new ControladorEntrega(mClientes);
 //        //ctrlEntrega.iniciarEntrega();
 //        frmRecargaOpcional fRecargaOpc = new frmRecargaOpcional();
 //        Cuenta mCuenta = new Cuenta();
