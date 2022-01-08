@@ -36,7 +36,7 @@ public class frmRUCPago extends javax.swing.JFrame {
         txtRazonSocial = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        btnRecargaOpc = new javax.swing.JButton();
+        btnVolverRecargaOpc = new javax.swing.JButton();
         btnOK = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -94,11 +94,11 @@ public class frmRUCPago extends javax.swing.JFrame {
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
 
-        btnRecargaOpc.setBackground(new java.awt.Color(121, 127, 139));
-        btnRecargaOpc.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnRecargaOpc.setForeground(new java.awt.Color(0, 0, 0));
-        btnRecargaOpc.setText("Volver");
-        btnRecargaOpc.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnVolverRecargaOpc.setBackground(new java.awt.Color(121, 127, 139));
+        btnVolverRecargaOpc.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnVolverRecargaOpc.setForeground(new java.awt.Color(0, 0, 0));
+        btnVolverRecargaOpc.setText("Volver");
+        btnVolverRecargaOpc.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btnOK.setBackground(new java.awt.Color(104, 113, 153));
         btnOK.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -120,7 +120,7 @@ public class frmRUCPago extends javax.swing.JFrame {
                             .add(lblRUC)))
                     .add(PContenidoLayout.createSequentialGroup()
                         .add(34, 34, 34)
-                        .add(btnRecargaOpc, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(btnVolverRecargaOpc, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                     .add(txtRazonSocial)
@@ -148,7 +148,7 @@ public class frmRUCPago extends javax.swing.JFrame {
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 37, Short.MAX_VALUE)
                 .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(btnOK, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 35, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(btnRecargaOpc))
+                    .add(btnVolverRecargaOpc))
                 .add(19, 19, 19))
         );
 
@@ -207,7 +207,7 @@ public class frmRUCPago extends javax.swing.JFrame {
     private javax.swing.JPanel PContenido;
     private javax.swing.JPanel PTitulo;
     public javax.swing.JButton btnOK;
-    public javax.swing.JButton btnRecargaOpc;
+    public javax.swing.JButton btnVolverRecargaOpc;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

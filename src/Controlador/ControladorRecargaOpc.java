@@ -44,8 +44,8 @@ public class ControladorRecargaOpc{
         this.vistaRecargaOpc.btnFactura.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                ControladorRUC ctrlRUC = new ControladorRUC(modeloClientes, mCliente);
-                ctrlRUC.iniciarRUC();
+                ControladorRUCPago ctrlRUC = new ControladorRUCPago(mCliente);
+                ctrlRUC.iniciarRUCPago();
                 vistaRecargaOpc.dispose(); 
             }
         });
