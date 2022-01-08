@@ -24,9 +24,14 @@ public class ControladorEntrega{
         this.vistaEntrega.btnSiguiente3.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(mCuenta, mTarjeta);
-                ctrlRecargaOpc.iniciarRecargaOpc();
-                vistaEntrega.dispose();
+                if(datosLlenosDireccionLima()){
+                    ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(mCuenta, mTarjeta);
+                    ctrlRecargaOpc.iniciarRecargaOpc();
+                    vistaEntrega.dispose();
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Debe llenar todos los campos, por favor.");
+                }
             }
         });
         

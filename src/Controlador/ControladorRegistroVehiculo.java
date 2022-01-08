@@ -21,9 +21,15 @@ public class ControladorRegistroVehiculo{
         this.vistaVehiculo.btnSiguiente1.addActionListener(new ActionListener(){
            @Override
            public void actionPerformed(ActionEvent e){
-               ControladorEntrega ctrlEntrega = new ControladorEntrega(modeloCliente);
-               ctrlEntrega.iniciarEntrega();
-               vistaVehiculo.dispose();
+               if(datosLlenosVehiculo()){
+                    ControladorEntrega ctrlEntrega = new ControladorEntrega(modeloCliente);
+                    ctrlEntrega.iniciarEntrega();
+                    vistaVehiculo.dispose();
+               }
+               else{
+                    JOptionPane.showMessageDialog(null, "Debe llenar todos los campos, por favor.");
+               }
+               
            }
         });
         this.vistaVehiculo.btnRegistrarVehiculo.addActionListener(new ActionListener(){

@@ -111,6 +111,7 @@ public class ControladorRecargaOpc{
                             modeloCuenta.recargar(Float.parseFloat(vistaRecargaOpc.txtMontoOpcional.getText()) + 12, 
                                             tarjeta, sdfActual.format(fechaActual));
                             
+                            JOptionPane.showMessageDialog(vistaRecargaOpc, "Ustede ha sido registrado en el PEX!");
                         }
                         else{
                             vistaRecargaOpc.txtCVV.setText(null);
