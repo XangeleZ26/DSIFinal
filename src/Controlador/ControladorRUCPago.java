@@ -7,11 +7,13 @@ import Vista.frmRUCPago;
 import Modelo.Tarjeta;
 import Modelo.Cuenta;
 import Modelo.Cliente;
+import Modelo.ArregloClientes;
 
 public class ControladorRUCPago {
     private frmRUCPago vistaRUCPago;
     Tarjeta mTarjeta = new Tarjeta();
     Cuenta mCuenta = new Cuenta(mTarjeta);
+    private ArregloClientes modeloClientes = new ArregloClientes(); 
     private Cliente user;
     
     public ControladorRUCPago(Cliente user){
@@ -20,7 +22,7 @@ public class ControladorRUCPago {
         this.vistaRUCPago.btnVolverRecargaOpc.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(mCuenta, mTarjeta);
+                ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(modeloClientes, mCuenta, mTarjeta);
                 ctrlRecargaOpc.iniciarRecargaOpc();
                 vistaRUCPago.dispose();
             }
@@ -31,7 +33,7 @@ public class ControladorRUCPago {
             public void actionPerformed(ActionEvent e){
                 if(datosLlenosRUCPago()){
                     if(user.verificarValidezRUC(vistaRUCPago.txtRUC.getText())){
-                        ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(mCuenta, mTarjeta);
+                        ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(modeloClientes, mCuenta, mTarjeta);
                         ctrlRecargaOpc.iniciarRecargaOpc();
                         vistaRUCPago.dispose();
                     }

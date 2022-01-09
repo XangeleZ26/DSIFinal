@@ -41,6 +41,7 @@ public class ControladorRUC {
                             "RUC", vistaRUC.txtRUC.getText())){
                             Cliente cliente = new Cliente("RUC", vistaRUC.txtRUC.getText(), vistaRUC.txtCorreo.getText(), vistaRUC.txtCorreo.getText());
                             modeloClientes.agregarCliente(cliente);
+                            JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
                          }
                          else{
                             limpiarDatosRUC();

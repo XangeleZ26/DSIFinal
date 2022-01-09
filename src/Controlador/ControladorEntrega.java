@@ -25,7 +25,7 @@ public class ControladorEntrega{
             @Override
             public void actionPerformed(ActionEvent e){
                 if(datosLlenosDireccionLima()){
-                    ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(mCuenta, mTarjeta);
+                    ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(modeloCliente, mCuenta, mTarjeta);
                     ctrlRecargaOpc.iniciarRecargaOpc();
                     vistaEntrega.dispose();
                 }
@@ -38,8 +38,25 @@ public class ControladorEntrega{
         this.vistaEntrega.btnRegistrarDireccion.addActionListener(new ActionListener(){
            @Override
            public void actionPerformed(ActionEvent e){
-               if(vistaEntrega.cbxDistrito.getSelectedItem().toString() != null){
-                   if( datosLlenosDireccionLima()){
+               if(vistaEntrega.cbxDistrito.getSelectedItem().toString().compareTo("") == 0){
+                   if( datosLlenosDireccion()){
+                        modeloCliente.getArregloCliente(modeloCliente.getOc()).registrarDireccion(
+                                        vistaEntrega.txtDepartamento.getText(),
+                                        vistaEntrega.txtProvincia.getText(),
+                                        vistaEntrega.txtDistrito.getText(),
+                                        vistaEntrega.txtAvenida.getText(),
+                                        Integer.parseInt(vistaEntrega.txtNumero.getText()),
+                                        vistaEntrega.txtReferencia.getText(),
+                                        vistaEntrega.txtTelefono.getText());
+                       JOptionPane.showMessageDialog(null, "Datos de entrega registrados, puede continuar con su registro.");  
+                                      
+                   }
+                   else{
+                       JOptionPane.showMessageDialog(null, "Debe llenar todos los campos, por favor.");
+                   }
+               }
+               else{
+                   if(datosLlenosDireccionLima()){
                         modeloCliente.getArregloCliente(modeloCliente.getOc()).registrarDireccion(
                                         vistaEntrega.txtDepartamento.getText(),
                                         vistaEntrega.txtProvincia.getText(),
@@ -48,22 +65,7 @@ public class ControladorEntrega{
                                         Integer.parseInt(vistaEntrega.txtNumero.getText()),
                                         vistaEntrega.txtReferencia.getText(),
                                         vistaEntrega.txtTelefono.getText());
-                        JOptionPane.showMessageDialog(null, "Datos de entrega registrados, puede continuar con su registro.");                
-                   }
-                   else{
-                       JOptionPane.showMessageDialog(null, "Debe llenar todos los campos, por favor.");
-                   }
-               }
-               else{
-                   if(datosLlenosDireccion()){
-                       modeloCliente.getArregloCliente(modeloCliente.getOc()).registrarDireccion(
-                                        vistaEntrega.txtDepartamento.getText(),
-                                        vistaEntrega.txtProvincia.getText(),
-                                        vistaEntrega.txtDistrito.getText(),
-                                        vistaEntrega.txtAvenida.getText(),
-                                        Integer.parseInt(vistaEntrega.txtNumero.getText()),
-                                        vistaEntrega.txtReferencia.getText(),
-                                        vistaEntrega.txtTelefono.getText());
+                        JOptionPane.showMessageDialog(null, "Datos de entrega registrados, puede continuar con su registro."); 
                    }
                    else{
                        JOptionPane.showMessageDialog(null, "Debe llenar todos los campos, por favor.");

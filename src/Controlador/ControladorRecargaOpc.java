@@ -19,7 +19,7 @@ public class ControladorRecargaOpc{
     private frmRecargaOpcional vistaRecargaOpc;
     Cliente mCliente = new Cliente();
     
-    public ControladorRecargaOpc(Cuenta modeloCuenta, Tarjeta modeloTarjeta){
+    public ControladorRecargaOpc(ArregloClientes modeloClientes, Cuenta modeloCuenta, Tarjeta modeloTarjeta){
         this.modeloCuenta = modeloCuenta;
         this.modeloTarjeta = modeloTarjeta;
         this.vistaRecargaOpc = new frmRecargaOpcional();
@@ -112,6 +112,7 @@ public class ControladorRecargaOpc{
                                             tarjeta, sdfActual.format(fechaActual));
                             
                             JOptionPane.showMessageDialog(vistaRecargaOpc, "Ustede ha sido registrado en el PEX!");
+                            vistaRecargaOpc.dispose();
                         }
                         else{
                             vistaRecargaOpc.txtCVV.setText(null);

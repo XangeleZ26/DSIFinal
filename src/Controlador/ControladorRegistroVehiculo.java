@@ -14,7 +14,7 @@ public class ControladorRegistroVehiculo{
     private frmRegistroVehiculo vistaVehiculo;
     //private Cliente user;
     
-    public ControladorRegistroVehiculo(ArregloClientes clientes){
+    public ControladorRegistroVehiculo(ArregloClientes modeloCliente){
         this.modeloCliente = modeloCliente;
         this.vistaVehiculo = new frmRegistroVehiculo();
         
@@ -46,7 +46,7 @@ public class ControladorRegistroVehiculo{
                                                 vistaVehiculo.cbxTipoUso.getSelectedItem().toString(),
                                                 Float.parseFloat(vistaVehiculo.txtPesoBruto.getText()),
                                                 Integer.parseInt(vistaVehiculo.txtAño.getText()),
-                                                clientes.getArregloCliente(clientes.getOc()));
+                                                modeloCliente.getArregloCliente(modeloCliente.getOc()));
                     JOptionPane.showMessageDialog(null, "Datos del vehículo registrados, puede continuar con su registro.");
                 }
                 else{
