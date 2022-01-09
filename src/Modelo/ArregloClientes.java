@@ -44,7 +44,7 @@ public class ArregloClientes {
     public boolean verificarExistenciaCorreo(String correo){
         boolean result = false;
         for(int i=0; i<nc && result==false; i++){
-            if(correo.equals(this.arregloCliente[i].getCorreo())){
+            if(correo.equals(this.arregloCliente[i].getCredencial().getCorreo())){
                 result = true;
             }
         }
@@ -74,7 +74,7 @@ public class ArregloClientes {
     public Cliente buscarCliente(String correo,String contrasena){
         int indice=-2;
         for(int i=0;i<nc;i++){
-            if(this.arregloCliente[i].getCorreo().equalsIgnoreCase(correo)&&this.arregloCliente[i].getContraseña().equalsIgnoreCase(contrasena)){
+            if(this.arregloCliente[i].getCredencial().getCorreo().equalsIgnoreCase(correo)&&this.arregloCliente[i].getCredencial().getContraseña().equalsIgnoreCase(contrasena)){
                 indice=i;
             }
         }
@@ -128,7 +128,7 @@ public class ArregloClientes {
         System.out.format("%-12s%-12s%-15s%-15s%-15s%-12s%-14s%-40s%-25s\n","Tipo Doc.","Num. Doc.","Nombres","A. Paterno","A. Materno","Sexo","Fecha Nac.","Correo","Contraseña");
         System.out.format("%-12s%-12s%-15s%-15s%-15s%-12s%-14s%-40s%-25s\n","=========","=========","=======","==========","==========","====","==========","======","==========");
         for(int i=0;i<nc;i++){
-            System.out.format("%-12s%-12s%-15s%-15s%-15s%-12s%-14s%-40s%-25s\n",arregloCliente[i].getTipoDocumento(),arregloCliente[i].getNumDocumento(),arregloCliente[i].getNombres(),arregloCliente[i].getApPaterno(),arregloCliente[i].getApMaterno(),arregloCliente[i].getSexo(),arregloCliente[i].getFechaNacimiento(),arregloCliente[i].getCorreo(),arregloCliente[i].getContraseña());
+            System.out.format("%-12s%-12s%-15s%-15s%-15s%-12s%-14s%-40s%-25s\n",arregloCliente[i].getTipoDocumento(),arregloCliente[i].getNumDocumento(),arregloCliente[i].getNombres(),arregloCliente[i].getApPaterno(),arregloCliente[i].getApMaterno(),arregloCliente[i].getSexo(),arregloCliente[i].getFechaNacimiento(),arregloCliente[i].getCredencial().getCorreo(),arregloCliente[i].getCredencial().getContraseña());
         }
     }
 

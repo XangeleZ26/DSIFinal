@@ -56,6 +56,11 @@ public class frmLogin extends javax.swing.JFrame {
         txtUsuarioLogin.setBackground(new java.awt.Color(121, 127, 139));
         txtUsuarioLogin.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtUsuarioLogin.setBorder(null);
+        txtUsuarioLogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtUsuarioLoginActionPerformed(evt);
+            }
+        });
         PContenidoLogin.add(txtUsuarioLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 45, 216, 30));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
@@ -85,6 +90,12 @@ public class frmLogin extends javax.swing.JFrame {
         btnAtras.setBorder(null);
         btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         PContenidoLogin.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 316, -1, -1));
+
+        txtContrasena.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtContrasenaActionPerformed(evt);
+            }
+        });
         PContenidoLogin.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(223, 124, 213, 30));
 
         OjoCerrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
@@ -133,6 +144,14 @@ txtContrasena.setEchoChar('•');
         OjoCerrado.setVisible(true);
         txtContrasena.setEchoChar((char) 0);
     }//GEN-LAST:event_OjoAbiertoMouseClicked
+
+    private void txtUsuarioLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtUsuarioLoginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtUsuarioLoginActionPerformed
+
+    private void txtContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtContrasenaActionPerformed
 
     /**
      * @param args the command line arguments

@@ -377,6 +377,11 @@ public class frmCliente extends javax.swing.JFrame {
         btnSiguiente2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/siguienteBoton.png"))); // NOI18N
         btnSiguiente2.setBorder(null);
         btnSiguiente2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSiguiente2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnSiguiente2MouseClicked(evt);
+            }
+        });
         jPanel1.add(btnSiguiente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, 63, 64));
 
         lblOjoCerrado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
@@ -462,6 +467,10 @@ public class frmCliente extends javax.swing.JFrame {
     private void cbxTipoDocumentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxTipoDocumentoMouseClicked
 
     }//GEN-LAST:event_cbxTipoDocumentoMouseClicked
+
+    private void btnSiguiente2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSiguiente2MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSiguiente2MouseClicked
 
     /**
      * @param args the command line arguments
