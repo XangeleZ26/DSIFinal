@@ -382,6 +382,11 @@ public class frmCliente extends javax.swing.JFrame {
                 btnSiguiente2MouseClicked(evt);
             }
         });
+        btnSiguiente2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSiguiente2ActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnSiguiente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, 63, 64));
 
         lblOjoCerrado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
@@ -471,6 +476,10 @@ public class frmCliente extends javax.swing.JFrame {
     private void btnSiguiente2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSiguiente2MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_btnSiguiente2MouseClicked
+
+    private void btnSiguiente2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguiente2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSiguiente2ActionPerformed
 
     /**
      * @param args the command line arguments

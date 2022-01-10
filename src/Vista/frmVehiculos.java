@@ -167,6 +167,11 @@ public class frmVehiculos extends javax.swing.JFrame {
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
         btnAtras.setBorder(null);
         btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
 
         org.jdesktop.layout.GroupLayout PContenidoVehiculosLayout = new org.jdesktop.layout.GroupLayout(PContenidoVehiculos);
         PContenidoVehiculos.setLayout(PContenidoVehiculosLayout);
@@ -175,20 +180,20 @@ public class frmVehiculos extends javax.swing.JFrame {
             .add(PContenidoVehiculosLayout.createSequentialGroup()
                 .addContainerGap()
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 777, Short.MAX_VALUE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                 .add(PContenidoVehiculosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoVehiculosLayout.createSequentialGroup()
+                    .add(PContenidoVehiculosLayout.createSequentialGroup()
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(PContenidoVehiculosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, btnAñadirVehiculo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, btnOrdenarPeso, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, btnOrdenarEjes, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, btnOrdenarAño, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .add(org.jdesktop.layout.GroupLayout.TRAILING, btnOrdenarPlaca, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .add(btnEliminarVehiculo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .add(15, 15, 15))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoVehiculosLayout.createSequentialGroup()
-                        .add(btnAtras)
-                        .add(26, 26, 26))))
+                            .add(btnEliminarVehiculo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .add(PContenidoVehiculosLayout.createSequentialGroup()
+                        .add(38, 38, 38)
+                        .add(btnAtras)))
+                .add(15, 15, 15))
         );
         PContenidoVehiculosLayout.setVerticalGroup(
             PContenidoVehiculosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -196,9 +201,8 @@ public class frmVehiculos extends javax.swing.JFrame {
                 .add(PContenidoVehiculosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(org.jdesktop.layout.GroupLayout.LEADING, PContenidoVehiculosLayout.createSequentialGroup()
                         .add(44, 44, 44)
-                        .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 446, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(0, 0, Short.MAX_VALUE))
-                    .add(PContenidoVehiculosLayout.createSequentialGroup()
+                        .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 446, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(org.jdesktop.layout.GroupLayout.LEADING, PContenidoVehiculosLayout.createSequentialGroup()
                         .add(70, 70, 70)
                         .add(btnOrdenarPlaca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(27, 27, 27)
@@ -211,9 +215,9 @@ public class frmVehiculos extends javax.swing.JFrame {
                         .add(btnAñadirVehiculo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(27, 27, 27)
                         .add(btnEliminarVehiculo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(18, 18, 18)
                         .add(btnAtras)))
-                .add(20, 20, 20))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PGeneralVehiculo.add(PContenidoVehiculos, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 108, 920, 510));
@@ -251,6 +255,10 @@ public class frmVehiculos extends javax.swing.JFrame {
     private void btnEliminarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarVehiculoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarVehiculoActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -291,13 +299,13 @@ public class frmVehiculos extends javax.swing.JFrame {
     private javax.swing.JPanel PContenidoVehiculos;
     private javax.swing.JPanel PGeneralVehiculo;
     private javax.swing.JPanel PTituloVehiculos;
-    private javax.swing.JButton btnAtras;
-    private javax.swing.JButton btnAñadirVehiculo;
-    private javax.swing.JButton btnEliminarVehiculo;
-    private javax.swing.JButton btnOrdenarAño;
-    private javax.swing.JButton btnOrdenarEjes;
-    private javax.swing.JButton btnOrdenarPeso;
-    private javax.swing.JButton btnOrdenarPlaca;
+    public javax.swing.JButton btnAtras;
+    public javax.swing.JButton btnAñadirVehiculo;
+    public javax.swing.JButton btnEliminarVehiculo;
+    public javax.swing.JButton btnOrdenarAño;
+    public javax.swing.JButton btnOrdenarEjes;
+    public javax.swing.JButton btnOrdenarPeso;
+    public javax.swing.JButton btnOrdenarPlaca;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     public javax.swing.JTable jTable1;
