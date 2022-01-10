@@ -254,7 +254,10 @@ public class AppPeaje {
         
         //Ingreso a la cuenta.
         
-        
+        Cliente nuevoCliente = clientes.getArregloCliente(0);
+        frmVehiculos fVehiculos = new frmVehiculos(); 
+        ControladorVehiculos ctrlVehiculos = new ControladorVehiculos(nuevoCliente);
+        ctrlVehiculos.iniciar();
         //ZONA EXPERIMENTAL********************************
         
             //esto es para prueba, debido a que el cliente 0 registró dirección,tarjeta y carros,
@@ -287,7 +290,6 @@ public class AppPeaje {
 //        Tarjeta mTarjeta = new Tarjeta();
 //        ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(mCuenta, mTarjeta);
 //        ctrlRecargaOpc.iniciarRecargaOpc();
-        
         
     }
     
