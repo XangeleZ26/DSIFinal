@@ -15,8 +15,6 @@ public class frmCliente extends javax.swing.JFrame {
     /** Creates new form frmCliente */
     public frmCliente() {
         initComponents();
-        lblOjoAbierto1.setVisible(false);
-        lblOjoAbierto2.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -391,38 +389,18 @@ public class frmCliente extends javax.swing.JFrame {
 
         lblOjoCerrado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
         lblOjoCerrado1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblOjoCerrado1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblOjoCerrado1MouseClicked(evt);
-            }
-        });
         jPanel1.add(lblOjoCerrado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, -1, -1));
 
         lblOjoAbierto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ver_32px.png"))); // NOI18N
         lblOjoAbierto1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblOjoAbierto1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblOjoAbierto1MouseClicked(evt);
-            }
-        });
         jPanel1.add(lblOjoAbierto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, -1, -1));
 
         lblOjoCerrado2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
         lblOjoCerrado2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblOjoCerrado2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblOjoCerrado2MouseClicked(evt);
-            }
-        });
         jPanel1.add(lblOjoCerrado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, -1, -1));
 
         lblOjoAbierto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ver_32px.png"))); // NOI18N
         lblOjoAbierto2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        lblOjoAbierto2.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                lblOjoAbierto2MouseClicked(evt);
-            }
-        });
         jPanel1.add(lblOjoAbierto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, -1, -1));
 
         PGeneral2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 670, 230));
@@ -444,30 +422,6 @@ public class frmCliente extends javax.swing.JFrame {
     private void txtEmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtEmailActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtEmailActionPerformed
-
-    private void lblOjoCerrado1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOjoCerrado1MouseClicked
-        lblOjoAbierto1.setVisible(true);
-        lblOjoCerrado1.setVisible(false);
-        txtContrasena.setEchoChar('•');
-    }//GEN-LAST:event_lblOjoCerrado1MouseClicked
-
-    private void lblOjoAbierto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOjoAbierto1MouseClicked
-        lblOjoAbierto1.setVisible(false);
-        lblOjoCerrado1.setVisible(true);
-        txtContrasena.setEchoChar((char) 0);
-    }//GEN-LAST:event_lblOjoAbierto1MouseClicked
-
-    private void lblOjoCerrado2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOjoCerrado2MouseClicked
-        lblOjoAbierto2.setVisible(true);
-        lblOjoCerrado2.setVisible(false);
-        txtVerifContrasena.setEchoChar('•');
-    }//GEN-LAST:event_lblOjoCerrado2MouseClicked
-
-    private void lblOjoAbierto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblOjoAbierto2MouseClicked
-        lblOjoAbierto2.setVisible(false);
-        lblOjoCerrado2.setVisible(true);
-        txtVerifContrasena.setEchoChar((char) 0);
-    }//GEN-LAST:event_lblOjoAbierto2MouseClicked
 
     private void cbxTipoDocumentoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxTipoDocumentoMouseClicked
 
