@@ -36,7 +36,7 @@ public class ControladorConfigCambiarContra {
                 if (isValido()) {
                     switch (user.cambioContrasena(String.valueOf(vista.txtContrasena.getPassword()), String.valueOf(vista.txtNovoContrasena.getPassword()), String.valueOf(vista.txtVerifContrasena.getPassword()))) {
                         case 0: {
-                            user.cambiarContraseña(String.valueOf(vista.txtNovoContrasena.getPassword()));
+                            user.getCredencial().cambiarContraseña(String.valueOf(vista.txtNovoContrasena.getPassword()));
                             JOptionPane.showMessageDialog(null, "Cambios registrados.");
                             ControladorConfiguracion controller = new ControladorConfiguracion(user);
                             controller.iniciar();
