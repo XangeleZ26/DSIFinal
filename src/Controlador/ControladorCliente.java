@@ -2,6 +2,8 @@ package Controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
 import Modelo.Cliente;
 import Modelo.Configuracion;
@@ -44,36 +46,36 @@ public class ControladorCliente{
         this.vistaCliente.lblOjoCerrado1.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e){
-                lblOjoAbierto1.setVisible(true);
-                lblOjoCerrado1.setVisible(false);
-                txtContrasena.setEchoChar('•');
+                vistaCliente.lblOjoAbierto1.setVisible(true);
+                vistaCliente.lblOjoCerrado1.setVisible(false);
+                vistaCliente.txtContrasena.setEchoChar('•');
             }
         });
         
         this.vistaCliente.lblOjoAbierto1.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e){
-                lblOjoAbierto1.setVisible(false);
-                lblOjoCerrado1.setVisible(true);
-                txtContrasena.setEchoChar((char) 0);
+                vistaCliente.lblOjoAbierto1.setVisible(false);
+                vistaCliente.lblOjoCerrado1.setVisible(true);
+                vistaCliente.txtContrasena.setEchoChar((char) 0);
             }
         });
         
         this.vistaCliente.lblOjoCerrado2.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e){
-                lblOjoAbierto2.setVisible(true);
-                lblOjoCerrado2.setVisible(false);
-                txtVerifContrasena.setEchoChar('•');
+                vistaCliente.lblOjoAbierto2.setVisible(true);
+                vistaCliente.lblOjoCerrado2.setVisible(false);
+                vistaCliente.txtVerifContrasena.setEchoChar('•');
             }
         });
         
         this.vistaCliente.lblOjoAbierto2.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e){
-                lblOjoAbierto2.setVisible(false);
-                lblOjoCerrado2.setVisible(true);
-                txtVerifContrasena.setEchoChar((char) 0);
+                vistaCliente.lblOjoAbierto2.setVisible(false);
+                vistaCliente.lblOjoCerrado2.setVisible(true);
+                vistaCliente.txtVerifContrasena.setEchoChar((char) 0);
             }
         });
         
@@ -144,8 +146,8 @@ public class ControladorCliente{
     
     public void iniciarCliente(){
         vistaCliente.setTitle("Datos Cliente");
-        lblOjoCerrado1.setVisible(false);
-        lblOjoCerrado2.setVisible(false);
+        vistaCliente.lblOjoCerrado1.setVisible(false);
+        vistaCliente.lblOjoCerrado2.setVisible(false);
         vistaCliente.setLocationRelativeTo(null);
         vistaCliente.setVisible(true);
     }
