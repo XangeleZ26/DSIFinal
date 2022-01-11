@@ -7,6 +7,7 @@
 package Vista;
 
 import java.text.SimpleDateFormat;
+import java.awt.Color;
 
 /**
  *
@@ -15,8 +16,10 @@ import java.text.SimpleDateFormat;
 public class frmRecargaOpcional extends javax.swing.JFrame {
 
     /** Creates new form frmRecargaOpcional */
+    private int opcionComprobantePago;
     public frmRecargaOpcional() {
         initComponents();
+        this.opcionComprobantePago = 0;
     }
 
     /** This method is called from within the constructor to
@@ -43,6 +46,16 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         lblMedioPago = new javax.swing.JLabel();
         lblDescripcion3 = new javax.swing.JLabel();
         cbxMedioPago = new javax.swing.JComboBox<>();
+        lblDescripcion4 = new javax.swing.JLabel();
+        txtNumeroTarjeta = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        lblDescripcion6 = new javax.swing.JLabel();
+        lblDescripcion7 = new javax.swing.JLabel();
+        txtCVV = new javax.swing.JPasswordField();
+        jSeparator5 = new javax.swing.JSeparator();
+        btnFinalizar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextPane1 = new javax.swing.JTextPane();
         PDatos = new javax.swing.JPanel();
         lblEtiqueta = new javax.swing.JLabel();
         lblSaldoInicial = new javax.swing.JLabel();
@@ -52,23 +65,16 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         lblMontoEtiqueta = new javax.swing.JLabel();
         lblMontoSaldoInicial = new javax.swing.JLabel();
         lblGratis = new javax.swing.JLabel();
-        jSeparator2 = new javax.swing.JSeparator();
         lblSimbolo2 = new javax.swing.JLabel();
         txtMontoRecarga = new javax.swing.JTextField();
         lblSimbolo3 = new javax.swing.JLabel();
-        txtTotal = new javax.swing.JTextField();
         btnCalcular = new javax.swing.JButton();
-        cbxComprobantePago = new javax.swing.JComboBox<>();
-        lblDescripcion4 = new javax.swing.JLabel();
-        txtNumeroTarjeta = new javax.swing.JTextField();
-        jSeparator3 = new javax.swing.JSeparator();
-        lblDescripcion6 = new javax.swing.JLabel();
-        dcFechaVencimiento = new com.toedter.calendar.JDateChooser();
-        lblDescripcion7 = new javax.swing.JLabel();
-        txtCVV = new javax.swing.JPasswordField();
-        jSeparator5 = new javax.swing.JSeparator();
-        btnFinalizar = new javax.swing.JButton();
-        txtNumeroTarjeta1 = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        txtTotal = new javax.swing.JTextField();
+        btnFactura = new javax.swing.JButton();
+        btnBoleta = new javax.swing.JButton();
+        jycAñoVencimiento = new com.toedter.calendar.JYearChooser();
+        jmcMesVencimiento = new com.toedter.calendar.JMonthChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -78,26 +84,27 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         PTituloRecargaOpcional.setBackground(new java.awt.Color(159, 162, 178));
 
         lblTituloRecargaAdicional.setFont(new java.awt.Font("Britannic Bold", 0, 48)); // NOI18N
-        lblTituloRecargaAdicional.setText("Recarga adicional (opcional)");
+        lblTituloRecargaAdicional.setForeground(new java.awt.Color(0, 0, 0));
+        lblTituloRecargaAdicional.setText("Recarga adicional ");
 
         org.jdesktop.layout.GroupLayout PTituloRecargaOpcionalLayout = new org.jdesktop.layout.GroupLayout(PTituloRecargaOpcional);
         PTituloRecargaOpcional.setLayout(PTituloRecargaOpcionalLayout);
         PTituloRecargaOpcionalLayout.setHorizontalGroup(
             PTituloRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, PTituloRecargaOpcionalLayout.createSequentialGroup()
-                .addContainerGap(72, Short.MAX_VALUE)
+                .addContainerGap(186, Short.MAX_VALUE)
                 .add(lblTituloRecargaAdicional)
-                .add(65, 65, 65))
+                .add(167, 167, 167))
         );
         PTituloRecargaOpcionalLayout.setVerticalGroup(
             PTituloRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(PTituloRecargaOpcionalLayout.createSequentialGroup()
-                .add(29, 29, 29)
+                .add(30, 30, 30)
                 .add(lblTituloRecargaAdicional)
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
-        PGeneralRecargaOpcional.add(PTituloRecargaOpcional, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 110));
+        PGeneralRecargaOpcional.add(PTituloRecargaOpcional, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 750, 110));
 
         PContenidoRecargaOpcional.setBackground(new java.awt.Color(121, 127, 139));
 
@@ -134,151 +141,8 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
 
         cbxMedioPago.setBackground(new java.awt.Color(121, 127, 139));
         cbxMedioPago.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        cbxMedioPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "                                  ", "Visa (Crédito o débito)", "Master Card (Crédito o débito)", "American Express (Crédito)", "Diners Club (Crédito)", " " }));
+        cbxMedioPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "                                   ", "VISA", "MASTER CARD", "AMERICAN EXPRESS", "DINERS CLUB", " " }));
         cbxMedioPago.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        PDatos.setBackground(new java.awt.Color(121, 127, 153));
-        PDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        PDatos.setEnabled(false);
-
-        lblEtiqueta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblEtiqueta.setText("Etiqueta PEX");
-
-        lblSaldoInicial.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblSaldoInicial.setText("Saldo inicial");
-
-        lblRecargaAdicional.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblRecargaAdicional.setText("Recarga adicional");
-
-        lblDelivery.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblDelivery.setText("Delivery");
-
-        lblTotal.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        lblTotal.setText("TOTAL");
-
-        lblMontoEtiqueta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblMontoEtiqueta.setText("S/ 8.00");
-
-        lblMontoSaldoInicial.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblMontoSaldoInicial.setText("S/ 12.00");
-
-        lblGratis.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblGratis.setText("Gratis");
-
-        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-
-        lblSimbolo2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblSimbolo2.setText("S/");
-
-        txtMontoRecarga.setBackground(new java.awt.Color(121, 127, 153));
-        txtMontoRecarga.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtMontoRecarga.setBorder(null);
-        txtMontoRecarga.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtMontoRecargaActionPerformed(evt);
-            }
-        });
-
-        lblSimbolo3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblSimbolo3.setText("S/");
-
-        txtTotal.setBackground(new java.awt.Color(121, 127, 153));
-        txtTotal.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtTotal.setBorder(null);
-        txtTotal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTotalActionPerformed(evt);
-            }
-        });
-
-        btnCalcular.setBackground(new java.awt.Color(159, 162, 178));
-        btnCalcular.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnCalcular.setText("Calcular Total");
-        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalcularActionPerformed(evt);
-            }
-        });
-
-        org.jdesktop.layout.GroupLayout PDatosLayout = new org.jdesktop.layout.GroupLayout(PDatos);
-        PDatos.setLayout(PDatosLayout);
-        PDatosLayout.setHorizontalGroup(
-            PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PDatosLayout.createSequentialGroup()
-                .add(16, 16, 16)
-                .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, PDatosLayout.createSequentialGroup()
-                        .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(lblEtiqueta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(lblDelivery, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(lblSaldoInicial, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(lblRecargaAdicional, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 144, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(18, 18, 18)
-                        .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(PDatosLayout.createSequentialGroup()
-                                .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(lblMontoEtiqueta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 62, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(lblMontoSaldoInicial, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 62, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                    .add(lblGratis, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 62, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                .add(0, 0, Short.MAX_VALUE))
-                            .add(PDatosLayout.createSequentialGroup()
-                                .add(lblSimbolo2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .add(txtMontoRecarga, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 92, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                    .add(org.jdesktop.layout.GroupLayout.LEADING, PDatosLayout.createSequentialGroup()
-                        .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 230, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(org.jdesktop.layout.GroupLayout.LEADING, PDatosLayout.createSequentialGroup()
-                                .add(lblTotal, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .add(lblSimbolo3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                                .add(txtTotal, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .add(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
-            .add(PDatosLayout.createSequentialGroup()
-                .add(83, 83, 83)
-                .add(btnCalcular)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        PDatosLayout.setVerticalGroup(
-            PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PDatosLayout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(btnCalcular)
-                .add(18, 18, 18)
-                .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblEtiqueta)
-                    .add(lblMontoEtiqueta))
-                .add(18, 18, 18)
-                .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblSaldoInicial)
-                    .add(lblMontoSaldoInicial))
-                .add(18, 18, 18)
-                .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblRecargaAdicional)
-                    .add(txtMontoRecarga, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(lblSimbolo2))
-                .add(18, 18, 18)
-                .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblDelivery)
-                    .add(lblGratis))
-                .add(18, 18, 18)
-                .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                        .add(txtTotal, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(lblSimbolo3))
-                    .add(lblTotal))
-                .add(20, 20, 20))
-        );
-
-        cbxComprobantePago.setBackground(new java.awt.Color(121, 127, 139));
-        cbxComprobantePago.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        cbxComprobantePago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "           ", "Boleta", "Factura", " " }));
-        cbxComprobantePago.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         lblDescripcion4.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         lblDescripcion4.setText("Digite su número de tarjeta");
@@ -316,9 +180,190 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
             }
         });
 
-        txtNumeroTarjeta1.setBackground(new java.awt.Color(121, 127, 139));
-        txtNumeroTarjeta1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtNumeroTarjeta1.setBorder(null);
+        jTextPane1.setBackground(new java.awt.Color(121, 127, 139));
+        jTextPane1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jTextPane1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        jTextPane1.setForeground(new java.awt.Color(0, 0, 0));
+        jTextPane1.setText("Inicialmente cuenta con un saldo de S/ 12.00 en su cuenta PEX.\nSi desea recargar con un monto extra digítelo a continuación. ");
+        jScrollPane1.setViewportView(jTextPane1);
+
+        PDatos.setBackground(new java.awt.Color(121, 127, 153));
+        PDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        PDatos.setEnabled(false);
+
+        lblEtiqueta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblEtiqueta.setForeground(new java.awt.Color(0, 0, 0));
+        lblEtiqueta.setText("Etiqueta PEX");
+
+        lblSaldoInicial.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblSaldoInicial.setForeground(new java.awt.Color(0, 0, 0));
+        lblSaldoInicial.setText("Saldo inicial");
+
+        lblRecargaAdicional.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblRecargaAdicional.setForeground(new java.awt.Color(0, 0, 0));
+        lblRecargaAdicional.setText("Recarga adicional");
+
+        lblDelivery.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblDelivery.setForeground(new java.awt.Color(0, 0, 0));
+        lblDelivery.setText("Delivery");
+
+        lblTotal.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        lblTotal.setForeground(new java.awt.Color(0, 0, 0));
+        lblTotal.setText("TOTAL");
+
+        lblMontoEtiqueta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblMontoEtiqueta.setForeground(new java.awt.Color(0, 0, 0));
+        lblMontoEtiqueta.setText("S/ 8.00");
+
+        lblMontoSaldoInicial.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblMontoSaldoInicial.setForeground(new java.awt.Color(0, 0, 0));
+        lblMontoSaldoInicial.setText("S/ 12.00");
+
+        lblGratis.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblGratis.setForeground(new java.awt.Color(0, 0, 0));
+        lblGratis.setText("Gratis");
+
+        lblSimbolo2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblSimbolo2.setForeground(new java.awt.Color(0, 0, 0));
+        lblSimbolo2.setText("S/");
+
+        txtMontoRecarga.setBackground(new java.awt.Color(121, 127, 153));
+        txtMontoRecarga.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtMontoRecarga.setBorder(null);
+        txtMontoRecarga.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtMontoRecargaActionPerformed(evt);
+            }
+        });
+
+        lblSimbolo3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblSimbolo3.setForeground(new java.awt.Color(0, 0, 0));
+        lblSimbolo3.setText("S/");
+
+        btnCalcular.setBackground(new java.awt.Color(159, 162, 178));
+        btnCalcular.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnCalcular.setForeground(new java.awt.Color(0, 0, 0));
+        btnCalcular.setText("Calcular Total");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularActionPerformed(evt);
+            }
+        });
+
+        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
+
+        txtTotal.setBackground(new java.awt.Color(121, 127, 153));
+        txtTotal.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtTotal.setBorder(null);
+        txtTotal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtTotalActionPerformed(evt);
+            }
+        });
+
+        org.jdesktop.layout.GroupLayout PDatosLayout = new org.jdesktop.layout.GroupLayout(PDatos);
+        PDatos.setLayout(PDatosLayout);
+        PDatosLayout.setHorizontalGroup(
+            PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(PDatosLayout.createSequentialGroup()
+                .add(83, 83, 83)
+                .add(btnCalcular)
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .add(PDatosLayout.createSequentialGroup()
+                .add(16, 16, 16)
+                .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(PDatosLayout.createSequentialGroup()
+                        .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 244, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(0, 0, Short.MAX_VALUE))
+                    .add(PDatosLayout.createSequentialGroup()
+                        .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(lblEtiqueta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(lblDelivery, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(lblSaldoInicial, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 113, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(lblRecargaAdicional, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 144, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(lblTotal, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 73, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                        .add(18, 18, 18)
+                        .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, lblMontoEtiqueta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 62, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, lblMontoSaldoInicial, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 62, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, lblGratis, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 62, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, PDatosLayout.createSequentialGroup()
+                                .add(lblSimbolo2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(txtMontoRecarga, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 92, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, PDatosLayout.createSequentialGroup()
+                                .add(lblSimbolo3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(txtTotal, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 92, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(13, Short.MAX_VALUE))))
+        );
+        PDatosLayout.setVerticalGroup(
+            PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(PDatosLayout.createSequentialGroup()
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(btnCalcular)
+                .add(18, 18, 18)
+                .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(lblEtiqueta)
+                    .add(lblMontoEtiqueta))
+                .add(18, 18, 18)
+                .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(lblSaldoInicial)
+                    .add(lblMontoSaldoInicial))
+                .add(18, 18, 18)
+                .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(lblRecargaAdicional)
+                    .add(txtMontoRecarga, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(lblSimbolo2))
+                .add(18, 18, 18)
+                .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                    .add(lblDelivery)
+                    .add(lblGratis))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(18, 18, 18)
+                .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(PDatosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(lblSimbolo3)
+                        .add(txtTotal, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(lblTotal))
+                .add(14, 14, 14))
+        );
+
+        btnFactura.setBackground(new java.awt.Color(22, 38, 46));
+        btnFactura.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnFactura.setForeground(new java.awt.Color(255, 255, 255));
+        btnFactura.setText("Factura");
+        btnFactura.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnFacturaMouseClicked(evt);
+            }
+        });
+        btnFactura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnFacturaActionPerformed(evt);
+            }
+        });
+
+        btnBoleta.setBackground(new java.awt.Color(22, 38, 46));
+        btnBoleta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnBoleta.setForeground(new java.awt.Color(255, 255, 255));
+        btnBoleta.setText("Boleta");
+        btnBoleta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnBoletaMouseClicked(evt);
+            }
+        });
+        btnBoleta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBoletaActionPerformed(evt);
+            }
+        });
+
+        jycAñoVencimiento.setBackground(new java.awt.Color(121, 127, 139));
+
+        jmcMesVencimiento.setForeground(new java.awt.Color(0, 0, 0));
 
         org.jdesktop.layout.GroupLayout PContenidoRecargaOpcionalLayout = new org.jdesktop.layout.GroupLayout(PContenidoRecargaOpcional);
         PContenidoRecargaOpcional.setLayout(PContenidoRecargaOpcionalLayout);
@@ -333,12 +378,27 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
                         .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(lblDescripcion1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 486, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(lblDescripcion2))
-                        .addContainerGap(87, Short.MAX_VALUE))
-                    .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
-                        .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                        .addContainerGap(88, Short.MAX_VALUE))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoRecargaOpcionalLayout.createSequentialGroup()
+                        .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                             .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
+                                .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(lblDescripcion6)
+                                    .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
+                                        .add(jmcMesVencimiento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                        .add(18, 18, 18)
+                                        .add(jycAñoVencimiento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                .add(83, 83, 83)
                                 .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                    .add(org.jdesktop.layout.GroupLayout.LEADING, PContenidoRecargaOpcionalLayout.createSequentialGroup()
+                                    .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator5)
+                                    .add(txtCVV, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 122, Short.MAX_VALUE)
+                                    .add(lblDescripcion7, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(btnFinalizar))
+                            .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
+                                .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 295, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
                                         .add(lblMontoOpcional, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 87, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                         .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
@@ -346,104 +406,91 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
                                                 .add(lblSimbolo1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 20, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                                 .add(txtMontoOpcional, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 99, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                            .add(jSeparator1)))
-                                    .add(lblComprobante, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .add(cbxComprobantePago, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                        .add(lblMedioPago, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 218, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(lblDescripcion3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 179, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(cbxMedioPago, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 243, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .add(PDatos, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoRecargaOpcionalLayout.createSequentialGroup()
-                                .add(0, 0, Short.MAX_VALUE)
-                                .add(btnFinalizar)
-                                .add(9, 9, 9))
-                            .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
-                                .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                    .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
-                                        .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                            .add(dcFechaVencimiento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                            .add(lblDescripcion6))
-                                        .add(83, 83, 83)
-                                        .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                                            .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                                .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator5)
-                                                .add(org.jdesktop.layout.GroupLayout.LEADING, txtCVV, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 122, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                            .add(lblDescripcion7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 141, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                                            .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 125, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                                     .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                        .add(lblDescripcion4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .add(org.jdesktop.layout.GroupLayout.LEADING, txtNumeroTarjeta)
-                                        .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                                .add(0, 0, Short.MAX_VALUE)))
-                        .add(25, 25, 25))))
-            .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
-                    .add(84, 84, 84)
-                    .add(txtNumeroTarjeta1)
-                    .add(449, 449, 449)))
+                                        .add(lblComprobante, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
+                                            .add(btnBoleta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 90, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                            .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .add(btnFactura))))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(PDatos, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(34, 34, 34))
+                    .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
+                        .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(lblDescripcion4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(lblMedioPago, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 218, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(lblDescripcion3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 179, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(cbxMedioPago, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 243, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                                .add(org.jdesktop.layout.GroupLayout.LEADING, txtNumeroTarjeta)
+                                .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 216, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .add(0, 0, Short.MAX_VALUE))))
         );
         PContenidoRecargaOpcionalLayout.setVerticalGroup(
             PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
-                .add(14, 14, 14)
-                .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(lblRelojIcon, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
-                        .add(13, 13, 13)
-                        .add(lblDescripcion1)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(lblDescripcion2)))
                 .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
-                        .add(37, 37, 37)
+                        .add(14, 14, 14)
+                        .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(lblRelojIcon, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 79, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
+                                .add(13, 13, 13)
+                                .add(lblDescripcion1)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(lblDescripcion2)))
+                        .add(28, 28, 28)
+                        .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
+                                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(18, 18, 18)
+                                .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                    .add(lblMontoOpcional)
+                                    .add(txtMontoOpcional, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(lblSimbolo1))
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(lblComprobante)
+                                .add(18, 18, 18)
+                                .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(btnFactura, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(btnBoleta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 37, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .add(32, 32, 32)
+                                .add(lblMedioPago)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(lblDescripcion3)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(cbxMedioPago, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(18, 18, 18)
+                                .add(lblDescripcion4)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(txtNumeroTarjeta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 21, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 37, Short.MAX_VALUE))
+                            .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
+                                .add(PDatos, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(lblMontoOpcional)
-                            .add(txtMontoOpcional, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(lblSimbolo1))
+                            .add(lblDescripcion6)
+                            .add(lblDescripcion7))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(30, 30, 30)
-                        .add(lblComprobante)
-                        .add(18, 18, 18)
-                        .add(cbxComprobantePago, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(lblMedioPago)
-                        .add(18, 18, 18)
-                        .add(lblDescripcion3)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(cbxMedioPago, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoRecargaOpcionalLayout.createSequentialGroup()
+                        .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(txtCVV, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(btnFinalizar))
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(PDatos, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(19, 19, 19)))
-                .add(lblDescripcion4)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(txtNumeroTarjeta, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 21, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblDescripcion6)
-                    .add(lblDescripcion7))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(dcFechaVencimiento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(jSeparator5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(PContenidoRecargaOpcionalLayout.createSequentialGroup()
-                        .add(txtCVV, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(jSeparator5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 12, Short.MAX_VALUE)
-                .add(btnFinalizar)
-                .add(25, 25, 25))
-            .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoRecargaOpcionalLayout.createSequentialGroup()
-                    .addContainerGap(449, Short.MAX_VALUE)
-                    .add(txtNumeroTarjeta1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 21, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(140, 140, 140)))
+                        .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(PContenidoRecargaOpcionalLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(jmcMesVencimiento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(jycAñoVencimiento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                .add(148, 148, 148))
         );
 
-        PGeneralRecargaOpcional.add(PContenidoRecargaOpcional, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 749, 610));
+        PGeneralRecargaOpcional.add(PContenidoRecargaOpcional, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 750, 660));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -463,6 +510,10 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
 
     }//GEN-LAST:event_btnFinalizarActionPerformed
 
+    private void txtMontoRecargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMontoRecargaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtMontoRecargaActionPerformed
+
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCalcularActionPerformed
@@ -471,9 +522,25 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTotalActionPerformed
 
-    private void txtMontoRecargaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMontoRecargaActionPerformed
+    private void btnFacturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFacturaMouseClicked
+
+    }//GEN-LAST:event_btnFacturaMouseClicked
+
+    private void btnFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturaActionPerformed
+        btnFactura.setBackground(new Color(64,103,105));
+        btnBoleta.setBackground(new Color(22,38,46));
+        this.opcionComprobantePago=1;
+    }//GEN-LAST:event_btnFacturaActionPerformed
+
+    private void btnBoletaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBoletaMouseClicked
+        btnBoleta.setBackground(new Color(64,103,105));
+        btnFactura.setBackground(new Color(22,38,46));
+        this.opcionComprobantePago=2;
+    }//GEN-LAST:event_btnBoletaMouseClicked
+
+    private void btnBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBoletaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtMontoRecargaActionPerformed
+    }//GEN-LAST:event_btnBoletaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -510,20 +577,32 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         });
     }
 
+    public int getOpcionComprobantePago() {
+        return opcionComprobantePago;
+    }
+
+    public void setOpcionComprobantePago(int opcionComprobantePago) {
+        this.opcionComprobantePago = opcionComprobantePago;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PContenidoRecargaOpcional;
     private javax.swing.JPanel PDatos;
     private javax.swing.JPanel PGeneralRecargaOpcional;
     private javax.swing.JPanel PTituloRecargaOpcional;
+    public javax.swing.JButton btnBoleta;
     public javax.swing.JButton btnCalcular;
+    public javax.swing.JButton btnFactura;
     public javax.swing.JButton btnFinalizar;
-    public javax.swing.JComboBox<String> cbxComprobantePago;
     public javax.swing.JComboBox<String> cbxMedioPago;
-    public com.toedter.calendar.JDateChooser dcFechaVencimiento;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator5;
+    private javax.swing.JTextPane jTextPane1;
+    public com.toedter.calendar.JMonthChooser jmcMesVencimiento;
+    public com.toedter.calendar.JYearChooser jycAñoVencimiento;
     private javax.swing.JLabel lblComprobante;
     private javax.swing.JLabel lblDelivery;
     private javax.swing.JLabel lblDescripcion1;
@@ -550,7 +629,6 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
     public javax.swing.JTextField txtMontoOpcional;
     public javax.swing.JTextField txtMontoRecarga;
     public javax.swing.JTextField txtNumeroTarjeta;
-    public javax.swing.JTextField txtNumeroTarjeta1;
     public javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
 

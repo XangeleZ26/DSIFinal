@@ -13,7 +13,9 @@ public class Cuenta {
     private Vehiculo vehiculos[];
     private int nv; //Cantidad de vehículos en el arreglo
     private int ov; //Orden en el arreglo del último vehículo agregado
-
+    private Movimiento movimientosOrdenados[];
+    private Vehiculo vehiculosOrdenados[];
+    
     public Cuenta() {
 
     }
@@ -68,6 +70,18 @@ public class Cuenta {
         return vehiculos[i];
     }
 
+    public Vehiculo getVehiculosOrdenados(int i) {
+        return vehiculosOrdenados[i];
+    }
+
+    public Movimiento[] getMovimientos() {
+        return movimientos;
+    }
+
+    public Vehiculo[] getVehiculos() {
+        return vehiculos;
+    }
+
     public void setVehiculos(Vehiculo[] vehiculos) {
         this.vehiculos = vehiculos;
     }
@@ -83,7 +97,8 @@ public class Cuenta {
     //MÉTODOS DEL FUNCIONAMIENTO DE LA CLASE
     public boolean registrarVehiculo(String placa, String marca, String modelo, int ejes, String tipoUso, float pesoBruto, int año, Cliente dueño) {
         boolean result = false;
-        if (verificarExistenciaVehiculo(placa) == false) {
+        if(nv != Configuracion.maxVehiculosXCliente){
+            if (verificarExistenciaVehiculo(placa) == false) {
             this.nv++;
             this.ov = this.nv - 1;
             this.vehiculos[ov] = new Vehiculo(placa, marca, modelo, ejes, tipoUso, pesoBruto, año, dueño);
@@ -93,7 +108,9 @@ public class Cuenta {
                 this.nv--;
                 this.ov = this.nv - 1;
             }
+            }
         }
+        
         return result;
     }
 
@@ -151,7 +168,7 @@ public class Cuenta {
 
     public void ordenarVehiculosXEjes() {
         Vehiculo aux;
-        Vehiculo vehiculosOrdenados[] = new Vehiculo[nv];
+        vehiculosOrdenados = new Vehiculo[nv];
         /*vehiculosOrdenados = vehiculos; Este es el método directo plara clonar, los cambios hechos en el
         clon se reflejan en el objeto original*/
         //Se clona cada uno de los espacios dle arreglo
@@ -178,7 +195,7 @@ public class Cuenta {
 
     public void ordenarVehiculosXPesoBruto() {
         Vehiculo aux;
-        Vehiculo vehiculosOrdenados[] = new Vehiculo[nv];
+        vehiculosOrdenados = new Vehiculo[nv];
         /*vehiculosOrdenados = vehiculos; Este es el método directo plara clonar, los cambios hechos en el
         clon se reflejan en el objeto original*/
         //Se clona cada uno de los espacios dle arreglo
@@ -205,7 +222,7 @@ public class Cuenta {
 
     public void ordenarVehiculosXAño() {
         Vehiculo aux;
-        Vehiculo vehiculosOrdenados[] = new Vehiculo[nv];
+        vehiculosOrdenados = new Vehiculo[nv];
         /*vehiculosOrdenados = vehiculos; Este es el método directo plara clonar, los cambios hechos en el
         clon se reflejan en el objeto original*/
         //Se clona cada uno de los espacios dle arreglo
@@ -232,7 +249,7 @@ public class Cuenta {
 
     public void ordenarVehiculosXPlaca() {
         Vehiculo aux;
-        Vehiculo vehiculosOrdenados[] = new Vehiculo[nv];
+        vehiculosOrdenados = new Vehiculo[nv];
         /*vehiculosOrdenados = vehiculos; Este es el método directo plara clonar, los cambios hechos en el
         clon se reflejan en el objeto original*/
         //Se clona cada uno de los espacios del arreglo

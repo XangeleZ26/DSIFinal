@@ -55,6 +55,7 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
         btnSiguiente1 = new javax.swing.JButton();
+        btnRegistrarVehiculo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -71,16 +72,16 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
         PTituloVehiculoLayout.setHorizontalGroup(
             PTituloVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, PTituloVehiculoLayout.createSequentialGroup()
-                .addContainerGap(243, Short.MAX_VALUE)
+                .addContainerGap(203, Short.MAX_VALUE)
                 .add(jLabel2)
-                .add(140, 140, 140))
+                .add(180, 180, 180))
         );
         PTituloVehiculoLayout.setVerticalGroup(
             PTituloVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PTituloVehiculoLayout.createSequentialGroup()
-                .add(30, 30, 30)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, PTituloVehiculoLayout.createSequentialGroup()
+                .addContainerGap(32, Short.MAX_VALUE)
                 .add(jLabel2)
-                .addContainerGap(32, Short.MAX_VALUE))
+                .add(30, 30, 30))
         );
 
         PGeneral.add(PTituloVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 110));
@@ -210,6 +211,13 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
         btnSiguiente1.setBorder(null);
         btnSiguiente1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        btnRegistrarVehiculo.setBackground(new java.awt.Color(104, 113, 153));
+        btnRegistrarVehiculo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnRegistrarVehiculo.setForeground(new java.awt.Color(0, 0, 0));
+        btnRegistrarVehiculo.setText("Registrar datos");
+        btnRegistrarVehiculo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnRegistrarVehiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
         org.jdesktop.layout.GroupLayout PContenidoVehiculoLayout = new org.jdesktop.layout.GroupLayout(PContenidoVehiculo);
         PContenidoVehiculo.setLayout(PContenidoVehiculoLayout);
         PContenidoVehiculoLayout.setHorizontalGroup(
@@ -232,16 +240,13 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
                                                 .add(txtPlaca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 161, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                                             .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 160, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                                         .add(0, 0, Short.MAX_VALUE))
-                                    .add(PContenidoVehiculoLayout.createSequentialGroup()
-                                        .add(txtModelo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 160, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                                    .add(txtModelo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 160, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                             .add(PContenidoVehiculoLayout.createSequentialGroup()
                                 .add(lblEjes)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                                     .add(jSeparator9)
-                                    .add(cbxEjes, 0, 61, Short.MAX_VALUE))
-                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                    .add(cbxEjes, 0, 61, Short.MAX_VALUE))))
                         .add(43, 43, 43))
                     .add(PContenidoVehiculoLayout.createSequentialGroup()
                         .add(lblCategoria)
@@ -259,14 +264,14 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
                             .add(cbxTipoUso, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 139, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                         .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .add(PContenidoVehiculoLayout.createSequentialGroup()
-                        .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(PContenidoVehiculoLayout.createSequentialGroup()
+                        .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                            .add(org.jdesktop.layout.GroupLayout.LEADING, PContenidoVehiculoLayout.createSequentialGroup()
                                 .add(lblMarca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 80, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .add(54, 54, 54)
                                 .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                     .add(jSeparator8)
                                     .add(cbxMarca, 0, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoVehiculoLayout.createSequentialGroup()
+                            .add(PContenidoVehiculoLayout.createSequentialGroup()
                                 .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                                     .add(PContenidoVehiculoLayout.createSequentialGroup()
                                         .add(0, 0, Short.MAX_VALUE)
@@ -283,7 +288,8 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
                                         .add(txtPesoBruto)
                                         .add(jSeparator4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 164, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                                 .add(105, 105, 105))
-                            .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoVehiculoLayout.createSequentialGroup()
+                            .add(PContenidoVehiculoLayout.createSequentialGroup()
+                                .add(btnRegistrarVehiculo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .add(btnSiguiente1)))
                         .add(67, 67, 67))))
@@ -347,9 +353,14 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
                         .add(cbxCategoria, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jSeparator5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 65, Short.MAX_VALUE)
-                .add(btnSiguiente1)
-                .add(20, 20, 20))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 54, Short.MAX_VALUE)
+                .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoVehiculoLayout.createSequentialGroup()
+                        .add(btnSiguiente1)
+                        .add(20, 20, 20))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoVehiculoLayout.createSequentialGroup()
+                        .add(btnRegistrarVehiculo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 35, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                        .add(46, 46, 46))))
         );
 
         PGeneral.add(PContenidoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 105, 770, 460));
@@ -429,6 +440,7 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
     private javax.swing.JPanel PContenidoVehiculo;
     private javax.swing.JPanel PGeneral;
     private javax.swing.JPanel PTituloVehiculo;
+    public javax.swing.JButton btnRegistrarVehiculo;
     public javax.swing.JButton btnSiguiente1;
     public javax.swing.JComboBox<String> cbxCategoria;
     public javax.swing.JComboBox<String> cbxEjes;

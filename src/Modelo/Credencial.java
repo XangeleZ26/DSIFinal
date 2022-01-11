@@ -1,9 +1,20 @@
 package Modelo;
 
 public class Credencial {
+    private String correo;
     private String contraseña;
-    private String usuario;
 
+    //Método constructor
+    public Credencial(String correo,String contraseña) {
+        this.contraseña = contraseña;
+        this.correo = correo;
+    }
+    
+    public Credencial(String correo) {
+        this.correo = correo;
+    }
+    
+    //Métodos accesores
     public String getContraseña() {
         return contraseña;
     }
@@ -12,12 +23,30 @@ public class Credencial {
         this.contraseña = contraseña;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
     
+    //Métodos del funcionamiento de la clase
+    public boolean cambiarCorreo(String nuevoCorreo){
+        boolean result = false;
+        if(nuevoCorreo.compareTo(this.correo)!=0){
+            this.correo = nuevoCorreo;
+            result = true;
+        }
+        return result;
+    }
+    
+    public boolean cambiarContraseña(String nuevaContraseña){
+        boolean result = false;
+        if(nuevaContraseña.compareTo(this.contraseña)!=0){
+            this.contraseña = nuevaContraseña;
+            result = true;
+        }
+        return result;
+    }
 }

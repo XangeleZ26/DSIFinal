@@ -70,9 +70,35 @@ public class Peaje {
     
     //MÉTODOS DEL FUNCIONAMIENTO DE LA CLASE
     public void agregarEstacion(String nombreEstacion, String codigoEstacion, Peaje peaje){
-        this.ne++;
-        this.oe=this.ne-1;
-        this.estaciones[oe] = new Estacion(nombreEstacion, codigoEstacion, peaje);
+        //Se podría convertir a un método booelean?
+        if(verificarExistenciaEstacion(nombreEstacion,codigoEstacion)==false){
+            this.ne++;
+            this.oe=this.ne-1;
+            this.estaciones[oe] = new Estacion(nombreEstacion, codigoEstacion, peaje);
+        }
+    }
+    
+    public void agregarEstacion(Estacion estacion){
+        //Se podría convertir a un método booelean?
+        if(verificarExistenciaEstacion(estacion.getNombreEstacion(),estacion.getCodigoEstacion())==false){
+            this.ne++;
+            this.oe=this.ne-1;
+            this.estaciones[oe] = estacion;
+        }
+    }
+    
+    public boolean verificarExistenciaEstacion(String nombreEstacion, String codigoEstacion){
+        boolean result = false;
+        if(this.ne!=0){
+            for(int i=0;(i<ne && result==false);i++){
+                if(this.estaciones[i].getNombreEstacion().compareTo(nombreEstacion)==0 &&
+                   this.estaciones[i].getCodigoEstacion().compareTo(codigoEstacion)==0){
+                    result = true;
+                }
+            }
+        }
+        return result;
+        //Si es false, significa que la estación no existe en el peaje, por lo tanto se puede registrar
     }
     
     public void mostrarEstaciones(){

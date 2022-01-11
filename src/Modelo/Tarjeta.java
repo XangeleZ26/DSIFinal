@@ -1,6 +1,7 @@
 
 package Modelo;
 
+import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.Date;
 
@@ -80,15 +81,15 @@ public class Tarjeta {
     Diners Club: los primeros números están entre 300-305, 36, 38 y 39 (14 números)
     American Express: Los dos primeros números pueden ser 34 y 37 (15 números)*/
     
-    public boolean verificarValidezTajeta() {
+    public boolean verificarValidezTajeta(String numTarjeta, String medioPago) {
         boolean result = false;
         String aux;
         if(numTarjeta.length() == 16){
-            if(this.numTarjeta.charAt(0) == '4' && medioPago.compareTo("VISA")==0){ //VISA
+            if(numTarjeta.charAt(0) == '4' && medioPago.compareTo("VISA")==0){ //VISA
                 result = true;
             }
-            else if(this.numTarjeta.charAt(0) == '5' && medioPago.compareTo("MASTER CARD")==0){ //MASTER CARD
-                switch (this.numTarjeta.charAt(1)){
+            else if(numTarjeta.charAt(0) == '5' && medioPago.compareTo("MASTER CARD")==0){ //MASTER CARD
+                switch (numTarjeta.charAt(1)){
                     case '1': 
                     case '2': 
                     case '3': 
@@ -100,8 +101,8 @@ public class Tarjeta {
                 }
             }
         }
-        else if (numTarjeta.length() == 15 && this.numTarjeta.charAt(0) == '3' && medioPago.compareTo("AMERICAN EXPRESS")==0) {
-            switch(this.numTarjeta.charAt(1)){ //AMERICAN EXPRESS
+        else if (numTarjeta.length() == 15 && numTarjeta.charAt(0) == '3' && medioPago.compareTo("AMERICAN EXPRESS")==0) {
+            switch(numTarjeta.charAt(1)){ //AMERICAN EXPRESS
                 case '4':
                 case '7': result = true;
                     break;
@@ -109,8 +110,8 @@ public class Tarjeta {
                     break;
             }
         }
-        else if(numTarjeta.length() == 14 && this.numTarjeta.charAt(0) == '3' && medioPago.compareTo("DINERS CLUB")==0){
-            switch(this.numTarjeta.charAt(1)){ //DINERS CLUB
+        else if(numTarjeta.length() == 14 && numTarjeta.charAt(0) == '3' && medioPago.compareTo("DINERS CLUB")==0){
+            switch(numTarjeta.charAt(1)){ //DINERS CLUB
                 case '0':
                 case '6':
                 case '8':
@@ -146,10 +147,11 @@ public class Tarjeta {
     }
     
     //REVISAR FUNCIONAMIENTO
-    public boolean verificarVigenciaTarjeta(String fechaActual) {
+    public boolean verificarVigenciaTarjeta(String fechaVencimiento) {
         boolean result = false;
-        
-        if(this.fechaVencimiento.compareTo(fechaActual)>0){
+        Date fechaActual = new Date();
+        SimpleDateFormat fecha = new SimpleDateFormat("yyyy/MM/dd");
+        if(fechaVencimiento.compareTo(fecha.format(fechaActual))>0){
             return true;
         }
         

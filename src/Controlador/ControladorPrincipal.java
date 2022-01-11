@@ -40,9 +40,9 @@ public class ControladorPrincipal implements ActionListener{
         }
         else if(e.getSource() == vistaPrincipal.btnAfiliate){
             
-            //ControladorCliente ctrlCliente = new ControladorCliente(modeloClientes, fCliente);
-            //ctrlCliente.iniciarCliente();
-            //vistaPrincipal.dispose(); 
+            ControladorCliente ctrlCliente = new ControladorCliente(modeloClientes);
+            ctrlCliente.iniciarCliente();
+            vistaPrincipal.dispose(); 
         }
     }
     
