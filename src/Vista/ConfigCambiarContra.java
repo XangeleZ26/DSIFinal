@@ -16,8 +16,8 @@ public class ConfigCambiarContra extends javax.swing.JFrame {
      */
     public ConfigCambiarContra() {
         initComponents();
-        OjoCerrado1.setVisible(false);
-        OjoCerrado2.setVisible(false);
+//        OjoCerrado1.setVisible(false);
+//        OjoCerrado2.setVisible(false);
     }
 
     /**
@@ -130,30 +130,30 @@ public class ConfigCambiarContra extends javax.swing.JFrame {
 
     private void OjoCerrado1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoCerrado1MouseClicked
 
-        OjoAbierto1.setVisible(true);
-        OjoCerrado1.setVisible(false);
-        txtContrasena.setEchoChar('•');
+//        OjoAbierto1.setVisible(true);
+//        OjoCerrado1.setVisible(false);
+//        txtContrasena.setEchoChar('•');
     }//GEN-LAST:event_OjoCerrado1MouseClicked
 
     private void OjoAbierto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoAbierto1MouseClicked
-        OjoAbierto1.setVisible(false);
-        OjoCerrado1.setVisible(true);
-        txtContrasena.setEchoChar((char) 0);
+//        OjoAbierto1.setVisible(false);
+//        OjoCerrado1.setVisible(true);
+//        txtContrasena.setEchoChar((char) 0);
     }//GEN-LAST:event_OjoAbierto1MouseClicked
 
     private void OjoAbierto2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoAbierto2MouseClicked
-        OjoAbierto2.setVisible(false);
-        OjoCerrado2.setVisible(true);
-        txtNovoContrasena.setEchoChar((char) 0);
-        txtVerifContrasena.setEchoChar((char) 0);
+//        OjoAbierto2.setVisible(false);
+//        OjoCerrado2.setVisible(true);
+//        txtNovoContrasena.setEchoChar((char) 0);
+//        txtVerifContrasena.setEchoChar((char) 0);
 
     }//GEN-LAST:event_OjoAbierto2MouseClicked
 
     private void OjoCerrado2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoCerrado2MouseClicked
-        OjoAbierto2.setVisible(true);
-        OjoCerrado2.setVisible(false);
-        txtNovoContrasena.setEchoChar('•');
-        txtVerifContrasena.setEchoChar('•');
+//        OjoAbierto2.setVisible(true);
+//        OjoCerrado2.setVisible(false);
+//        txtNovoContrasena.setEchoChar('•');
+//        txtVerifContrasena.setEchoChar('•');
     }//GEN-LAST:event_OjoCerrado2MouseClicked
 
     /**

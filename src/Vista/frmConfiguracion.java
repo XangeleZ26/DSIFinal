@@ -13,8 +13,8 @@ public class frmConfiguracion extends javax.swing.JFrame {
     public frmConfiguracion(Cliente user) {
         initComponents();
          this.user=user;
-        ocultar();
-        OjoCerrado.setVisible(false);
+//        ocultar();
+//        OjoCerrado.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -202,25 +202,25 @@ public class frmConfiguracion extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void OjoAbiertoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoAbiertoMouseClicked
-       OjoAbierto.setVisible(false);
-       OjoCerrado.setVisible(true);
-       txtContrasena.setText(this.user.getContraseña());
+//       OjoAbierto.setVisible(false);
+//       OjoCerrado.setVisible(true);
+//       txtContrasena.setText(this.user.getContraseña());
     }//GEN-LAST:event_OjoAbiertoMouseClicked
 
     private void OjoCerradoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoCerradoMouseClicked
   
         
-        OjoAbierto.setVisible(true);
-        OjoCerrado.setVisible(false);
-        ocultar();
+//        OjoAbierto.setVisible(true);
+//        OjoCerrado.setVisible(false);
+//        ocultar();
     }//GEN-LAST:event_OjoCerradoMouseClicked
-    public void ocultar(){
-        String contraOculta="•";
-         for(int i=1;i<4;i++){
-            contraOculta+="•";
-        }
-         txtContrasena.setText(contraOculta);
-    }
+//    public void ocultar(){
+//        String contraOculta="•";
+//         for(int i=1;i<4;i++){
+//            contraOculta+="•";
+//        }
+//         txtContrasena.setText(contraOculta);
+//    }
     
 
 

@@ -11,7 +11,7 @@ public class ConfigCambiarCorreo extends javax.swing.JFrame {
    
     public ConfigCambiarCorreo() {
         initComponents();
-      OjoCerrado1.setVisible(false);
+//      OjoCerrado1.setVisible(false);
     }
 
     /**
@@ -120,15 +120,15 @@ public class ConfigCambiarCorreo extends javax.swing.JFrame {
 
     private void OjoCerrado1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoCerrado1MouseClicked
 
-        OjoAbierto1.setVisible(true);
-        OjoCerrado1.setVisible(false);
-        txtContrasena.setEchoChar('•');
+//        OjoAbierto1.setVisible(true);
+//        OjoCerrado1.setVisible(false);
+//        txtContrasena.setEchoChar('•');
     }//GEN-LAST:event_OjoCerrado1MouseClicked
 
     private void OjoAbierto1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoAbierto1MouseClicked
-        OjoAbierto1.setVisible(false);
-        OjoCerrado1.setVisible(true);
-        txtContrasena.setEchoChar((char)0);
+//        OjoAbierto1.setVisible(false);
+//        OjoCerrado1.setVisible(true);
+//        txtContrasena.setEchoChar((char)0);
     }//GEN-LAST:event_OjoAbierto1MouseClicked
 
     /**

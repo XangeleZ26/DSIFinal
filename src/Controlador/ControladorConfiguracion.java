@@ -11,6 +11,8 @@ import Vista.frmOpcionesIngreso;
 import Vista.frmPaginaPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class ControladorConfiguracion {
 
@@ -66,6 +68,23 @@ public class ControladorConfiguracion {
                vista.dispose();
             }
         });
+        this.vista.OjoCerrado.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                vista.OjoAbierto.setVisible(true);
+        vista.OjoCerrado.setVisible(false);
+        ocultar();
+            }
+        });
+        this.vista.OjoAbierto.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                   vista.OjoAbierto.setVisible(false);
+       vista.OjoCerrado.setVisible(true);
+       vista.txtContrasena.setText(user.getContraseña());
+            }
+        });
+        
     }
 
     //metodos
@@ -78,9 +97,17 @@ public class ControladorConfiguracion {
         this.vista.txtNumTarjeta.setText(user.getCuenta().getTarjeta().getNumTarjeta());
 
     }
-
+ public void ocultar(){
+        String contraOculta="•";
+         for(int i=1;i<4;i++){
+            contraOculta+="•";
+        }
+         vista.txtContrasena.setText(contraOculta);
+    }
     public void iniciar() {
         this.llenarDatos();
+        ocultar();
+        vista.OjoCerrado.setVisible(false);
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     }
