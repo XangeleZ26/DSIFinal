@@ -190,7 +190,7 @@ public class frmPagar extends javax.swing.JFrame {
     private javax.swing.JPanel PContenidoPagar;
     private javax.swing.JPanel PGeneralPagar;
     private javax.swing.JPanel PTituloPagar;
-    private javax.swing.JButton btnAtras;
+    public javax.swing.JButton btnAtras;
     private javax.swing.JButton btnPagar;
     private javax.swing.JComboBox<String> cbxEstacion;
     private javax.swing.JComboBox<String> cbxPeaje;

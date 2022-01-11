@@ -35,6 +35,15 @@ public class ControladorVehiculos {
         
         this.vista.btnAtras.addActionListener();
         */
+          this.vista.btnAtras.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                ControladorOpcionesIngreso controller = new ControladorOpcionesIngreso(usuario);
+                controller.iniciar();
+                vista.dispose();
+            }
+        });
     }
     
     public void llenarTablaNormal(){
@@ -69,6 +78,7 @@ public class ControladorVehiculos {
             informacion[7] = String.valueOf(this.usuario1.getCuenta().getVehiculos(i).getAño());   
             user.addRow(informacion);
         }
+      
     }
     
     /*public void llenarTablaOrdenada(){

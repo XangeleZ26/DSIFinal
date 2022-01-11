@@ -45,7 +45,6 @@ public class frmMovimientos extends javax.swing.JFrame {
         PTituloMovimientos.setBackground(new java.awt.Color(159, 162, 178));
 
         jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Movimientos de cuenta");
 
         org.jdesktop.layout.GroupLayout PTituloMovimientosLayout = new org.jdesktop.layout.GroupLayout(PTituloMovimientos);
@@ -71,7 +70,6 @@ public class frmMovimientos extends javax.swing.JFrame {
 
         jTable1.setBackground(new java.awt.Color(121, 127, 153));
         jTable1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jTable1.setForeground(new java.awt.Color(0, 0, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -87,7 +85,6 @@ public class frmMovimientos extends javax.swing.JFrame {
 
         btnOrdenarEstacion.setBackground(new java.awt.Color(159, 162, 178));
         btnOrdenarEstacion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnOrdenarEstacion.setForeground(new java.awt.Color(0, 0, 0));
         btnOrdenarEstacion.setText("Ordenar por Estación");
         btnOrdenarEstacion.setToolTipText("");
         btnOrdenarEstacion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -100,7 +97,6 @@ public class frmMovimientos extends javax.swing.JFrame {
 
         btnOrdenarFecha.setBackground(new java.awt.Color(159, 162, 178));
         btnOrdenarFecha.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnOrdenarFecha.setForeground(new java.awt.Color(0, 0, 0));
         btnOrdenarFecha.setText("Ordenar por Fecha");
         btnOrdenarFecha.setToolTipText("");
         btnOrdenarFecha.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -113,7 +109,6 @@ public class frmMovimientos extends javax.swing.JFrame {
 
         btnOrdenarMonto.setBackground(new java.awt.Color(159, 162, 178));
         btnOrdenarMonto.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnOrdenarMonto.setForeground(new java.awt.Color(0, 0, 0));
         btnOrdenarMonto.setText("Ordenar por Monto");
         btnOrdenarMonto.setToolTipText("");
         btnOrdenarMonto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -126,7 +121,6 @@ public class frmMovimientos extends javax.swing.JFrame {
 
         btnOrdenarVehiculo.setBackground(new java.awt.Color(159, 162, 178));
         btnOrdenarVehiculo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnOrdenarVehiculo.setForeground(new java.awt.Color(0, 0, 0));
         btnOrdenarVehiculo.setText("Ordenar por Placa");
         btnOrdenarVehiculo.setToolTipText("");
         btnOrdenarVehiculo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -250,14 +244,12 @@ public class frmMovimientos extends javax.swing.JFrame {
     private javax.swing.JPanel PContenidoMovimientos;
     private javax.swing.JPanel PGeneralMovimientos;
     private javax.swing.JPanel PTituloMovimientos;
-    private javax.swing.JButton btnAtras;
+    public javax.swing.JButton btnAtras;
     private javax.swing.JButton btnOrdenarEstacion;
     private javax.swing.JButton btnOrdenarFecha;
     private javax.swing.JButton btnOrdenarMonto;
     private javax.swing.JButton btnOrdenarVehiculo;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
