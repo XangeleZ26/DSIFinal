@@ -7,7 +7,10 @@ import Vista.frmLogin;
 import Vista.frmPaginaPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
+import javax.swing.event.AncestorListener;
 
 public class ControladorLogin {
 
@@ -17,6 +20,7 @@ public class ControladorLogin {
     public ControladorLogin() {  //controlador, todos los botones se hacen dentro del controlador
         this.vista = new frmLogin();
         this.clientes = Configuracion.arrClientes;
+        
         this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -44,7 +48,24 @@ public class ControladorLogin {
                 }
             }
         });
-
+       this.vista.OjoCerrado.addMouseListener(new MouseAdapter() {
+       @Override
+       public void mouseClicked(MouseEvent e){
+           vista.OjoAbierto.setVisible(true);
+        vista.OjoCerrado.setVisible(false);
+    vista.txtContrasena.setEchoChar('•');
+       }
+       
+       });
+       this.vista.OjoAbierto.addMouseListener(new MouseAdapter() {
+       @Override
+       public void mouseClicked(MouseEvent e){
+           vista.OjoAbierto.setVisible(false);
+        vista.OjoCerrado.setVisible(true);
+        vista.txtContrasena.setEchoChar((char) 0);
+       }
+       
+       });
     }
 
     private boolean isValido() {
@@ -53,6 +74,7 @@ public class ControladorLogin {
     }
 
     public void iniciar() {
+         vista.OjoCerrado.setVisible(false);
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     }

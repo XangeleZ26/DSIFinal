@@ -12,7 +12,7 @@ public class frmLogin extends javax.swing.JFrame {
 
     public frmLogin() {
         initComponents();
-        OjoCerrado.setVisible(false);
+       
     }
 
     /** This method is called from within the constructor to
@@ -121,15 +121,11 @@ public class frmLogin extends javax.swing.JFrame {
 
     private void OjoCerradoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoCerradoMouseClicked
 
-        OjoAbierto.setVisible(true);
-        OjoCerrado.setVisible(false);
-txtContrasena.setEchoChar('•');
+        
     }//GEN-LAST:event_OjoCerradoMouseClicked
 
     private void OjoAbiertoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OjoAbiertoMouseClicked
-        OjoAbierto.setVisible(false);
-        OjoCerrado.setVisible(true);
-        txtContrasena.setEchoChar((char) 0);
+        
     }//GEN-LAST:event_OjoAbiertoMouseClicked
 
     /**
@@ -168,8 +164,8 @@ txtContrasena.setEchoChar('•');
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel OjoAbierto;
-    private javax.swing.JLabel OjoCerrado;
+    public javax.swing.JLabel OjoAbierto;
+    public javax.swing.JLabel OjoCerrado;
     private javax.swing.JPanel PContenidoLogin;
     private javax.swing.JPanel PGeneralLogin;
     public javax.swing.JButton btnAtras;
