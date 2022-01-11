@@ -33,9 +33,9 @@ public class ControladorConfigCambiarCorreo {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isValido()) {
-                    if ((String.valueOf(vista.txtContrasena.getPassword())).equals(user.getContraseña())) {
+                    if ((String.valueOf(vista.txtContrasena.getPassword())).equals(user.getCredencial().getContraseña())) {
                         JOptionPane.showMessageDialog(null, "Cambios registrados.");
-                        user.cambiarCorreo(vista.txtCorreo.getText());
+                        user.getCredencial().cambiarCorreo(vista.txtCorreo.getText());
                         ControladorConfiguracion controller = new ControladorConfiguracion(user);
                         controller.iniciar();
                         vista.dispose();

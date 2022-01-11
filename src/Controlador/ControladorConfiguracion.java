@@ -81,7 +81,7 @@ public class ControladorConfiguracion {
             public void mouseClicked(MouseEvent e) {
                    vista.OjoAbierto.setVisible(false);
        vista.OjoCerrado.setVisible(true);
-       vista.txtContrasena.setText(user.getContraseña());
+       vista.txtContrasena.setText(user.getCredencial().getContraseña());
             }
         });
         
@@ -92,7 +92,7 @@ public class ControladorConfiguracion {
         this.vista.txtUsuario.setText(user.getNombres()+" "+user.getApPaterno()+" "+user.getApMaterno());
         this.vista.txtTipoDoc.setText(user.getTipoDocumento());
         this.vista.txtNumDoc.setText(user.getNumDocumento());
-        this.vista.txtCorreo.setText(user.getCorreo());
+        this.vista.txtCorreo.setText(user.getCredencial().getCorreo());
         this.vista.txtTarjeta.setText(user.getCuenta().getTarjeta().getMedioPago());
         this.vista.txtNumTarjeta.setText(user.getCuenta().getTarjeta().getNumTarjeta());
 

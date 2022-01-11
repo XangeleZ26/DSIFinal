@@ -254,32 +254,38 @@ public class AppPeaje {
         
         //Ingreso a la cuenta.
         
-        Cliente nuevoCliente = clientes.getArregloCliente(0);
-        nuevoCliente.getCuenta().mostrarVehiculos();
+//        Cliente nuevoCliente = clientes.getArregloCliente(0);
+//        nuevoCliente.getCuenta().mostrarVehiculos();
+//        
+//        frmVehiculos fVehiculos = new frmVehiculos(); 
+//        ControladorVehiculos ctrlVehiculos = new ControladorVehiculos(nuevoCliente);
+//        ctrlVehiculos.iniciar();
         
-        frmVehiculos fVehiculos = new frmVehiculos(); 
-        ControladorVehiculos ctrlVehiculos = new ControladorVehiculos(nuevoCliente);
-        ctrlVehiculos.iniciar();
+
+        //INICIO DE PROGRAMAAAA (SEGÚN LA VISTA)
+         frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
+        ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
+        ctrlPrincipal.iniciar();
+        //INICIO DE PROGRAMAAAA (SEGÚN LA VISTA)
+   
         //ZONA EXPERIMENTAL********************************
         
             //esto es para prueba, debido a que el cliente 0 registró dirección,tarjeta y carros,
             //lo estoy considerando como "cliente debidamente registrado" y lo estoy agregando a este arreglo estático para su uso en el programa visual
-        /*Configuracion.arrClientes.agregarCliente(clientes.getArregloCliente(0));
+       Configuracion.arrClientes.agregarCliente(clientes.getArregloCliente(0));
         System.out.println("USAR PARA LOGIN EN EL SISTEMA (ES MOMENTANEO)");
             System.out.println("Correo experimental: xd");
             System.out.println("contraseña experimental: 123");
              System.out.println("CVV de tarjeta activa: 124");
-             clientes.mostrarClientes();*/
+             clientes.mostrarClientes();
              //ZONA EXPERIMENTAL********************************
         
         
         //Trabajo de vista y controladores
-        
-        /*frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
-        ArregloClientes mClientes = new ArregloClientes();
-        mClientes.toString();
-        ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
-        ctrlPrincipal.iniciar();*/
+//        ArregloClientes mClientes = new ArregloClientes();
+//        mClientes.toString();
+
+ 
 //        frmCliente fCliente = new frmCliente();
 //        ControladorCliente ctrlCliente = new ControladorCliente(mClientes, fCliente);
 //        //ctrlCliente.iniciarCliente();
