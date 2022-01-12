@@ -46,6 +46,7 @@ public class Movimiento {
     
     public float getMonto() {
         return monto;
+        
     }
 
     public void setMonto(float monto) {

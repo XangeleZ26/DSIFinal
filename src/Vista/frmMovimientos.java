@@ -31,7 +31,7 @@ public class frmMovimientos extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         PContenidoMovimientos = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jMovimientos = new javax.swing.JTable();
         btnOrdenarEstacion = new javax.swing.JButton();
         btnOrdenarFecha = new javax.swing.JButton();
         btnOrdenarMonto = new javax.swing.JButton();
@@ -68,20 +68,32 @@ public class frmMovimientos extends javax.swing.JFrame {
 
         PContenidoMovimientos.setBackground(new java.awt.Color(121, 127, 139));
 
-        jTable1.setBackground(new java.awt.Color(121, 127, 153));
-        jTable1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jMovimientos.setBackground(new java.awt.Color(121, 127, 153));
+        jMovimientos.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jMovimientos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Fecha", "Tipo", "Monto", "Vehículo", "Peaje", "Estación"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(jMovimientos);
 
         btnOrdenarEstacion.setBackground(new java.awt.Color(159, 162, 178));
         btnOrdenarEstacion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -245,13 +257,13 @@ public class frmMovimientos extends javax.swing.JFrame {
     private javax.swing.JPanel PGeneralMovimientos;
     private javax.swing.JPanel PTituloMovimientos;
     public javax.swing.JButton btnAtras;
-    private javax.swing.JButton btnOrdenarEstacion;
-    private javax.swing.JButton btnOrdenarFecha;
-    private javax.swing.JButton btnOrdenarMonto;
-    private javax.swing.JButton btnOrdenarVehiculo;
+    public javax.swing.JButton btnOrdenarEstacion;
+    public javax.swing.JButton btnOrdenarFecha;
+    public javax.swing.JButton btnOrdenarMonto;
+    public javax.swing.JButton btnOrdenarVehiculo;
     private javax.swing.JLabel jLabel2;
+    public javax.swing.JTable jMovimientos;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 
 }

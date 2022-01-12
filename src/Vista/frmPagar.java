@@ -41,7 +41,7 @@ public class frmPagar extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         lblFecha1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbxVehiculo = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,9 +84,14 @@ public class frmPagar extends javax.swing.JFrame {
 
         cbxPeaje.setBackground(new java.awt.Color(121, 127, 139));
         cbxPeaje.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        cbxPeaje.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "                                  ", "Panamericana Norte", "Panamericana Sur" }));
+        cbxPeaje.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar", "Panamericana Norte", "Panamericana Sur", "Huaylas", "Separadora Industrial" }));
         cbxPeaje.setBorder(null);
         cbxPeaje.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cbxPeaje.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxPeajeActionPerformed(evt);
+            }
+        });
         PContenidoPagar.add(cbxPeaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 239, -1));
 
         lblEstacion.setFont(new java.awt.Font("Times New Roman", 0, 28)); // NOI18N
@@ -95,9 +100,14 @@ public class frmPagar extends javax.swing.JFrame {
 
         cbxEstacion.setBackground(new java.awt.Color(121, 127, 139));
         cbxEstacion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        cbxEstacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "                                          ", "Serpentin de Pasamayo", "Variante de Pasamayo", "El paraíso", "Fortaleza", "Chilca" }));
+        cbxEstacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
         cbxEstacion.setBorder(null);
         cbxEstacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cbxEstacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxEstacionActionPerformed(evt);
+            }
+        });
         PContenidoPagar.add(cbxEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, -1, -1));
 
         btnPagar.setBackground(new java.awt.Color(121, 127, 139));
@@ -122,7 +132,7 @@ public class frmPagar extends javax.swing.JFrame {
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        PContenidoPagar.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 90, 239, 10));
+        PContenidoPagar.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 239, 10));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
@@ -132,8 +142,8 @@ public class frmPagar extends javax.swing.JFrame {
         lblFecha1.setText("Vehiculos:");
         PContenidoPagar.add(lblFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 127, -1));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        PContenidoPagar.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 240, 30));
+        cbxVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        PContenidoPagar.add(cbxVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 240, 30));
 
         PGeneralPagar.add(PContenidoPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 99, 510, 470));
 
@@ -150,6 +160,14 @@ public class frmPagar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void cbxEstacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEstacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxEstacionActionPerformed
+
+    private void cbxPeajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxPeajeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxPeajeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -191,11 +209,11 @@ public class frmPagar extends javax.swing.JFrame {
     private javax.swing.JPanel PGeneralPagar;
     private javax.swing.JPanel PTituloPagar;
     public javax.swing.JButton btnAtras;
-    private javax.swing.JButton btnPagar;
-    private javax.swing.JComboBox<String> cbxEstacion;
-    private javax.swing.JComboBox<String> cbxPeaje;
-    private com.toedter.calendar.JDateChooser dcFechaPago;
-    private javax.swing.JComboBox<String> jComboBox1;
+    public javax.swing.JButton btnPagar;
+    public javax.swing.JComboBox<String> cbxEstacion;
+    public javax.swing.JComboBox<String> cbxPeaje;
+    public javax.swing.JComboBox<String> cbxVehiculo;
+    public com.toedter.calendar.JDateChooser dcFechaPago;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JLabel lblEstacion;

@@ -15,6 +15,7 @@ public class Cuenta {
     private int ov; //Orden en el arreglo del último vehículo agregado
     private Movimiento movimientosOrdenados[];
     private Vehiculo vehiculosOrdenados[];
+    private Estacion estacion;
     
     public Cuenta() {
 
@@ -33,6 +34,17 @@ public class Cuenta {
     }
 
     //MÉTODOS ACCESORES
+    
+    //AGREGADO
+    public Estacion getEstacion(String stacion ) {
+        return estacion;
+    }
+
+    public void setEstacion(Estacion estacion) {
+        this.estacion = estacion;
+    }
+    //AGREGADO
+    
     public float getSaldoTotal() {
         return saldoTotal;
     }
@@ -505,4 +517,5 @@ public class Cuenta {
         return result;
     }
      */
+
 }

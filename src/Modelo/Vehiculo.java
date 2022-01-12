@@ -19,6 +19,7 @@ public class Vehiculo {
 
     public void setPlaca(String placa) {
         this.placa = placa;
+       // dueño.getCuenta().ordenarMovimientosXFecha();
     }
 
     public String getMarca() {
@@ -26,7 +27,8 @@ public class Vehiculo {
     }
 
     public void setMarca(String marca) {
-        this.marca = marca;
+    this.marca = marca;
+    
     }
 
     public String getModelo() {
@@ -39,6 +41,7 @@ public class Vehiculo {
 
     public String getCategoria() {
         return categoria;
+       // dueño.getCuenta().getMovimientos(2).getVehiculo().getPlaca()
     }
 
     public void setCategoria(String categoria) {
@@ -55,6 +58,7 @@ public class Vehiculo {
 
     public String getTipoUso() {
         return tipoUso;
+
     }
 
     public void setTipoUso(String tipoUso) {
@@ -79,10 +83,11 @@ public class Vehiculo {
 
     public Cliente getDueño() {
         return dueño;
+        
     }
 
     public void setDueño(Cliente dueño) {
-        this.dueño = dueño;
+
     }
     
     //MÉTODOS DE FUNCIONAMIENTO DE LA CLASE 
@@ -125,5 +130,6 @@ public class Vehiculo {
                "PesoBruto: " + pesoBruto + "\n" +
                "Año: " + año;
     }
+    
     
 }
