@@ -1,5 +1,6 @@
 package Modelo;
 
+
 public class Direccion {
     private String departamento;
     private String provincia;

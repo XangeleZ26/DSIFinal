@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
 
 import Modelo.Cliente;
+import Modelo.Configuracion;
 import Vista.ConfigCambiarContra;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,30 +12,38 @@ import javax.swing.JOptionPane;
 public class ControladorConfigCambiarContra {
 
     private ConfigCambiarContra vista;
-    private Cliente user;
-
-    public ControladorConfigCambiarContra(Cliente user) {
+    //private Cliente user;
+    //private int indiceCliente;
+    
+    public ControladorConfigCambiarContra(int indiceCliente) {
         this.vista = new ConfigCambiarContra();
-        this.user = user;
+        //this.user = user;
+        //this.indiceCliente = indiceCliente;
+        
         this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorConfiguracion controller = new ControladorConfiguracion(user);
-                controller.iniciar();
+                ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(indiceCliente);
+                ctrlConfiguracion.iniciar();
                 vista.dispose();
 
             }
         });
+        
+        /*Los métodos de cambiar contraseña son booleanos y su return no se guarda en ninguna variable, REVISAR*/
         this.vista.btnCambiar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isValido()) {
-                    switch (user.cambioContrasena(String.valueOf(vista.txtContrasena.getPassword()), String.valueOf(vista.txtNovoContrasena.getPassword()), String.valueOf(vista.txtVerifContrasena.getPassword()))) {
+                    switch (Configuracion.arrClientes.getArregloCliente(indiceCliente).cambioContrasena(
+                            String.valueOf(vista.txtContrasena.getPassword()),
+                            String.valueOf(vista.txtNovoContrasena.getPassword()),
+                            String.valueOf(vista.txtVerifContrasena.getPassword()))) {
                         case 0: {
-                            user.getCredencial().cambiarContraseña(String.valueOf(vista.txtNovoContrasena.getPassword()));
+                            Configuracion.arrClientes.getArregloCliente(indiceCliente).getCredencial().cambiarContraseña(String.valueOf(vista.txtNovoContrasena.getPassword()));
                             JOptionPane.showMessageDialog(null, "Cambios registrados.");
-                            ControladorConfiguracion controller = new ControladorConfiguracion(user);
-                            controller.iniciar();
+                            ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(indiceCliente);
+                            ctrlConfiguracion.iniciar();
                             vista.dispose();
                             break;
                         }

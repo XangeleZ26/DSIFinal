@@ -143,6 +143,11 @@ public class frmPagar extends javax.swing.JFrame {
         PContenidoPagar.add(lblFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 127, -1));
 
         cbxVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxVehiculo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxVehiculoActionPerformed(evt);
+            }
+        });
         PContenidoPagar.add(cbxVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 240, 30));
 
         PGeneralPagar.add(PContenidoPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 99, 510, 470));
@@ -168,6 +173,10 @@ public class frmPagar extends javax.swing.JFrame {
     private void cbxPeajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxPeajeActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxPeajeActionPerformed
+
+    private void cbxVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxVehiculoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxVehiculoActionPerformed
 
     /**
      * @param args the command line arguments

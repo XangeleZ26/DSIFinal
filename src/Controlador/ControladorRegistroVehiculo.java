@@ -5,33 +5,48 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Modelo.Vehiculo;
 import Modelo.ArregloClientes;
+import Modelo.Cliente;
 import Vista.frmRegistroVehiculo;
 import javax.swing.JOptionPane;
 
 public class ControladorRegistroVehiculo{
-    private ArregloClientes modeloCliente = new ArregloClientes();
+    //private ArregloClientes modeloCliente = new ArregloClientes();
     //private Vehiculo modeloVehiculo;
+    //private Cliente ClientePotencial;
     private frmRegistroVehiculo vistaVehiculo;
     //private Cliente user;
     
-    public ControladorRegistroVehiculo(ArregloClientes modeloCliente){
-        this.modeloCliente = modeloCliente;
+    public ControladorRegistroVehiculo(Cliente ClientePotencial){
+        //this.ClientePotencial = ClientePotencial;
         this.vistaVehiculo = new frmRegistroVehiculo();
         
         this.vistaVehiculo.btnSiguiente1.addActionListener(new ActionListener(){
-           @Override
-           public void actionPerformed(ActionEvent e){
-               if(datosLlenosVehiculo()){
-                    ControladorEntrega ctrlEntrega = new ControladorEntrega(modeloCliente);
+            @Override
+            public void actionPerformed(ActionEvent e){
+                if(datosLlenosVehiculo()){  
+                    String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
+                    int ejesEntero = Integer.parseInt(ejesCadena);
+                    ClientePotencial.getCuenta().registrarVehiculo(
+                                                 vistaVehiculo.txtPlaca.getText(),
+                                                 vistaVehiculo.cbxMarca.getSelectedItem().toString(),
+                                                 vistaVehiculo.txtModelo.getText(),
+                                                 ejesEntero,
+                                                 vistaVehiculo.cbxTipoUso.getSelectedItem().toString(),
+                                                 Float.parseFloat(vistaVehiculo.txtPesoBruto.getText()),
+                                                 Integer.parseInt(vistaVehiculo.txtAño.getText()),
+                                                 ClientePotencial);
+                    
+                    ControladorEntrega ctrlEntrega = new ControladorEntrega(ClientePotencial);
                     ctrlEntrega.iniciarEntrega();
                     vistaVehiculo.dispose();
-               }
-               else{
+                }
+                else{
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos, por favor.");
-               }
+                }
                
-           }
+            }
         });
+        /*
         this.vistaVehiculo.btnRegistrarVehiculo.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -53,7 +68,7 @@ public class ControladorRegistroVehiculo{
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos, por favor.");
                 }
             }
-        });
+        });*/
     }
     
     public void iniciarVehiculo(){

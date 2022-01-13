@@ -53,7 +53,9 @@ public class AppPeaje {
         ArregloClientes clientes = new ArregloClientes();
         Date fechanacimiento1 = new Date(2000-1900, 11-1, 14);
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        Cliente cliente = new Cliente("DNI","11112222","José Alonso","Tolentino","Tantaruna","Masculino", sdf.format(fechanacimiento1),"xd","123");
+        Cliente cliente = new Cliente("DNI","11112222","José Alonso","Tolentino","Tantaruna","Masculino", sdf.format(fechanacimiento1),"josealonso@gmail.com","123");
+        //CLIENTE PRUEBA
+        Cliente clienteborrar = cliente;
         System.out.println("Cliente agregado: "+clientes.agregarCliente(cliente));
         Date fechanacimiento2 = new Date(2003-1900, 6-1, 25);
         cliente = new Cliente("DNI","33334444","Esthefany","Meza","Meza","Femenino", sdf.format(fechanacimiento2), "esthefany.meza@gmail.com","123");
@@ -253,32 +255,51 @@ public class AppPeaje {
         System.out.println("");
         
         //Ingreso a la cuenta.
+        /*
+        Cliente nuevoCliente = clientes.getArregloCliente(0);
+        nuevoCliente.getCuenta().mostrarVehiculos();
         
-//        Cliente nuevoCliente = clientes.getArregloCliente(0);
-//        nuevoCliente.getCuenta().mostrarVehiculos();
-//        
-//        frmVehiculos fVehiculos = new frmVehiculos(); 
-//        ControladorVehiculos ctrlVehiculos = new ControladorVehiculos(nuevoCliente);
-//        ctrlVehiculos.iniciar();
+        frmVehiculos fVehiculos = new frmVehiculos(); 
+        ControladorVehiculos ctrlVehiculos = new ControladorVehiculos(nuevoCliente);
+        ctrlVehiculos.iniciar();*/
         
 
         //INICIO DE PROGRAMAAAA (SEGÚN LA VISTA)
-         frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
+        /*Configuracion.arrClientes = clientes;
+        Configuracion.arrClientes.mostrarClientes();
+        System.out.println("");
+        Cliente clienteprueba = new Cliente();
+        clienteprueba.mostrarClientes();
+        System.out.println("");
+        Configuracion.arrClientes.eliminarCliente(clienteborrar);
+        Configuracion.arrClientes.mostrarClientes();
+        System.out.println("");
+        clienteprueba.mostrarClientes();
+        System.out.println("");*/
+        
+        
+        Configuracion.getArrClientes().mostrarClientes();
+        
+        Configuracion.arrClientes = clientes;
+        
+        frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
         ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
         ctrlPrincipal.iniciar();
+        
         //INICIO DE PROGRAMAAAA (SEGÚN LA VISTA)
    
         //ZONA EXPERIMENTAL********************************
         
-            //esto es para prueba, debido a que el cliente 0 registró dirección,tarjeta y carros,
-            //lo estoy considerando como "cliente debidamente registrado" y lo estoy agregando a este arreglo estático para su uso en el programa visual
-       Configuracion.arrClientes.agregarCliente(clientes.getArregloCliente(0));
+        //esto es para prueba, debido a que el cliente 0 registró dirección,tarjeta y carros,
+        //lo estoy considerando como "cliente debidamente registrado" y lo estoy agregando a este arreglo 
+        //estático para su uso en el programa visual
+        /*Configuracion.arrClientes.agregarCliente(clientes.getArregloCliente(0));
         System.out.println("USAR PARA LOGIN EN EL SISTEMA (ES MOMENTANEO)");
-            System.out.println("Correo experimental: xd");
-            System.out.println("contraseña experimental: 123");
-             System.out.println("CVV de tarjeta activa: 124");
-             clientes.mostrarClientes();
-             //ZONA EXPERIMENTAL********************************
+        System.out.println("Correo experimental: xd");
+        System.out.println("contraseña experimental: 123");
+        System.out.println("CVV de tarjeta activa: 124");
+        clientes.mostrarClientes();*/
+        //ZONA EXPERIMENTAL********************************
         
         
         //Trabajo de vista y controladores

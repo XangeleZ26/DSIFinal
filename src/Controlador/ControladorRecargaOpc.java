@@ -7,21 +7,24 @@ import javax.swing.JOptionPane;
 import Modelo.Cuenta;
 import Modelo.Cliente;
 import Modelo.Tarjeta;
+import Modelo.Configuracion;
 import Modelo.ArregloClientes;
 import Vista.frmRecargaOpcional;
+import Vista.frmPaginaPrincipal;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class ControladorRecargaOpc{
-    private ArregloClientes modeloClientes = new ArregloClientes(); 
-    private Cuenta modeloCuenta;
-    private Tarjeta modeloTarjeta;
+    //private ArregloClientes modeloClientes = new ArregloClientes(); 
+    //private Cuenta modeloCuenta;
+    private Tarjeta TarjetaPotencial;
     private frmRecargaOpcional vistaRecargaOpc;
-    Cliente mCliente = new Cliente();
+    //Cliente mCliente = new Cliente();
+    //private Cliente ClientePotencial;
     
-    public ControladorRecargaOpc(ArregloClientes modeloClientes, Cuenta modeloCuenta, Tarjeta modeloTarjeta){
-        this.modeloCuenta = modeloCuenta;
-        this.modeloTarjeta = modeloTarjeta;
+    public ControladorRecargaOpc(Cliente ClientePotencial){
+        //this.modeloCuenta = modeloCuenta;
+        //this.modeloTarjeta = modeloTarjeta;
         this.vistaRecargaOpc = new frmRecargaOpcional();
         
         this.vistaRecargaOpc.btnCalcular.addActionListener(new ActionListener(){
@@ -40,17 +43,26 @@ public class ControladorRecargaOpc{
                 }
             }
         });
-        
+        /*
+        FALTA DEFINIR QUÉ PAPEL JUGARÁ EL RUC EN EL PROGRAMA
         this.vistaRecargaOpc.btnFactura.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                ControladorRUCPago ctrlRUC = new ControladorRUCPago(mCliente);
-                ctrlRUC.iniciarRUCPago();
-                vistaRecargaOpc.dispose(); 
+                if(datosLlenosRecargaOpc()){
+                    ControladorRUCPago ctrlRUC = new ControladorRUCPago(mCliente);
+                    ctrlRUC.iniciarRUCPago();
+                    vistaRecargaOpc.dispose();
+                }
+                else{
+                    JOptionPane.showMessageDialog(vistaRecargaOpc, "CVV no válido. Digite nuevamente.");
+                }
             }
-        });
+        });*/
         
-        this.vistaRecargaOpc.btnFinalizar.addActionListener(new ActionListener(){
+        
+        /*PUEDE FALLAR DEBIDO A QUE LA TARJETA POTENCIAL AÚN NO SE HA INICIALIZADO
+        REVISAR LA VALIDEZ DE LA FECHA DE VENCIMIENTO ANTES DE REGISTRAR UNA TARJETA*/
+        this.vistaRecargaOpc.btnFinalizar.addActionListener(new ActionListener(){ //HACER REGISTRO DEL CLIENTE AQUÍ
             @Override 
             public void actionPerformed(ActionEvent e){
                 if(datosLlenosRecargaOpc()){
@@ -60,19 +72,35 @@ public class ControladorRecargaOpc{
                     Date fechaVencimiento = new Date(añoVencimiento, mesVencimiento, 00);
 
                     //if(modeloTarjeta.verificarVigenciaTarjeta(sdfVencimiento.format(fechaVencimiento))){
-                        if(modeloTarjeta.verificarValidezTajeta(vistaRecargaOpc.txtNumeroTarjeta.getText(), vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString())){
-                            if(modeloTarjeta.verificarValidezCVV(vistaRecargaOpc.txtCVV.getText(), vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString())){
-                                Tarjeta tarjeta = new Tarjeta(
+                        if(TarjetaPotencial.verificarValidezTajeta(vistaRecargaOpc.txtNumeroTarjeta.getText(),
+                           vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString())){
+                            
+                            if(TarjetaPotencial.verificarValidezCVV(vistaRecargaOpc.txtCVV.getText(),
+                               vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString())){
+                                
+                                TarjetaPotencial = new Tarjeta(
                                                 vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString(),
                                                 vistaRecargaOpc.txtNumeroTarjeta.getText(),
                                                 sdfVencimiento.format(fechaVencimiento),
                                                 vistaRecargaOpc.txtCVV.getText());
-                                modeloClientes.getArregloCliente(modeloClientes.getOc()).crearCuenta(tarjeta);   
+                                //Registrar la Tarjeta Potencial en el Cliente Potencial
+                                ClientePotencial.getCuenta().setTarjeta(TarjetaPotencial);
+                                
+                                //modeloClientes.getArregloCliente(modeloClientes.getOc()).crearCuenta(tarjeta);   
                                 Date fechaActual = new Date();
                                 SimpleDateFormat sdfActual = new SimpleDateFormat("yyyy/MM/dd");
-                                modeloCuenta.recargar(Float.parseFloat(vistaRecargaOpc.txtMontoOpcional.getText()) + 12, 
-                                                tarjeta, sdfActual.format(fechaActual));
-
+                                ClientePotencial.getCuenta().recargar(Float.parseFloat(vistaRecargaOpc.txtMontoOpcional.getText()) + 12, 
+                                                                          TarjetaPotencial, sdfActual.format(fechaActual));
+                                
+                                //Registramos en el arrClientes al Cliente Potencial 
+                                if(Configuracion.arrClientes.agregarCliente(ClientePotencial)){
+                                    JOptionPane.showMessageDialog(vistaRecargaOpc, "Ustede ha sido registrado en el PEX!");
+                                }
+                                frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
+                                ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
+                                vistaRecargaOpc.dispose();
+                                ctrlPrincipal.iniciar();
+                                
                             }
                             else{
                                 vistaRecargaOpc.txtCVV.setText(null);
@@ -92,14 +120,21 @@ public class ControladorRecargaOpc{
                 else{
                     JOptionPane.showMessageDialog(vistaRecargaOpc, "Debe rellenar todos los campos, por favor.");  
                 }
+                
+                
+                /*
                 int añoVencimiento = vistaRecargaOpc.jycAñoVencimiento.getYear();
                 int mesVencimiento = vistaRecargaOpc.jmcMesVencimiento.getMonth();
                 SimpleDateFormat sdfVencimiento = new SimpleDateFormat("yyyy/MM/dd");
                 Date fechaVencimiento = new Date(añoVencimiento, mesVencimiento, 00);
                 
                 //if(modeloTarjeta.verificarVigenciaTarjeta(sdfVencimiento.format(fechaVencimiento))){
-                    if(modeloTarjeta.verificarValidezTajeta(vistaRecargaOpc.txtNumeroTarjeta.getText(), vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString())){
-                        if(modeloTarjeta.verificarValidezCVV(vistaRecargaOpc.txtCVV.getText(), vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString())){
+                    if(modeloTarjeta.verificarValidezTajeta(vistaRecargaOpc.txtNumeroTarjeta.getText(),
+                       vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString())){
+                        
+                        if(modeloTarjeta.verificarValidezCVV(vistaRecargaOpc.txtCVV.getText(),
+                           vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString())){
+                            
                             Tarjeta tarjeta = new Tarjeta(
                                             vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString(),
                                             vistaRecargaOpc.txtNumeroTarjeta.getText(),
@@ -111,8 +146,7 @@ public class ControladorRecargaOpc{
                             modeloCuenta.recargar(Float.parseFloat(vistaRecargaOpc.txtMontoOpcional.getText()) + 12, 
                                             tarjeta, sdfActual.format(fechaActual));
                             
-                            JOptionPane.showMessageDialog(vistaRecargaOpc, "Ustede ha sido registrado en el PEX!");
-                            vistaRecargaOpc.dispose();
+                            
                         }
                         else{
                             vistaRecargaOpc.txtCVV.setText(null);
@@ -127,7 +161,7 @@ public class ControladorRecargaOpc{
                 //else{
                   //  limpiarDatosTarjeta();
                   //  JOptionPane.showMessageDialog(vistaRecargaOpc, "Tarjeta caducada. Ingrese otra tarjeta.");  
-                //}
+                //}*/
             }
         });
         

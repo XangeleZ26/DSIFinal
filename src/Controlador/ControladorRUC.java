@@ -2,6 +2,7 @@ package Controlador;
 
 import Modelo.ArregloClientes;
 import Modelo.Cliente;
+import Modelo.Configuracion;
 import javax.swing.JOptionPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,30 +10,60 @@ import Vista.frmRUC;
 
 public class ControladorRUC {
     private frmRUC vistaRUC;
-    private ArregloClientes modeloClientes = new ArregloClientes();
-    private Cliente user;
+    //private ArregloClientes modeloClientes = new ArregloClientes();
+    //private Cliente user;
+    //private Cliente ClientePotencial;
     
-    public ControladorRUC(ArregloClientes modeloCliente, Cliente user){
+    public ControladorRUC(Cliente ClientePotencial){
         this.vistaRUC = new frmRUC();
-        this.user = user;
-        this.modeloClientes = modeloClientes;
+        //this.user = user;
+        //this.modeloClientes = modeloClientes;
+        //this.ClientePotencial = ClientePotencial;
+        
         this.vistaRUC.btnVolverCliente.addActionListener(new ActionListener(){
-           @Override
-           public void actionPerformed(ActionEvent e){
-               ControladorCliente ctrlCliente = new ControladorCliente(modeloClientes);
+            @Override
+            public void actionPerformed(ActionEvent e){
+               ControladorCliente ctrlCliente = new ControladorCliente();
                ctrlCliente.iniciarCliente();
                vistaRUC.dispose(); 
            }
         });
+        
         this.vistaRUC.btnNext.addActionListener(new ActionListener(){
-           @Override
-           public void actionPerformed(ActionEvent e){
-                ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(modeloCliente);
-                ctrlVehiculo.iniciarVehiculo();
-                vistaRUC.dispose(); 
+            @Override
+            public void actionPerformed(ActionEvent e){
+                
+                
+                if(datosLlenosCliente()){
+                    if(ClientePotencial.verificarValidezRUC(vistaRUC.txtRUC.getText())){
+                         if(!Configuracion.arrClientes.verificarExistenciaCliente("RUC", vistaRUC.txtRUC.getText())){
+                            ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(), 
+                                                           vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText());
+                            //modeloClientes.agregarCliente(cliente);
+                            JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
+                            ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                            ctrlVehiculo.iniciarVehiculo();
+                            vistaRUC.dispose(); 
+                         }
+                         else{
+                            limpiarDatosRUC();
+                            JOptionPane.showMessageDialog(vistaRUC, "Cliente ya registrado. Ingrese nuevos datos.");
+                         }
+                    }
+                    else{
+                        vistaRUC.txtRUC.setText(null);
+                        JOptionPane.showMessageDialog(vistaRUC, "RUC inválido, digite nuevamente");
+                    }
+      
+                }
+                else{
+                    JOptionPane.showMessageDialog(vistaRUC, "Debe llenar todos los campos, por favor.");
+                }
+                
            }
         });
-        this.vistaRUC.btnRegistrarClienteRUC.addActionListener(new ActionListener(){
+        
+        /*this.vistaRUC.btnRegistrarClienteRUC.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
                 if(datosLlenosCliente()){
@@ -58,7 +89,7 @@ public class ControladorRUC {
                     JOptionPane.showMessageDialog(vistaRUC, "Debe llenar todos los campos, por favor.");
                 }
             }
-        });
+        });*/
     }
     
     public void iniciarRUC(){

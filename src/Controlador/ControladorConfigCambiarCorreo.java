@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
 
 import Modelo.Cliente;
+import Modelo.Configuracion;
 import Vista.ConfigCambiarCorreo;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -16,37 +12,51 @@ import javax.swing.JOptionPane;
 public class ControladorConfigCambiarCorreo {
 
     private ConfigCambiarCorreo vista;
-    private Cliente user;
-
-    public ControladorConfigCambiarCorreo(Cliente user) {
+    //private Cliente user;
+    //private int indiceCliente; 
+    
+    public ControladorConfigCambiarCorreo(int indiceCliente) {
         this.vista = new ConfigCambiarCorreo();
-        this.user = user;
+        //this.user = user;
+        //this.indiceCliente = indiceCliente;
+        
         this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorConfiguracion controller = new ControladorConfiguracion(user);
-                controller.iniciar();
+                ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(indiceCliente);
+                ctrlConfiguracion.iniciar();
                 vista.dispose();
             }
         });
+        
         this.vista.btnCambiar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isValido()) {
-                    if ((String.valueOf(vista.txtContrasena.getPassword())).equals(user.getCredencial().getContraseña())) {
-                        JOptionPane.showMessageDialog(null, "Cambios registrados.");
-                        user.getCredencial().cambiarCorreo(vista.txtCorreo.getText());
-                        ControladorConfiguracion controller = new ControladorConfiguracion(user);
-                        controller.iniciar();
-                        vista.dispose();
-                    } else {
+                    if ((String.valueOf(vista.txtContrasena.getPassword())).equals(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCredencial().getContraseña())) {
+                        
+                        if((vista.txtCorreo.getText()).compareTo(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCredencial().getCorreo())==0){
+                            //Este método es boolean, REVISAR
+                            Configuracion.arrClientes.getArregloCliente(indiceCliente).getCredencial().cambiarCorreo(vista.txtCorreo.getText());
+                            JOptionPane.showMessageDialog(null, "Cambios registrados.");
+                            ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(indiceCliente);
+                            ctrlConfiguracion.iniciar();
+                            vista.dispose();
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(null, "Debe escribir un correo diferente al anterior.");
+                        }
+                    } 
+                    else {
                         JOptionPane.showMessageDialog(null, "Contraseña de cuenta incorrecta.");
                     }
-                } else {
+                } 
+                else {
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos!");
                 }
             }
         });
+        
         this.vista.OjoCerrado1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -55,6 +65,7 @@ public class ControladorConfigCambiarCorreo {
                 vista.txtContrasena.setEchoChar('•');
             }
         });
+        
         this.vista.OjoAbierto1.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

@@ -10,6 +10,7 @@ public class ArregloClientes {
         this.nc = 0;
         this.oc = this.nc-1;
         this.arregloCliente = new Cliente[Configuracion.maxClientes];
+        
     }
 
     //MÉTODOS ACCESORES
@@ -80,6 +81,17 @@ public class ArregloClientes {
         }
         return this.arregloCliente[indice];
     }
+    
+    public int buscarOrdenCliente(String correo,String contrasena){
+        int indice=-2;
+        for(int i=0;i<nc;i++){
+            if(this.arregloCliente[i].getCredencial().getCorreo().equalsIgnoreCase(correo)&&this.arregloCliente[i].getCredencial().getContraseña().equalsIgnoreCase(contrasena)){
+                indice=i;
+            }
+        }
+        return indice;
+    }
+    
     public void crecerArreglo(){
         Cliente clientePlus[]=new Cliente[this.arregloCliente.length+2];
         for(int i=0; i<this.arregloCliente.length; i++) {

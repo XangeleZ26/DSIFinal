@@ -9,4 +9,15 @@ public class Configuracion {
     public static int maxPeajes = 10;
     
     public static ArregloClientes arrClientes=new ArregloClientes();
+
+    public static ArregloClientes getArrClientes() {
+        return arrClientes;
+    }
+
+    public static void setArrClientes(ArregloClientes arrClientes) {
+        Configuracion.arrClientes = arrClientes;
+    }
+    
+    
 }
+

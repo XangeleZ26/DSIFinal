@@ -1,4 +1,3 @@
-
 package Modelo;
 
 import java.text.SimpleDateFormat;
@@ -166,4 +165,5 @@ public class Tarjeta {
                 "Fecha de Vencimiento: " + fechaVencimiento + "\n" +
                 "CVV: " + cvv;
     }
+    
 }

@@ -1,28 +1,28 @@
 package Controlador;
 
 import Modelo.Cliente;
+import Modelo.Configuracion;
 import Vista.frmMovimientos;
-import Modelo.Vehiculo;
-
 import java.awt.event.ActionEvent;
-import javax.swing.JOptionPane;
 import java.awt.event.ActionListener;
 import javax.swing.table.DefaultTableModel;
 
 public class ControladorMovimientos {
 
-    private Cliente user;
+    //private Cliente user;
     private frmMovimientos vista;
+    private int indiceCliente;
 
-    public ControladorMovimientos(Cliente user) {
-        this.user = user;
+    public ControladorMovimientos(int indiceCliente) {
+        //this.user = user;
         this.vista = new frmMovimientos();
+        this.indiceCliente = indiceCliente;
         
         this.vista.btnAtras.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorOpcionesIngreso controller = new ControladorOpcionesIngreso(user);
-                controller.iniciar();
+                ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(indiceCliente);
+                ctrlOpcionesIngreso.iniciar();
                 vista.dispose();
             }
         });
@@ -57,13 +57,13 @@ public class ControladorMovimientos {
         
         this.vista.jMovimientos.setModel(datos);
         
-        for(int i=0;i<this.user.getCuenta().getNm();i++){
-            informacion[0] = this.user.getCuenta().getMovimientos(i).getFecha();
-            informacion[1] = this.user.getCuenta().getMovimientos(i).getTipo();
-            informacion[2] = Float.toString(this.user.getCuenta().getMovimientos(i).getMonto());
-            informacion[3] = this.user.getCuenta().getVehiculos(i).getPlaca();
-            informacion[4] = this.user.getCuenta().getVehiculos(i).getPlaca(); // mal, peaje
-            informacion[5] = this.user.getCuenta().getVehiculos(i).getPlaca(); // mal, peaje
+        for(int i=0;i<Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getNm();i++){
+            informacion[0] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getFecha();
+            informacion[1] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getTipo();
+            informacion[2] = Float.toString(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getMonto());
+            informacion[3] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getVehiculos(i).getPlaca();
+            informacion[4] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getVehiculos(i).getPlaca(); // mal, peaje
+            informacion[5] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getVehiculos(i).getPlaca(); // mal, peaje
             
             datos.addRow(informacion);
         }   

@@ -14,11 +14,13 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class ControladorVehiculos {
-    private Cliente usuario1;
+    //private Cliente usuario1;
     private frmVehiculos vista;
-
-    public ControladorVehiculos(Cliente usuario) {
-        this.usuario1 = usuario;
+    private int indiceCliente;
+    
+    public ControladorVehiculos(int indiceCliente) {
+        //this.usuario1 = usuario;
+        this.indiceCliente = indiceCliente;
         this.vista = new frmVehiculos();
         /*
         this.vista.btnOrdenarPlaca.addActionListener();
@@ -35,12 +37,11 @@ public class ControladorVehiculos {
         
         this.vista.btnAtras.addActionListener();
         */
-          this.vista.btnAtras.addActionListener(new ActionListener() {
+        this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
-                ControladorOpcionesIngreso controller = new ControladorOpcionesIngreso(usuario);
-                controller.iniciar();
+                ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(indiceCliente);
+                ctrlOpcionesIngreso.iniciar();
                 vista.dispose();
             }
         });
@@ -67,15 +68,15 @@ public class ControladorVehiculos {
         informacion[6] = "Peso bruto";
         informacion[7] = "Año";   
         user.addRow(informacion);*/
-        for(int i=0;i<this.usuario1.getCuenta().getNv();i++){
-            informacion[0] = this.usuario1.getCuenta().getVehiculos(i).getPlaca();
-            informacion[1] = this.usuario1.getCuenta().getVehiculos(i).getMarca();
-            informacion[2] = this.usuario1.getCuenta().getVehiculos(i).getModelo();
-            informacion[3] = this.usuario1.getCuenta().getVehiculos(i).getCategoria();
-            informacion[4] = String.valueOf(this.usuario1.getCuenta().getVehiculos(i).getEjes());
-            informacion[5] = this.usuario1.getCuenta().getVehiculos(i).getTipoUso();
-            informacion[6] = String.valueOf(this.usuario1.getCuenta().getVehiculos(i).getPesoBruto());
-            informacion[7] = String.valueOf(this.usuario1.getCuenta().getVehiculos(i).getAño());   
+        for(int i=0;i<Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getNv();i++){
+            informacion[0] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getVehiculos(i).getPlaca();
+            informacion[1] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getVehiculos(i).getMarca();
+            informacion[2] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getVehiculos(i).getModelo();
+            informacion[3] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getVehiculos(i).getCategoria();
+            informacion[4] = String.valueOf(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getVehiculos(i).getEjes());
+            informacion[5] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getVehiculos(i).getTipoUso();
+            informacion[6] = String.valueOf(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getVehiculos(i).getPesoBruto());
+            informacion[7] = String.valueOf(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getVehiculos(i).getAño());   
             user.addRow(informacion);
         }
       

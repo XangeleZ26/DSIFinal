@@ -11,18 +11,21 @@ import Modelo.ArregloClientes;
 
 public class ControladorRUCPago {
     private frmRUCPago vistaRUCPago;
-    Tarjeta mTarjeta = new Tarjeta();
-    Cuenta mCuenta = new Cuenta(mTarjeta);
-    private ArregloClientes modeloClientes = new ArregloClientes(); 
-    private Cliente user;
+    //Tarjeta mTarjeta = new Tarjeta();
+    //Cuenta mCuenta = new Cuenta(mTarjeta);
+    //private ArregloClientes modeloClientes = new ArregloClientes(); 
+    //private Cliente user;
     
-    public ControladorRUCPago(Cliente user){
+    /*
+    //public ControladorRUCPago(Cliente user){
+    public ControladorRUCPago(Cliente ClientePotencial){
         this.vistaRUCPago = new frmRUCPago();
-        this.user = user;
+        //this.user = user;
+        //this.indiceCliente = indiceCliente;
         this.vistaRUCPago.btnVolverRecargaOpc.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(modeloClientes, mCuenta, mTarjeta);
+                ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(ClientePotencial);
                 ctrlRecargaOpc.iniciarRecargaOpc();
                 vistaRUCPago.dispose();
             }
@@ -33,7 +36,7 @@ public class ControladorRUCPago {
             public void actionPerformed(ActionEvent e){
                 if(datosLlenosRUCPago()){
                     if(user.verificarValidezRUC(vistaRUCPago.txtRUC.getText())){
-                        ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(modeloClientes, mCuenta, mTarjeta);
+                        ControladorRecargaOpc ctrlRecargaOpc = new ControladorRecargaOpc(ClientePotencial);
                         ctrlRecargaOpc.iniciarRecargaOpc();
                         vistaRUCPago.dispose();
                     }
@@ -48,7 +51,7 @@ public class ControladorRUCPago {
             }
         });
     }
-    
+    */
     public void iniciarRUCPago(){
         vistaRUCPago.setTitle("Datos RUC");
         vistaRUCPago.setLocationRelativeTo(null);

@@ -18,7 +18,14 @@ public class Cuenta {
     private Estacion estacion;
     
     public Cuenta() {
-
+        this.saldoTotal = 12;
+        this.tarjeta = null;
+        this.nv = 0;
+        this.ov = nv - 1;
+        this.vehiculos = new Vehiculo[Configuracion.maxVehiculosXCliente];
+        this.nm = 0;
+        this.om = this.nm - 1;
+        this.movimientos = new Movimiento[Configuracion.maxMovimientos];
     }
 
     //CONSTRUCTORES
@@ -45,6 +52,7 @@ public class Cuenta {
     }
     //AGREGADO
     
+    //MÉTODOS ACCESORES
     public float getSaldoTotal() {
         return saldoTotal;
     }
@@ -341,7 +349,8 @@ public class Cuenta {
         }
         return result;
     }
-
+    
+    /*Hacer validación del CVV*/
     public boolean recargar(float monto, String cvv, String fecha) {
         boolean result = false;
             this.saldoTotal = this.saldoTotal + monto;
@@ -381,7 +390,7 @@ public class Cuenta {
     //ORDENAR MOVIMIENTOS
     public void ordenarMovimientosXFecha() {
         Movimiento aux;
-        Movimiento movimientosOrdenados[] = new Movimiento[nm];
+        movimientosOrdenados = new Movimiento[nm];
         /*movimientosOrdenados = movimientos; Este es el método directo plara clonar, los cambios hechos en el
         clon se reflejan en el objeto original*/
         //Se clona cada uno de los espacios del arreglo
@@ -412,7 +421,7 @@ public class Cuenta {
 
     public void ordenarMovimientosXMonto() {
         Movimiento aux;
-        Movimiento movimientosOrdenados[] = new Movimiento[nm];
+        movimientosOrdenados = new Movimiento[nm];
         /*movimientosOrdenados = movimientos; Este es el método directo plara clonar, los cambios hechos en el
         clon se reflejan en el objeto original*/
         //Se clona cada uno de los espacios del arreglo
@@ -443,7 +452,7 @@ public class Cuenta {
 
     public void ordenarMovimientosXPlacaVehiculo() {
         Movimiento aux;
-        Movimiento movimientosOrdenados[] = new Movimiento[nm];
+        movimientosOrdenados = new Movimiento[nm];
         /*movimientosOrdenados = movimientos; Este es el método directo plara clonar, los cambios hechos en el
         clon se reflejan en el objeto original*/
         //Se clona cada uno de los espacios del arreglo
@@ -478,7 +487,7 @@ public class Cuenta {
 
     public void ordenarMovimientosXEstacion() {
         Movimiento aux;
-        Movimiento movimientosOrdenados[] = new Movimiento[nm];
+        movimientosOrdenados = new Movimiento[nm];
         /*movimientosOrdenados = movimientos; Este es el método directo plara clonar, los cambios hechos en el
         clon se reflejan en el objeto original*/
         //Se clona cada uno de los espacios del arreglo
@@ -517,5 +526,4 @@ public class Cuenta {
         return result;
     }
      */
-
 }

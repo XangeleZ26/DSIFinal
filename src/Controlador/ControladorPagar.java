@@ -2,6 +2,7 @@
 package Controlador;
 
 import Modelo.Cliente;
+import Modelo.Configuracion;
 import Vista.frmPagar;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,24 +12,25 @@ import Modelo.Estacion;
 
 ////////////////////////////
 public class ControladorPagar {
-    private Cliente user;
+    //private Cliente user;
     private frmPagar vista;
     private Estacion estacion;
     ////////////////////////
-    public ControladorPagar(Cliente user) {
-        this.user = user;
+    public ControladorPagar(int indiceCliente) {
+        //this.user = user;
         this.vista = new frmPagar();
         this.estacion = estacion;
+        //this.indiceCliente = indiceCliente;
 
          this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorOpcionesIngreso controller = new ControladorOpcionesIngreso(user);
-                controller.iniciar();
+                ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(indiceCliente);
+                ctrlOpcionesIngreso.iniciar();
                 vista.dispose();
             }
         });
-         
+        /* 
         this.vista.btnPagar.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e){
@@ -36,10 +38,10 @@ public class ControladorPagar {
             SimpleDateFormat año = new SimpleDateFormat("yyyy");
 
             if(datosLlenosPagar()){
-            user.getCuenta().pagarPeaje(
+            Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().pagarPeaje(
                 sdf.format(vista.dcFechaPago.getDate()),
-                user.getCuenta().getVehiculos(Integer. parseInt(año.format(vista.dcFechaPago.getDate()))),
-                user.getCuenta().getEstacion(vista.cbxEstacion.getSelectedItem().toString())
+                Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getVehiculos(Integer.parseInt(año.format(vista.dcFechaPago.getDate()))),
+                Configuracion.arrClientes.getArregloCliente(indiceCliente).getEstacion(vista.cbxEstacion.getSelectedItem().toString())
                 );
                 JOptionPane.showMessageDialog(null, "Pago realizado con éxito");
             }
@@ -50,7 +52,8 @@ public class ControladorPagar {
         });
         
         //
-                this.vista.cbxPeaje.addActionListener(new ActionListener(){
+        
+        this.vista.cbxPeaje.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e){
             if(vista.cbxPeaje.getSelectedItem().toString()== "Panamericana Norte"){
@@ -76,7 +79,7 @@ public class ControladorPagar {
             }
             
         }
-        });
+        });*/
         
         //
     }

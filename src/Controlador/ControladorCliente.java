@@ -12,28 +12,89 @@ import Vista.frmCliente;
 import java.text.SimpleDateFormat;
 
 public class ControladorCliente{
-    private ArregloClientes modeloCliente = new ArregloClientes();
+    //private ArregloClientes modeloCliente = new ArregloClientes();
     //private ArregloClientes clientes;
     //private Vehiculo vehiculo;
     private frmCliente vistaCliente;
-    Cliente mCliente = new Cliente();
-    public ControladorCliente(ArregloClientes modeloCliente){
+    private Cliente ClientePotencial; 
+    /*En este atributo se guardarán los datos del cliente que 
+    posiblemente se registre. El registro se realizará en la clase Controlador Recarga Opcional*/
+    //public ControladorCliente(ArregloClientes modeloCliente){
+    public ControladorCliente(){
         this.vistaCliente = new frmCliente();
-        this.modeloCliente = modeloCliente;
+        this.ClientePotencial = new Cliente();
+        //this.modeloCliente = modeloCliente;
+        
         this.vistaCliente.btnOpcionRUC.addActionListener(new ActionListener(){
            @Override
            public void actionPerformed(ActionEvent e){
-               ControladorRUC ctrlRUC = new ControladorRUC(modeloCliente, mCliente);
+               ControladorRUC ctrlRUC = new ControladorRUC(ClientePotencial); //Se coloca como argumento al ClientePotencial
                ctrlRUC.iniciarRUC();
                vistaCliente.dispose(); 
            }
         });
+        
         this.vistaCliente.btnSiguiente2.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
                 if(datosLlenosCliente()){
-                    ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(modeloCliente);
-                    ctrlVehiculo.iniciarVehiculo();
+                    
+                    if(!Configuracion.arrClientes.verificarExistenciaCliente(
+                    vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
+                    vistaCliente.txtNumeroDocumento.getText())){
+                        
+                        if(!Configuracion.arrClientes.verificarExistenciaCorreo(vistaCliente.txtEmail.getText())){
+                            String contra = String.valueOf(vistaCliente.txtContrasena.getPassword());
+                            String contraVerif = String.valueOf(vistaCliente.txtVerifContrasena.getPassword());
+                            
+                            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                            //String fechaNacimiento = sdf.format(vistaCliente.dcFechaNacimiento.getDate());
+                            
+                            if(contra != null && contraVerif !=null){
+                                if(contra.compareTo(contraVerif) == 0){
+                                    ClientePotencial = new Cliente(
+                                                    vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
+                                                    vistaCliente.txtNumeroDocumento.getText(),
+                                                    vistaCliente.txtNombres.getText(),
+                                                    vistaCliente.txtApPaterno.getText(),
+                                                    vistaCliente.txtApMaterno.getText(),
+                                                    vistaCliente.cbxSexo.getSelectedItem().toString(),
+                                                    sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
+                                                    vistaCliente.txtEmail.getText(),
+                                                    vistaCliente.txtContrasena.getPassword().toString());
+                                    //modeloCliente.agregarCliente(cliente); CORREGIR
+                                    //JOptionPane.showMessageDialog(null, "Datos del cliente registrados, puede continuar con su registro.");
+                                }
+                                else{
+                                    JOptionPane.showMessageDialog(null, "Verificación de contraseña incorrecta.");
+                                }
+                            }
+                            else{
+                                ClientePotencial = new Cliente(
+                                                vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
+                                                vistaCliente.txtNumeroDocumento.getText(),
+                                                vistaCliente.txtNombres.getText(),
+                                                vistaCliente.txtApPaterno.getText(),
+                                                vistaCliente.txtApMaterno.getText(),
+                                                vistaCliente.cbxSexo.getSelectedItem().toString(),
+                                                sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
+                                                vistaCliente.txtEmail.getText());
+                                //modeloCliente.agregarCliente(cliente);
+                            }
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(vistaCliente, "Correo ya registrado. Ingrese otra dirección de correo.");
+                            vistaCliente.txtEmail.setText(null);
+                        }
+                        
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(vistaCliente, "Cliente ya registrado. Ingrese nuevos datos.");
+                        limpiarDatosCliente();
+                    }
+                    
+                    ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                    ctrlRegistroVehiculo.iniciarVehiculo();
                     vistaCliente.dispose(); 
                 }
                 else{
@@ -78,7 +139,7 @@ public class ControladorCliente{
                 vistaCliente.txtVerifContrasena.setEchoChar((char) 0);
             }
         });
-        
+        /*
         this.vistaCliente.btnRegistrarCliente.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -105,7 +166,7 @@ public class ControladorCliente{
                                                     sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
                                                     vistaCliente.txtEmail.getText(),
                                                     vistaCliente.txtContrasena.getPassword().toString());
-                                    modeloCliente.agregarCliente(cliente);
+                                    modeloCliente.agregarCliente(cliente); //CORREGIR
                                     JOptionPane.showMessageDialog(null, "Datos del cliente registrados, puede continuar con su registro.");
                                 }
                                 else{
@@ -141,7 +202,7 @@ public class ControladorCliente{
                 }
                 
             }
-        });
+        });*/
     }
     
     public void iniciarCliente(){
@@ -174,3 +235,4 @@ public class ControladorCliente{
                 && this.vistaCliente.txtEmail.getText().trim().length() != 0);
     }  
 }
+

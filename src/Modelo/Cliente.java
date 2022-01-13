@@ -32,6 +32,7 @@ public class Cliente {
         this.apMaterno = cliente.getApMaterno();
         this.sexo = cliente.getSexo();
         this.fechaNacimiento = cliente.getFechaNacimiento();
+        this.cuenta = new Cuenta();
         this.credencial = new Credencial(cliente.getCredencial().getCorreo(),cliente.getCredencial().getContraseña());
     }
     
@@ -43,6 +44,7 @@ public class Cliente {
         this.apMaterno = apMaterno;
         this.sexo = sexo;
         this.fechaNacimiento = fechaNacimiento;
+        this.cuenta = new Cuenta();
         this.credencial = new Credencial (correo,contraseña);         
     }
     public Cliente(String tipoDocumento, String numDocumento, String nombres, String apPaterno, String apMaterno, String sexo, String fechaNacimiento, String correo) {
@@ -53,6 +55,7 @@ public class Cliente {
         this.apMaterno = apMaterno;
         this.sexo = sexo;
         this.fechaNacimiento = fechaNacimiento;
+        this.cuenta = new Cuenta();
         this.credencial = new Credencial(correo,numDocumento);           
     }
     
@@ -60,6 +63,7 @@ public class Cliente {
         this.tipoDocumento = tipoDocumento;
         this.numDocumento = numDocumento;
         this.razonSocial = razonSocial;
+        this.cuenta = new Cuenta();
         this.credencial = new Credencial(correo,numDocumento);
     }
     
@@ -67,16 +71,19 @@ public class Cliente {
         this.tipoDocumento = tipoDocumento;
         this.numDocumento = numDocumento;
         this.razonSocial = razonSocial;
+        this.cuenta = new Cuenta();
         this.credencial = new Credencial(correo,contraseña);
     }
 
     public Cliente(String numDocumento, String correo) {
         this.numDocumento = numDocumento;
+        this.cuenta = new Cuenta();
         this.credencial = new Credencial(correo);
     }
 
     public Cliente(String numDocumento, String correo, String contraseña) {
         this.numDocumento = numDocumento;
+        this.cuenta = new Cuenta();
         this.credencial = new Credencial(correo,contraseña);
     }
     
@@ -219,7 +226,7 @@ public class Cliente {
         if(tarjeta.verificarValidezTajeta(tarjeta.getNumTarjeta(), tarjeta.getMedioPago())==true && 
                 tarjeta.verificarVigenciaTarjeta(tarjeta.getFechaVencimiento()) == true && 
                 tarjeta.verificarValidezCVV(tarjeta.getCvv(), tarjeta.getMedioPago())==true){
-            this.cuenta = new Cuenta (tarjeta);
+            this.cuenta.setTarjeta(tarjeta);
             result = true;
         }
         return result; 
@@ -258,6 +265,10 @@ public class Cliente {
             result = false;
         }
         return result;
+    }
+    
+    public void mostrarClientes(){
+        Configuracion.arrClientes.mostrarClientes();
     }
     
     @Override

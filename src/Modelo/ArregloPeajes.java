@@ -126,8 +126,10 @@ public class ArregloPeajes {
                 }
             }
         }
+        
         return result;
         /*Si es false, significa que la estación no existe en ningún peaje, por lo tanto
         se puede registrar*/
     }
 }
+

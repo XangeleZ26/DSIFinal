@@ -10,16 +10,18 @@ import Vista.frmCliente;
 import Vista.frmLogin;
 import Vista.frmRegistroVehiculo;
 
+/* 
+*/
 public class ControladorPrincipal implements ActionListener{
-    private ArregloClientes modeloClientes;
+    //private ArregloClientes modeloClientes;
     private frmPaginaPrincipal vistaPrincipal;
     Vehiculo mVehiculo;
     frmCliente fCliente;
     frmRegistroVehiculo fVehiculo;
     
     public ControladorPrincipal(frmPaginaPrincipal vistaPrincipal){
-        this.modeloClientes = Configuracion.arrClientes;
-        this.vistaPrincipal = vistaPrincipal;
+        //this.modeloClientes = Configuracion.arrClientes;
+        this.vistaPrincipal = new frmPaginaPrincipal();
         this.vistaPrincipal.btnIngresa.addActionListener(this);
         this.vistaPrincipal.btnAfiliate.addActionListener(this);
     } 
@@ -34,13 +36,13 @@ public class ControladorPrincipal implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vistaPrincipal.btnIngresa){
             
-            ControladorLogin controller = new ControladorLogin();
-            controller.iniciar(); //se abre vista login
+            ControladorLogin ctrlLogin = new ControladorLogin();
+            ctrlLogin.iniciar(); //se abre vista login
             vistaPrincipal.dispose(); //se cierra vista principal
         }
         else if(e.getSource() == vistaPrincipal.btnAfiliate){
             
-            ControladorCliente ctrlCliente = new ControladorCliente(modeloClientes);
+            ControladorCliente ctrlCliente = new ControladorCliente();
             ctrlCliente.iniciarCliente();
             vistaPrincipal.dispose(); 
         }

@@ -1,11 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Controlador;
 
 import Modelo.Cliente;
+import Modelo.Configuracion;
 import Vista.frmOpcionesIngreso;
 import Vista.frmPaginaPrincipal;
 import java.awt.event.ActionEvent;
@@ -13,65 +9,71 @@ import java.awt.event.ActionListener;
 
 
 public class ControladorOpcionesIngreso {
-    private Cliente user;
+    //private Cliente user;
     private frmOpcionesIngreso vista;
-    
-    public ControladorOpcionesIngreso(Cliente user){
-       this.user=user;
-        this.vista=new frmOpcionesIngreso(); 
+    private int indiceCliente;
+    //public ControladorOpcionesIngreso(Cliente user){
+    public ControladorOpcionesIngreso(int indiceCliente){
+        //this.user=user;
+        this.vista=new frmOpcionesIngreso();
+        this.indiceCliente = indiceCliente;
+        
         
         this.vista.btnConfiguracion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               ControladorConfiguracion controller=new ControladorConfiguracion(user);
-               controller.iniciar();
-               vista.dispose();
+                ControladorConfiguracion ctrlConfiguracion=new ControladorConfiguracion(indiceCliente);
+                ctrlConfiguracion.iniciar();
+                vista.dispose();
             }
         });
+        
         this.vista.btnSaldo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-               ControladorSaldo controller=new ControladorSaldo(user);
-               controller.iniciar();
-               vista.dispose();
+                ControladorSaldo ctrlSaldo = new ControladorSaldo(indiceCliente);
+                ctrlSaldo.iniciar();
+                vista.dispose();
             }
         });
+        
         this.vista.btnMovimientos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              ControladorMovimientos controller=new ControladorMovimientos(user);
-               controller.iniciar();
-               vista.dispose();
+                ControladorMovimientos ctrlMovimientos =new ControladorMovimientos(indiceCliente);
+                ctrlMovimientos.iniciar();
+                vista.dispose();
             }
         });
         this.vista.btnPagar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              ControladorPagar controller=new ControladorPagar(user);
-               controller.iniciar();
-               vista.dispose();
+                ControladorPagar ctrlPagar = new ControladorPagar(indiceCliente);
+                ctrlPagar.iniciar();
+                vista.dispose();
             }
         });
         this.vista.btnRecargar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              ControladorRecarga controller=new ControladorRecarga(user);
-               controller.iniciar();
-               vista.dispose();
+                ControladorRecarga ctrlRecarga = new ControladorRecarga(indiceCliente);
+                ctrlRecarga.iniciar();
+                vista.dispose();
             }
         });
         this.vista.btnVehiculos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-              ControladorVehiculos controller=new ControladorVehiculos(user);
-               controller.iniciar();
-               vista.dispose();
+                ControladorVehiculos ctrlVehiculos = new ControladorVehiculos(indiceCliente);
+                ctrlVehiculos.iniciar();
+                vista.dispose();
             }
         });
     }
     
-      public void iniciar(){
-          vista.txtNombreUsuario.setText(this.user.getNombres()+" "+this.user.getApPaterno());
+    public void iniciar(){
+        vista.txtNombreUsuario.setText(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getNombres()+" "
+                                       +Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getApPaterno());
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     }

@@ -58,7 +58,6 @@ public class Vehiculo {
 
     public String getTipoUso() {
         return tipoUso;
-
     }
 
     public void setTipoUso(String tipoUso) {
@@ -82,12 +81,11 @@ public class Vehiculo {
     }
 
     public Cliente getDueño() {
-        return dueño;
-        
+        return dueño;        
     }
 
     public void setDueño(Cliente dueño) {
-
+        this.dueño = dueño;
     }
     
     //MÉTODOS DE FUNCIONAMIENTO DE LA CLASE 
