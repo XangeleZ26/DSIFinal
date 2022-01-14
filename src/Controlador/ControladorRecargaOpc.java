@@ -28,7 +28,7 @@ public class ControladorRecargaOpc{
         //this.modeloCuenta = modeloCuenta;
         //this.modeloTarjeta = modeloTarjeta;
         this.vistaRecargaOpc = new frmRecargaOpcional();
-        this.ClientePotencial = ControladorCliente.ClientePotencial;
+        this.ClientePotencial = ClientePotencial;
         this.vistaRecargaOpc.btnCalcular.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e){

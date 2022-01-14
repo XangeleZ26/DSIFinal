@@ -21,7 +21,7 @@ public class ControladorEntrega{
  
     public ControladorEntrega(Cliente ClientePotencial){
         this.vistaEntrega = new frmEntrega();
-        this.ClientePotencial = ControladorCliente.ClientePotencial;
+        this.ClientePotencial = ClientePotencial;
         
         this.vistaEntrega.btnSiguiente3.addActionListener(new ActionListener(){
             @Override

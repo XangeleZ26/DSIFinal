@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import Modelo.ArregloClientes;
 import Modelo.Configuracion;
-import Modelo.Vehiculo;
+import Modelo.Cliente;
 import Vista.frmPaginaPrincipal;
 import Vista.frmCliente;
 import Vista.frmLogin;
@@ -15,7 +15,8 @@ import Vista.frmRegistroVehiculo;
 public class ControladorPrincipal implements ActionListener{
     //private ArregloClientes modeloClientes;
     private frmPaginaPrincipal vistaPrincipal;
-    Vehiculo mVehiculo;
+    private Cliente cliente;
+
     frmCliente fCliente;
     frmRegistroVehiculo fVehiculo;
     

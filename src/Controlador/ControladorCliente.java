@@ -14,7 +14,7 @@ import javax.swing.DefaultComboBoxModel;
  
 public class ControladorCliente{
     private frmCliente vistaCliente;
-    public static Cliente ClientePotencial; 
+    private Cliente ClientePotencial; 
     
     /*En este atributo se guardarán los datos del cliente que 
     posiblemente se registre. El registro se realizará en la clase Controlador Recarga Opcional*/
@@ -54,6 +54,8 @@ public class ControladorCliente{
                                                     sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
                                                     vistaCliente.txtEmail.getText(),
                                                     vistaCliente.txtContrasena.getPassword().toString());
+                                    //esta agregacion es solo de prueba
+                                    Configuracion.arrClientes.agregarCliente(ClientePotencial);
                                     JOptionPane.showMessageDialog(vistaCliente, "Datos del cliente registrados, puede continuar con su registro.");
                                                     ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
                                                     ctrlRegistroVehiculo.iniciarVehiculo();
@@ -72,7 +74,9 @@ public class ControladorCliente{
                                                 vistaCliente.txtApMaterno.getText(),
                                                 vistaCliente.cbxSexo.getSelectedItem().toString(),
                                                 sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
-                                                vistaCliente.txtEmail.getText());
+                                                vistaCliente.txtEmail.getText(),
+                                                vistaCliente.txtNumeroDocumento.getText());
+                                //esta agregacion es solo de prueba
                                 Configuracion.arrClientes.agregarCliente(ClientePotencial);
                                     JOptionPane.showMessageDialog(vistaCliente, "Datos del cliente registrados, puede continuar con su registro.");        
                                                 ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);

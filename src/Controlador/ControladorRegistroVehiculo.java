@@ -16,7 +16,7 @@ public class ControladorRegistroVehiculo{
     private frmRegistroVehiculo vistaVehiculo;
    
     public ControladorRegistroVehiculo(Cliente ClientePotencial){
-        this.ClientePotencial = ControladorCliente.ClientePotencial;
+        this.ClientePotencial = ClientePotencial;
         this.vistaVehiculo = new frmRegistroVehiculo();
         this.vistaVehiculo = new frmRegistroVehiculo();
         this.vistaVehiculo.btnSiguiente2.addActionListener(new ActionListener(){
