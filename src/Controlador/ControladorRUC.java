@@ -10,15 +10,13 @@ import Vista.frmRUC;
 
 public class ControladorRUC {
     private frmRUC vistaRUC;
+    private Cliente ClientePotencial;
     //private ArregloClientes modeloClientes = new ArregloClientes();
     //private Cliente user;
-    //private Cliente ClientePotencial;
     
     public ControladorRUC(Cliente ClientePotencial){
         this.vistaRUC = new frmRUC();
-        //this.user = user;
-        //this.modeloClientes = modeloClientes;
-        //this.ClientePotencial = ClientePotencial;
+        this.ClientePotencial = ClientePotencial;
         
         this.vistaRUC.btnVolverCliente.addActionListener(new ActionListener(){
             @Override
@@ -32,14 +30,11 @@ public class ControladorRUC {
         this.vistaRUC.btnNext.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                
-                
                 if(datosLlenosCliente()){
                     if(ClientePotencial.verificarValidezRUC(vistaRUC.txtRUC.getText())){
                          if(!Configuracion.arrClientes.verificarExistenciaCliente("RUC", vistaRUC.txtRUC.getText())){
-                            ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(), 
+                            Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(), 
                                                            vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText());
-                            //modeloClientes.agregarCliente(cliente);
                             JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
                             ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
                             ctrlVehiculo.iniciarVehiculo();
@@ -62,34 +57,6 @@ public class ControladorRUC {
                 
            }
         });
-        
-        /*this.vistaRUC.btnRegistrarClienteRUC.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                if(datosLlenosCliente()){
-                    if(user.verificarValidezRUC(vistaRUC.txtRUC.getText())){
-                         if(!modeloClientes.verificarExistenciaCliente(
-                            "RUC", vistaRUC.txtRUC.getText())){
-                            Cliente cliente = new Cliente("RUC", vistaRUC.txtRUC.getText(), vistaRUC.txtCorreo.getText(), vistaRUC.txtCorreo.getText());
-                            modeloClientes.agregarCliente(cliente);
-                            JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
-                         }
-                         else{
-                            limpiarDatosRUC();
-                            JOptionPane.showMessageDialog(vistaRUC, "Cliente ya registrado. Ingrese nuevos datos.");
-                         }
-                    }
-                    else{
-                        vistaRUC.txtRUC.setText(null);
-                        JOptionPane.showMessageDialog(vistaRUC, "RUC inválido, digite nuevamente");
-                    }
-      
-                }
-                else{
-                    JOptionPane.showMessageDialog(vistaRUC, "Debe llenar todos los campos, por favor.");
-                }
-            }
-        });*/
     }
     
     public void iniciarRUC(){

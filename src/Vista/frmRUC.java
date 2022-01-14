@@ -41,7 +41,6 @@ public class frmRUC extends javax.swing.JFrame {
         txtCorreo = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
         btnVolverCliente = new javax.swing.JButton();
-        btnRegistrarClienteRUC = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -122,13 +121,6 @@ public class frmRUC extends javax.swing.JFrame {
         btnVolverCliente.setText("Volver");
         btnVolverCliente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
-        btnRegistrarClienteRUC.setBackground(new java.awt.Color(104, 113, 153));
-        btnRegistrarClienteRUC.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnRegistrarClienteRUC.setForeground(new java.awt.Color(0, 0, 0));
-        btnRegistrarClienteRUC.setText("Registrar datos");
-        btnRegistrarClienteRUC.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnRegistrarClienteRUC.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
         org.jdesktop.layout.GroupLayout PContenidoLayout = new org.jdesktop.layout.GroupLayout(PContenido);
         PContenido.setLayout(PContenidoLayout);
         PContenidoLayout.setHorizontalGroup(
@@ -147,8 +139,7 @@ public class frmRUC extends javax.swing.JFrame {
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                     .add(PContenidoLayout.createSequentialGroup()
-                        .add(btnRegistrarClienteRUC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 132, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(75, 75, 75)
+                        .add(207, 207, 207)
                         .add(btnNext))
                     .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                         .add(txtRazonSocial)
@@ -165,32 +156,30 @@ public class frmRUC extends javax.swing.JFrame {
                 .add(42, 42, 42)
                 .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(lblRUC)
-                    .add(txtRUC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(txtRUC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(33, 33, 33)
                 .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(lblRazonSocial)
-                    .add(txtRazonSocial, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(txtRazonSocial, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(33, 33, 33)
                 .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(lblCorreo)
-                    .add(txtCorreo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(txtCorreo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(PContenidoLayout.createSequentialGroup()
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
                         .add(btnNext)
-                        .addContainerGap(20, Short.MAX_VALUE))
+                        .addContainerGap(10, Short.MAX_VALUE))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoLayout.createSequentialGroup()
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                            .add(btnVolverCliente)
-                            .add(btnRegistrarClienteRUC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 35, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(28, 28, 28))))
+                        .add(btnVolverCliente)
+                        .add(33, 33, 33))))
         );
 
         PGeneral.add(PContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 440, 320));
@@ -249,7 +238,6 @@ public class frmRUC extends javax.swing.JFrame {
     private javax.swing.JPanel PGeneral;
     private javax.swing.JPanel PTitulo;
     public javax.swing.JButton btnNext;
-    public javax.swing.JButton btnRegistrarClienteRUC;
     public javax.swing.JButton btnVolverCliente;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;

@@ -63,6 +63,9 @@ public class AppPeaje {
         Date fechanacimiento3 = new Date(1900-1900, 8-1, 10);
         cliente = new Cliente("PASAPORTE","55556666","Sheldon Lee","Cooper","Fowler","Masculino", sdf.format(fechanacimiento3),"sheldon.cooper@gmail.com","123");
         System.out.println("Cliente agregado: "+clientes.agregarCliente(cliente));
+        Date fechanacimiento4 = new Date(2002-1900, 7-1, 25);
+        cliente = new Cliente("RUC","20518639928", "alfaBeta@gmail.com","Brigth");
+        System.out.println("Cliente agregado: "+clientes.agregarCliente(cliente));
         System.out.println("");
         System.out.println("***Clientes del sistema***");
         clientes.mostrarClientes();
@@ -109,10 +112,10 @@ public class AppPeaje {
         System.out.println("");
         
         //REGISTRAMOS VEHÍCULOS AL CLIENTE
-        System.out.println("Vehículo 'FALL1N1 Tesla Elon' registrado: "+clientes.getArregloCliente(0).getCuenta().registrarVehiculo("FALL1N1", "Tesla", "Elon", 2, "Privado", 2000, 2018, clientes.getArregloCliente(0)));
-        System.out.println("Vehículo 'MESSI10 Chevrolet Camaro' registrado: "+clientes.getArregloCliente(0).getCuenta().registrarVehiculo("MESSI10", "Chevrolet", "Camaro", 2, "Público", 1500, 2015, clientes.getArregloCliente(0)));
+        System.out.println("Vehículo 'FALL1N1 Tesla Elon' registrado: "+clientes.getArregloCliente(0).getCuenta().registrarVehiculo("FALL1N1", "Tesla", "Elon", "Liviano", 2, "Privado", 2000, 2018, clientes.getArregloCliente(0)));
+        System.out.println("Vehículo 'MESSI10 Chevrolet Camaro' registrado: "+clientes.getArregloCliente(0).getCuenta().registrarVehiculo("MESSI10", "Chevrolet", "Pesado", "Camaro", 2, "Público", 1500, 2015, clientes.getArregloCliente(0)));
         System.out.println("Vehículo 'MARIOKT Hyundai H100' registrado: "+clientes.getArregloCliente(0).getCuenta().registrarVehiculo("MARIOKT", "Hyundai", "H100", 6, 8500, 2010, clientes.getArregloCliente(0)));
-        System.out.println("Vehículo 'J20G15GY Susuki Grand' registrado: "+clientes.getArregloCliente(0).getCuenta().registrarVehiculo("J20G15GY", "Susuki", "Grand", 2, "Público", 2100, 2007, clientes.getArregloCliente(0)));
+        System.out.println("Vehículo 'J20G15GY Susuki Grand' registrado: "+clientes.getArregloCliente(0).getCuenta().registrarVehiculo("J20G15GY", "Susuki", "Grand", "Liviano", 2, "Público", 2100, 2007, clientes.getArregloCliente(0)));
         System.out.println("");
         System.out.println("***Vehículos del cliente***");
         clientes.getArregloCliente(0).getCuenta().mostrarVehiculos();
@@ -277,14 +280,18 @@ public class AppPeaje {
         clienteprueba.mostrarClientes();
         System.out.println("");*/
         
-        
+        cliente = new Cliente("DNI","75720836","dfbfg","fbfb","fgbfg", "dfvd", sdf.format(fechanacimiento2), "fgbfgv","156");
+        System.out.println("Cliente agregado: "+Configuracion.arrClientes.agregarCliente(cliente));
+        cliente = new Cliente("DNI","75720838","dfbfg","fbfb","fgbfg", "frgbr", sdf.format(fechanacimiento2), "fgbfgv","156");
+        System.out.println("Cliente agregado: "+Configuracion.arrClientes.agregarCliente(cliente));
+        //Configuracion.arrClientes = clientes;
         Configuracion.getArrClientes().mostrarClientes();
         
-        Configuracion.arrClientes = clientes;
         
         frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
         ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
         ctrlPrincipal.iniciar();
+        
         
         //INICIO DE PROGRAMAAAA (SEGÚN LA VISTA)
    

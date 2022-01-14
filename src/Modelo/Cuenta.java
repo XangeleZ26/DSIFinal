@@ -115,13 +115,13 @@ public class Cuenta {
     }
 
     //MÉTODOS DEL FUNCIONAMIENTO DE LA CLASE
-    public boolean registrarVehiculo(String placa, String marca, String modelo, int ejes, String tipoUso, float pesoBruto, int año, Cliente dueño) {
+    public boolean registrarVehiculo(String placa, String marca, String modelo, String categoria, int ejes, String tipoUso, float pesoBruto, int año, Cliente dueño) {
         boolean result = false;
         if(nv != Configuracion.maxVehiculosXCliente){
             if (verificarExistenciaVehiculo(placa) == false) {
             this.nv++;
             this.ov = this.nv - 1;
-            this.vehiculos[ov] = new Vehiculo(placa, marca, modelo, ejes, tipoUso, pesoBruto, año, dueño);
+            this.vehiculos[ov] = new Vehiculo(placa, marca, modelo, categoria, ejes, tipoUso, pesoBruto, año, dueño);
             result = true;
             //Verificar si el registro fue correcto
             if (result == false) {

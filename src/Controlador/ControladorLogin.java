@@ -54,6 +54,9 @@ public class ControladorLogin {
                             vista.dispose();
                             System.out.println(contrasena);
                         }
+                        else{
+                            JOptionPane.showMessageDialog(null, "Cliente no registrado.");
+                        }
                         
                     } catch (ArrayIndexOutOfBoundsException z) {
                         JOptionPane.showMessageDialog(null, "Datos incorrectos.");

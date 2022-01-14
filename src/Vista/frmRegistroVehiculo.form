@@ -101,38 +101,28 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lblModelo" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
-                                          <Component id="lblPlaca" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="jSeparator2" max="32767" attributes="0"/>
-                                                      <Component id="txtPlaca" min="-2" pref="161" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="jSeparator3" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Component id="txtModelo" min="-2" pref="160" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="lblEjes" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jSeparator9" max="32767" attributes="0"/>
-                                          <Component id="cbxEjes" pref="61" max="32767" attributes="0"/>
-                                      </Group>
-                                  </Group>
+                                  <Component id="lblModelo" alignment="0" min="-2" pref="89" max="-2" attributes="0"/>
+                                  <Component id="lblPlaca" alignment="0" min="-2" pref="65" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                              <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jSeparator2" max="32767" attributes="0"/>
+                                      <Component id="txtPlaca" min="-2" pref="161" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Component id="jSeparator3" alignment="0" min="-2" pref="160" max="-2" attributes="0"/>
+                                  <Component id="txtModelo" min="-2" pref="160" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="lblEjes" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jSeparator9" max="32767" attributes="0"/>
+                                  <Component id="cbxEjes" pref="61" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="lblCategoria" min="-2" max="-2" attributes="0"/>
@@ -141,9 +131,9 @@
                                   <Component id="jSeparator5" max="32767" attributes="0"/>
                                   <Component id="cbxCategoria" min="-2" pref="160" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace max="32767" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
                               <Component id="lblTipoUso" min="-2" pref="127" max="-2" attributes="0"/>
@@ -189,9 +179,8 @@
                                       <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="1" attributes="0">
-                                      <Component id="btnRegistrarVehiculo" min="-2" pref="132" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="btnSiguiente1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                      <Component id="btnSiguiente2" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
@@ -277,17 +266,9 @@
                               <Component id="jSeparator5" min="-2" pref="10" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="54" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="btnSiguiente1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="btnRegistrarVehiculo" min="-2" pref="35" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <EmptySpace pref="65" max="32767" attributes="0"/>
+                      <Component id="btnSiguiente2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -340,151 +321,7 @@
                   <Font name="Times New Roman" size="14" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="143">
-                    <StringItem index="0" value="                             "/>
-                    <StringItem index="1" value="ACS"/>
-                    <StringItem index="2" value="AG AUTOMOTRIZ"/>
-                    <StringItem index="3" value="ALELUYA"/>
-                    <StringItem index="4" value="ALYER"/>
-                    <StringItem index="5" value="ASIA"/>
-                    <StringItem index="6" value="AUDI"/>
-                    <StringItem index="7" value="AUTOCRAFT"/>
-                    <StringItem index="8" value="BAW"/>
-                    <StringItem index="9" value="BEIJING"/>
-                    <StringItem index="10" value="BMW"/>
-                    <StringItem index="11" value="BROWN"/>
-                    <StringItem index="12" value="BULLON"/>
-                    <StringItem index="13" value="Camc"/>
-                    <StringItem index="14" value="CEISA"/>
-                    <StringItem index="15" value="CEMAC"/>
-                    <StringItem index="16" value="CHERY"/>
-                    <StringItem index="17" value="CHEVROLET"/>
-                    <StringItem index="18" value="CHRYSLER"/>
-                    <StringItem index="19" value="CITROEN"/>
-                    <StringItem index="20" value="CLEMENT"/>
-                    <StringItem index="21" value="COCERVI"/>
-                    <StringItem index="22" value="CORENHA"/>
-                    <StringItem index="23" value="CORMAR"/>
-                    <StringItem index="24" value="CPR"/>
-                    <StringItem index="25" value="DAEWOO"/>
-                    <StringItem index="26" value="DAIHATSU"/>
-                    <StringItem index="27" value="DCMETAL"/>
-                    <StringItem index="28" value="DODGE"/>
-                    <StringItem index="29" value="DONG FENG"/>
-                    <StringItem index="30" value="DORSEY"/>
-                    <StringItem index="31" value="DUNHAM"/>
-                    <StringItem index="32" value="ESMECA"/>
-                    <StringItem index="33" value="FABRIMETAL"/>
-                    <StringItem index="34" value="FAMECA"/>
-                    <StringItem index="35" value="FIAT"/>
-                    <StringItem index="36" value="FMC"/>
-                    <StringItem index="37" value="FORD"/>
-                    <StringItem index="38" value="FOTON"/>
-                    <StringItem index="39" value="FREIGHTLINER"/>
-                    <StringItem index="40" value="FRUEHAUF"/>
-                    <StringItem index="41" value="FUFABRISAC"/>
-                    <StringItem index="42" value="G.H.INDUSTRIAL"/>
-                    <StringItem index="43" value="GDAN"/>
-                    <StringItem index="44" value="GM"/>
-                    <StringItem index="45" value="GMC"/>
-                    <StringItem index="46" value="GOLDEN DRAGON"/>
-                    <StringItem index="47" value="GRE &amp; JHO"/>
-                    <StringItem index="48" value="GREAT DANE"/>
-                    <StringItem index="49" value="GREAT WALL"/>
-                    <StringItem index="50" value="GREYHOUND"/>
-                    <StringItem index="51" value="GUERRA"/>
-                    <StringItem index="52" value="HERCULES"/>
-                    <StringItem index="53" value="HINO"/>
-                    <StringItem index="54" value="HONDA"/>
-                    <StringItem index="55" value="HRT"/>
-                    <StringItem index="56" value="HUANGHAI"/>
-                    <StringItem index="57" value="INCAPER"/>
-                    <StringItem index="58" value="INCMENA"/>
-                    <StringItem index="59" value="INDIO"/>
-                    <StringItem index="60" value="INMEPO"/>
-                    <StringItem index="61" value="INTERNATIONAL"/>
-                    <StringItem index="62" value="INTERNATIONAL"/>
-                    <StringItem index="63" value="ISUZU"/>
-                    <StringItem index="64" value="IVECO"/>
-                    <StringItem index="65" value="JAC"/>
-                    <StringItem index="66" value="JEEP"/>
-                    <StringItem index="67" value="JINBEI"/>
-                    <StringItem index="68" value="JMC"/>
-                    <StringItem index="69" value="JMR INVERSIONES"/>
-                    <StringItem index="70" value="JOSELOF"/>
-                    <StringItem index="71" value="KENWORTH"/>
-                    <StringItem index="72" value="KIA"/>
-                    <StringItem index="73" value="KILIN"/>
-                    <StringItem index="74" value="King Long"/>
-                    <StringItem index="75" value="LAM"/>
-                    <StringItem index="76" value="LEON"/>
-                    <StringItem index="77" value="LIMA TRAYLERS"/>
-                    <StringItem index="78" value="MACK"/>
-                    <StringItem index="79" value="MAHINDRA"/>
-                    <StringItem index="80" value="MAN"/>
-                    <StringItem index="81" value="MARCO POLO"/>
-                    <StringItem index="82" value="MAZDA"/>
-                    <StringItem index="83" value="MCI"/>
-                    <StringItem index="84" value="MELGA"/>
-                    <StringItem index="85" value="Mercedes"/>
-                    <StringItem index="86" value="MERCEDES BENZ"/>
-                    <StringItem index="87" value="MERCEDES-BENZ"/>
-                    <StringItem index="88" value="MG"/>
-                    <StringItem index="89" value="MILLER"/>
-                    <StringItem index="90" value="MITSUBISHI"/>
-                    <StringItem index="91" value="MONTENEGRO"/>
-                    <StringItem index="92" value="NACIONAL"/>
-                    <StringItem index="93" value="NEOGAS"/>
-                    <StringItem index="94" value="NISSAN"/>
-                    <StringItem index="95" value="OGJ METAL"/>
-                    <StringItem index="96" value="PAZ DEL PERU"/>
-                    <StringItem index="97" value="PERTRA"/>
-                    <StringItem index="98" value="PEUGEOT"/>
-                    <StringItem index="99" value="PINES"/>
-                    <StringItem index="100" value="QUSCHMITZ"/>
-                    <StringItem index="101" value="RAJUNSA"/>
-                    <StringItem index="102" value="RANDON"/>
-                    <StringItem index="103" value="RECRUSUL"/>
-                    <StringItem index="104" value="REFRISS"/>
-                    <StringItem index="105" value="REMCASA"/>
-                    <StringItem index="106" value="RENAULT"/>
-                    <StringItem index="107" value="RMB"/>
-                    <StringItem index="108" value="RMB SATECI"/>
-                    <StringItem index="109" value="RODO"/>
-                    <StringItem index="110" value="ROFOSA"/>
-                    <StringItem index="111" value="SAN MARTIN"/>
-                    <StringItem index="112" value="SATECI"/>
-                    <StringItem index="113" value="SCANIA"/>
-                    <StringItem index="114" value="SEAT"/>
-                    <StringItem index="115" value="SERMET"/>
-                    <StringItem index="116" value="SERVIMET"/>
-                    <StringItem index="117" value="SIELSAC"/>
-                    <StringItem index="118" value="SINOTRUK"/>
-                    <StringItem index="119" value="STRIK"/>
-                    <StringItem index="120" value="SUBARU"/>
-                    <StringItem index="121" value="SUDENGA"/>
-                    <StringItem index="122" value="SUZUKI"/>
-                    <StringItem index="123" value="THEURER"/>
-                    <StringItem index="124" value="TIANJIN"/>
-                    <StringItem index="125" value="TOYOTA"/>
-                    <StringItem index="126" value="TRAIL TEK"/>
-                    <StringItem index="127" value="TRAILMOBILE"/>
-                    <StringItem index="128" value="TRAINPE"/>
-                    <StringItem index="129" value="TRAMASA"/>
-                    <StringItem index="130" value="TRIELHT"/>
-                    <StringItem index="131" value="UTILITY"/>
-                    <StringItem index="132" value="VALDERRAMA"/>
-                    <StringItem index="133" value="VERA"/>
-                    <StringItem index="134" value="VOLKSWAGEN"/>
-                    <StringItem index="135" value="VOLVO"/>
-                    <StringItem index="136" value="VRAMEL"/>
-                    <StringItem index="137" value="VW"/>
-                    <StringItem index="138" value="WHITE"/>
-                    <StringItem index="139" value="WHUE"/>
-                    <StringItem index="140" value="YAMAHA"/>
-                    <StringItem index="141" value="YUEJIN"/>
-                    <StringItem index="142" value="ZXAUTO"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -579,11 +416,7 @@
                   <Font name="Times New Roman" size="14" style="0"/>
                 </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="3">
-                    <StringItem index="0" value="            "/>
-                    <StringItem index="1" value="Liviano"/>
-                    <StringItem index="2" value="Pesado"/>
-                  </StringArray>
+                  <StringArray count="0"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -784,7 +617,7 @@
                 </Property>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="btnSiguiente1">
+            <Component class="javax.swing.JButton" name="btnSiguiente2">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="8b" green="7f" red="79" type="rgb"/>
@@ -794,31 +627,6 @@
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
-                </Property>
-                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
-                  <Color id="Hand Cursor"/>
-                </Property>
-              </Properties>
-              <AuxValues>
-                <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="1"/>
-              </AuxValues>
-            </Component>
-            <Component class="javax.swing.JButton" name="btnRegistrarVehiculo">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="99" green="71" red="68" type="rgb"/>
-                </Property>
-                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Times New Roman" size="18" style="0"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="0" green="0" red="0" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Registrar datos"/>
-                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-                  <Border info="org.netbeans.modules.form.compat2.border.BevelBorderInfo">
-                    <BevelBorder/>
-                  </Border>
                 </Property>
                 <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
                   <Color id="Hand Cursor"/>

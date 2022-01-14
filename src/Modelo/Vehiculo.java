@@ -90,6 +90,19 @@ public class Vehiculo {
     
     //MÉTODOS DE FUNCIONAMIENTO DE LA CLASE 
     //Si tiene dos ejes, es de categoría liviana y puede tener un tipo de uso público o privado
+    
+    public Vehiculo(String placa, String marca, String modelo, String categoria, int ejes, String tipoUso, float pesoBruto, int año, Cliente dueño) {
+        this.placa = placa;
+        this.marca = marca;
+        this.modelo = modelo;
+        this.categoria = categoria;
+        this.ejes = ejes;
+        this.tipoUso = tipoUso;
+        this.pesoBruto = pesoBruto;
+        this.año = año;
+        this.dueño = dueño;
+    }
+
     public Vehiculo(String placa, String marca, String modelo, int ejes, String tipoUso, float pesoBruto, int año, Cliente dueño) {
         this.placa = placa;
         this.marca = marca;

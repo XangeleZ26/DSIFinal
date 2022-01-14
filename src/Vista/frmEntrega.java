@@ -15,7 +15,6 @@ public class frmEntrega extends javax.swing.JFrame {
     /** Creates new form frmEntrega */
     public frmEntrega() {
         initComponents();
-        txtDistrito.setVisible(false);
     }
 
     /** This method is called from within the constructor to
@@ -37,11 +36,9 @@ public class frmEntrega extends javax.swing.JFrame {
         lblDepartamento = new javax.swing.JLabel();
         txtDepartamento = new javax.swing.JTextField();
         lblProvincia = new javax.swing.JLabel();
-        txtDistrito = new javax.swing.JTextField();
         lblAvenida = new javax.swing.JLabel();
         txtAvenida = new javax.swing.JTextField();
         lblDistrito = new javax.swing.JLabel();
-        cbxDistrito = new javax.swing.JComboBox<>();
         lblNumero = new javax.swing.JLabel();
         txtNumero = new javax.swing.JTextField();
         lblTeleforno = new javax.swing.JLabel();
@@ -56,9 +53,10 @@ public class frmEntrega extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator6 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
-        btnRegistrarDireccion = new javax.swing.JButton();
         txtProvincia = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
+        cbxDistrito = new javax.swing.JComboBox<>();
+        txtDistrito = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -97,6 +95,7 @@ public class frmEntrega extends javax.swing.JFrame {
         lblIconEntrega.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/entrega.png"))); // NOI18N
         PContenidoEntrega.add(lblIconEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 38, 85, -1));
 
+        txtDescripcion.setEditable(false);
         txtDescripcion.setBackground(new java.awt.Color(121, 127, 139));
         txtDescripcion.setBorder(null);
         txtDescripcion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -123,17 +122,6 @@ public class frmEntrega extends javax.swing.JFrame {
         lblProvincia.setText("Provincia:");
         PContenidoEntrega.add(lblProvincia, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 126, 209, -1));
 
-        txtDistrito.setBackground(new java.awt.Color(121, 127, 139));
-        txtDistrito.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtDistrito.setForeground(new java.awt.Color(0, 0, 0));
-        txtDistrito.setBorder(null);
-        txtDistrito.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtDistritoMouseClicked(evt);
-            }
-        });
-        PContenidoEntrega.add(txtDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 245, -1));
-
         lblAvenida.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
         lblAvenida.setForeground(new java.awt.Color(0, 0, 0));
         lblAvenida.setText("Calle, Jirón, Avenida:");
@@ -149,19 +137,6 @@ public class frmEntrega extends javax.swing.JFrame {
         lblDistrito.setForeground(new java.awt.Color(0, 0, 0));
         lblDistrito.setText("Distrito:");
         PContenidoEntrega.add(lblDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 207, 209, -1));
-
-        cbxDistrito.setBackground(new java.awt.Color(121, 127, 139));
-        cbxDistrito.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        cbxDistrito.setForeground(new java.awt.Color(0, 0, 0));
-        cbxDistrito.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "                                                           ", "ANCON", "ATE", "BARRANCO", "BELLAVISTA", "BREÑA", "CARABAYLLO", "CARMEN DE LA LEGUA REYNOSO", "CHACLACAYO", "CHORRILLOS", "CIENEGUILLA", "COMAS", "EL AGUSTINO", "INDEPENDENCIA", "JESUS MARIA", "LA MOLINA", "LA PERLA", "LA PUNTA", "LA VICTORIA", "LIMA", "LINCE", "LOS OLIVOS", "LURIGANCHO", "LURIN", "MAGDALENA DEL MAR", "MIRAFLORES", "PACHACAMAC", "PUCUSANA", "PUEBLO LIBRE", "PUENTE PIEDRA", "PUNTA HERMOSA", "PUNTA NEGRA", "RIMAC", "SAN BARTOLO", "SAN BORJA", "SAN ISIDRO", "SAN JUAN DE LURIGANCHO", "SAN JUAN DE MIRAFLORES", "SAN LUIS", "SAN MARTIN DE PORRES", "SAN MIGUEL", "SANTA ANITA", "SANTA MARIA DEL MAR", "SANTA ROSA", "SANTIAGO DE SURCO", "SURQUILLO", "VENTANILLA", "VILLA EL SALVADOR", "VILLA MARIA DEL TRIUNFO" }));
-        cbxDistrito.setBorder(null);
-        cbxDistrito.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        cbxDistrito.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cbxDistritoMouseClicked(evt);
-            }
-        });
-        PContenidoEntrega.add(cbxDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 239, -1, -1));
 
         lblNumero.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
         lblNumero.setForeground(new java.awt.Color(0, 0, 0));
@@ -230,14 +205,6 @@ public class frmEntrega extends javax.swing.JFrame {
         jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
         PContenidoEntrega.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 270, 245, 10));
 
-        btnRegistrarDireccion.setBackground(new java.awt.Color(104, 113, 153));
-        btnRegistrarDireccion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnRegistrarDireccion.setForeground(new java.awt.Color(0, 0, 0));
-        btnRegistrarDireccion.setText("Registrar datos");
-        btnRegistrarDireccion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnRegistrarDireccion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        PContenidoEntrega.add(btnRegistrarDireccion, new org.netbeans.lib.awtextra.AbsoluteConstraints(275, 448, 132, 35));
-
         txtProvincia.setBackground(new java.awt.Color(121, 127, 139));
         txtProvincia.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtProvincia.setForeground(new java.awt.Color(0, 0, 0));
@@ -247,6 +214,18 @@ public class frmEntrega extends javax.swing.JFrame {
         jSeparator8.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator8.setForeground(new java.awt.Color(0, 0, 0));
         PContenidoEntrega.add(jSeparator8, new org.netbeans.lib.awtextra.AbsoluteConstraints(318, 185, 245, 10));
+
+        cbxDistrito.setBackground(new java.awt.Color(121, 127, 139));
+        cbxDistrito.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        cbxDistrito.setBorder(null);
+        cbxDistrito.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContenidoEntrega.add(cbxDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 320, -1));
+
+        txtDistrito.setBackground(new java.awt.Color(121, 127, 139));
+        txtDistrito.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtDistrito.setForeground(new java.awt.Color(0, 0, 0));
+        txtDistrito.setBorder(null);
+        PContenidoEntrega.add(txtDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 240, -1));
 
         PGeneralEntrega.add(PContenidoEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 105, 680, 510));
 
@@ -263,36 +242,6 @@ public class frmEntrega extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void cbxDistritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cbxDistritoMouseClicked
-        if(txtDepartamento.getText().compareTo("Lima") == 0 && txtProvincia.getText().compareTo("Lima") == 0){
-            cbxDistrito.setVisible(true);
-            jSeparator2.setVisible(true);
-            txtDistrito.setVisible(false);
-            jSeparator7.setVisible(false);
-        }
-        else{
-            cbxDistrito.setVisible(false);
-            jSeparator2.setVisible(false);
-            txtDistrito.setVisible(true);
-            jSeparator7.setVisible(true);
-        }
-    }//GEN-LAST:event_cbxDistritoMouseClicked
-
-    private void txtDistritoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtDistritoMouseClicked
-        if(txtDepartamento.getText().compareTo("Lima") == 0 && txtProvincia.getText().compareTo("Lima") == 0){
-            cbxDistrito.setVisible(true);
-            jSeparator2.setVisible(true);
-            txtDistrito.setVisible(false);
-            jSeparator7.setVisible(false);
-        }
-        else{
-            cbxDistrito.setVisible(false);
-            jSeparator2.setVisible(false);
-            txtDistrito.setVisible(true);
-            jSeparator7.setVisible(true);
-        }
-    }//GEN-LAST:event_txtDistritoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -333,7 +282,6 @@ public class frmEntrega extends javax.swing.JFrame {
     private javax.swing.JPanel PContenidoEntrega;
     private javax.swing.JPanel PGeneralEntrega;
     private javax.swing.JPanel PTituloEntrega;
-    public javax.swing.JButton btnRegistrarDireccion;
     public javax.swing.JButton btnSiguiente3;
     public javax.swing.JComboBox<String> cbxDistrito;
     private javax.swing.JScrollPane jScrollPane1;
