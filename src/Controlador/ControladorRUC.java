@@ -11,9 +11,7 @@ import Vista.frmRUC;
 public class ControladorRUC {
     private frmRUC vistaRUC;
     private Cliente ClientePotencial;
-    //private ArregloClientes modeloClientes = new ArregloClientes();
-    //private Cliente user;
-    
+        
     public ControladorRUC(Cliente ClientePotencial){
         this.vistaRUC = new frmRUC();
         this.ClientePotencial = ClientePotencial;

@@ -280,9 +280,7 @@ public class AppPeaje {
         clienteprueba.mostrarClientes();
         System.out.println("");*/
         
-        cliente = new Cliente("DNI","75720836","dfbfg","fbfb","fgbfg", "dfvd", sdf.format(fechanacimiento2), "fgbfgv","156");
-        System.out.println("Cliente agregado: "+Configuracion.arrClientes.agregarCliente(cliente));
-        cliente = new Cliente("DNI","75720838","dfbfg","fbfb","fgbfg", "frgbr", sdf.format(fechanacimiento2), "fgbfgv","156");
+        cliente = new Cliente("DNI","75720836","ABC","DEF","GHI", "Fem", sdf.format(fechanacimiento2), "abc@gmail.com","1568");
         System.out.println("Cliente agregado: "+Configuracion.arrClientes.agregarCliente(cliente));
         //Configuracion.arrClientes = clientes;
         Configuracion.getArrClientes().mostrarClientes();

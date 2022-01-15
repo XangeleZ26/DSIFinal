@@ -28,9 +28,9 @@ public class frmBoleta extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         PTituloConfiguracion = new javax.swing.JPanel();
-        lblBoletaRecarga = new javax.swing.JLabel();
         lblBoletaPago = new javax.swing.JLabel();
         lblBoletaConsumo = new javax.swing.JLabel();
+        lblBoletaRecarga = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         lblUsuario = new javax.swing.JLabel();
         lblMonto = new javax.swing.JLabel();
@@ -54,22 +54,22 @@ public class frmBoleta extends javax.swing.JFrame {
         PTituloConfiguracion.setBackground(new java.awt.Color(159, 162, 178));
         PTituloConfiguracion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblBoletaRecarga.setFont(new java.awt.Font("Britannic Bold", 0, 36)); // NOI18N
-        lblBoletaRecarga.setForeground(new java.awt.Color(0, 0, 0));
-        lblBoletaRecarga.setText("Boleta de recarga PEX");
-        PTituloConfiguracion.add(lblBoletaRecarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
-
         lblBoletaPago.setFont(new java.awt.Font("Britannic Bold", 0, 36)); // NOI18N
         lblBoletaPago.setForeground(new java.awt.Color(0, 0, 0));
         lblBoletaPago.setText("Boleta de pago PEX");
-        PTituloConfiguracion.add(lblBoletaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+        PTituloConfiguracion.add(lblBoletaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
 
         lblBoletaConsumo.setFont(new java.awt.Font("Britannic Bold", 0, 36)); // NOI18N
         lblBoletaConsumo.setForeground(new java.awt.Color(0, 0, 0));
         lblBoletaConsumo.setText("Boleta de consumo PEX");
-        PTituloConfiguracion.add(lblBoletaConsumo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 20, -1, -1));
+        PTituloConfiguracion.add(lblBoletaConsumo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        jPanel1.add(PTituloConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 70));
+        lblBoletaRecarga.setFont(new java.awt.Font("Britannic Bold", 0, 36)); // NOI18N
+        lblBoletaRecarga.setForeground(new java.awt.Color(0, 0, 0));
+        lblBoletaRecarga.setText("Boleta de recarga PEX");
+        PTituloConfiguracion.add(lblBoletaRecarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
+
+        jPanel1.add(PTituloConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 70));
 
         jPanel2.setBackground(new java.awt.Color(121, 127, 139));
 
@@ -147,7 +147,7 @@ public class frmBoleta extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(jPanel2Layout.createSequentialGroup()
-                .add(16, 16, 16)
+                .add(62, 62, 62)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
                     .add(lblUsuario)
                     .add(lblMonto)
@@ -155,23 +155,23 @@ public class frmBoleta extends javax.swing.JFrame {
                     .add(lblEstacion)
                     .add(lblVehiculo)
                     .add(lblNumDoc))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(jPanel2Layout.createSequentialGroup()
                         .add(jLabel7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 18, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(txtMonto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 76, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                     .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                        .add(txtUsuario)
-                        .add(txtNumDoc, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
+                        .add(txtNumDoc)
                         .add(txtFecha, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(txtVehiculo)
-                        .add(txtEstacion)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                        .add(txtEstacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 221, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(txtUsuario, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 187, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(76, Short.MAX_VALUE))
             .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(btnOKBoleta)
-                .add(185, 185, 185))
+                .add(210, 210, 210))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -206,7 +206,7 @@ public class frmBoleta extends javax.swing.JFrame {
                 .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 63, 450, 400));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 63, 510, 400));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -267,15 +267,15 @@ public class frmBoleta extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel lblBoletaConsumo;
-    private javax.swing.JLabel lblBoletaPago;
-    private javax.swing.JLabel lblBoletaRecarga;
-    private javax.swing.JLabel lblEstacion;
+    public javax.swing.JLabel lblBoletaConsumo;
+    public javax.swing.JLabel lblBoletaPago;
+    public javax.swing.JLabel lblBoletaRecarga;
+    public javax.swing.JLabel lblEstacion;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblMonto;
     private javax.swing.JLabel lblNumDoc;
     private javax.swing.JLabel lblUsuario;
-    private javax.swing.JLabel lblVehiculo;
+    public javax.swing.JLabel lblVehiculo;
     public javax.swing.JTextField txtEstacion;
     public javax.swing.JTextField txtFecha;
     public javax.swing.JTextField txtMonto;

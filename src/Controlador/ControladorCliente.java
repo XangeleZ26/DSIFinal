@@ -54,8 +54,7 @@ public class ControladorCliente{
                                                     sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
                                                     vistaCliente.txtEmail.getText(),
                                                     vistaCliente.txtContrasena.getPassword().toString());
-                                    //esta agregacion es solo de prueba
-                                    Configuracion.arrClientes.agregarCliente(ClientePotencial);
+                                    
                                     JOptionPane.showMessageDialog(vistaCliente, "Datos del cliente registrados, puede continuar con su registro.");
                                                     ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
                                                     ctrlRegistroVehiculo.iniciarVehiculo();
@@ -76,8 +75,7 @@ public class ControladorCliente{
                                                 sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
                                                 vistaCliente.txtEmail.getText(),
                                                 vistaCliente.txtNumeroDocumento.getText());
-                                //esta agregacion es solo de prueba
-                                Configuracion.arrClientes.agregarCliente(ClientePotencial);
+                                
                                     JOptionPane.showMessageDialog(vistaCliente, "Datos del cliente registrados, puede continuar con su registro.");        
                                                 ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
                                                 ctrlRegistroVehiculo.iniciarVehiculo();
@@ -143,7 +141,6 @@ public class ControladorCliente{
         vistaCliente.lblOjoCerrado2.setVisible(false);
         vistaCliente.setLocationRelativeTo(null);
         vistaCliente.setVisible(true);
-        
         DefaultComboBoxModel tipoDocComboBox = new DefaultComboBoxModel();
         for(Object o : Modelo.Configuracion.tipoDocumentos){
             tipoDocComboBox.addElement(o);
@@ -180,4 +177,3 @@ public class ControladorCliente{
                 && this.vistaCliente.txtEmail.getText().trim().length() != 0);
     }  
 }
-

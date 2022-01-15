@@ -14,6 +14,7 @@ import Modelo.Configuracion;
 import Modelo.ArregloClientes;
 import Vista.frmRecargaOpcional;
 import Vista.frmPaginaPrincipal;
+import Vista.frmBoleta;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.awt.Color;
@@ -22,13 +23,15 @@ public class ControladorRecargaOpc{
     private Tarjeta TarjetaPotencial;
     private frmRecargaOpcional vistaRecargaOpc;
     private Cliente ClientePotencial;
-    private int verificarBtnCalcular = 0; 
+    private int verificarBtnCalcular = 0;
+    //private ArregloClientes clientes;
     
     public ControladorRecargaOpc(Cliente ClientePotencial){
         //this.modeloCuenta = modeloCuenta;
         //this.modeloTarjeta = modeloTarjeta;
         this.vistaRecargaOpc = new frmRecargaOpcional();
         this.ClientePotencial = ClientePotencial;
+        //this.clientes = Configuracion.arrClientes;
         this.vistaRecargaOpc.btnCalcular.addMouseListener(new MouseAdapter(){
             @Override
             public void mouseClicked(MouseEvent e){
@@ -82,23 +85,22 @@ public class ControladorRecargaOpc{
                                         SimpleDateFormat sdfActual = new SimpleDateFormat("yyyy/MM/dd");
                                         ClientePotencial.getCuenta().recargar(Float.parseFloat(vistaRecargaOpc.txtMontoOpcional.getText()) + 12, 
                                                                                   TarjetaPotencial, sdfActual.format(fechaActual));
-
-                                        //Registramos en el arrClientes al Cliente Potencial 
-                                        Configuracion.arrClientes.agregarCliente(ClientePotencial);
-                                        JOptionPane.showMessageDialog(vistaRecargaOpc, "Usted ha sido registrado en el PEX!");
-                                        frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
-                                        ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
-                                        ctrlPrincipal.iniciar();
-                                        vistaRecargaOpc.dispose();
-                                        /*
-                                        if(Configuracion.arrClientes.agregarCliente(ControladorCliente.ClientePotencial)){
+                                     
+                                        if(Configuracion.arrClientes.agregarCliente(ClientePotencial)){
                                             JOptionPane.showMessageDialog(vistaRecargaOpc, "Usted ha sido registrado en el PEX!");
-                                            frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
-                                            ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
-                                            ctrlPrincipal.iniciar();
+                                            Configuracion.getArrClientes().mostrarClientes();
+                                            
+                                            ControladorBoleta ctrlBoleta = new ControladorBoleta(ClientePotencial);
+                                            ctrlBoleta.iniciarBoleta();
                                             vistaRecargaOpc.dispose();
+                                            //frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
+                                            //ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
+                                            //ctrlPrincipal.iniciar();
+                                            //vistaRecargaOpc.dispose();
                                         }
-                                        */
+                                        else{
+                                            JOptionPane.showMessageDialog(vistaRecargaOpc, "Registro no procesado.");
+                                        }
 
                                     }
                                     else{

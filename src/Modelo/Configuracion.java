@@ -9,16 +9,16 @@ public class Configuracion {
     public static int maxPeajes = 10;
     
     public static ArregloClientes arrClientes=new ArregloClientes();
-
+    
     public static ArregloClientes getArrClientes() {
         return arrClientes;
     }
 
-    public static void setArrClientes(ArregloClientes arrClientes) {
+    public void setArrClientes(ArregloClientes arrClientes) {
         Configuracion.arrClientes = arrClientes;
     }
     
-    public static String[] marcasVehiculo = {"", "ACS", "AG AUTOMOTRIZ", "ALELUYA", "ALYER", "ASIA", "AUDI","AUTOCRAFT", "BAW", "BEIJING" ,
+    public static String[] marcasVehiculo = {"ACS", "AG AUTOMOTRIZ", "ALELUYA", "ALYER", "ASIA", "AUDI","AUTOCRAFT", "BAW", "BEIJING" ,
                                              "BMW", "BROWN", "BULLON", "Camc", "CEISA", "CEMAC", "CHERY", "CHEVROLET", "CHRYSLER", "CITROEN",
                                              "CLEMENT", "COCERVI", "CORENHA", "CORMAR", "CPR", "DAEWOO", "DAIHATSU", "DCMETAL", "DODGE",
                                              "DONG FENG", "DORSEY", "DUNHAM", "ESMECA", "FABRIMETAL", "FAMECA", "FIAT", "FMC", "FORD",
@@ -35,10 +35,10 @@ public class Configuracion {
                                              "TRAMASA", "TRIELHT", "UTILITY", "VALDERRAMA", "VERA", "VOLKSWAGEN", "VOLVO", "VRAMEL", "VW",
                                              "WHITE", "WHUE", "YAMAHA", "YUEJIN", "ZXAUTO"};
     public static int[] ejesVehiculo = {2, 3, 4, 5, 6, 7, 8, 9, 10};
-    public static String[] categoriasVehiculo = {"", "Liviano", "Pesado"};
-    public static String[] tipoUsoVehiculo = {"", "Privado", "Publico"};
-    public static String[] tipoDocumentos = {"", "DNI", "Carnet Extranjería", "Pasaporte"};
-    public static String[] sexo={"", "Femenimo", "Masculino"};
+    public static String[] categoriasVehiculo = {"Liviano", "Pesado"};
+    public static String[] tipoUsoVehiculo = {"Privado", "Publico"};
+    public static String[] tipoDocumentos = {"DNI", "Carnet Extranjería", "Pasaporte"};
+    public static String[] sexo={"Femenimo", "Masculino"};
     public static String[] distritosLima = {"", "ANCON", "ATE", "BARRANCO", "BELLAVISTA", "BREÑA", "CARABAYLLO", "CARMEN DE LA LEGUA REYNOSO", "CHACLACAYO", 
                                             "CHORRILLOS", "CIENEGUILLA", "COMAS", "EL AGUSTINO", "INDEPENDENCIA", "JESUS MARIA", "LA MOLINA", "LA PERLA",
                                             "LA PUNTA", "LA VICTORIA", "LIMA", "LINCE", "LOS OLIVOS", "LURIGANCHO", "LURIN", "MAGDALENA DEL MAR", "MIRAFLORES",
@@ -46,6 +46,6 @@ public class Configuracion {
                                             "SAN BORJA", "SAN ISIDRO", "SAN JUAN DE LURIGANCHO", "SAN JUAN DE MIRAFLORES", "SAN LUIS", "SAN MARTIN DE PORRES",
                                             "SAN MIGUEL", "SANTA ANITA", "SANTA MARIA DEL MAR", "SANTA ROSA", "SANTIAGO DE SURCO", "SURQUILLO", "VENTANILLA",
                                             "VILLA EL SALVADOR", "VILLA MARIA DEL TRIUNFO"};
-    public static String[] medioPago={"", "VISA", "MASTER CARD", "AMERICAN EXPRESS", "DINERS CLUB"};
+    public static String[] medioPago={"VISA", "MASTER CARD", "AMERICAN EXPRESS", "DINERS CLUB"};
 }
 

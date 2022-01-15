@@ -246,20 +246,51 @@ public class Cliente {
     
     public boolean verificarValidezRUC(String RUC){
         boolean result = false;
+        int suma = (Character.getNumericValue(RUC.charAt(0))*5) +
+                       (Character.getNumericValue(RUC.charAt(1))*4) +
+                       (Character.getNumericValue(RUC.charAt(2))*3) +
+                       (Character.getNumericValue(RUC.charAt(3))*2) +
+                       (Character.getNumericValue(RUC.charAt(4))*7) +
+                       (Character.getNumericValue(RUC.charAt(5))*6) +
+                       (Character.getNumericValue(RUC.charAt(6))*5) +
+                       (Character.getNumericValue(RUC.charAt(7))*4) +
+                       (Character.getNumericValue(RUC.charAt(8))*3) + 
+                       (Character.getNumericValue(RUC.charAt(9))*2);        
+            double division = suma/11;
+            long entero = (long) division;
+            int validacion = (int) (11-(suma - (entero*11)));
+            if(validacion == 10){
+                validacion = 0;
+            }
+            else if(validacion == 11){
+                validacion = 1;
+            }
+        
         if(RUC.length() == 11){
             if(RUC.charAt(0) == '2' && RUC.charAt(1) == '0'){
-               result = true; 
+                if(Character.getNumericValue(RUC.charAt(10)) == validacion){
+                    result = true;
+                }
+                else{
+                    result = false;
+                }
             }
             else if(RUC.charAt(0) == '1'){
                 switch(RUC.charAt(1)){
                     case '0':
                     case '5':
-                    case '7': result = true;
+                    case '7':
+                        if(Character.getNumericValue(RUC.charAt(10)) == validacion){
+                            result = true;
+                        }
+                        else{
+                            result = false;
+                        }
                         break;
                     default: result = false;
                         break;
                 }
-            }
+            }           
         }
         else{
             result = false;
