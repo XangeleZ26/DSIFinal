@@ -55,7 +55,7 @@ public class AppPeaje {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         Cliente cliente = new Cliente("DNI","11112222","José Alonso","Tolentino","Tantaruna","Masculino", sdf.format(fechanacimiento1),"josealonso@gmail.com","123");
         //CLIENTE PRUEBA
-        Cliente clienteborrar = cliente;
+        //Cliente clienteborrar = cliente;
         System.out.println("Cliente agregado: "+clientes.agregarCliente(cliente));
         Date fechanacimiento2 = new Date(2003-1900, 6-1, 25);
         cliente = new Cliente("DNI","33334444","Esthefany","Meza","Meza","Femenino", sdf.format(fechanacimiento2), "esthefany.meza@gmail.com","123");
@@ -280,9 +280,9 @@ public class AppPeaje {
         clienteprueba.mostrarClientes();
         System.out.println("");*/
         
-        cliente = new Cliente("DNI","75720836","ABC","DEF","GHI", "Fem", sdf.format(fechanacimiento2), "abc@gmail.com","1568");
-        System.out.println("Cliente agregado: "+Configuracion.arrClientes.agregarCliente(cliente));
-        //Configuracion.arrClientes = clientes;
+        //cliente = new Cliente("DNI","75720836","ABC","DEF","GHI", "Fem", sdf.format(fechanacimiento2), "abc@gmail.com","1568");
+        //System.out.println("Cliente agregado: "+Configuracion.arrClientes.agregarCliente(cliente));
+        Configuracion.arrClientes = clientes;
         Configuracion.getArrClientes().mostrarClientes();
         
         

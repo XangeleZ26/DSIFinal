@@ -175,7 +175,30 @@ public class Cuenta {
         }
         return result;
     }
-
+    
+    //Nuevo método de Eliminar Vehículo
+    public void eliminarVehiculo(int orden) {
+        //Se borra copiándose todos los objetos desde adelante hacia atrás
+        for (int i = orden; i < nv; i++) {
+            this.vehiculos[i] = this.vehiculos[i + 1];
+        }
+        //Se borra el último espacio en memoria del arreglo y se cambia el número y el orden de los vehículos
+        this.vehiculos[this.ov] = null;
+        this.nv--;
+        this.ov = this.nv - 1;
+    }
+    
+    //Método que devuelve el orden de un vehículo en el arreglo
+    public int buscarOrdenVehiculo(String placa) {
+        int orden = -1;
+        for (int i = 0; (i < nv && orden == -1); i++) {
+            if (placa.equals(this.vehiculos[i].getPlaca())) {
+                orden = i;
+            }
+        } 
+        return orden;
+    }
+    
     public boolean verificarExistenciaVehiculo(String placa) {
         boolean result = false;
         for (int i = 0; i < nv; i++) {
