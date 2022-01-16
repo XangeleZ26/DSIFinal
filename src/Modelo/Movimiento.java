@@ -24,8 +24,8 @@ public class Movimiento {
         this.monto = monto;
         this.tipo = tipo;
         this.fecha = fecha;
-        this.vehiculo = null;
-        this.estacion = null;
+        /*this.vehiculo = null;
+        this.estacion = null;*/
     }
 
     public String getFecha() {

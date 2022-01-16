@@ -19,7 +19,6 @@ public class Vehiculo {
 
     public void setPlaca(String placa) {
         this.placa = placa;
-       // dueño.getCuenta().ordenarMovimientosXFecha();
     }
 
     public String getMarca() {
@@ -41,7 +40,6 @@ public class Vehiculo {
 
     public String getCategoria() {
         return categoria;
-       // dueño.getCuenta().getMovimientos(2).getVehiculo().getPlaca()
     }
 
     public void setCategoria(String categoria) {
