@@ -6,6 +6,7 @@ import Modelo.Configuracion;
 import Modelo.Direccion;
 import Modelo.Estacion;
 import Modelo.Peaje;
+import Modelo.ArregloPeajes;
 import Modelo.Vehiculo;
 import Modelo.Cuenta;
 import Modelo.Tarjeta;
@@ -22,6 +23,12 @@ public class AppPeaje {
         Peaje peaje2 = new Peaje ("Panamericana Sur", (float)3.25, (float)3.6,(float)2.8);
         Peaje peaje3 = new Peaje ("Huaylas", (float)2.5, (float)3,(float)2.5);
         Peaje peaje4 = new Peaje ("Separadora Industrial", (float)3.2, (float)2.6,(float)1.5);
+        
+       // ArregloPeajes arrPeajes = new ArregloPeajes();
+        Configuracion.arrPeajes.agregarPeaje(peaje1);
+        Configuracion.arrPeajes.agregarPeaje(peaje2);
+        Configuracion.arrPeajes.agregarPeaje(peaje3);
+        Configuracion.arrPeajes.agregarPeaje(peaje4);
         
         //DECLARAMOS LAS ESTACIONES DE CADA PEAJE
         peaje1.agregarEstacion("Serpentin de Pasamayo", "1N001", peaje1);
@@ -231,6 +238,7 @@ public class AppPeaje {
         System.out.println("Saldo total: "+clientes.getArregloCliente(0).getCuenta().getSaldoTotal());
         System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos(7).imprimirMovimientoSimple());
         System.out.println("");
+        
         
         //MOSTRAR MOVIMIENTOS
         System.out.println("***Movimientos del cliente***");

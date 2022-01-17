@@ -3,23 +3,24 @@ package Controlador;
 
 import Modelo.Cliente;
 import Modelo.Configuracion;
+import Modelo.Peaje;
+import Modelo.ArregloPeajes;
 import Vista.frmPagar;
+import Vista.AppPeaje;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
-import Modelo.Estacion;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ItemEvent;
 
 public class ControladorPagar {
     //private Cliente user;
     private frmPagar vista;
-    private Estacion estacion;
     private int indiceCliente;
     private int x;
     
-    public String[] getEstacion(String Peaje){
+     public String[] getEstacion(String Peaje){
         String[] estaciones = new String[4];
         if(Peaje.equalsIgnoreCase("Panamericana Norte")){
             estaciones[0]= "Serpentin de Pasamayo";
@@ -41,11 +42,11 @@ public class ControladorPagar {
         }
         return estaciones;
         }
+    
 
     public ControladorPagar(int indiceCliente) {
         //this.user = user;
         this.vista = new frmPagar();
-        this.estacion = estacion;
         this.indiceCliente = indiceCliente;
         
 
@@ -62,17 +63,18 @@ public class ControladorPagar {
         @Override
         public void actionPerformed(ActionEvent e ){
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-            SimpleDateFormat año = new SimpleDateFormat("yyyy");
            // vista.cbxVehiculo.getSelectedItem() = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getVehiculos(i);
 
             if(datosLlenosPagar()){
                 Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().pagarPeaje(
                 sdf.format(vista.dcFechaPago.getDate()),
                 Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getVehiculos(x),
-                Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getEstacion()
+                Configuracion.arrPeajes.getArregloPeajes(vista.cbxPeaje.getSelectedIndex()).getEstaciones(vista.cbxEstacion.getSelectedIndex())    
                 );
-            
+                //Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos().imprimirMovimientoSimple();
+                //Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getSaldoTotal();
                 JOptionPane.showMessageDialog(null, "Pago realizado con éxito");
+                
             }
             else{
                 JOptionPane.showMessageDialog(null, "Debe llenar todos los campos, por favor.");
@@ -113,6 +115,13 @@ public class ControladorPagar {
     public void iniciar() {
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
+        
+    DefaultComboBoxModel peajesComboBox = new DefaultComboBoxModel();
+        for(Object o : Modelo.Configuracion.arrPeaje){
+            peajesComboBox.addElement(o);
+        }
+        vista.cbxPeaje.setModel(peajesComboBox);
+        
     }
     public boolean datosLlenosPagar(){
     return (this.vista.cbxPeaje.getSelectedItem().toString().trim().length() != 0

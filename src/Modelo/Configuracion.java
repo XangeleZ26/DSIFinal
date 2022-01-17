@@ -8,9 +8,12 @@ public class Configuracion {
     public static int maxMovimientos = 10;
     public static int maxPeajes = 10;
     
-    public static ArregloClientes arrClientes=new ArregloClientes();
+    public static ArregloClientes arrClientes = new ArregloClientes();
+    public static ArregloPeajes arrPeajes = new ArregloPeajes();
     
-    public static ArregloClientes getArrClientes() {
+    public static String[] arrPeaje = {" ","Panamericana Norte","Panamericana Sur","Huaylas","Separadora Industrial"};
+    
+    public static ArregloClientes getArrClientes(){
         return arrClientes;
     }
 
@@ -38,7 +41,7 @@ public class Configuracion {
     public static String[] categoriasVehiculo = {"Liviano", "Pesado"};
     public static String[] tipoUsoVehiculo = {"Privado", "Publico"};
     public static String[] tipoDocumentos = {"DNI", "Carnet Extranjería", "Pasaporte"};
-    public static String[] sexo={"Femenimo", "Masculino"};
+    public static String[] sexo ={"Femenimo", "Masculino"};
     public static String[] distritosLima = {"", "ANCON", "ATE", "BARRANCO", "BELLAVISTA", "BREÑA", "CARABAYLLO", "CARMEN DE LA LEGUA REYNOSO", "CHACLACAYO", 
                                             "CHORRILLOS", "CIENEGUILLA", "COMAS", "EL AGUSTINO", "INDEPENDENCIA", "JESUS MARIA", "LA MOLINA", "LA PERLA",
                                             "LA PUNTA", "LA VICTORIA", "LIMA", "LINCE", "LOS OLIVOS", "LURIGANCHO", "LURIN", "MAGDALENA DEL MAR", "MIRAFLORES",
@@ -46,6 +49,6 @@ public class Configuracion {
                                             "SAN BORJA", "SAN ISIDRO", "SAN JUAN DE LURIGANCHO", "SAN JUAN DE MIRAFLORES", "SAN LUIS", "SAN MARTIN DE PORRES",
                                             "SAN MIGUEL", "SANTA ANITA", "SANTA MARIA DEL MAR", "SANTA ROSA", "SANTIAGO DE SURCO", "SURQUILLO", "VENTANILLA",
                                             "VILLA EL SALVADOR", "VILLA MARIA DEL TRIUNFO"};
-    public static String[] medioPago={"VISA", "MASTER CARD", "AMERICAN EXPRESS", "DINERS CLUB"};
+    public static String[] medioPago={"VISA", "MASTER CARD", "AMERICAN EXPRESS", "DINERS CLUB"};    
 }
-
+        

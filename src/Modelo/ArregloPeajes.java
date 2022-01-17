@@ -43,7 +43,7 @@ public class ArregloPeajes {
         if(verificarExistenciaPeaje(peaje.getNombrePeaje())==false){
             this.np++;
             this.op=this.np-1;
-            this.arregloPeajes[op]=peaje;
+            this.arregloPeajes[this.op]=peaje;
             result = true;
         }
         return result;
@@ -54,7 +54,7 @@ public class ArregloPeajes {
         if(verificarExistenciaPeaje(nombrePeaje)==false){
             this.np++;
             this.op=this.np-1;
-            this.arregloPeajes[op] = new Peaje(nombrePeaje, livianoPublico, livianoPrivado, pesado);
+            this.arregloPeajes[this.op] = new Peaje(nombrePeaje, livianoPublico, livianoPrivado, pesado);
             result = true;
         }
         return result;
