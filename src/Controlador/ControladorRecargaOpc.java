@@ -47,12 +47,11 @@ public class ControladorRecargaOpc {
             @Override
             public void actionPerformed(ActionEvent e) {
                 float total = 20;
-                if (vistaRecargaOpc.txtCVV.getText().compareTo("") == 0) {
-                    vistaRecargaOpc.txtCVV.setText("0");
+                if (vistaRecargaOpc.txtMontoOpcional.getText().equalsIgnoreCase("")) {
                     vistaRecargaOpc.txtMontoRecarga.setText("0");
                     vistaRecargaOpc.txtTotal.setText(String.valueOf(total));
                 } else {
-                    vistaRecargaOpc.txtMontoRecarga.setText(vistaRecargaOpc.txtCVV.getText());
+                    vistaRecargaOpc.txtMontoRecarga.setText(vistaRecargaOpc.txtMontoOpcional.getText());
                     total += Float.parseFloat(vistaRecargaOpc.txtMontoRecarga.getText());
                     vistaRecargaOpc.txtTotal.setText(String.valueOf(total));
                 }
@@ -85,7 +84,7 @@ public class ControladorRecargaOpc {
 
                                     Date fechaActual = new Date();
                                     SimpleDateFormat sdfActual = new SimpleDateFormat("yyyy/MM/dd");
-                                    ClientePotencial.getCuenta().recargar(Float.parseFloat(vistaRecargaOpc.txtCVV.getText()) + 12,
+                                    ClientePotencial.getCuenta().recargar(Float.parseFloat(vistaRecargaOpc.txtMontoOpcional.getText()),
                                             TarjetaPotencial, sdfActual.format(fechaActual));
 
                                     if (Configuracion.arrClientes.agregarCliente(ClientePotencial)) {

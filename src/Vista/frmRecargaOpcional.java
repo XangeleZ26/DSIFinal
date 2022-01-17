@@ -72,7 +72,7 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         jmcMesVencimiento = new com.toedter.calendar.JMonthChooser();
         btnFactura = new javax.swing.JButton();
         btnBoleta = new javax.swing.JButton();
-        txtMontoOpcional1 = new javax.swing.JTextField();
+        txtMontoOpcional = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -127,7 +127,6 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
 
         txtCVV.setBackground(new java.awt.Color(121, 127, 139));
         txtCVV.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtCVV.setText("xd");
         txtCVV.setBorder(null);
         txtCVV.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -329,10 +328,10 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         });
         PContenidoRecargaOpcional.add(btnBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 90, 37));
 
-        txtMontoOpcional1.setBackground(new java.awt.Color(121, 127, 139));
-        txtMontoOpcional1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtMontoOpcional1.setBorder(null);
-        PContenidoRecargaOpcional.add(txtMontoOpcional1, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 220, 100, 20));
+        txtMontoOpcional.setBackground(new java.awt.Color(121, 127, 139));
+        txtMontoOpcional.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtMontoOpcional.setBorder(null);
+        PContenidoRecargaOpcional.add(txtMontoOpcional, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 220, 100, 20));
 
         PGeneralRecargaOpcional.add(PContenidoRecargaOpcional, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 750, 670));
 
@@ -463,7 +462,7 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
     private javax.swing.JLabel lblTituloRecargaAdicional;
     private javax.swing.JLabel lblTotal;
     public javax.swing.JTextField txtCVV;
-    public javax.swing.JTextField txtMontoOpcional1;
+    public javax.swing.JTextField txtMontoOpcional;
     public javax.swing.JTextField txtMontoRecarga;
     public javax.swing.JTextField txtNumeroTarjeta;
     public javax.swing.JTextField txtTotal;
