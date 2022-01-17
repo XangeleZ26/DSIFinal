@@ -393,7 +393,7 @@ public class Cuenta {
         }
         //Registrar movimiento al arreglo
         if (result == true) {
-            registrarMovimiento(fecha, "Peaje", tarifaNeta, vehiculo, estacion);
+            registrarMovimiento(fecha, "Consumo", tarifaNeta, vehiculo, estacion);
         }
         return result;
     }

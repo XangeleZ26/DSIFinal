@@ -15,6 +15,7 @@ public class Vehiculo {
     //MÉTODOS ACCESORES 
     public String getPlaca() {
         return placa;
+     //   dueño.getCuenta().getMovimientos(5).getEstacion().getPeaje()
     }
 
     public void setPlaca(String placa) {

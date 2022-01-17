@@ -70,19 +70,29 @@ public class ControladorMovimientos {
         datos.addColumn("Vehiculo");
         datos.addColumn("Peaje");
         datos.addColumn("Estación");
-        
         this.vista.jMovimientos.setModel(datos);
         
         for(int i=0;i<Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getNm();i++){
-            informacion[0] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getFecha();
-            informacion[1] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getTipo();
-            informacion[2] = Float.toString(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getMonto());
-            informacion[3] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getVehiculo().getPlaca();
-            informacion[4] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getEstacion().getPeaje().getNombrePeaje();
-            informacion[5] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getEstacion().getNombreEstacion();
+        if(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getTipo().compareTo("Recarga")== 0){
             
+            informacion[0] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getFecha();
+            informacion[1] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getTipo();
+            informacion[2] = Float.toString(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getMonto());
             datos.addRow(informacion);
-        }   
+        
+        }
+        if(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getTipo().compareTo("Consumo")== 0){      
+        
+            informacion[0] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getFecha();
+            informacion[1] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getTipo();
+            informacion[2] = Float.toString(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getMonto());
+            informacion[3] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getVehiculo().getPlaca();
+            informacion[4] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getEstacion().getPeaje().getNombrePeaje(); 
+            informacion[5] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getEstacion().getNombreEstacion(); 
+            datos.addRow(informacion);
+        
+        }
+        }  
     }
     
     public void llenarTablaOrdenada(){
@@ -97,6 +107,16 @@ public class ControladorMovimientos {
         this.vista.jMovimientos.setModel(user);
         
         for(int i=0;i<Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getNm();i++){
+        if(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getTipo().compareTo("Recarga")== 0){
+            
+            informacion[0] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getFecha();
+            informacion[1] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getTipo();
+            informacion[2] = Float.toString(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getMonto());
+            user.addRow(informacion);
+        
+        }
+        if(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getTipo().compareTo("Consumo")== 0){      
+        
             informacion[0] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getFecha();
             informacion[1] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getTipo();
             informacion[2] = Float.toString(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getMonto());
@@ -104,6 +124,8 @@ public class ControladorMovimientos {
             informacion[4] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getEstacion().getPeaje().getNombrePeaje(); 
             informacion[5] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getEstacion().getNombreEstacion(); 
             user.addRow(informacion);
+        
+        }
         }
     }
     

@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.ItemEvent;
+import Vista.frmMovimientos;
 
 public class ControladorPagar {
     //private Cliente user;
@@ -111,6 +112,17 @@ public class ControladorPagar {
         
    
     }
+    
+   /* public void llenarTabla() {
+        DefaultTableModel modelo = new DefaultTableModel(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getFecha(),
+                                        Configuracion.arrTarjeta.header(),Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getTipo(),
+                                        Float.toString(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getMonto()),
+                                        Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getVehiculo().getPlaca(),
+                                        Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getEstacion().getPeaje().getNombrePeaje(),
+                                        Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getEstacion().getNombreEstacion()
+        );
+        this.vista.tblTarjetas.setModel(modelo);
+    }*/
 
     public void iniciar() {
         vista.setLocationRelativeTo(null);
