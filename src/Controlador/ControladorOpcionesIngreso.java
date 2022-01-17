@@ -72,8 +72,12 @@ public class ControladorOpcionesIngreso {
     }
     
     public void iniciar(){
-        vista.txtNombreUsuario.setText(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getNombres()+" "
+        if(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getTipoDocumento().equals("RUC")){
+        vista.txtNombreUsuario.setText(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getRazonSocial());
+        }else{
+            vista.txtNombreUsuario.setText(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getNombres()+" "
                                        +Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getApPaterno());
+        }
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     }

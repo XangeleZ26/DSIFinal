@@ -51,6 +51,8 @@ public class frmConfiguracion extends javax.swing.JFrame {
         txtTarjeta = new javax.swing.JTextField();
         txtNumTarjeta = new javax.swing.JTextField();
         txtCorreo = new javax.swing.JTextField();
+        lblRazon = new javax.swing.JLabel();
+        txtRazon = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -89,7 +91,7 @@ public class frmConfiguracion extends javax.swing.JFrame {
 
         lblTipoDoc.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblTipoDoc.setText("Tipo de documento:");
-        PContenidoConfiguracion.add(lblTipoDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(64, 86, 201, -1));
+        PContenidoConfiguracion.add(lblTipoDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 200, -1));
 
         lblNumDoc.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblNumDoc.setText("N° de documento:");
@@ -185,6 +187,14 @@ public class frmConfiguracion extends javax.swing.JFrame {
         txtCorreo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         PContenidoConfiguracion.add(txtCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 280, 280, 30));
 
+        lblRazon.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblRazon.setText("Razón social:");
+        PContenidoConfiguracion.add(lblRazon, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 100, 130, -1));
+
+        txtRazon.setEditable(false);
+        txtRazon.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        PContenidoConfiguracion.add(txtRazon, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 280, 30));
+
         PGeneralConfiguracion.add(PContenidoConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 690, 550));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
@@ -238,15 +248,17 @@ public class frmConfiguracion extends javax.swing.JFrame {
     private javax.swing.JLabel lblConfiguracion;
     private javax.swing.JLabel lblCorreo;
     private javax.swing.JLabel lblCorreo1;
-    private javax.swing.JLabel lblNumDoc;
+    public javax.swing.JLabel lblNumDoc;
     private javax.swing.JLabel lblNumTarjeta;
+    public javax.swing.JLabel lblRazon;
     private javax.swing.JLabel lblTarjeta;
-    private javax.swing.JLabel lblTipoDoc;
-    private javax.swing.JLabel lblUsuario;
+    public javax.swing.JLabel lblTipoDoc;
+    public javax.swing.JLabel lblUsuario;
     public javax.swing.JTextField txtContrasena;
     public javax.swing.JTextField txtCorreo;
     public javax.swing.JTextField txtNumDoc;
     public javax.swing.JTextField txtNumTarjeta;
+    public javax.swing.JTextField txtRazon;
     public javax.swing.JTextField txtTarjeta;
     public javax.swing.JTextField txtTipoDoc;
     public javax.swing.JTextField txtUsuario;

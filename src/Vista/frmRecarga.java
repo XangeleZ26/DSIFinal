@@ -36,7 +36,7 @@ public class frmRecarga extends javax.swing.JFrame {
         lblMonto = new javax.swing.JLabel();
         lblSimbolo1 = new javax.swing.JLabel();
         txtMonto = new javax.swing.JTextField();
-        lblComprobante = new javax.swing.JLabel();
+        medioPago = new javax.swing.JLabel();
         btnAtras = new javax.swing.JButton();
         lblFecha = new javax.swing.JLabel();
         dcFechaPago = new com.toedter.calendar.JDateChooser();
@@ -50,9 +50,8 @@ public class frmRecarga extends javax.swing.JFrame {
         btnPagar = new javax.swing.JButton();
         txtCVV = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        btnFactura = new javax.swing.JButton();
-        btnBoleta = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
+        lblComprobante1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -98,9 +97,9 @@ public class frmRecarga extends javax.swing.JFrame {
         txtMonto.setBorder(null);
         PContenidoRecarga.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 48, 150, -1));
 
-        lblComprobante.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        lblComprobante.setText("Comprobante de pago");
-        PContenidoRecarga.add(lblComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 170, -1, -1));
+        medioPago.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        medioPago.setText("xd");
+        PContenidoRecarga.add(medioPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 170, -1));
 
         btnAtras.setBackground(new java.awt.Color(121, 127, 139));
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
@@ -170,41 +169,13 @@ public class frmRecarga extends javax.swing.JFrame {
 
         PContenidoRecarga.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 380, 250));
 
-        btnFactura.setBackground(new java.awt.Color(22, 38, 46));
-        btnFactura.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnFactura.setForeground(new java.awt.Color(255, 255, 255));
-        btnFactura.setText("Factura");
-        btnFactura.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnFacturaMouseClicked(evt);
-            }
-        });
-        btnFactura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFacturaActionPerformed(evt);
-            }
-        });
-        PContenidoRecarga.add(btnFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 220, -1, 37));
-
-        btnBoleta.setBackground(new java.awt.Color(22, 38, 46));
-        btnBoleta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnBoleta.setForeground(new java.awt.Color(255, 255, 255));
-        btnBoleta.setText("Boleta");
-        btnBoleta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnBoletaMouseClicked(evt);
-            }
-        });
-        btnBoleta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBoletaActionPerformed(evt);
-            }
-        });
-        PContenidoRecarga.add(btnBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 90, 37));
-
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
         PContenidoRecarga.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 160, 10));
+
+        lblComprobante1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        lblComprobante1.setText("Comprobante de pago:");
+        PContenidoRecarga.add(lblComprobante1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
 
         PGeneralRecarga.add(PContenidoRecarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 104, 550, 560));
 
@@ -222,29 +193,9 @@ public class frmRecarga extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturaActionPerformed
-         btnFactura.setBackground(new Color(64,103,105));
-        btnBoleta.setBackground(new Color(22,38,46));
-        this.opcionComprobante=1;
-    }//GEN-LAST:event_btnFacturaActionPerformed
-
     private void txtCVVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCVVActionPerformed
         
     }//GEN-LAST:event_txtCVVActionPerformed
-
-    private void btnBoletaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBoletaMouseClicked
-           btnBoleta.setBackground(new Color(64,103,105));
-        btnFactura.setBackground(new Color(22,38,46));
-        this.opcionComprobante=2;
-    }//GEN-LAST:event_btnBoletaMouseClicked
-
-    private void btnFacturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFacturaMouseClicked
-        
-    }//GEN-LAST:event_btnFacturaMouseClicked
-
-    private void btnBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBoletaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBoletaActionPerformed
 
     private void btnPagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPagarActionPerformed
         // TODO add your handling code here:
@@ -298,14 +249,12 @@ public class frmRecarga extends javax.swing.JFrame {
     private javax.swing.JPanel PGeneralRecarga;
     private javax.swing.JPanel PTituloRecarga;
     public javax.swing.JButton btnAtras;
-    public javax.swing.JButton btnBoleta;
-    public javax.swing.JButton btnFactura;
     public javax.swing.JButton btnPagar;
     public com.toedter.calendar.JDateChooser dcFechaPago;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JLabel lblComprobante;
+    private javax.swing.JLabel lblComprobante1;
     private javax.swing.JLabel lblDescripcion4;
     private javax.swing.JLabel lblDescripcion5;
     private javax.swing.JLabel lblDescripcion6;
@@ -316,6 +265,7 @@ public class frmRecarga extends javax.swing.JFrame {
     private javax.swing.JLabel lblSimbolo1;
     public javax.swing.JLabel lblTarjeta;
     private javax.swing.JLabel lblTituloRecarga;
+    public javax.swing.JLabel medioPago;
     public javax.swing.JTextField txtCVV;
     public javax.swing.JTextField txtMonto;
     // End of variables declaration//GEN-END:variables

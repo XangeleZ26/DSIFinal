@@ -28,24 +28,28 @@ public class frmBoleta extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         PTituloConfiguracion = new javax.swing.JPanel();
+        lblBoletaRecarga = new javax.swing.JLabel();
         lblBoletaPago = new javax.swing.JLabel();
         lblBoletaConsumo = new javax.swing.JLabel();
-        lblBoletaRecarga = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        lblUsuario = new javax.swing.JLabel();
-        lblMonto = new javax.swing.JLabel();
-        lblFecha = new javax.swing.JLabel();
-        lblEstacion = new javax.swing.JLabel();
-        lblVehiculo = new javax.swing.JLabel();
-        lblNumDoc = new javax.swing.JLabel();
+        txtTipoComprobante = new javax.swing.JLabel();
+        txtEstacion = new javax.swing.JLabel();
         btnOKBoleta = new javax.swing.JButton();
-        txtUsuario = new javax.swing.JTextField();
-        txtNumDoc = new javax.swing.JTextField();
         txtMonto = new javax.swing.JTextField();
         txtFecha = new javax.swing.JTextField();
-        txtVehiculo = new javax.swing.JTextField();
-        txtEstacion = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        txtNumDoc = new javax.swing.JLabel();
+        lblMonto1 = new javax.swing.JLabel();
+        txtUsuario = new javax.swing.JLabel();
+        lblTipoComprobante = new javax.swing.JLabel();
+        lblNumDoc = new javax.swing.JLabel();
+        txtRazon = new javax.swing.JLabel();
+        lblMonto = new javax.swing.JLabel();
+        lblFecha = new javax.swing.JLabel();
+        txtVehiculo = new javax.swing.JLabel();
+        lblEstacion = new javax.swing.JLabel();
+        lblVehiculo = new javax.swing.JLabel();
+        lblUsuario = new javax.swing.JLabel();
+        lblRazon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -54,159 +58,115 @@ public class frmBoleta extends javax.swing.JFrame {
         PTituloConfiguracion.setBackground(new java.awt.Color(159, 162, 178));
         PTituloConfiguracion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblBoletaPago.setFont(new java.awt.Font("Britannic Bold", 0, 36)); // NOI18N
-        lblBoletaPago.setForeground(new java.awt.Color(0, 0, 0));
-        lblBoletaPago.setText("Boleta de pago PEX");
-        PTituloConfiguracion.add(lblBoletaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, -1, -1));
+        lblBoletaRecarga.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
+        lblBoletaRecarga.setText("Comprobante de recarga PEX");
+        PTituloConfiguracion.add(lblBoletaRecarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
-        lblBoletaConsumo.setFont(new java.awt.Font("Britannic Bold", 0, 36)); // NOI18N
-        lblBoletaConsumo.setForeground(new java.awt.Color(0, 0, 0));
-        lblBoletaConsumo.setText("Boleta de consumo PEX");
-        PTituloConfiguracion.add(lblBoletaConsumo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
+        lblBoletaPago.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
+        lblBoletaPago.setText("Comprobante de pago PEX");
+        PTituloConfiguracion.add(lblBoletaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
-        lblBoletaRecarga.setFont(new java.awt.Font("Britannic Bold", 0, 36)); // NOI18N
-        lblBoletaRecarga.setForeground(new java.awt.Color(0, 0, 0));
-        lblBoletaRecarga.setText("Boleta de recarga PEX");
-        PTituloConfiguracion.add(lblBoletaRecarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, -1, -1));
+        lblBoletaConsumo.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
+        lblBoletaConsumo.setText("Comprobante de consumo PEX");
+        PTituloConfiguracion.add(lblBoletaConsumo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
-        jPanel1.add(PTituloConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 510, 70));
+        jPanel1.add(PTituloConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 70));
 
         jPanel2.setBackground(new java.awt.Color(121, 127, 139));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblUsuario.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblUsuario.setForeground(new java.awt.Color(0, 0, 0));
-        lblUsuario.setText("Usuario:");
+        txtTipoComprobante.setFont(new java.awt.Font("Times New Roman", 0, 21)); // NOI18N
+        txtTipoComprobante.setText("Tipo de comprobante:");
+        jPanel2.add(txtTipoComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 220, -1));
 
-        lblMonto.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblMonto.setForeground(new java.awt.Color(0, 0, 0));
-        lblMonto.setText("Monto:");
-
-        lblFecha.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblFecha.setForeground(new java.awt.Color(0, 0, 0));
-        lblFecha.setText("Fecha:");
-
-        lblEstacion.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblEstacion.setForeground(new java.awt.Color(0, 0, 0));
-        lblEstacion.setText("Estación:");
-
-        lblVehiculo.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblVehiculo.setForeground(new java.awt.Color(0, 0, 0));
-        lblVehiculo.setText("Vehiculo:");
-
-        lblNumDoc.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        lblNumDoc.setForeground(new java.awt.Color(0, 0, 0));
-        lblNumDoc.setText("N° documento:");
+        txtEstacion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtEstacion.setText("Estación:");
+        jPanel2.add(txtEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 210, -1));
 
         btnOKBoleta.setBackground(new java.awt.Color(22, 38, 46));
         btnOKBoleta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnOKBoleta.setForeground(new java.awt.Color(255, 255, 255));
         btnOKBoleta.setText("OK");
         btnOKBoleta.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        txtUsuario.setEditable(false);
-        txtUsuario.setBackground(new java.awt.Color(121, 127, 139));
-        txtUsuario.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtUsuario.setBorder(null);
-
-        txtNumDoc.setEditable(false);
-        txtNumDoc.setBackground(new java.awt.Color(121, 127, 139));
-        txtNumDoc.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtNumDoc.setBorder(null);
+        btnOKBoleta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnOKBoletaActionPerformed(evt);
+            }
+        });
+        jPanel2.add(btnOKBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, -1, -1));
 
         txtMonto.setEditable(false);
         txtMonto.setBackground(new java.awt.Color(121, 127, 139));
         txtMonto.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtMonto.setText("xd");
         txtMonto.setBorder(null);
         txtMonto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtMontoActionPerformed(evt);
             }
         });
+        jPanel2.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 180, -1));
 
         txtFecha.setEditable(false);
         txtFecha.setBackground(new java.awt.Color(121, 127, 139));
         txtFecha.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtFecha.setText("xd");
         txtFecha.setBorder(null);
+        jPanel2.add(txtFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 180, 200, -1));
 
-        txtVehiculo.setEditable(false);
-        txtVehiculo.setBackground(new java.awt.Color(121, 127, 139));
+        txtNumDoc.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtNumDoc.setText("xd");
+        jPanel2.add(txtNumDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 120, 220, -1));
+
+        lblMonto1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblMonto1.setText("S/.");
+        jPanel2.add(lblMonto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 150, 30, -1));
+
+        txtUsuario.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtUsuario.setText("xd");
+        jPanel2.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 90, 220, -1));
+
+        lblTipoComprobante.setFont(new java.awt.Font("Times New Roman", 0, 21)); // NOI18N
+        lblTipoComprobante.setText("Tipo de comprobante:");
+        jPanel2.add(lblTipoComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+
+        lblNumDoc.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblNumDoc.setText("Número de documento:");
+        jPanel2.add(lblNumDoc, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, 180, -1));
+
+        txtRazon.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtRazon.setText("Razón social:");
+        jPanel2.add(txtRazon, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 230, -1));
+
+        lblMonto.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblMonto.setText("Monto:");
+        jPanel2.add(lblMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 150, 60, 20));
+
+        lblFecha.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblFecha.setText("Fecha:");
+        jPanel2.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 50, -1));
+
         txtVehiculo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtVehiculo.setBorder(null);
+        txtVehiculo.setText("Vehículo:");
+        jPanel2.add(txtVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 210, -1));
 
-        txtEstacion.setEditable(false);
-        txtEstacion.setBackground(new java.awt.Color(121, 127, 139));
-        txtEstacion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtEstacion.setBorder(null);
+        lblEstacion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblEstacion.setText("Estación:");
+        jPanel2.add(lblEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 70, -1));
 
-        jLabel7.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel7.setText("S/");
+        lblVehiculo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblVehiculo.setText("Vehículo:");
+        jPanel2.add(lblVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 70, -1));
 
-        org.jdesktop.layout.GroupLayout jPanel2Layout = new org.jdesktop.layout.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel2Layout.createSequentialGroup()
-                .add(62, 62, 62)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(lblUsuario)
-                    .add(lblMonto)
-                    .add(lblFecha)
-                    .add(lblEstacion)
-                    .add(lblVehiculo)
-                    .add(lblNumDoc))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(jPanel2Layout.createSequentialGroup()
-                        .add(jLabel7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 18, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(txtMonto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 76, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                        .add(txtNumDoc)
-                        .add(txtFecha, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(txtVehiculo)
-                        .add(txtEstacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 221, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(txtUsuario, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 187, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(76, Short.MAX_VALUE))
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(btnOKBoleta)
-                .add(210, 210, 210))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel2Layout.createSequentialGroup()
-                .add(27, 27, 27)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblUsuario)
-                    .add(txtUsuario, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(26, 26, 26)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblNumDoc)
-                    .add(txtNumDoc, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(29, 29, 29)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblMonto)
-                    .add(txtMonto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(jLabel7))
-                .add(29, 29, 29)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblFecha)
-                    .add(txtFecha, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(29, 29, 29)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblEstacion)
-                    .add(txtEstacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(29, 29, 29)
-                .add(jPanel2Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblVehiculo)
-                    .add(txtVehiculo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(18, 18, 18)
-                .add(btnOKBoleta)
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        lblUsuario.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblUsuario.setText("Usuario:");
+        jPanel2.add(lblUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, 70, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 63, 510, 400));
+        lblRazon.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblRazon.setText("Razón social:");
+        jPanel2.add(lblRazon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 100, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 490, 330));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -216,7 +176,7 @@ public class frmBoleta extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -225,6 +185,10 @@ public class frmBoleta extends javax.swing.JFrame {
     private void txtMontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMontoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtMontoActionPerformed
+
+    private void btnOKBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOKBoletaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnOKBoletaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -264,24 +228,28 @@ public class frmBoleta extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PTituloConfiguracion;
     public javax.swing.JButton btnOKBoleta;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     public javax.swing.JLabel lblBoletaConsumo;
     public javax.swing.JLabel lblBoletaPago;
     public javax.swing.JLabel lblBoletaRecarga;
     public javax.swing.JLabel lblEstacion;
-    private javax.swing.JLabel lblFecha;
-    private javax.swing.JLabel lblMonto;
-    private javax.swing.JLabel lblNumDoc;
-    private javax.swing.JLabel lblUsuario;
+    public javax.swing.JLabel lblFecha;
+    public javax.swing.JLabel lblMonto;
+    private javax.swing.JLabel lblMonto1;
+    public javax.swing.JLabel lblNumDoc;
+    public javax.swing.JLabel lblRazon;
+    public javax.swing.JLabel lblTipoComprobante;
+    public javax.swing.JLabel lblUsuario;
     public javax.swing.JLabel lblVehiculo;
-    public javax.swing.JTextField txtEstacion;
+    public javax.swing.JLabel txtEstacion;
     public javax.swing.JTextField txtFecha;
     public javax.swing.JTextField txtMonto;
-    public javax.swing.JTextField txtNumDoc;
-    public javax.swing.JTextField txtUsuario;
-    public javax.swing.JTextField txtVehiculo;
+    public javax.swing.JLabel txtNumDoc;
+    public javax.swing.JLabel txtRazon;
+    public javax.swing.JLabel txtTipoComprobante;
+    public javax.swing.JLabel txtUsuario;
+    public javax.swing.JLabel txtVehiculo;
     // End of variables declaration//GEN-END:variables
 
 }
