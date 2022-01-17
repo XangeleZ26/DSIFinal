@@ -99,7 +99,7 @@ public class ControladorConfiguracion {
         this.vista.txtCorreo.setText(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCredencial().getCorreo());
         this.vista.txtTarjeta.setText(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getTarjeta().getMedioPago());
         this.vista.txtNumTarjeta.setText(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getTarjeta().getNumTarjeta());
-
+        this.vista.txtRazon.setText(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getRazonSocial());
     }
 
     public void ocultar() {
@@ -110,8 +110,23 @@ public class ControladorConfiguracion {
         vista.txtContrasena.setText(contraOculta);
     }
 
+    public void comprobarTipoUser() {
+        if (Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getTipoDocumento().equals("RUC")) {
+            vista.lblUsuario.setVisible(false);
+            vista.lblTipoDoc.setVisible(false);
+            vista.lblNumDoc.setVisible(false);
+            vista.txtUsuario.setVisible(false);
+            vista.txtNumDoc.setVisible(false);
+            vista.txtTipoDoc.setVisible(false);
+        } else {
+            vista.lblRazon.setVisible(false);
+            vista.txtRazon.setVisible(false);
+        }
+    }
+
     public void iniciar() {
         llenarDatos();
+        comprobarTipoUser();
         ocultar();
         vista.OjoCerrado.setVisible(false);
         vista.setLocationRelativeTo(null);

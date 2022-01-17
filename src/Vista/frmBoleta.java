@@ -93,7 +93,7 @@ public class frmBoleta extends javax.swing.JFrame {
                 btnOKBoletaActionPerformed(evt);
             }
         });
-        jPanel2.add(btnOKBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 290, -1, -1));
+        jPanel2.add(btnOKBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, -1, -1));
 
         txtMonto.setEditable(false);
         txtMonto.setBackground(new java.awt.Color(121, 127, 139));
@@ -166,7 +166,7 @@ public class frmBoleta extends javax.swing.JFrame {
         lblRazon.setText("Razón social:");
         jPanel2.add(lblRazon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 100, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 490, 350));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 490, 330));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -176,7 +176,7 @@ public class frmBoleta extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(jPanel1, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .add(jPanel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
