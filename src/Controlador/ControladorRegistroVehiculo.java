@@ -20,7 +20,6 @@ public class ControladorRegistroVehiculo{
     public ControladorRegistroVehiculo(Cliente ClientePotencial){
         this.ClientePotencial = ClientePotencial;
         this.vistaVehiculo = new frmRegistroVehiculo();
-        this.vistaVehiculo = new frmRegistroVehiculo();
         this.vistaVehiculo.btnSiguiente2.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
