@@ -43,7 +43,7 @@ public class Cuenta {
     //MÉTODOS ACCESORES
     
     //AGREGADO
-    public Estacion getEstacion(String stacion ) {
+    public Estacion getEstacion() {
         return estacion;
     }
 
@@ -549,4 +549,6 @@ public class Cuenta {
         return result;
     }
      */
+
+
 }

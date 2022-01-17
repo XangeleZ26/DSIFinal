@@ -108,7 +108,7 @@ public class frmPagar extends javax.swing.JFrame {
                 cbxEstacionActionPerformed(evt);
             }
         });
-        PContenidoPagar.add(cbxEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, -1, -1));
+        PContenidoPagar.add(cbxEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 240, -1));
 
         btnPagar.setBackground(new java.awt.Color(121, 127, 139));
         btnPagar.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
@@ -142,7 +142,8 @@ public class frmPagar extends javax.swing.JFrame {
         lblFecha1.setText("Vehiculos:");
         PContenidoPagar.add(lblFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 127, -1));
 
-        cbxVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cbxVehiculo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        cbxVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccionar" }));
         cbxVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbxVehiculoActionPerformed(evt);

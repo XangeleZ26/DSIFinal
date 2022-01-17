@@ -96,7 +96,7 @@ public class frmMovimientos extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jMovimientos);
 
         btnOrdenarEstacion.setBackground(new java.awt.Color(159, 162, 178));
-        btnOrdenarEstacion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnOrdenarEstacion.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnOrdenarEstacion.setText("Ordenar por Estación");
         btnOrdenarEstacion.setToolTipText("");
         btnOrdenarEstacion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -108,7 +108,7 @@ public class frmMovimientos extends javax.swing.JFrame {
         });
 
         btnOrdenarFecha.setBackground(new java.awt.Color(159, 162, 178));
-        btnOrdenarFecha.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnOrdenarFecha.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnOrdenarFecha.setText("Ordenar por Fecha");
         btnOrdenarFecha.setToolTipText("");
         btnOrdenarFecha.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -120,7 +120,7 @@ public class frmMovimientos extends javax.swing.JFrame {
         });
 
         btnOrdenarMonto.setBackground(new java.awt.Color(159, 162, 178));
-        btnOrdenarMonto.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnOrdenarMonto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnOrdenarMonto.setText("Ordenar por Monto");
         btnOrdenarMonto.setToolTipText("");
         btnOrdenarMonto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -132,7 +132,7 @@ public class frmMovimientos extends javax.swing.JFrame {
         });
 
         btnOrdenarVehiculo.setBackground(new java.awt.Color(159, 162, 178));
-        btnOrdenarVehiculo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnOrdenarVehiculo.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnOrdenarVehiculo.setText("Ordenar por Placa");
         btnOrdenarVehiculo.setToolTipText("");
         btnOrdenarVehiculo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -153,17 +153,22 @@ public class frmMovimientos extends javax.swing.JFrame {
         PContenidoMovimientosLayout.setHorizontalGroup(
             PContenidoMovimientosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(PContenidoMovimientosLayout.createSequentialGroup()
-                .add(21, 21, 21)
-                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 465, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(36, 36, 36)
-                .add(PContenidoMovimientosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                    .add(PContenidoMovimientosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                        .add(btnOrdenarEstacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 168, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(btnOrdenarFecha, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 168, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(btnOrdenarMonto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 168, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(btnOrdenarVehiculo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 168, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(btnAtras))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap()
+                .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 555, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(PContenidoMovimientosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(PContenidoMovimientosLayout.createSequentialGroup()
+                        .add(64, 64, 64)
+                        .add(btnAtras)
+                        .add(0, 0, Short.MAX_VALUE))
+                    .add(PContenidoMovimientosLayout.createSequentialGroup()
+                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(PContenidoMovimientosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoMovimientosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                .add(btnOrdenarEstacion, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .add(btnOrdenarVehiculo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, btnOrdenarMonto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 125, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(org.jdesktop.layout.GroupLayout.TRAILING, btnOrdenarFecha, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 125, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                .add(710, 710, 710))
         );
         PContenidoMovimientosLayout.setVerticalGroup(
             PContenidoMovimientosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -172,14 +177,14 @@ public class frmMovimientos extends javax.swing.JFrame {
                 .add(jScrollPane1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 401, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .add(18, 18, 18))
             .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoMovimientosLayout.createSequentialGroup()
-                .add(65, 65, 65)
-                .add(btnOrdenarEstacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(26, 26, 26)
+                .add(79, 79, 79)
                 .add(btnOrdenarFecha, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(26, 26, 26)
+                .add(40, 40, 40)
                 .add(btnOrdenarMonto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(26, 26, 26)
+                .add(42, 42, 42)
                 .add(btnOrdenarVehiculo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(43, 43, 43)
+                .add(btnOrdenarEstacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(btnAtras)
                 .add(26, 26, 26))
