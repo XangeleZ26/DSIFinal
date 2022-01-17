@@ -109,7 +109,7 @@ public class ControladorConfiguracion {
         }
         vista.txtContrasena.setText(contraOculta);
     }
-
+    //xd
     public void comprobarTipoUser() {
         if (Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getTipoDocumento().equals("RUC")) {
             vista.lblUsuario.setVisible(false);
