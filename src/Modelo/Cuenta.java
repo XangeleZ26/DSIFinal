@@ -376,10 +376,13 @@ public class Cuenta {
     /*Hacer validación del CVV*/
     public boolean recargar(float monto, String cvv, String fecha) {
         boolean result = false;
+        if(monto>0){
             this.saldoTotal = this.saldoTotal + monto;
-            result = true;
-        //Registrar movimiento al arreglo
             registrarMovimiento(fecha, "Recarga", monto);
+            result = true;
+        }
+        //Registrar movimiento al arreglo
+            
         return result;
     }
 
@@ -404,7 +407,7 @@ public class Cuenta {
         for (int i = 0; i < nm; i++) {
             if (movimientos[i].getTipo().compareTo("Recarga") == 0) {
                 System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientos[i].getFecha(), movimientos[i].getTipo(), movimientos[i].getMonto(), "-----", "-----", "-----");
-            } else if (movimientos[i].getTipo().compareTo("Peaje") == 0) {
+            } else if (movimientos[i].getTipo().compareTo("Consumo") == 0) {
                 System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientos[i].getFecha(), movimientos[i].getTipo(), movimientos[i].getMonto(), movimientos[i].getVehiculo().getPlaca() + " " + movimientos[i].getVehiculo().getMarca() + " " + movimientos[i].getVehiculo().getModelo(), movimientos[i].getEstacion().getPeaje().getNombrePeaje(), movimientos[i].getEstacion().getNombreEstacion());
             }
         }
@@ -436,7 +439,7 @@ public class Cuenta {
         for (int i = 0; i < nm; i++) {
             if (movimientosOrdenados[i].getTipo().compareTo("Recarga") == 0) {
                 System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), "-----", "-----", "-----");
-            } else if (movimientosOrdenados[i].getTipo().compareTo("Peaje") == 0) {
+            } else if (movimientosOrdenados[i].getTipo().compareTo("Consumo") == 0) {
                 System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), movimientosOrdenados[i].getVehiculo().getPlaca() + " " + movimientosOrdenados[i].getVehiculo().getMarca() + " " + movimientosOrdenados[i].getVehiculo().getModelo(), movimientosOrdenados[i].getEstacion().getPeaje().getNombrePeaje(), movimientosOrdenados[i].getEstacion().getNombreEstacion());
             }
         }
@@ -467,7 +470,7 @@ public class Cuenta {
         for (int i = 0; i < nm; i++) {
             if (movimientosOrdenados[i].getTipo().compareTo("Recarga") == 0) {
                 System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), "-----", "-----", "-----");
-            } else if (movimientosOrdenados[i].getTipo().compareTo("Peaje") == 0) {
+            } else if (movimientosOrdenados[i].getTipo().compareTo("Consumo") == 0) {
                 System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), movimientosOrdenados[i].getVehiculo().getPlaca() + " " + movimientosOrdenados[i].getVehiculo().getMarca() + " " + movimientosOrdenados[i].getVehiculo().getModelo(), movimientosOrdenados[i].getEstacion().getPeaje().getNombrePeaje(), movimientosOrdenados[i].getEstacion().getNombreEstacion());
             }
         }
@@ -502,7 +505,7 @@ public class Cuenta {
         for (int i = 0; i < nm; i++) {
             if (movimientosOrdenados[i].getTipo().compareTo("Recarga") == 0) {
                 System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), "-----", "-----", "-----");
-            } else if (movimientosOrdenados[i].getTipo().compareTo("Peaje") == 0) {
+            } else if (movimientosOrdenados[i].getTipo().compareTo("Consumo") == 0) {
                 System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), movimientosOrdenados[i].getVehiculo().getPlaca() + " " + movimientosOrdenados[i].getVehiculo().getMarca() + " " + movimientosOrdenados[i].getVehiculo().getModelo(), movimientosOrdenados[i].getEstacion().getPeaje().getNombrePeaje(), movimientosOrdenados[i].getEstacion().getNombreEstacion());
             }
         }
@@ -537,7 +540,7 @@ public class Cuenta {
         for (int i = 0; i < nm; i++) {
             if (movimientosOrdenados[i].getTipo().compareTo("Recarga") == 0) {
                 System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), "-----", "-----", "-----");
-            } else if (movimientosOrdenados[i].getTipo().compareTo("Peaje") == 0) {
+            } else if (movimientosOrdenados[i].getTipo().compareTo("Consumo") == 0) {
                 System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), movimientosOrdenados[i].getVehiculo().getPlaca() + " " + movimientosOrdenados[i].getVehiculo().getMarca() + " " + movimientosOrdenados[i].getVehiculo().getModelo(), movimientosOrdenados[i].getEstacion().getPeaje().getNombrePeaje(), movimientosOrdenados[i].getEstacion().getNombreEstacion());
             }
         }

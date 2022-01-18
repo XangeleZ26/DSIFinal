@@ -63,7 +63,7 @@ public class ControladorPagar {
         this.vista.btnPagar.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e ){
-            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
            // vista.cbxVehiculo.getSelectedItem() = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getVehiculos(i);
 
             if(datosLlenosPagar()){

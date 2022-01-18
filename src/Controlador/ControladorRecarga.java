@@ -33,9 +33,11 @@ public class ControladorRecarga {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isValido()) {
+                    
                     if (vista.txtCVV.getText().equals(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getTarjeta().getCvv())) {
+                        
                         if (Float.parseFloat(vista.txtMonto.getText()) > 0) {
-                            SimpleDateFormat sdfPago = new SimpleDateFormat("yyyy/MM"); //doy formato
+                            SimpleDateFormat sdfPago = new SimpleDateFormat("yyyy/MM/dd"); //doy formato
                             String fechaPago = sdfPago.format(vista.dcFechaPago.getDate()); //indico a q cosa quiero dar formato y lo almaceno
 
                             //Aún no se contempla el "boleta y factura" en el codigo. Esperando acuerdo grupal xd
@@ -45,6 +47,7 @@ public class ControladorRecarga {
                             }*/
                             
                             Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()), vista.txtCVV.getText(), fechaPago);
+                            Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().mostrarMovimientos();
                             
                             JOptionPane.showMessageDialog(null, "Recarga realizada con éxito.");
 
@@ -68,13 +71,16 @@ public class ControladorRecarga {
                             //AGREGAR DICHA RECARGA AL HISTORIAL DE MOVIMIENTOS
                             
                             
-                        } else {
+                        }
+                        else {
                             JOptionPane.showMessageDialog(null, "No puede recargar un monto negativo!");
                         }
-                    } else {
+                    }
+                    else {
                         JOptionPane.showMessageDialog(null, "CVV incorrecto!");
                     }
-                } else {
+                }
+                else {
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos!");
                 }
             }
