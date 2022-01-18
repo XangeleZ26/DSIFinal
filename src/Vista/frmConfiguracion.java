@@ -9,12 +9,9 @@ import javax.swing.ImageIcon;
 
 public class frmConfiguracion extends javax.swing.JFrame {
 
-   private Cliente user;
-    public frmConfiguracion(Cliente user) {
+    public frmConfiguracion() {
         initComponents();
-         this.user=user;
-//        ocultar();
-//        OjoCerrado.setVisible(false);
+
     }
 
     /** This method is called from within the constructor to

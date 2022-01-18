@@ -11,21 +11,21 @@ import javax.swing.table.DefaultTableModel;
 
 public class ControladorMovimientos {
 
-    //private Cliente user;
+    private Cliente user;
     private frmMovimientos vista;
-    private int indiceCliente;
+
     private String OrdenadoPor = new String();
 
-    public ControladorMovimientos(int indiceCliente) {
+    public ControladorMovimientos(Cliente user) {
         //this.user = user;
         this.vista = new frmMovimientos();
-        this.indiceCliente = indiceCliente;
+        this.user = user;
         
         
         this.vista.btnAtras.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(indiceCliente);
+                ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(user);
                 ctrlOpcionesIngreso.iniciar();
                 vista.dispose();
             }
@@ -34,7 +34,7 @@ public class ControladorMovimientos {
         this.vista.btnOrdenarFecha.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-            Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().ordenarMovimientosXFecha();
+            user.getCuenta().ordenarMovimientosXFecha();
             OrdenadoPor = "Fecha";
             llenarTablaOrdenada();
             }
@@ -43,7 +43,7 @@ public class ControladorMovimientos {
         this.vista.btnOrdenarMonto.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-            Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().ordenarMovimientosXMonto();
+            user.getCuenta().ordenarMovimientosXMonto();
             OrdenadoPor = "Monto";
             llenarTablaOrdenada();
             }  
@@ -52,7 +52,7 @@ public class ControladorMovimientos {
         this.vista.btnOrdenarVehiculo.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-            Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().ordenarMovimientosXPlacaVehiculo();
+            user.getCuenta().ordenarMovimientosXPlacaVehiculo();
             OrdenadoPor = "Vehiculo";
             llenarTablaOrdenada();
             }  
@@ -72,26 +72,26 @@ public class ControladorMovimientos {
         datos.addColumn("Estación");
         this.vista.jMovimientos.setModel(datos);
         
-        for(int i=0;i<Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getNm();i++){
-            if(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getTipo().compareTo("Recarga")== 0){
+        for(int i=0;i<user.getCuenta().getNm();i++){
+            if(user.getCuenta().getMovimientos(i).getTipo().compareTo("Recarga")== 0){
                 
-                informacion[0] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getFecha();
-                informacion[1] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getTipo();
-                informacion[2] = Float.toString(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getMonto());
+                informacion[0] = user.getCuenta().getMovimientos(i).getFecha();
+                informacion[1] = user.getCuenta().getMovimientos(i).getTipo();
+                informacion[2] = Float.toString(user.getCuenta().getMovimientos(i).getMonto());
                 informacion[3] = "";
                 informacion[4] = "";
                 informacion[5] = "";
                 datos.addRow(informacion);
         
             }
-            else if(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getTipo().compareTo("Consumo")== 0){      
+            else if(user.getCuenta().getMovimientos(i).getTipo().compareTo("Consumo")== 0){      
                 
-                informacion[0] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getFecha();
-                informacion[1] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getTipo();
-                informacion[2] = Float.toString(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getMonto());
-                informacion[3] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getVehiculo().getPlaca();
-                informacion[4] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getEstacion().getPeaje().getNombrePeaje(); 
-                informacion[5] = Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getMovimientos(i).getEstacion().getNombreEstacion(); 
+                informacion[0] = user.getCuenta().getMovimientos(i).getFecha();
+                informacion[1] = user.getCuenta().getMovimientos(i).getTipo();
+                informacion[2] = Float.toString(user.getCuenta().getMovimientos(i).getMonto());
+                informacion[3] = user.getCuenta().getMovimientos(i).getVehiculo().getPlaca();
+                informacion[4] = user.getCuenta().getMovimientos(i).getEstacion().getPeaje().getNombrePeaje(); 
+                informacion[5] = user.getCuenta().getMovimientos(i).getEstacion().getNombreEstacion(); 
                 datos.addRow(informacion);
         
             }
@@ -99,34 +99,34 @@ public class ControladorMovimientos {
     }
     
     public void llenarTablaOrdenada(){
-        DefaultTableModel user = new DefaultTableModel();
+        DefaultTableModel Tablauser = new DefaultTableModel();
         String informacion[] = new String[8];
-        user.addColumn("Fecha");
-        user.addColumn("Tipo");
-        user.addColumn("Monto");
-        user.addColumn("Vehiculo");
-        user.addColumn("Peaje");
-        user.addColumn("Estación");
-        this.vista.jMovimientos.setModel(user);
+        Tablauser.addColumn("Fecha");
+        Tablauser.addColumn("Tipo");
+        Tablauser.addColumn("Monto");
+        Tablauser.addColumn("Vehiculo");
+        Tablauser.addColumn("Peaje");
+        Tablauser.addColumn("Estación");
+        this.vista.jMovimientos.setModel(Tablauser);
         
-        for(int i=0;i<Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getNm();i++){
-        if(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getTipo().compareTo("Recarga")== 0){
+        for(int i=0;i<user.getCuenta().getNm();i++){
+        if(user.getCuenta().getMovimientos(i).getTipo().compareTo("Recarga")== 0){
             
-            informacion[0] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getFecha();
-            informacion[1] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getTipo();
-            informacion[2] = Float.toString(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getMonto());
-            user.addRow(informacion);
+            informacion[0] = user.getCuenta().getMovimientos(i).getFecha();
+            informacion[1] = user.getCuenta().getMovimientos(i).getTipo();
+            informacion[2] = Float.toString(user.getCuenta().getMovimientos(i).getMonto());
+            Tablauser.addRow(informacion);
         
         }
-        if(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getTipo().compareTo("Consumo")== 0){      
+        if(user.getCuenta().getMovimientos(i).getTipo().equals("Consumo")){      
         
-            informacion[0] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getFecha();
-            informacion[1] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getTipo();
-            informacion[2] = Float.toString(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getMonto());
-            informacion[3] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getVehiculo().getPlaca();
-            informacion[4] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getEstacion().getPeaje().getNombrePeaje(); 
-            informacion[5] = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getEstacion().getNombreEstacion(); 
-            user.addRow(informacion);
+            informacion[0] = user.getCuenta().getMovimientos(i).getFecha();
+            informacion[1] = user.getCuenta().getMovimientos(i).getTipo();
+            informacion[2] = Float.toString(user.getCuenta().getMovimientos(i).getMonto());
+            informacion[3] = user.getCuenta().getMovimientos(i).getVehiculo().getPlaca();
+            informacion[4] = user.getCuenta().getMovimientos(i).getEstacion().getPeaje().getNombrePeaje(); 
+            informacion[5] = user.getCuenta().getMovimientos(i).getEstacion().getNombreEstacion(); 
+            Tablauser.addRow(informacion);
         
         }
         }

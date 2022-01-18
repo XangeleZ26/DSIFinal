@@ -49,15 +49,16 @@ public class ControladorRegistroVehiculo{
     }
     
     //PROVENIENTE DEL CONTROLADOR VEHÍCULOS
-    public ControladorRegistroVehiculo(int indiceCliente){
-        this.vistaVehiculo = new frmRegistroVehiculo();
+    public ControladorRegistroVehiculo(Cliente cliente,frmRegistroVehiculo vista){
+        this.vistaVehiculo = vista;
+        this.ClientePotencial=cliente;  //aqui el cliente ya existe, solo desea agregar carros
         this.vistaVehiculo.btnSiguiente2.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
                 if(datosLlenosVehiculo()){
                     String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
                     int ejesEntero = Integer.parseInt(ejesCadena);
-                    Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().registrarVehiculo(
+                   ClientePotencial.getCuenta().registrarVehiculo(
                                                  vistaVehiculo.txtPlaca.getText(),
                                                  vistaVehiculo.cbxMarca.getSelectedItem().toString(),
                                                  vistaVehiculo.txtModelo.getText(),
@@ -68,7 +69,7 @@ public class ControladorRegistroVehiculo{
                                                  Integer.parseInt(vistaVehiculo.txtAño.getText()),
                                                  ClientePotencial);
                     JOptionPane.showMessageDialog(null, "Datos del vehículo registrado, puede continuar.");
-                    ControladorVehiculos ctrlVehiculos = new ControladorVehiculos(indiceCliente);
+                    ControladorVehiculos ctrlVehiculos = new ControladorVehiculos(ClientePotencial);
                     ctrlVehiculos.iniciar();
                     vistaVehiculo.dispose();  
                 }

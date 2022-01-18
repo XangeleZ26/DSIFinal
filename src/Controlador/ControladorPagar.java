@@ -16,9 +16,8 @@ import java.awt.event.ItemEvent;
 import Vista.frmMovimientos;
 
 public class ControladorPagar {
-    //private Cliente user;
+    private Cliente user;
     private frmPagar vista;
-    private int indiceCliente;
     private int x;
     
      public String[] getEstacion(String Peaje){
@@ -45,16 +44,16 @@ public class ControladorPagar {
         }
     
 
-    public ControladorPagar(int indiceCliente) {
+    public ControladorPagar(Cliente user) {
         //this.user = user;
         this.vista = new frmPagar();
-        this.indiceCliente = indiceCliente;
+        this.user = user;
         
 
          this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(indiceCliente);
+                ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(user);
                 ctrlOpcionesIngreso.iniciar();
                 vista.dispose();
             }
@@ -64,16 +63,16 @@ public class ControladorPagar {
         @Override
         public void actionPerformed(ActionEvent e ){
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-           // vista.cbxVehiculo.getSelectedItem() = Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getVehiculos(i);
+           // vista.cbxVehiculo.getSelectedItem() = user.getCuenta().getVehiculos(i);
 
             if(datosLlenosPagar()){
-                Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().pagarPeaje(
+                user.getCuenta().pagarPeaje(
                 sdf.format(vista.dcFechaPago.getDate()),
-                Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getVehiculos(x),
+                user.getCuenta().getVehiculos(x),
                 Configuracion.arrPeajes.getArregloPeajes(vista.cbxPeaje.getSelectedIndex()).getEstaciones(vista.cbxEstacion.getSelectedIndex())    
                 );
-                //Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos().imprimirMovimientoSimple();
-                //Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getSaldoTotal();
+                //user.getCuenta().getMovimientos().imprimirMovimientoSimple();
+                //user.getCuenta().getSaldoTotal();
                 JOptionPane.showMessageDialog(null, "Pago realizado con éxito");
                 
             }
@@ -94,8 +93,8 @@ public class ControladorPagar {
         }
         });
         
-        for (int i = 0; i < Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getNv(); i++){  
-        vista.cbxVehiculo.addItem(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getVehiculos(i).getPlaca());
+        for (int i = 0; i < user.getCuenta().getNv(); i++){  
+        vista.cbxVehiculo.addItem(user.getCuenta().getVehiculos(i).getPlaca());
         x = i;
         }
      
@@ -104,8 +103,8 @@ public class ControladorPagar {
         @Override
         public void actionPerformed(ActionEvent e){
             
-        for (int i = 0; i < Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getNv(); i++){  
-        vista.cbxVehiculo.addItem(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getVehiculos(i).getPlaca());
+        for (int i = 0; i < user.getCuenta().getNv(); i++){  
+        vista.cbxVehiculo.addItem(user.getCuenta().getVehiculos(i).getPlaca());
         }
         }
         });*/
@@ -114,12 +113,12 @@ public class ControladorPagar {
     }
     
    /* public void llenarTabla() {
-        DefaultTableModel modelo = new DefaultTableModel(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getFecha(),
-                                        Configuracion.arrTarjeta.header(),Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getTipo(),
-                                        Float.toString(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getMonto()),
-                                        Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getVehiculo().getPlaca(),
-                                        Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getEstacion().getPeaje().getNombrePeaje(),
-                                        Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getMovimientos(i).getEstacion().getNombreEstacion()
+        DefaultTableModel modelo = new DefaultTableModel(user.getCuenta().getMovimientos(i).getFecha(),
+                                        Configuracion.arrTarjeta.header(),user.getCuenta().getMovimientos(i).getTipo(),
+                                        Float.toString(user.getCuenta().getMovimientos(i).getMonto()),
+                                        user.getCuenta().getMovimientos(i).getVehiculo().getPlaca(),
+                                        user.getCuenta().getMovimientos(i).getEstacion().getPeaje().getNombrePeaje(),
+                                        user.getCuenta().getMovimientos(i).getEstacion().getNombreEstacion()
         );
         this.vista.tblTarjetas.setModel(modelo);
     }*/

@@ -11,18 +11,18 @@ import java.awt.event.ActionListener;
 public class ControladorOpcionesIngreso {
     //private Cliente user;
     private frmOpcionesIngreso vista;
-    private int indiceCliente;
+    private Cliente user;
     //public ControladorOpcionesIngreso(Cliente user){
-    public ControladorOpcionesIngreso(int indiceCliente){
+    public ControladorOpcionesIngreso(Cliente user){
         //this.user=user;
         this.vista=new frmOpcionesIngreso();
-        this.indiceCliente = indiceCliente;
+        this.user=user;
         
         
         this.vista.btnConfiguracion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorConfiguracion ctrlConfiguracion=new ControladorConfiguracion(indiceCliente);
+                ControladorConfiguracion ctrlConfiguracion=new ControladorConfiguracion(user);
                 ctrlConfiguracion.iniciar();
                 vista.dispose();
             }
@@ -31,7 +31,7 @@ public class ControladorOpcionesIngreso {
         this.vista.btnSaldo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorSaldo ctrlSaldo = new ControladorSaldo(indiceCliente);
+                ControladorSaldo ctrlSaldo = new ControladorSaldo(user);
                 ctrlSaldo.iniciar();
                 vista.dispose();
             }
@@ -40,7 +40,7 @@ public class ControladorOpcionesIngreso {
         this.vista.btnMovimientos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorMovimientos ctrlMovimientos =new ControladorMovimientos(indiceCliente);
+                ControladorMovimientos ctrlMovimientos =new ControladorMovimientos(user);
                 ctrlMovimientos.iniciar();
                 vista.dispose();
             }
@@ -48,7 +48,7 @@ public class ControladorOpcionesIngreso {
         this.vista.btnPagar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorPagar ctrlPagar = new ControladorPagar(indiceCliente);
+                ControladorPagar ctrlPagar = new ControladorPagar(user);
                 ctrlPagar.iniciar();
                 vista.dispose();
             }
@@ -56,7 +56,7 @@ public class ControladorOpcionesIngreso {
         this.vista.btnRecargar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorRecarga ctrlRecarga = new ControladorRecarga(indiceCliente);
+                ControladorRecarga ctrlRecarga = new ControladorRecarga(user);
                 ctrlRecarga.iniciar();
                 vista.dispose();
             }
@@ -64,7 +64,7 @@ public class ControladorOpcionesIngreso {
         this.vista.btnVehiculos.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorVehiculos ctrlVehiculos = new ControladorVehiculos(indiceCliente);
+                ControladorVehiculos ctrlVehiculos = new ControladorVehiculos(user);
                 ctrlVehiculos.iniciar();
                 vista.dispose();
             }
@@ -72,11 +72,11 @@ public class ControladorOpcionesIngreso {
     }
     
     public void iniciar(){
-        if(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getTipoDocumento().equals("RUC")){
-        vista.txtNombreUsuario.setText(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getRazonSocial());
+        if(user.getTipoDocumento().equals("RUC")){
+        vista.txtNombreUsuario.setText(user.getRazonSocial());
         }else{
-            vista.txtNombreUsuario.setText(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getNombres()+" "
-                                       +Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getApPaterno());
+            vista.txtNombreUsuario.setText(user.getNombres()+" "
+                                       +user.getApPaterno());
         }
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);

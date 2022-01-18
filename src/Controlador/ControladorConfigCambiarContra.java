@@ -12,18 +12,16 @@ import javax.swing.JOptionPane;
 public class ControladorConfigCambiarContra {
 
     private ConfigCambiarContra vista;
-    //private Cliente user;
-    //private int indiceCliente;
+    private Cliente user;
     
-    public ControladorConfigCambiarContra(int indiceCliente) {
+    public ControladorConfigCambiarContra(Cliente user) {
         this.vista = new ConfigCambiarContra();
-        //this.user = user;
-        //this.indiceCliente = indiceCliente;
+        this.user = user;
         
         this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(indiceCliente);
+                ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(user);
                 ctrlConfiguracion.iniciar();
                 vista.dispose();
 
@@ -35,14 +33,14 @@ public class ControladorConfigCambiarContra {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isValido()) {
-                    switch (Configuracion.arrClientes.getArregloCliente(indiceCliente).cambioContrasena(
+                    switch (user.cambioContrasena(
                             String.valueOf(vista.txtContrasena.getPassword()),
                             String.valueOf(vista.txtNovoContrasena.getPassword()),
                             String.valueOf(vista.txtVerifContrasena.getPassword()))) {
                         case 0: {
-                            Configuracion.arrClientes.getArregloCliente(indiceCliente).getCredencial().cambiarContraseña(String.valueOf(vista.txtNovoContrasena.getPassword()));
+                            user.getCredencial().cambiarContraseña(String.valueOf(vista.txtNovoContrasena.getPassword()));
                             JOptionPane.showMessageDialog(null, "Cambios registrados.");
-                            ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(indiceCliente);
+                            ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(user);
                             ctrlConfiguracion.iniciar();
                             vista.dispose();
                             break;

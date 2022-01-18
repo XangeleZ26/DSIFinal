@@ -12,18 +12,18 @@ import javax.swing.JOptionPane;
 public class ControladorConfigCambiarCorreo {
 
     private ConfigCambiarCorreo vista;
-    //private Cliente user;
-    //private int indiceCliente; 
+    private Cliente user;
+
     
-    public ControladorConfigCambiarCorreo(int indiceCliente) {
+    public ControladorConfigCambiarCorreo(Cliente user) {
         this.vista = new ConfigCambiarCorreo();
-        //this.user = user;
-        //this.indiceCliente = indiceCliente;
+        this.user = user;
+
         
         this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(indiceCliente);
+                ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(user);
                 ctrlConfiguracion.iniciar();
                 vista.dispose();
             }
@@ -33,13 +33,13 @@ public class ControladorConfigCambiarCorreo {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isValido()) {
-                    if ((String.valueOf(vista.txtContrasena.getPassword())).equals(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCredencial().getContraseña())) {
+                    if ((String.valueOf(vista.txtContrasena.getPassword())).equals(user.getCredencial().getContraseña())) {
                         
-                        if((vista.txtCorreo.getText()).compareTo(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCredencial().getCorreo())==0){
+                        if((vista.txtCorreo.getText()).compareTo(user.getCredencial().getCorreo())==0){
                             //Este método es boolean, REVISAR
-                            Configuracion.arrClientes.getArregloCliente(indiceCliente).getCredencial().cambiarCorreo(vista.txtCorreo.getText());
+                            user.getCredencial().cambiarCorreo(vista.txtCorreo.getText());
                             JOptionPane.showMessageDialog(null, "Cambios registrados.");
-                            ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(indiceCliente);
+                            ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(user);
                             ctrlConfiguracion.iniciar();
                             vista.dispose();
                         }

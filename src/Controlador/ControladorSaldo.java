@@ -11,19 +11,18 @@ import java.awt.event.ActionListener;
 
 public class ControladorSaldo {
     private frmSaldo vista;
-    //private Cliente user;
-    private int indiceCliente;
+    private Cliente user;
     
-    public ControladorSaldo(int indiceCliente){
+    public ControladorSaldo(Cliente user){
         this.vista = new frmSaldo();
         //this.user=user;
-        this.indiceCliente = indiceCliente;
+        this.user = user;
         
         this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
-                ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(indiceCliente);
+                ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(user);
                 ctrlOpcionesIngreso.iniciar();
                 vista.dispose();
             }
@@ -32,7 +31,7 @@ public class ControladorSaldo {
         this.vista.btnRecargar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorRecarga ctrlRecarga = new ControladorRecarga(indiceCliente);
+                ControladorRecarga ctrlRecarga = new ControladorRecarga(user);
                 ctrlRecarga.iniciar();
                 vista.dispose();
             }
@@ -41,7 +40,7 @@ public class ControladorSaldo {
     }
     
     public void iniciar() {
-        vista.txtSaldoTotal.setText(String.valueOf(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getSaldoTotal()));
+        vista.txtSaldoTotal.setText(String.valueOf(user.getCuenta().getSaldoTotal()));
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     }

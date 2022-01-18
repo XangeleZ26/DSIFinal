@@ -11,19 +11,17 @@ import javax.swing.JOptionPane;
 public class ControladorRecarga {
 
     private frmRecarga vista;
-    //private Cliente user;
-    private int indiceCliente;
+    private Cliente user;
 //    private int condicionComprobante; //1 si es Pago inicial, 2 si es recarga , 3 para pagar peaje
 
-    public ControladorRecarga(int indiceCliente) {
+    public ControladorRecarga(Cliente user) {
         this.vista = new frmRecarga();
-        //this.user=user;
-        this.indiceCliente = indiceCliente;
+        this.user=user;
 //        this.condicionComprobante = 0;
         this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(indiceCliente);
+                ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(user);
                 ctrlOpcionesIngreso.iniciar();
                 vista.dispose();
             }
@@ -34,7 +32,7 @@ public class ControladorRecarga {
             public void actionPerformed(ActionEvent e) {
                 if (isValido()) {
                     
-                    if (vista.txtCVV.getText().equals(Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().getTarjeta().getCvv())) {
+                    if (vista.txtCVV.getText().equals(user.getCuenta().getTarjeta().getCvv())) {
                         
                         if (Float.parseFloat(vista.txtMonto.getText()) > 0) {
                             SimpleDateFormat sdfPago = new SimpleDateFormat("yyyy/MM/dd"); //doy formato
@@ -42,19 +40,19 @@ public class ControladorRecarga {
 
                             //Aún no se contempla el "boleta y factura" en el codigo. Esperando acuerdo grupal xd
                             /*switch(vista.getOpcionComprobante()){
-                                case 1: Configuracion.arrClientes.getArregloClientes(this.indiceCliente).getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()),vista.txtCVV.getText(),fechaPago);
-                                case 2: Configuracion.arrClientes.getArregloClientes(this.indiceCliente).getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()),vista.txtCVV.getText(),fechaPago);
+                                case 1: user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()),vista.txtCVV.getText(),fechaPago);
+                                case 2: user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()),vista.txtCVV.getText(),fechaPago);
                             }*/
                             
-                            Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()), vista.txtCVV.getText(), fechaPago);
-                            Configuracion.arrClientes.getArregloCliente(indiceCliente).getCuenta().mostrarMovimientos();
+                            user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()), vista.txtCVV.getText(), fechaPago);
+                            user.getCuenta().mostrarMovimientos();
                             
                             JOptionPane.showMessageDialog(null, "Recarga realizada con éxito.");
 
 //                            condicionComprobante = 2;
                             
                             //PARA MOSTRAR COMPROBANTE
-                            ControladorBoleta comprobante = new ControladorBoleta(Configuracion.arrClientes.getArregloCliente(indiceCliente),vista.txtMonto.getText());
+                            ControladorBoleta comprobante = new ControladorBoleta(user,vista.txtMonto.getText());
                             comprobante.iniciarParaRecarga();
 //                            vista.dispose();
 
@@ -62,7 +60,7 @@ public class ControladorRecarga {
                             comprobante.getVistaBoleta().btnOKBoleta.addActionListener(new ActionListener() {
                                 @Override
                                 public void actionPerformed(ActionEvent e) {
-                                    ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(indiceCliente);
+                                    ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(user);
                                     ctrlOpcionesIngreso.iniciar();
                                     comprobante.getVistaBoleta().dispose();
                                     vista.dispose();
@@ -94,14 +92,14 @@ public class ControladorRecarga {
     }
 
     public void iniciar() {
-        if (!Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getTipoDocumento().equals("RUC")) {
+        if (!user.getTipoDocumento().equals("RUC")) {
             vista.medioPago.setText("Boleta");
         } else {
             vista.medioPago.setText("Factura");
         }
 
-        vista.lblTarjeta.setText(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getTarjeta().getMedioPago());
-        vista.lblNumberT.setText(Configuracion.arrClientes.getArregloCliente(this.indiceCliente).getCuenta().getTarjeta().getNumTarjeta());
+        vista.lblTarjeta.setText(user.getCuenta().getTarjeta().getMedioPago());
+        vista.lblNumberT.setText(user.getCuenta().getTarjeta().getNumTarjeta());
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
     }

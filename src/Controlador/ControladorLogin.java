@@ -15,12 +15,12 @@ import javax.swing.event.AncestorListener;
 public class ControladorLogin {
 
     private frmLogin vista;
-    private int indiceCliente = -1;
-    //private ArregloClientes clientes;
+    private Cliente cliente;
+    private ArregloClientes clientes;
 
     public ControladorLogin() {  //controlador, todos los botones se hacen dentro del controlador
         this.vista = new frmLogin();
-        //this.clientes = Configuracion.arrClientes;
+        this.clientes = Configuracion.arrClientes;
         
         this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
@@ -36,7 +36,6 @@ public class ControladorLogin {
             public void actionPerformed(ActionEvent e) {
                 if (isValido()) {
                     try {
-                        //this.indiceCliente = -1;
                         String contrasena = String.valueOf(vista.txtContrasena.getPassword());
                         /*Primero se busca el cliente con sus credenciales. Si se encuentra, se guarda en el atributo cliente,
                         luego se busca el índice en el arreglo que ocupa ese cliente, ese índice se guarda. Si el índice
@@ -47,19 +46,15 @@ public class ControladorLogin {
                         /*if(cliente!=null){
                             this.indiceCliente = Configuracion.arrClientes.buscarOrdenCliente(vista.txtUsuarioLogin.getText(), contrasena);
                         }*/
-                        indiceCliente = Configuracion.arrClientes.buscarOrdenCliente(vista.txtUsuarioLogin.getText(), contrasena);
-                        if(indiceCliente>-1){
-                            ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(indiceCliente);
+                        cliente = Configuracion.arrClientes.buscarCliente(vista.txtUsuarioLogin.getText(), contrasena);
+
+                            ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(cliente);
                             ctrlOpcionesIngreso.iniciar();
                             vista.dispose();
                             System.out.println(contrasena);
-                        }
-                        else{
-                            JOptionPane.showMessageDialog(null, "Cliente no registrado.");
-                        }
                         
                     } catch (ArrayIndexOutOfBoundsException z) {
-                        JOptionPane.showMessageDialog(null, "Datos incorrectos.");
+                        JOptionPane.showMessageDialog(null, "Datos incorrectos y/o usuario no registrado");
                     }
                 } 
                 else {

@@ -28,9 +28,9 @@ public class frmBoleta extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         PTituloConfiguracion = new javax.swing.JPanel();
-        lblBoletaRecarga = new javax.swing.JLabel();
         lblBoletaPago = new javax.swing.JLabel();
         lblBoletaConsumo = new javax.swing.JLabel();
+        lblBoletaRecarga = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         txtTipoComprobante = new javax.swing.JLabel();
         txtEstacion = new javax.swing.JLabel();
@@ -58,10 +58,6 @@ public class frmBoleta extends javax.swing.JFrame {
         PTituloConfiguracion.setBackground(new java.awt.Color(159, 162, 178));
         PTituloConfiguracion.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblBoletaRecarga.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
-        lblBoletaRecarga.setText("Comprobante de recarga PEX");
-        PTituloConfiguracion.add(lblBoletaRecarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
-
         lblBoletaPago.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         lblBoletaPago.setText("Comprobante de pago PEX");
         PTituloConfiguracion.add(lblBoletaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
@@ -69,6 +65,10 @@ public class frmBoleta extends javax.swing.JFrame {
         lblBoletaConsumo.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
         lblBoletaConsumo.setText("Comprobante de consumo PEX");
         PTituloConfiguracion.add(lblBoletaConsumo, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
+
+        lblBoletaRecarga.setFont(new java.awt.Font("Britannic Bold", 0, 30)); // NOI18N
+        lblBoletaRecarga.setText("Comprobante de recarga PEX");
+        PTituloConfiguracion.add(lblBoletaRecarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 20, -1, -1));
 
         jPanel1.add(PTituloConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 490, 70));
 
