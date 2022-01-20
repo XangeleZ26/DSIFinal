@@ -34,7 +34,6 @@ public class frmEntrega extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDescripcion = new javax.swing.JTextPane();
         lblDepartamento = new javax.swing.JLabel();
-        txtDepartamento = new javax.swing.JTextField();
         lblProvincia = new javax.swing.JLabel();
         lblAvenida = new javax.swing.JLabel();
         txtAvenida = new javax.swing.JTextField();
@@ -57,6 +56,8 @@ public class frmEntrega extends javax.swing.JFrame {
         jSeparator8 = new javax.swing.JSeparator();
         cbxDistrito = new javax.swing.JComboBox<>();
         txtDistrito = new javax.swing.JTextField();
+        cbxProvinciaLima = new javax.swing.JComboBox<>();
+        cbxDepartamento = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -110,12 +111,6 @@ public class frmEntrega extends javax.swing.JFrame {
         lblDepartamento.setForeground(new java.awt.Color(0, 0, 0));
         lblDepartamento.setText("Departamento:");
         PContenidoEntrega.add(lblDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 126, 209, -1));
-
-        txtDepartamento.setBackground(new java.awt.Color(121, 127, 139));
-        txtDepartamento.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtDepartamento.setForeground(new java.awt.Color(0, 0, 0));
-        txtDepartamento.setBorder(null);
-        PContenidoEntrega.add(txtDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(45, 158, 245, -1));
 
         lblProvincia.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
         lblProvincia.setForeground(new java.awt.Color(0, 0, 0));
@@ -227,6 +222,16 @@ public class frmEntrega extends javax.swing.JFrame {
         txtDistrito.setBorder(null);
         PContenidoEntrega.add(txtDistrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 240, -1));
 
+        cbxProvinciaLima.setBackground(new java.awt.Color(121, 127, 139));
+        cbxProvinciaLima.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        cbxProvinciaLima.setBorder(null);
+        PContenidoEntrega.add(cbxProvinciaLima, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 240, -1));
+
+        cbxDepartamento.setBackground(new java.awt.Color(121, 127, 139));
+        cbxDepartamento.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        cbxDepartamento.setBorder(null);
+        PContenidoEntrega.add(cbxDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 240, -1));
+
         PGeneralEntrega.add(PContenidoEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 105, 680, 510));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
@@ -283,7 +288,9 @@ public class frmEntrega extends javax.swing.JFrame {
     private javax.swing.JPanel PGeneralEntrega;
     private javax.swing.JPanel PTituloEntrega;
     public javax.swing.JButton btnSiguiente3;
+    public javax.swing.JComboBox<String> cbxDepartamento;
     public javax.swing.JComboBox<String> cbxDistrito;
+    public javax.swing.JComboBox<String> cbxProvinciaLima;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     public javax.swing.JSeparator jSeparator2;
@@ -302,7 +309,6 @@ public class frmEntrega extends javax.swing.JFrame {
     private javax.swing.JLabel lblReferencia;
     private javax.swing.JLabel lblTeleforno;
     public javax.swing.JTextField txtAvenida;
-    public javax.swing.JTextField txtDepartamento;
     private javax.swing.JTextPane txtDescripcion;
     public javax.swing.JTextField txtDistrito;
     public javax.swing.JTextField txtNumero;

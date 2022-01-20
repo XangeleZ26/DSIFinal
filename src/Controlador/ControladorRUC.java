@@ -50,7 +50,7 @@ public class ControladorRUC {
                             }
                             else{
                                 Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(), 
-                                                           vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText());
+                                                           vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText(), contra);
                                     JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
                                     ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
                                     ctrlVehiculo.iniciarVehiculo();

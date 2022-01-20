@@ -53,7 +53,7 @@ public class ControladorCliente{
                                                     vistaCliente.cbxSexo.getSelectedItem().toString(),
                                                     sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
                                                     vistaCliente.txtEmail.getText(),
-                                                    vistaCliente.txtContrasena.getPassword().toString());
+                                                    contra);
                                     
                                     JOptionPane.showMessageDialog(vistaCliente, "Datos del cliente registrados, puede continuar con su registro.");
                                                     ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);

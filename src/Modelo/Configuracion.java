@@ -49,6 +49,10 @@ public class Configuracion {
                                             "SAN BORJA", "SAN ISIDRO", "SAN JUAN DE LURIGANCHO", "SAN JUAN DE MIRAFLORES", "SAN LUIS", "SAN MARTIN DE PORRES",
                                             "SAN MIGUEL", "SANTA ANITA", "SANTA MARIA DEL MAR", "SANTA ROSA", "SANTIAGO DE SURCO", "SURQUILLO", "VENTANILLA",
                                             "VILLA EL SALVADOR", "VILLA MARIA DEL TRIUNFO"};
+    public static String[] departamentosPeru ={"LIMA", "AMAZONAS", "ANCASH", "APURIMAC", "AREQUIPA", "AYACUCHO", "CAJAMARCA", "CALLAO", "CUSCO", "HUANCAVELICA", "HUANUCO", 
+                                               "ICA", "JUNÍN", "LA LIBERTAD", "LAMBAYEQUE", "LORETO", "MADRE DE DIOS", "MOQUEGUA", "PASCO", "PIURA", "PUNO", 
+                                               "SAN MARTÍN", "TACNA", "TUMBES", "UCAYALI"};
+    public static String[] provinciasLima = {"LIMA", "BARRANCA", "CAJATAMBO", "CANTA", "CAÑETE", "HUARAL", "HUAROCHIRÍ", "HUAURA", "OYÓN", "YAUYOS"};
     public static String[] medioPago={"VISA", "MASTER CARD", "AMERICAN EXPRESS", "DINERS CLUB"};    
 }
         
