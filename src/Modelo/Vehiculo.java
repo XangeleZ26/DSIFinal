@@ -16,6 +16,7 @@ public class Vehiculo {
     public String getPlaca() {
         return placa;
      //   dueño.getCuenta().getMovimientos(5).getEstacion().getPeaje()
+   //  dueño.getCuenta().getMovimientos(5).getVehiculo().getPlaca().compareTo(categoria)
     }
 
     public void setPlaca(String placa) {
@@ -28,7 +29,7 @@ public class Vehiculo {
 
     public void setMarca(String marca) {
     this.marca = marca;
-    
+
     }
 
     public String getModelo() {

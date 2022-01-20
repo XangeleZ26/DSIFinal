@@ -401,14 +401,15 @@ public class Cuenta {
 
     public void ordenarMovimientosXPlacaVehiculo() {
         Movimiento aux;
-        for (int i = 0; i < nm; i++) {
-            for (int j = i + 1; j < nm; j++) {
-                if (movimientos[i].getVehiculo() == null) {
+        for (int i = 0; i < (this.nm); i++) {
+            for (int j = i + 1; j < (this.nm); j++) {
+                
+                if (movimientos[i].getTipo().compareTo("Recarga")== 0) {
                     aux = movimientos[i];
                     movimientos[i] = movimientos[j];
                     movimientos[j] = aux;
                 } 
-                else if (movimientos[i].getVehiculo().getPlaca().compareTo(movimientos[j].getVehiculo().getPlaca()) > 0) {
+                else if (movimientos[i].getTipo().compareTo("Consumo")== 0) {
                     aux = movimientos[i];
                     movimientos[i] = movimientos[j];
                     movimientos[j] = aux;
@@ -419,16 +420,19 @@ public class Cuenta {
 
     public void ordenarMovimientosXEstacion() {
         Movimiento aux;
-        for (int i = 0; i < nm; i++) {
-            for (int j = i + 1; j < nm; j++) {
-                if (movimientos[i].getEstacion() == null) {
+        for (int i = 0; i < (this.nm); i++) {
+            for (int j = i + 1; j < (this.nm); j++) {
+                if (movimientos[i].getTipo().compareTo("Recarga")== 0) {
                     aux = movimientos[i];
                     movimientos[i] = movimientos[j];
                     movimientos[j] = aux;
-                } else if (movimientos[i].getEstacion().getNombreEstacion().compareTo(movimientos[j].getEstacion().getNombreEstacion()) > 0) {
+                }
+                
+                else if (movimientos[i].getTipo().compareTo("Consumo")== 0) {
                     aux = movimientos[i];
                     movimientos[i] = movimientos[j];
                     movimientos[j] = aux;
+               
                 }
             }
         }

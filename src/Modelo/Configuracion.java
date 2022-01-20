@@ -11,8 +11,9 @@ public class Configuracion {
     public static ArregloClientes arrClientes = new ArregloClientes();
     public static ArregloPeajes arrPeajes = new ArregloPeajes();
     
-    public static String[] arrPeaje = {" ","Panamericana Norte","Panamericana Sur","Huaylas","Separadora Industrial"};
-    
+    public static String[] arrPeaje = {"Panamericana Norte","Panamericana Sur","Huaylas","Separadora Industrial"};
+    public static String[] arrEstaciones = {"Serpentin de Pasamayo","Variante Pasamayo","El Paraíso","Fortaleza"};
+
     public static ArregloClientes getArrClientes(){
         return arrClientes;
     }
@@ -55,6 +56,9 @@ public class Configuracion {
     public static String[] departamentosPeru ={"LIMA", "AMAZONAS", "ANCASH", "APURIMAC", "AREQUIPA", "AYACUCHO", "CAJAMARCA", "CALLAO", "CUSCO", "HUANCAVELICA", "HUANUCO", 
                                                "ICA", "JUNÍN", "LA LIBERTAD", "LAMBAYEQUE", "LORETO", "MADRE DE DIOS", "MOQUEGUA", "PASCO", "PIURA", "PUNO", 
                                                "SAN MARTÍN", "TACNA", "TUMBES", "UCAYALI"};
-    public static String[] provinciasLima = {"LIMA", "BARRANCA", "CAJATAMBO", "CANTA", "CAÑETE", "HUARAL", "HUAROCHIRÍ", "HUAURA", "OYÓN", "YAUYOS"};  
+    public static String[] provinciasLima = {"LIMA", "BARRANCA", "CAJATAMBO", "CANTA", "CAÑETE", "HUARAL", "HUAROCHIRÍ", "HUAURA", "OYÓN", "YAUYOS"};
+    public static String[] datosMovimiento={"FECHA","TIPO","MONTO","VEHICULO","PEAJE","ESTACION"};
+            
+           
 }
         

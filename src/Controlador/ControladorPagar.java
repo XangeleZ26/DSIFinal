@@ -20,14 +20,16 @@ public class ControladorPagar {
     private frmPagar vista;
     private int x;
     
-     public String[] getEstacion(String Peaje){
+    /*public String[] getEstacion(String Peaje){
         String[] estaciones = new String[4];
-        if(Peaje.equalsIgnoreCase("Panamericana Norte")){
+        
+        if(vista.cbxPeaje.getSelectedIndex()==1){
             estaciones[0]= "Serpentin de Pasamayo";
             estaciones[1]= "Variante Pasamayo";
             estaciones[2]= "El Paraíso";
             estaciones[3]= "Fortaleza";
         }
+
         if(Peaje.equalsIgnoreCase("Panamericana Sur")){
             estaciones[0]= "Chilca";       
         }
@@ -41,8 +43,7 @@ public class ControladorPagar {
             estaciones[2]= "Central industrial";
         }
         return estaciones;
-        }
-    
+        }*/
 
     public ControladorPagar(Cliente user) {
         //this.user = user;
@@ -63,7 +64,6 @@ public class ControladorPagar {
         @Override
         public void actionPerformed(ActionEvent e ){
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-           // vista.cbxVehiculo.getSelectedItem() = user.getCuenta().getVehiculos(i);
 
             if(datosLlenosPagar()){
                 user.getCuenta().pagarPeaje(
@@ -132,7 +132,12 @@ public class ControladorPagar {
             peajesComboBox.addElement(o);
         }
         vista.cbxPeaje.setModel(peajesComboBox);
-        
+      
+            DefaultComboBoxModel estacionesComboBox = new DefaultComboBoxModel();
+        for(Object o : Modelo.Configuracion.arrEstaciones){
+            estacionesComboBox.addElement(o);
+        }
+        vista.cbxEstacion.setModel(estacionesComboBox);
     }
     public boolean datosLlenosPagar(){
     return (this.vista.cbxPeaje.getSelectedItem().toString().trim().length() != 0
@@ -147,5 +152,32 @@ public class ControladorPagar {
         vista.cbxVehiculo.setSelectedItem(-1);
         vista.dcFechaPago.setDate(null);
     }
+
+            
+    public String[] getEstacion(String Peaje){
+        String[] estaciones = new String[4];
+        if(Peaje.equalsIgnoreCase("Panamericana Norte")){
+            estaciones[0]= "Serpentin de Pasamayo";
+            estaciones[1]= "Variante Pasamayo";
+            estaciones[2]= "El Paraíso";
+            estaciones[3]= "Fortaleza";
+        }
+        if(Peaje.equalsIgnoreCase("Panamericana Sur")){
+            estaciones[0]= "Chilca";
+        }
+        if(Peaje.equalsIgnoreCase("Huaylas")){
+            estaciones[0]= "Alto Lampas";
+            estaciones[1]= "Cahuish";
+        }
+        if(Peaje.equalsIgnoreCase("Separadora Industrial")){
+            estaciones[0]= "Mayorazgo";
+            estaciones[1]= "Parque industrial";
+            estaciones[2]= "Central industrial";
+        }
+        return estaciones;
+    }
+
 }
+
+
 
