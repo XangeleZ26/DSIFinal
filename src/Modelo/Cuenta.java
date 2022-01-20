@@ -13,8 +13,6 @@ public class Cuenta {
     private Vehiculo vehiculos[];
     private int nv; //Cantidad de vehículos en el arreglo
     private int ov; //Orden en el arreglo del último vehículo agregado
-    private Movimiento movimientosOrdenados[];
-    private Vehiculo vehiculosOrdenados[];
     private Estacion estacion;
     
     public Cuenta() {
@@ -88,10 +86,6 @@ public class Cuenta {
     //OJO
     public Vehiculo getVehiculos(int i) { //Se puede usar para llamar a un vehículo del arreglo
         return vehiculos[i];
-    }
-
-    public Vehiculo getVehiculosOrdenados(int i) {
-        return vehiculosOrdenados[i];
     }
 
     public Movimiento[] getMovimientos() {
@@ -188,6 +182,27 @@ public class Cuenta {
         this.ov = this.nv - 1;
     }
     
+    //Nuevo método de Eliminar Vehículo usando la placa
+    public boolean eliminarVehiculo(String placa) {
+        boolean result = false;
+        //Se buscael vehículo en el arreglo y se almacena su orden
+        int orden=-1;
+        orden = buscarOrdenVehiculo(placa);
+        
+        if(orden>=0){
+            //Se borra copiándose todos los objetos desde adelante hacia atrás
+            for (int i = orden; i < nv; i++) {
+                this.vehiculos[i] = this.vehiculos[i + 1];
+            }
+            //Se borra el último espacio en memoria del arreglo y se cambia el número y el orden de los vehículos
+            this.vehiculos[this.ov] = null;
+            this.nv--;
+            this.ov = this.nv - 1;
+            result = true;
+        }
+        return result;
+    }
+    
     //Método que devuelve el orden de un vehículo en el arreglo
     public int buscarOrdenVehiculo(String placa) {
         int orden = -1;
@@ -211,109 +226,53 @@ public class Cuenta {
 
     public void ordenarVehiculosXEjes() {
         Vehiculo aux;
-        vehiculosOrdenados = new Vehiculo[nv];
-        /*vehiculosOrdenados = vehiculos; Este es el método directo plara clonar, los cambios hechos en el
-        clon se reflejan en el objeto original*/
-        //Se clona cada uno de los espacios dle arreglo
-        for (int i = 0; i < this.nv; i++) {
-            vehiculosOrdenados[i] = vehiculos[i];
-        }
-        //Se ordena el arreglo clonado
         for (int i = 0; i < (this.nv); i++) {
             for (int j = i + 1; j < (this.nv); j++) {
-                if (vehiculosOrdenados[i].getEjes() > vehiculosOrdenados[j].getEjes()) {
-                    aux = vehiculosOrdenados[i];
-                    vehiculosOrdenados[i] = vehiculosOrdenados[j];
-                    vehiculosOrdenados[j] = aux;
+                if (vehiculos[i].getEjes() > vehiculos[j].getEjes()) {
+                    aux = vehiculos[i];
+                    vehiculos[i] = vehiculos[j];
+                    vehiculos[j] = aux;
                 }
             }
-        }
-        //Imprimir vehículos ordenados
-        System.out.format("%-15s%-15s%-15s%-12s%-8s%-10s%-10s%-6s\n", "Placa", "Marca", "Modelo", "Categoría", "Ejes", "Uso", "Peso", "Año");
-        System.out.format("%-15s%-15s%-15s%-12s%-8s%-10s%-10s%-6s\n", "=====", "=====", "======", "=========", "====", "===", "====", "===");
-        for (int i = 0; i < nv; i++) {
-            System.out.format("%-15s%-15s%-15s%-12s%-8s%-10s%-10s%-6s\n", vehiculosOrdenados[i].getPlaca(), vehiculosOrdenados[i].getMarca(), vehiculosOrdenados[i].getModelo(), vehiculosOrdenados[i].getCategoria(), vehiculosOrdenados[i].getEjes(), vehiculosOrdenados[i].getTipoUso(), vehiculosOrdenados[i].getPesoBruto(), vehiculosOrdenados[i].getAño());
         }
     }
 
     public void ordenarVehiculosXPesoBruto() {
         Vehiculo aux;
-        vehiculosOrdenados = new Vehiculo[nv];
-        /*vehiculosOrdenados = vehiculos; Este es el método directo plara clonar, los cambios hechos en el
-        clon se reflejan en el objeto original*/
-        //Se clona cada uno de los espacios dle arreglo
-        for (int i = 0; i < this.nv; i++) {
-            vehiculosOrdenados[i] = vehiculos[i];
-        }
-        //Se ordena el arreglo clonado
         for (int i = 0; i < (this.nv); i++) {
             for (int j = i + 1; j < (this.nv); j++) {
-                if (vehiculosOrdenados[i].getPesoBruto() > vehiculosOrdenados[j].getPesoBruto()) {
-                    aux = vehiculosOrdenados[i];
-                    vehiculosOrdenados[i] = vehiculosOrdenados[j];
-                    vehiculosOrdenados[j] = aux;
+                if (vehiculos[i].getPesoBruto() > vehiculos[j].getPesoBruto()) {
+                    aux = vehiculos[i];
+                    vehiculos[i] = vehiculos[j];
+                    vehiculos[j] = aux;
                 }
             }
-        }
-        //Imprimir vehículos ordenados
-        System.out.format("%-15s%-15s%-15s%-12s%-8s%-10s%-10s%-6s\n", "Placa", "Marca", "Modelo", "Categoría", "Ejes", "Uso", "Peso", "Año");
-        System.out.format("%-15s%-15s%-15s%-12s%-8s%-10s%-10s%-6s\n", "=====", "=====", "======", "=========", "====", "===", "====", "===");
-        for (int i = 0; i < nv; i++) {
-            System.out.format("%-15s%-15s%-15s%-12s%-8s%-10s%-10s%-6s\n", vehiculosOrdenados[i].getPlaca(), vehiculosOrdenados[i].getMarca(), vehiculosOrdenados[i].getModelo(), vehiculosOrdenados[i].getCategoria(), vehiculosOrdenados[i].getEjes(), vehiculosOrdenados[i].getTipoUso(), vehiculosOrdenados[i].getPesoBruto(), vehiculosOrdenados[i].getAño());
         }
     }
 
     public void ordenarVehiculosXAño() {
         Vehiculo aux;
-        vehiculosOrdenados = new Vehiculo[nv];
-        /*vehiculosOrdenados = vehiculos; Este es el método directo plara clonar, los cambios hechos en el
-        clon se reflejan en el objeto original*/
-        //Se clona cada uno de los espacios dle arreglo
-        for (int i = 0; i < this.nv; i++) {
-            vehiculosOrdenados[i] = vehiculos[i];
-        }
-        //Se ordena el arreglo clonado
         for (int i = 0; i < (this.nv); i++) {
             for (int j = i + 1; j < (this.nv); j++) {
-                if (vehiculosOrdenados[i].getAño() > vehiculosOrdenados[j].getAño()) {
-                    aux = vehiculosOrdenados[i];
-                    vehiculosOrdenados[i] = vehiculosOrdenados[j];
-                    vehiculosOrdenados[j] = aux;
+                if (vehiculos[i].getAño() > vehiculos[j].getAño()) {
+                    aux = vehiculos[i];
+                    vehiculos[i] = vehiculos[j];
+                    vehiculos[j] = aux;
                 }
             }
-        }
-        //Imprimir vehículos ordenados
-        System.out.format("%-15s%-15s%-15s%-12s%-8s%-10s%-10s%-6s\n", "Placa", "Marca", "Modelo", "Categoría", "Ejes", "Uso", "Peso", "Año");
-        System.out.format("%-15s%-15s%-15s%-12s%-8s%-10s%-10s%-6s\n", "=====", "=====", "======", "=========", "====", "===", "====", "===");
-        for (int i = 0; i < nv; i++) {
-            System.out.format("%-15s%-15s%-15s%-12s%-8s%-10s%-10s%-6s\n", vehiculosOrdenados[i].getPlaca(), vehiculosOrdenados[i].getMarca(), vehiculosOrdenados[i].getModelo(), vehiculosOrdenados[i].getCategoria(), vehiculosOrdenados[i].getEjes(), vehiculosOrdenados[i].getTipoUso(), vehiculosOrdenados[i].getPesoBruto(), vehiculosOrdenados[i].getAño());
         }
     }
 
     public void ordenarVehiculosXPlaca() {
         Vehiculo aux;
-        vehiculosOrdenados = new Vehiculo[nv];
-        /*vehiculosOrdenados = vehiculos; Este es el método directo plara clonar, los cambios hechos en el
-        clon se reflejan en el objeto original*/
-        //Se clona cada uno de los espacios del arreglo
-        for (int i = 0; i < this.nv; i++) {
-            vehiculosOrdenados[i] = vehiculos[i];
-        }
-        //Se ordena el arreglo clonado
         for (int i = 0; i < (this.nv); i++) {
             for (int j = i + 1; j < (this.nv); j++) {
-                if (vehiculosOrdenados[i].getPlaca().compareTo(vehiculosOrdenados[j].getPlaca()) > 0) {
-                    aux = vehiculosOrdenados[i];
-                    vehiculosOrdenados[i] = vehiculosOrdenados[j];
-                    vehiculosOrdenados[j] = aux;
+                if (vehiculos[i].getPlaca().compareTo(vehiculos[j].getPlaca()) > 0) {
+                    aux = vehiculos[i];
+                    vehiculos[i] = vehiculos[j];
+                    vehiculos[j] = aux;
                 }
             }
-        }
-        //Imprimir vehículos ordenados
-        System.out.format("%-15s%-15s%-15s%-12s%-8s%-10s%-10s%-6s\n", "Placa", "Marca", "Modelo", "Categoría", "Ejes", "Uso", "Peso", "Año");
-        System.out.format("%-15s%-15s%-15s%-12s%-8s%-10s%-10s%-6s\n", "=====", "=====", "======", "=========", "====", "===", "====", "===");
-        for (int i = 0; i < nv; i++) {
-            System.out.format("%-15s%-15s%-15s%-12s%-8s%-10s%-10s%-6s\n", vehiculosOrdenados[i].getPlaca(), vehiculosOrdenados[i].getMarca(), vehiculosOrdenados[i].getModelo(), vehiculosOrdenados[i].getCategoria(), vehiculosOrdenados[i].getEjes(), vehiculosOrdenados[i].getTipoUso(), vehiculosOrdenados[i].getPesoBruto(), vehiculosOrdenados[i].getAño());
         }
     }
 
@@ -416,142 +375,63 @@ public class Cuenta {
     //ORDENAR MOVIMIENTOS
     public void ordenarMovimientosXFecha() {
         Movimiento aux;
-        movimientosOrdenados = new Movimiento[nm];
-        /*movimientosOrdenados = movimientos; Este es el método directo plara clonar, los cambios hechos en el
-        clon se reflejan en el objeto original*/
-        //Se clona cada uno de los espacios del arreglo
-        for (int i = 0; i < nm; i++) {
-            movimientosOrdenados[i] = movimientos[i];
-        }
-        //Se ordena el objeto clonado
         for (int i = 0; i < nm; i++) {
             for (int j = i + 1; j < nm; j++) {
-                if (movimientosOrdenados[i].getFecha().compareTo(movimientosOrdenados[j].getFecha()) > 0) {
-                    aux = movimientosOrdenados[i];
-                    movimientosOrdenados[i] = movimientosOrdenados[j];
-                    movimientosOrdenados[j] = aux;
+                if (movimientos[i].getFecha().compareTo(movimientos[j].getFecha()) > 0) {
+                    aux = movimientos[i];
+                    movimientos[i] = movimientos[j];
+                    movimientos[j] = aux;
                 }
-            }
-        }
-        //Se imprime el objeto clonado
-        System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", "Fecha", "Tipo", "Monto", "Vehículo", "Peaje", "Estación");
-        System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", "=====", "====", "=====", "========", "=====", "========");
-        for (int i = 0; i < nm; i++) {
-            if (movimientosOrdenados[i].getTipo().compareTo("Recarga") == 0) {
-                System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), "-----", "-----", "-----");
-            } else if (movimientosOrdenados[i].getTipo().compareTo("Consumo") == 0) {
-                System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), movimientosOrdenados[i].getVehiculo().getPlaca() + " " + movimientosOrdenados[i].getVehiculo().getMarca() + " " + movimientosOrdenados[i].getVehiculo().getModelo(), movimientosOrdenados[i].getEstacion().getPeaje().getNombrePeaje(), movimientosOrdenados[i].getEstacion().getNombreEstacion());
             }
         }
     }
 
     public void ordenarMovimientosXMonto() {
         Movimiento aux;
-        movimientosOrdenados = new Movimiento[nm];
-        /*movimientosOrdenados = movimientos; Este es el método directo plara clonar, los cambios hechos en el
-        clon se reflejan en el objeto original*/
-        //Se clona cada uno de los espacios del arreglo
-        for (int i = 0; i < nm; i++) {
-            movimientosOrdenados[i] = movimientos[i];
-        }
-        //Se ordena el objeto clonado
         for (int i = 0; i < (this.nm); i++) {
             for (int j = i + 1; j < (this.nm); j++) {
-                if (movimientosOrdenados[i].getMonto() > movimientosOrdenados[j].getMonto()) {
-                    aux = movimientosOrdenados[i];
-                    movimientosOrdenados[i] = movimientosOrdenados[j];
-                    movimientosOrdenados[j] = aux;
+                if (movimientos[i].getMonto() > movimientos[j].getMonto()) {
+                    aux = movimientos[i];
+                    movimientos[i] = movimientos[j];
+                    movimientos[j] = aux;
                 }
-            }
-        }
-        //Se imprime el objeto clonado
-        System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", "Fecha", "Tipo", "Monto", "Vehículo", "Peaje", "Estación");
-        System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", "=====", "====", "=====", "========", "=====", "========");
-        for (int i = 0; i < nm; i++) {
-            if (movimientosOrdenados[i].getTipo().compareTo("Recarga") == 0) {
-                System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), "-----", "-----", "-----");
-            } else if (movimientosOrdenados[i].getTipo().compareTo("Consumo") == 0) {
-                System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), movimientosOrdenados[i].getVehiculo().getPlaca() + " " + movimientosOrdenados[i].getVehiculo().getMarca() + " " + movimientosOrdenados[i].getVehiculo().getModelo(), movimientosOrdenados[i].getEstacion().getPeaje().getNombrePeaje(), movimientosOrdenados[i].getEstacion().getNombreEstacion());
             }
         }
     }
 
     public void ordenarMovimientosXPlacaVehiculo() {
         Movimiento aux;
-        movimientosOrdenados = new Movimiento[nm];
-        /*movimientosOrdenados = movimientos; Este es el método directo plara clonar, los cambios hechos en el
-        clon se reflejan en el objeto original*/
-        //Se clona cada uno de los espacios del arreglo
-        for (int i = 0; i < nm; i++) {
-            movimientosOrdenados[i] = movimientos[i];
-        }
-        //Se ordena el objeto clonado
         for (int i = 0; i < nm; i++) {
             for (int j = i + 1; j < nm; j++) {
-                if (movimientosOrdenados[i].getVehiculo() == null) {
-                    aux = movimientosOrdenados[i];
-                    movimientosOrdenados[i] = movimientosOrdenados[j];
-                    movimientosOrdenados[j] = aux;
-                } else if (movimientosOrdenados[i].getVehiculo().getPlaca().compareTo(movimientosOrdenados[j].getVehiculo().getPlaca()) > 0) {
-                    aux = movimientosOrdenados[i];
-                    movimientosOrdenados[i] = movimientosOrdenados[j];
-                    movimientosOrdenados[j] = aux;
+                if (movimientos[i].getVehiculo() == null) {
+                    aux = movimientos[i];
+                    movimientos[i] = movimientos[j];
+                    movimientos[j] = aux;
+                } 
+                else if (movimientos[i].getVehiculo().getPlaca().compareTo(movimientos[j].getVehiculo().getPlaca()) > 0) {
+                    aux = movimientos[i];
+                    movimientos[i] = movimientos[j];
+                    movimientos[j] = aux;
                 }
-            }
-        }
-        //Se imprime el objeto clonado
-        System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", "Fecha", "Tipo", "Monto", "Vehículo", "Peaje", "Estación");
-        System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", "=====", "====", "=====", "========", "=====", "========");
-        for (int i = 0; i < nm; i++) {
-            if (movimientosOrdenados[i].getTipo().compareTo("Recarga") == 0) {
-                System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), "-----", "-----", "-----");
-            } else if (movimientosOrdenados[i].getTipo().compareTo("Consumo") == 0) {
-                System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), movimientosOrdenados[i].getVehiculo().getPlaca() + " " + movimientosOrdenados[i].getVehiculo().getMarca() + " " + movimientosOrdenados[i].getVehiculo().getModelo(), movimientosOrdenados[i].getEstacion().getPeaje().getNombrePeaje(), movimientosOrdenados[i].getEstacion().getNombreEstacion());
             }
         }
     }
 
     public void ordenarMovimientosXEstacion() {
         Movimiento aux;
-        movimientosOrdenados = new Movimiento[nm];
-        /*movimientosOrdenados = movimientos; Este es el método directo plara clonar, los cambios hechos en el
-        clon se reflejan en el objeto original*/
-        //Se clona cada uno de los espacios del arreglo
-        for (int i = 0; i < nm; i++) {
-            movimientosOrdenados[i] = movimientos[i];
-        }
-        //Se ordena el objeto clonado
         for (int i = 0; i < nm; i++) {
             for (int j = i + 1; j < nm; j++) {
-                if (movimientosOrdenados[i].getEstacion() == null) {
-                    aux = movimientosOrdenados[i];
-                    movimientosOrdenados[i] = movimientosOrdenados[j];
-                    movimientosOrdenados[j] = aux;
-                } else if (movimientosOrdenados[i].getEstacion().getNombreEstacion().compareTo(movimientosOrdenados[j].getEstacion().getNombreEstacion()) > 0) {
-                    aux = movimientosOrdenados[i];
-                    movimientosOrdenados[i] = movimientosOrdenados[j];
-                    movimientosOrdenados[j] = aux;
+                if (movimientos[i].getEstacion() == null) {
+                    aux = movimientos[i];
+                    movimientos[i] = movimientos[j];
+                    movimientos[j] = aux;
+                } else if (movimientos[i].getEstacion().getNombreEstacion().compareTo(movimientos[j].getEstacion().getNombreEstacion()) > 0) {
+                    aux = movimientos[i];
+                    movimientos[i] = movimientos[j];
+                    movimientos[j] = aux;
                 }
             }
         }
-        //Se imprime el objeto clonado
-        System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", "Fecha", "Tipo", "Monto", "Vehículo", "Peaje", "Estación");
-        System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", "=====", "====", "=====", "========", "=====", "========");
-        for (int i = 0; i < nm; i++) {
-            if (movimientosOrdenados[i].getTipo().compareTo("Recarga") == 0) {
-                System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), "-----", "-----", "-----");
-            } else if (movimientosOrdenados[i].getTipo().compareTo("Consumo") == 0) {
-                System.out.format("%-13s%-10s%-10s%-30s%-22s%-15s\n", movimientosOrdenados[i].getFecha(), movimientosOrdenados[i].getTipo(), movimientosOrdenados[i].getMonto(), movimientosOrdenados[i].getVehiculo().getPlaca() + " " + movimientosOrdenados[i].getVehiculo().getMarca() + " " + movimientosOrdenados[i].getVehiculo().getModelo(), movimientosOrdenados[i].getEstacion().getPeaje().getNombrePeaje(), movimientosOrdenados[i].getEstacion().getNombreEstacion());
-            }
-        }
     }
-    /*
-    public boolean ingresarCuenta(String usuario, String contraseña){
-        boolean result = false;
-        if(usuario.equals())
-        return result;
-    }
-     */
-
-
+    
 }

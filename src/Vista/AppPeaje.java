@@ -136,25 +136,29 @@ public class AppPeaje {
         //ORDENAR VEHÍCULOS POR AÑO
         System.out.println("***Vehículos del cliente ordenados por año***");
         clientes.getArregloCliente(0).getCuenta().ordenarVehiculosXAño();
+        clientes.getArregloCliente(0).getCuenta().mostrarVehiculos();
         System.out.println("");
         
         //ORDENAR VEHÍCULOS POR PLACA
         System.out.println("***Vehículos del cliente ordenados por placa***");
         clientes.getArregloCliente(0).getCuenta().ordenarVehiculosXPlaca();
+        clientes.getArregloCliente(0).getCuenta().mostrarVehiculos();
         System.out.println("");
         
         //ORDENAR VEHÍCULOS POR PESO
         System.out.println("***Vehículos del cliente ordenados por peso***");
         clientes.getArregloCliente(0).getCuenta().ordenarVehiculosXPesoBruto();
+        clientes.getArregloCliente(0).getCuenta().mostrarVehiculos();
         System.out.println("");
         
         //ORDENAR VEHÍCULOS POR EJES
         System.out.println("***Vehículos del cliente ordenados por ejes***");
         clientes.getArregloCliente(0).getCuenta().ordenarVehiculosXEjes();
+        clientes.getArregloCliente(0).getCuenta().mostrarVehiculos();
         System.out.println("");
         
         //ELIMINAR VEHÍCULO
-        System.out.println("Vehículo 'J20G15GY Susuki Grand' eliminado: "+clientes.getArregloCliente(0).getCuenta().eliminarVehiculo(clientes.getArregloCliente(0).getCuenta().getVehiculos(3)));
+        System.out.println("Vehículo 'J20G15GY Susuki Grand' eliminado: "+clientes.getArregloCliente(0).getCuenta().eliminarVehiculo("J20G15GY"));
         System.out.println("");
         clientes.getArregloCliente(0).getCuenta().mostrarVehiculos();
         System.out.println("");
@@ -271,21 +275,25 @@ public class AppPeaje {
         //ORDENAR MOVIMIENTOS POR FECHA
         System.out.println("***Movimientos del cliente ordenados por fecha***");
         clientes.getArregloCliente(0).getCuenta().ordenarMovimientosXFecha();
+        clientes.getArregloCliente(0).getCuenta().mostrarMovimientos();
         System.out.println("");
         
         //ORDENAR MOVIMIENTOS POR MONTO
         System.out.println("***Movimientos del cliente ordenados por monto***");
         clientes.getArregloCliente(0).getCuenta().ordenarMovimientosXMonto();
+        clientes.getArregloCliente(0).getCuenta().mostrarMovimientos();
         System.out.println("");
         
         //ODENAR MOVIMIENTOS POR PLACA DEL VEHÍCULO
         System.out.println("***Movimientos del cliente ordenados por vehículo***");
         clientes.getArregloCliente(0).getCuenta().ordenarMovimientosXPlacaVehiculo();
+        clientes.getArregloCliente(0).getCuenta().mostrarMovimientos();
         System.out.println("");
         
         //ORDENAR MOVIMIENTOS POR ESTACIÓN
         System.out.println("***Movimientos del cliente ordenados por estación***");
         clientes.getArregloCliente(0).getCuenta().ordenarMovimientosXEstacion();
+        clientes.getArregloCliente(0).getCuenta().mostrarMovimientos();
         System.out.println("");
         
         //Ingreso a la cuenta.

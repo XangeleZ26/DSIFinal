@@ -49,6 +49,8 @@ public class Configuracion {
                                             "SAN BORJA", "SAN ISIDRO", "SAN JUAN DE LURIGANCHO", "SAN JUAN DE MIRAFLORES", "SAN LUIS", "SAN MARTIN DE PORRES",
                                             "SAN MIGUEL", "SANTA ANITA", "SANTA MARIA DEL MAR", "SANTA ROSA", "SANTIAGO DE SURCO", "SURQUILLO", "VENTANILLA",
                                             "VILLA EL SALVADOR", "VILLA MARIA DEL TRIUNFO"};
-    public static String[] medioPago={"VISA", "MASTER CARD", "AMERICAN EXPRESS", "DINERS CLUB"};    
+    public static String[] medioPago={"VISA", "MASTER CARD", "AMERICAN EXPRESS", "DINERS CLUB"};
+
+    public static String datosVehiculos[] = {"Placa", "Marca", "Modelo", "Categoría", "Ejes", "Uso", "Peso", "Año"};
 }
         
