@@ -43,7 +43,7 @@ public class ControladorCliente{
                             String contraVerif = String.valueOf(vistaCliente.txtVerifContrasena.getPassword());    
                             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
                             if(contra != null && contraVerif !=null){
-                                if(contra.compareTo(contraVerif) == 0){
+                                if(contra.equalsIgnoreCase(contraVerif)){
                                     ClientePotencial = new Cliente(
                                                     vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
                                                     vistaCliente.txtNumeroDocumento.getText(),

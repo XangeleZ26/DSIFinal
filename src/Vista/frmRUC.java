@@ -36,11 +36,22 @@ public class frmRUC extends javax.swing.JFrame {
         txtRazonSocial = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
-        btnNext = new javax.swing.JButton();
         lblCorreo = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
+        PContraseña = new javax.swing.JPanel();
         btnVolverCliente = new javax.swing.JButton();
+        btnNext = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtDescripcionLogin = new javax.swing.JTextPane();
+        lblEmail2 = new javax.swing.JLabel();
+        lblEmail = new javax.swing.JLabel();
+        txtContrasena = new javax.swing.JPasswordField();
+        txtVerifContrasena = new javax.swing.JPasswordField();
+        lblOjoCerrado1 = new javax.swing.JLabel();
+        lblOjoCerrado2 = new javax.swing.JLabel();
+        lblOjoAbierto1 = new javax.swing.JLabel();
+        lblOjoAbierto2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,9 +68,9 @@ public class frmRUC extends javax.swing.JFrame {
         PTituloLayout.setHorizontalGroup(
             PTituloLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, PTituloLayout.createSequentialGroup()
-                .addContainerGap(90, Short.MAX_VALUE)
+                .addContainerGap(162, Short.MAX_VALUE)
                 .add(lblTitulo)
-                .add(76, 76, 76))
+                .add(154, 154, 154))
         );
         PTituloLayout.setVerticalGroup(
             PTituloLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -69,7 +80,7 @@ public class frmRUC extends javax.swing.JFrame {
                 .addContainerGap(21, Short.MAX_VALUE))
         );
 
-        PGeneral.add(PTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 440, 70));
+        PGeneral.add(PTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 590, 70));
 
         PContenido.setBackground(new java.awt.Color(121, 127, 139));
 
@@ -97,12 +108,6 @@ public class frmRUC extends javax.swing.JFrame {
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
 
-        btnNext.setBackground(new java.awt.Color(121, 127, 139));
-        btnNext.setForeground(new java.awt.Color(0, 0, 0));
-        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/siguienteBoton.png"))); // NOI18N
-        btnNext.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        btnNext.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
         lblCorreo.setFont(new java.awt.Font("Times New Roman", 0, 22)); // NOI18N
         lblCorreo.setForeground(new java.awt.Color(0, 0, 0));
         lblCorreo.setText("Correo:");
@@ -115,45 +120,30 @@ public class frmRUC extends javax.swing.JFrame {
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
 
-        btnVolverCliente.setBackground(new java.awt.Color(121, 127, 139));
-        btnVolverCliente.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnVolverCliente.setForeground(new java.awt.Color(0, 0, 0));
-        btnVolverCliente.setText("Volver");
-        btnVolverCliente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-
         org.jdesktop.layout.GroupLayout PContenidoLayout = new org.jdesktop.layout.GroupLayout(PContenido);
         PContenido.setLayout(PContenidoLayout);
         PContenidoLayout.setHorizontalGroup(
             PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(PContenidoLayout.createSequentialGroup()
-                .add(23, 23, 23)
-                .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoLayout.createSequentialGroup()
-                        .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
-                            .add(lblRazonSocial)
-                            .add(lblRUC)
-                            .add(lblCorreo))
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED))
-                    .add(PContenidoLayout.createSequentialGroup()
-                        .add(btnVolverCliente, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 63, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .add(77, 77, 77)
+                .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING)
+                    .add(lblRazonSocial)
+                    .add(lblRUC)
+                    .add(lblCorreo))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                    .add(PContenidoLayout.createSequentialGroup()
-                        .add(207, 207, 207)
-                        .add(btnNext))
-                    .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                        .add(txtRazonSocial)
-                        .add(jSeparator2)
-                        .add(txtRUC, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
-                        .add(jSeparator1)
-                        .add(txtCorreo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 261, Short.MAX_VALUE)
-                        .add(jSeparator3)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                    .add(txtRazonSocial)
+                    .add(jSeparator2)
+                    .add(txtRUC)
+                    .add(jSeparator1)
+                    .add(txtCorreo)
+                    .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 261, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         PContenidoLayout.setVerticalGroup(
             PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PContenidoLayout.createSequentialGroup()
-                .add(42, 42, 42)
+            .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoLayout.createSequentialGroup()
+                .addContainerGap(33, Short.MAX_VALUE)
                 .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(lblRUC)
                     .add(txtRUC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
@@ -165,34 +155,89 @@ public class frmRUC extends javax.swing.JFrame {
                     .add(txtRazonSocial, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(33, 33, 33)
+                .add(27, 27, 27)
                 .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(lblCorreo)
                     .add(txtCorreo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(PContenidoLayout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(btnNext)
-                        .addContainerGap(10, Short.MAX_VALUE))
-                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoLayout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .add(btnVolverCliente)
-                        .add(33, 33, 33))))
+                .add(31, 31, 31))
         );
 
-        PGeneral.add(PContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 440, 320));
+        PGeneral.add(PContenido, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 590, 260));
+
+        PContraseña.setBackground(new java.awt.Color(159, 162, 178));
+        PContraseña.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btnVolverCliente.setBackground(new java.awt.Color(121, 127, 139));
+        btnVolverCliente.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnVolverCliente.setForeground(new java.awt.Color(0, 0, 0));
+        btnVolverCliente.setText("Volver");
+        btnVolverCliente.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        PContraseña.add(btnVolverCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(32, 203, 63, -1));
+
+        btnNext.setBackground(new java.awt.Color(159, 162, 178));
+        btnNext.setForeground(new java.awt.Color(0, 0, 0));
+        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/siguienteBoton.png"))); // NOI18N
+        btnNext.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnNext.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContraseña.add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 188, -1, -1));
+
+        txtDescripcionLogin.setEditable(false);
+        txtDescripcionLogin.setBackground(new java.awt.Color(121, 127, 139));
+        txtDescripcionLogin.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtDescripcionLogin.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        txtDescripcionLogin.setText("\t¿Deseas establecer una contraseña personalizada?\nEn caso de no hacerlo, automáticamente su contraseña provisional será el numero de documento de identidad con el cual se ha registrado.");
+        jScrollPane1.setViewportView(txtDescripcionLogin);
+
+        PContraseña.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 20, 430, -1));
+
+        lblEmail2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblEmail2.setForeground(new java.awt.Color(0, 0, 0));
+        lblEmail2.setText("Contraseña:");
+        PContraseña.add(lblEmail2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, -1, 30));
+
+        lblEmail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(0, 0, 0));
+        lblEmail.setText("Verificar contraseña:");
+        PContraseña.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, -1, 30));
+
+        txtContrasena.setForeground(new java.awt.Color(0, 0, 0));
+        txtContrasena.setBorder(null);
+        PContraseña.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 100, 152, 30));
+
+        txtVerifContrasena.setBorder(null);
+        PContraseña.add(txtVerifContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 150, 152, 30));
+
+        lblOjoCerrado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
+        lblOjoCerrado1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContraseña.add(lblOjoCerrado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, -1, -1));
+
+        lblOjoCerrado2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
+        lblOjoCerrado2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContraseña.add(lblOjoCerrado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, -1));
+
+        lblOjoAbierto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ver_32px.png"))); // NOI18N
+        lblOjoAbierto1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContraseña.add(lblOjoAbierto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 100, -1, -1));
+
+        lblOjoAbierto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ver_32px.png"))); // NOI18N
+        lblOjoAbierto2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContraseña.add(lblOjoAbierto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, -1, -1));
+
+        PGeneral.add(PContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 330, 590, 260));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PGeneral, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+            .add(layout.createSequentialGroup()
+                .add(PGeneral, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PGeneral, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+            .add(PGeneral, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -235,20 +280,31 @@ public class frmRUC extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PContenido;
+    private javax.swing.JPanel PContraseña;
     private javax.swing.JPanel PGeneral;
     private javax.swing.JPanel PTitulo;
     public javax.swing.JButton btnNext;
     public javax.swing.JButton btnVolverCliente;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     public javax.swing.JSeparator jSeparator3;
     public javax.swing.JLabel lblCorreo;
+    private javax.swing.JLabel lblEmail;
+    private javax.swing.JLabel lblEmail2;
+    public javax.swing.JLabel lblOjoAbierto1;
+    public javax.swing.JLabel lblOjoAbierto2;
+    public javax.swing.JLabel lblOjoCerrado1;
+    public javax.swing.JLabel lblOjoCerrado2;
     private javax.swing.JLabel lblRUC;
     private javax.swing.JLabel lblRazonSocial;
     private javax.swing.JLabel lblTitulo;
+    public javax.swing.JPasswordField txtContrasena;
     public javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextPane txtDescripcionLogin;
     public javax.swing.JTextField txtRUC;
     public javax.swing.JTextField txtRazonSocial;
+    public javax.swing.JPasswordField txtVerifContrasena;
     // End of variables declaration//GEN-END:variables
 
 }

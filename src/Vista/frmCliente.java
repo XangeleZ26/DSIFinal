@@ -50,25 +50,24 @@ public class frmCliente extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         jSeparator7 = new javax.swing.JSeparator();
-        PTituloPeronales1 = new javax.swing.JPanel();
         lblEmail1 = new javax.swing.JLabel();
         txtEmail = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
         btnOpcionRUC = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        txtDescripcionLogin = new javax.swing.JTextPane();
+        PContraseña = new javax.swing.JPanel();
+        btnSiguiente1 = new javax.swing.JButton();
         lblEmail2 = new javax.swing.JLabel();
         txtContrasena = new javax.swing.JPasswordField();
-        jSeparator9 = new javax.swing.JSeparator();
         lblEmail = new javax.swing.JLabel();
         txtVerifContrasena = new javax.swing.JPasswordField();
         jSeparator10 = new javax.swing.JSeparator();
-        btnSiguiente1 = new javax.swing.JButton();
-        lblOjoCerrado1 = new javax.swing.JLabel();
+        jSeparator9 = new javax.swing.JSeparator();
         lblOjoAbierto1 = new javax.swing.JLabel();
-        lblOjoCerrado2 = new javax.swing.JLabel();
         lblOjoAbierto2 = new javax.swing.JLabel();
+        lblOjoCerrado1 = new javax.swing.JLabel();
+        lblOjoCerrado2 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txtDescripcionLogin = new javax.swing.JTextPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -79,6 +78,7 @@ public class frmCliente extends javax.swing.JFrame {
         PTituloPeronales.setPreferredSize(new java.awt.Dimension(682, 110));
 
         lblPersonales.setFont(new java.awt.Font("Britannic Bold", 0, 48)); // NOI18N
+        lblPersonales.setForeground(new java.awt.Color(0, 0, 0));
         lblPersonales.setText("Datos personales ");
 
         org.jdesktop.layout.GroupLayout PTituloPeronalesLayout = new org.jdesktop.layout.GroupLayout(PTituloPeronales);
@@ -176,20 +176,6 @@ public class frmCliente extends javax.swing.JFrame {
         jSeparator7.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator7.setForeground(new java.awt.Color(0, 0, 0));
 
-        PTituloPeronales1.setBackground(new java.awt.Color(159, 162, 178));
-        PTituloPeronales1.setPreferredSize(new java.awt.Dimension(682, 110));
-
-        org.jdesktop.layout.GroupLayout PTituloPeronales1Layout = new org.jdesktop.layout.GroupLayout(PTituloPeronales1);
-        PTituloPeronales1.setLayout(PTituloPeronales1Layout);
-        PTituloPeronales1Layout.setHorizontalGroup(
-            PTituloPeronales1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 680, Short.MAX_VALUE)
-        );
-        PTituloPeronales1Layout.setVerticalGroup(
-            PTituloPeronales1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 8, Short.MAX_VALUE)
-        );
-
         lblEmail1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblEmail1.setText("Email:");
 
@@ -221,46 +207,48 @@ public class frmCliente extends javax.swing.JFrame {
         PContenidoPersonales.setLayout(PContenidoPersonalesLayout);
         PContenidoPersonalesLayout.setHorizontalGroup(
             PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoPersonalesLayout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(PTituloPeronales1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 680, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .add(PContenidoPersonalesLayout.createSequentialGroup()
                 .add(80, 80, 80)
                 .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(lblFechaNacimiento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 209, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(dcFechaNacimiento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 199, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(PContenidoPersonalesLayout.createSequentialGroup()
                         .add(lblEmail1)
                         .add(18, 18, 18)
                         .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                             .add(jSeparator8)
-                            .add(txtEmail, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)))
-                    .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(txtEmail, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
+                        .add(0, 0, Short.MAX_VALUE))
                     .add(PContenidoPersonalesLayout.createSequentialGroup()
                         .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                                .add(org.jdesktop.layout.GroupLayout.LEADING, txtNumeroDocumento)
-                                .add(org.jdesktop.layout.GroupLayout.LEADING, lblNumeroDocumento, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                                .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator2))
-                            .add(cbxSexo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jSeparator5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(lblSexo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 54, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(lblTipoDocumento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(cbxTipoDocumento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(103, 103, 103)
-                        .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(lblApPaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(txtApPaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 219, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jSeparator4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 209, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(lblNombres, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(txtNombres, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(lblApMaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(txtApMaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(btnOpcionRUC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 232, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(jSeparator7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .add(PContenidoPersonalesLayout.createSequentialGroup()
+                                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                                        .add(org.jdesktop.layout.GroupLayout.LEADING, txtNumeroDocumento)
+                                        .add(org.jdesktop.layout.GroupLayout.LEADING, lblNumeroDocumento, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .add(org.jdesktop.layout.GroupLayout.LEADING, jSeparator2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                    .add(cbxSexo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(jSeparator5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(lblSexo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 54, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(lblFechaNacimiento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 209, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(dcFechaNacimiento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 199, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .add(95, 95, 95)
+                                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(lblApMaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(lblApPaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(txtApPaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 219, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(jSeparator4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 209, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(lblNombres, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(txtNombres, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(txtApMaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(jSeparator7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                            .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(PContenidoPersonalesLayout.createSequentialGroup()
+                                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(lblTipoDocumento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(cbxTipoDocumento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 201, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .add(103, 103, 103)
+                                .add(btnOpcionRUC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 232, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(54, Short.MAX_VALUE))))
         );
         PContenidoPersonalesLayout.setVerticalGroup(
             PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -276,8 +264,8 @@ public class frmCliente extends javax.swing.JFrame {
                         .add(btnOpcionRUC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 35, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .add(0, 0, 0)
                 .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 22, Short.MAX_VALUE)
-                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                .add(31, 31, 31)
+                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(PContenidoPersonalesLayout.createSequentialGroup()
                         .add(lblNumeroDocumento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(0, 0, 0)
@@ -291,29 +279,28 @@ public class frmCliente extends javax.swing.JFrame {
                         .add(5, 5, 5)
                         .add(jSeparator5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(24, 24, 24)
-                        .add(lblFechaNacimiento)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(dcFechaNacimiento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(26, 26, 26))
+                        .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                            .add(lblFechaNacimiento)
+                            .add(lblApMaterno)))
                     .add(PContenidoPersonalesLayout.createSequentialGroup()
                         .add(lblNombres)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(txtNombres, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(0, 0, 0)
                         .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .add(18, 18, 18)
                         .add(lblApPaterno)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(txtApPaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .add(0, 0, 0)
-                        .add(jSeparator4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(lblApMaterno)
-                        .add(9, 9, 9)
-                        .add(txtApMaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(0, 0, 0)
-                        .add(jSeparator7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)))
+                        .add(jSeparator4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(dcFechaNacimiento, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                    .add(txtApMaterno, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .add(0, 0, 0)
+                .add(jSeparator7, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(18, 18, 18)
                 .add(PContenidoPersonalesLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(lblEmail1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                     .add(PContenidoPersonalesLayout.createSequentialGroup()
@@ -321,49 +308,15 @@ public class frmCliente extends javax.swing.JFrame {
                         .add(txtEmail, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 30, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jSeparator8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 14, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 22, Short.MAX_VALUE)
-                .add(PTituloPeronales1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .add(51, 51, 51))
         );
 
-        PGeneral2.add(PContenidoPersonales, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 670, 450));
+        PGeneral2.add(PContenidoPersonales, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 670, 460));
 
-        jPanel1.setBackground(new java.awt.Color(121, 127, 139));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        PContraseña.setBackground(new java.awt.Color(159, 162, 178));
+        PContraseña.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtDescripcionLogin.setEditable(false);
-        txtDescripcionLogin.setBackground(new java.awt.Color(121, 127, 139));
-        txtDescripcionLogin.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        txtDescripcionLogin.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        txtDescripcionLogin.setText("\t¿Deseas establecer una contraseña personalizada?\nEn caso de no hacerlo, automáticamente su contraseña provisional será el numero de documento de identidad con el cual se ha registrado.");
-        jScrollPane1.setViewportView(txtDescripcionLogin);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 10, 430, -1));
-
-        lblEmail2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblEmail2.setText("Contraseña:");
-        jPanel1.add(lblEmail2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 80, -1, 30));
-
-        txtContrasena.setForeground(new java.awt.Color(0, 0, 0));
-        txtContrasena.setBorder(null);
-        jPanel1.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 152, 30));
-
-        jSeparator9.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator9.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 152, 10));
-
-        lblEmail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        lblEmail.setText("Verificar contraseña:");
-        jPanel1.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, -1, 30));
-
-        txtVerifContrasena.setBorder(null);
-        jPanel1.add(txtVerifContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 130, 152, 30));
-
-        jSeparator10.setBackground(new java.awt.Color(0, 0, 0));
-        jSeparator10.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, 152, 10));
-
-        btnSiguiente1.setBackground(new java.awt.Color(121, 127, 139));
+        btnSiguiente1.setBackground(new java.awt.Color(159, 162, 178));
         btnSiguiente1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/siguienteBoton.png"))); // NOI18N
         btnSiguiente1.setBorder(null);
         btnSiguiente1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -377,25 +330,59 @@ public class frmCliente extends javax.swing.JFrame {
                 btnSiguiente1ActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSiguiente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 150, 63, 64));
+        PContraseña.add(btnSiguiente1, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 170, 63, 64));
 
-        lblOjoCerrado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
-        lblOjoCerrado1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(lblOjoCerrado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, -1, -1));
+        lblEmail2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblEmail2.setForeground(new java.awt.Color(0, 0, 0));
+        lblEmail2.setText("Contraseña:");
+        PContraseña.add(lblEmail2, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, -1, 30));
+
+        txtContrasena.setForeground(new java.awt.Color(0, 0, 0));
+        txtContrasena.setBorder(null);
+        PContraseña.add(txtContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, 152, 30));
+
+        lblEmail.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblEmail.setForeground(new java.awt.Color(0, 0, 0));
+        lblEmail.setText("Verificar contraseña:");
+        PContraseña.add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 160, -1, 30));
+
+        txtVerifContrasena.setBorder(null);
+        PContraseña.add(txtVerifContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 160, 152, 30));
+
+        jSeparator10.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator10.setForeground(new java.awt.Color(0, 0, 0));
+        PContraseña.add(jSeparator10, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 190, 152, 10));
+
+        jSeparator9.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator9.setForeground(new java.awt.Color(0, 0, 0));
+        PContraseña.add(jSeparator9, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 140, 152, 10));
 
         lblOjoAbierto1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ver_32px.png"))); // NOI18N
         lblOjoAbierto1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(lblOjoAbierto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, -1, -1));
-
-        lblOjoCerrado2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
-        lblOjoCerrado2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(lblOjoCerrado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, -1, -1));
+        PContraseña.add(lblOjoAbierto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, -1));
 
         lblOjoAbierto2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ver_32px.png"))); // NOI18N
         lblOjoAbierto2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel1.add(lblOjoAbierto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 130, -1, -1));
+        PContraseña.add(lblOjoAbierto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, -1, -1));
 
-        PGeneral2.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 540, 670, 230));
+        lblOjoCerrado1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
+        lblOjoCerrado1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContraseña.add(lblOjoCerrado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, -1, -1));
+
+        lblOjoCerrado2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
+        lblOjoCerrado2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContraseña.add(lblOjoCerrado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, -1, -1));
+
+        txtDescripcionLogin.setEditable(false);
+        txtDescripcionLogin.setBackground(new java.awt.Color(121, 127, 139));
+        txtDescripcionLogin.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        txtDescripcionLogin.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        txtDescripcionLogin.setText("\t¿Deseas establecer una contraseña personalizada?\nEn caso de no hacerlo, automáticamente su contraseña provisional será el numero de documento de identidad con el cual se ha registrado.");
+        jScrollPane1.setViewportView(txtDescripcionLogin);
+
+        PContraseña.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 430, -1));
+
+        PGeneral2.add(PContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 670, 250));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -405,7 +392,7 @@ public class frmCliente extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(PGeneral2, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+            .add(PGeneral2, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -468,15 +455,14 @@ public class frmCliente extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PContenidoPersonales;
+    private javax.swing.JPanel PContraseña;
     private javax.swing.JPanel PGeneral2;
     private javax.swing.JPanel PTituloPeronales;
-    private javax.swing.JPanel PTituloPeronales1;
     public javax.swing.JButton btnOpcionRUC;
     public javax.swing.JButton btnSiguiente1;
     public javax.swing.JComboBox<String> cbxSexo;
     public javax.swing.JComboBox<String> cbxTipoDocumento;
     public com.toedter.calendar.JDateChooser dcFechaNacimiento;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator10;

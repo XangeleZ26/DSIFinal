@@ -6,6 +6,8 @@ import Modelo.Configuracion;
 import javax.swing.JOptionPane;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import Vista.frmRUC;
 
 public class ControladorRUC {
@@ -31,12 +33,29 @@ public class ControladorRUC {
                 if(datosLlenosCliente()){
                     if(ClientePotencial.verificarValidezRUC(vistaRUC.txtRUC.getText())){
                          if(!Configuracion.arrClientes.verificarExistenciaCliente("RUC", vistaRUC.txtRUC.getText())){
-                            Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(), 
+                            String contra = String.valueOf(vistaRUC.txtContrasena.getPassword());
+                            String contraVerif = String.valueOf(vistaRUC.txtVerifContrasena.getPassword());
+                            if(contra != null && contraVerif !=null){
+                                if(contra.equalsIgnoreCase(contraVerif)){
+                                    Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(), 
                                                            vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText());
-                            JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
-                            ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
-                            ctrlVehiculo.iniciarVehiculo();
-                            vistaRUC.dispose(); 
+                                    JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
+                                    ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                                    ctrlVehiculo.iniciarVehiculo();
+                                    vistaRUC.dispose();
+                                }
+                                else{
+                                    JOptionPane.showMessageDialog(null, "Verificación de contraseña incorrecta.");
+                                }
+                            }
+                            else{
+                                Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(), 
+                                                           vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText());
+                                    JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
+                                    ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                                    ctrlVehiculo.iniciarVehiculo();
+                                    vistaRUC.dispose();
+                            }
                          }
                          else{
                             limpiarDatosRUC();
@@ -55,12 +74,49 @@ public class ControladorRUC {
                 
            }
         });
+        this.vistaRUC.lblOjoCerrado1.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                vistaRUC.lblOjoAbierto1.setVisible(true);
+                vistaRUC.lblOjoCerrado1.setVisible(false);
+                vistaRUC.txtContrasena.setEchoChar('•');
+            }
+        });
+        
+        this.vistaRUC.lblOjoAbierto1.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                vistaRUC.lblOjoAbierto1.setVisible(false);
+                vistaRUC.lblOjoCerrado1.setVisible(true);
+                vistaRUC.txtContrasena.setEchoChar((char) 0);
+            }
+        });
+        
+        this.vistaRUC.lblOjoCerrado2.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                vistaRUC.lblOjoAbierto2.setVisible(true);
+                vistaRUC.lblOjoCerrado2.setVisible(false);
+                vistaRUC.txtVerifContrasena.setEchoChar('•');
+            }
+        });
+        
+        this.vistaRUC.lblOjoAbierto2.addMouseListener(new MouseAdapter(){
+            @Override
+            public void mouseClicked(MouseEvent e){
+                vistaRUC.lblOjoAbierto2.setVisible(false);
+                vistaRUC.lblOjoCerrado2.setVisible(true);
+                vistaRUC.txtVerifContrasena.setEchoChar((char) 0);
+            }
+        });
     }
     
     public void iniciarRUC(){
         vistaRUC.setTitle("Datos RUC");
         vistaRUC.setLocationRelativeTo(null);
         vistaRUC.setVisible(true);
+        vistaRUC.lblOjoCerrado1.setVisible(false);
+        vistaRUC.lblOjoCerrado2.setVisible(false);
     }
     
     public void limpiarDatosRUC(){

@@ -16,10 +16,33 @@ public class ControladorRegistroVehiculo{
     private Cliente ClientePotencial;
     private frmRegistroVehiculo vistaVehiculo;
     
+    public String[] getCategoria(int ejes){
+        String[] categoria = new String[1];
+        if(ejes==2){
+            categoria[0]= "Liviano";
+            categoria[1]= "Pesado";
+        }
+        if(ejes>2){
+            categoria[0]="Pesado";
+        }
+        return categoria;
+    }
+    public String[] getTipoUso(int ejes){
+        String[] tipoUso = new String[1];
+        if(ejes==2){
+            tipoUso[0]= "Privado";
+            tipoUso[1]= "Público";
+        }
+        if(ejes>2){
+            tipoUso[0]="Privado";
+        }
+        return tipoUso;
+    }
     //PROVENIENTE DEL CONTROLADOR ENTREGA
     public ControladorRegistroVehiculo(Cliente ClientePotencial){
         this.ClientePotencial = ClientePotencial;
         this.vistaVehiculo = new frmRegistroVehiculo();
+        
         this.vistaVehiculo.btnSiguiente2.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -46,8 +69,21 @@ public class ControladorRegistroVehiculo{
                 }   
             }
         });
+        this.vistaVehiculo.cbxEjes.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
+                int ejesEntero = Integer.parseInt(ejesCadena);
+                if(vistaVehiculo.cbxEjes.getSelectedItem().toString().trim().length() != 0){
+                    if(vistaVehiculo.cbxEjes.getSelectedIndex()>0){
+                        vistaVehiculo.cbxCategoria.setModel(new DefaultComboBoxModel(getCategoria(ejesEntero)));
+                        vistaVehiculo.cbxTipoUso.setModel(new DefaultComboBoxModel(getTipoUso(ejesEntero)));
+                    }
+                }
+            }
+        });
     }
-    
+ 
     //PROVENIENTE DEL CONTROLADOR VEHÍCULOS
     public ControladorRegistroVehiculo(Cliente cliente,frmRegistroVehiculo vista){
         this.vistaVehiculo = vista;
@@ -78,12 +114,29 @@ public class ControladorRegistroVehiculo{
                 }   
             }
         });
+        this.vistaVehiculo.cbxEjes.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
+                int ejesEntero = Integer.parseInt(ejesCadena);
+                if(vistaVehiculo.cbxEjes.getSelectedItem().toString().trim().length() != 0){
+                    if(vistaVehiculo.cbxEjes.getSelectedIndex()>0){
+                        vistaVehiculo.cbxCategoria.setModel(new DefaultComboBoxModel(getCategoria(ejesEntero)));
+                        vistaVehiculo.cbxTipoUso.setModel(new DefaultComboBoxModel(getTipoUso(ejesEntero)));
+                    }
+                }
+            }
+        });
     }
     
     public void iniciarVehiculo(){
         vistaVehiculo.setTitle("Datos Vehiculo");
         vistaVehiculo.setLocationRelativeTo(null);
         vistaVehiculo.setVisible(true);
+        vistaVehiculo.cbxMarca.setSelectedItem(-1);
+        vistaVehiculo.cbxEjes.setSelectedItem(-1);
+        vistaVehiculo.cbxCategoria.setSelectedItem(-1);
+        vistaVehiculo.cbxTipoUso.setSelectedItem(-1);
         DefaultComboBoxModel marcasComboBox = new DefaultComboBoxModel();
         for(Object o : Modelo.Configuracion.marcasVehiculo){
             marcasComboBox.addElement(o);
