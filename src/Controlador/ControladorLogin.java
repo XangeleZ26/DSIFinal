@@ -90,13 +90,13 @@ public class ControladorLogin {
     }
 
     public void iniciar() {
-                 try {
-                      
-                        ArregloClientes prueba=(ArregloClientes)Configuracion.serial.deserializar("archivoUser.txt");
-                        System.out.println(prueba);
-                    } catch (Exception z) {
-                        
-                    }
+//                 try {
+//                      
+//                        ArregloClientes prueba=(ArregloClientes)Configuracion.serial.deserializar("archivoUser.txt");
+//                        System.out.println(prueba);
+//                    } catch (Exception z) {
+//                        
+//                    }
         vista.OjoCerrado.setVisible(false);
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
