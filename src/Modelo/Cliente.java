@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Cliente implements Serializable {
+public final class Cliente implements Serializable {
     
 private static final long serialVersionUID=26L;
     private String tipoDocumento;

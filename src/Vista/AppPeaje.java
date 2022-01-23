@@ -3,22 +3,11 @@ package Vista;
 import Modelo.ArregloClientes;
 import Modelo.Cliente;
 import Modelo.Configuracion;
-import Modelo.Direccion;
-import Modelo.Estacion;
 import Modelo.Peaje;
-import Modelo.ArregloPeajes;
-import Modelo.Vehiculo;
-import Modelo.Cuenta;
 import Modelo.Tarjeta;
-import Modelo.Movimiento;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import Controlador.*;
-import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JOptionPane;
 
 public class AppPeaje {
 
