@@ -39,45 +39,44 @@ public class ControladorBoleta {
         this.monto = monto;
     }
 
-    public void iniciarParaConsumo() {
-//        Date fechaActual = new Date();
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-//     
+    public void iniciarParaConsumo(String peaje,String estacion,String vehiculo,String fecha) {
+        
         vistaBoleta.lblBoletaPago.setVisible(false);
         vistaBoleta.lblBoletaRecarga.setVisible(false);
         vistaBoleta.lblBoletaConsumo.setVisible(true);
-//        vistaBoleta.txtUsuario.setText(cliente.getNombres()+ " "
-//                                       +cliente.getApPaterno());
-//        
-//        vistaBoleta.txtNumDoc.setText(cliente.getNumDocumento());
-//
-//        vistaBoleta.txtMonto.setText(String.valueOf(this.monto));
-//        vistaBoleta.txtFecha.setText(sdf.format(fechaActual));
-//         vistaBoleta.txtRazon.setText(cliente.getRazonSocial());
+        vistaBoleta.txtUsuario.setText(cliente.getNombres()+ " "
+                                       +cliente.getApPaterno());  
+        vistaBoleta.txtNumDoc.setText(cliente.getNumDocumento());
+        vistaBoleta.txtMonto.setText(String.valueOf(this.monto));
+        vistaBoleta.txtFecha.setText(fecha);
+         vistaBoleta.txtRazon.setText(cliente.getRazonSocial());
+         vistaBoleta.txtEstacion.setText(estacion);
+        vistaBoleta.txtVehiculo.setText(vehiculo);
+        vistaBoleta.txtPeaje.setText(peaje);
         comprobarTipoUser();
         vistaBoleta.setLocationRelativeTo(null);
         vistaBoleta.setVisible(true);
     
     }
 
-    public void iniciarParaRecarga() {
-        Date fechaActual = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+    public void iniciarParaRecarga(String fecha) {
+       
         vistaBoleta.lblBoletaPago.setVisible(false);
         vistaBoleta.lblBoletaRecarga.setVisible(true);
         vistaBoleta.lblBoletaConsumo.setVisible(false);
         vistaBoleta.lblEstacion.setVisible(false);
+        vistaBoleta.lblPeaje.setVisible(false);
         vistaBoleta.lblVehiculo.setVisible(false);
         vistaBoleta.txtEstacion.setVisible(false);
         vistaBoleta.txtVehiculo.setVisible(false);
-
+        vistaBoleta.txtPeaje.setVisible(false);
         vistaBoleta.txtUsuario.setText(cliente.getNombres() + " "
                 + cliente.getApPaterno());
 
         vistaBoleta.txtNumDoc.setText(cliente.getNumDocumento());
 
         vistaBoleta.txtMonto.setText(this.monto);
-        vistaBoleta.txtFecha.setText(sdf.format(fechaActual));
+        vistaBoleta.txtFecha.setText(fecha);
         vistaBoleta.txtRazon.setText(cliente.getRazonSocial());
         comprobarTipoUser();
         vistaBoleta.setLocationRelativeTo(null);
@@ -87,15 +86,17 @@ public class ControladorBoleta {
 
     public void iniciarParaOpc() {
         Date fechaActual = new Date();
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         vistaBoleta.lblBoletaPago.setVisible(true);
         vistaBoleta.lblBoletaRecarga.setVisible(false);
         vistaBoleta.lblBoletaConsumo.setVisible(false);
         vistaBoleta.lblEstacion.setVisible(false);
+         vistaBoleta.lblPeaje.setVisible(false);
         vistaBoleta.lblVehiculo.setVisible(false);
         vistaBoleta.txtEstacion.setVisible(false);
         vistaBoleta.txtVehiculo.setVisible(false);
-
+         vistaBoleta.txtPeaje.setVisible(false);
+         
         vistaBoleta.txtUsuario.setText(cliente.getNombres() + " "
                 + cliente.getApPaterno());
         vistaBoleta.txtNumDoc.setText(cliente.getNumDocumento());
@@ -115,9 +116,11 @@ public class ControladorBoleta {
             vistaBoleta.txtUsuario.setVisible(false);
             vistaBoleta.lblNumDoc.setVisible(false);
             vistaBoleta.txtNumDoc.setVisible(false);
+            vistaBoleta.txtTipoComprobante.setText("Factura");
         } else {
             vistaBoleta.lblRazon.setVisible(false);
             vistaBoleta.txtRazon.setVisible(false);
+            vistaBoleta.txtTipoComprobante.setText("Boleta");
         }
     }
 

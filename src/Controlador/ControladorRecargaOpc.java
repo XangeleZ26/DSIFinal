@@ -68,7 +68,7 @@ public class ControladorRecargaOpc {
                     if (datosLlenosRecargaOpc()) {
                         int añoVencimiento = vistaRecargaOpc.jycAñoVencimiento.getYear();
                         int mesVencimiento = vistaRecargaOpc.jmcMesVencimiento.getMonth();
-                        SimpleDateFormat sdfVencimiento = new SimpleDateFormat("yyyy/MM/dd");
+                        SimpleDateFormat sdfVencimiento = new SimpleDateFormat("dd/MM/yyyy");
                         Date fechaVencimiento = new Date(añoVencimiento, mesVencimiento, 00);
                         TarjetaPotencial = new Tarjeta(
                                 vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString(),
@@ -85,7 +85,7 @@ public class ControladorRecargaOpc {
                                     ClientePotencial.getCuenta().setTarjeta(TarjetaPotencial);
 
                                     Date fechaActual = new Date();
-                                    SimpleDateFormat sdfActual = new SimpleDateFormat("yyyy/MM/dd");
+                                    SimpleDateFormat sdfActual = new SimpleDateFormat("dd/MM/yyyy");
                                     ClientePotencial.getCuenta().recargar(Float.parseFloat(vistaRecargaOpc.txtMontoOpcional.getText()),
                                             TarjetaPotencial, sdfActual.format(fechaActual));
                                             //se registra al cliente

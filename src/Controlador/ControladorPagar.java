@@ -63,7 +63,7 @@ public class ControladorPagar {
         this.vista.btnPagar.addActionListener(new ActionListener(){
         @Override
         public void actionPerformed(ActionEvent e ){
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
             if(datosLlenosPagar()){
                 user.getCuenta().pagarPeaje(
@@ -82,7 +82,7 @@ public class ControladorPagar {
                     }
                  //PARA MOSTRAR COMPROBANTE
                             ControladorBoleta comprobante = new ControladorBoleta(user,String.valueOf(user.getCuenta().getMonto()));
-                            comprobante.iniciarParaConsumo();
+                            comprobante.iniciarParaConsumo(vista.cbxPeaje.getSelectedItem().toString(),vista.cbxEstacion.getSelectedItem().toString(),vista.cbxVehiculo.getSelectedItem().toString(),sdf.format(vista.dcFechaPago.getDate()));
 //                            vista.dispose();
 
                             //PARA CERRAR COMPROBANTE

@@ -50,6 +50,8 @@ public class frmBoleta extends javax.swing.JFrame {
         lblVehiculo = new javax.swing.JLabel();
         lblUsuario = new javax.swing.JLabel();
         lblRazon = new javax.swing.JLabel();
+        lblPeaje = new javax.swing.JLabel();
+        txtPeaje = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -76,12 +78,12 @@ public class frmBoleta extends javax.swing.JFrame {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         txtTipoComprobante.setFont(new java.awt.Font("Times New Roman", 0, 21)); // NOI18N
-        txtTipoComprobante.setText("Tipo de comprobante:");
-        jPanel2.add(txtTipoComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, 220, -1));
+        txtTipoComprobante.setText("T");
+        jPanel2.add(txtTipoComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 40, 130, -1));
 
         txtEstacion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        txtEstacion.setText("Estación:");
-        jPanel2.add(txtEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 210, -1));
+        txtEstacion.setText("esta");
+        jPanel2.add(txtEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 210, -1));
 
         btnOKBoleta.setBackground(new java.awt.Color(22, 38, 46));
         btnOKBoleta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -93,7 +95,7 @@ public class frmBoleta extends javax.swing.JFrame {
                 btnOKBoletaActionPerformed(evt);
             }
         });
-        jPanel2.add(btnOKBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 280, -1, -1));
+        jPanel2.add(btnOKBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 300, -1, -1));
 
         txtMonto.setEditable(false);
         txtMonto.setBackground(new java.awt.Color(121, 127, 139));
@@ -128,7 +130,7 @@ public class frmBoleta extends javax.swing.JFrame {
 
         lblTipoComprobante.setFont(new java.awt.Font("Times New Roman", 0, 21)); // NOI18N
         lblTipoComprobante.setText("Tipo de comprobante:");
-        jPanel2.add(lblTipoComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 30, -1, -1));
+        jPanel2.add(lblTipoComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 40, -1, -1));
 
         lblNumDoc.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblNumDoc.setText("Número de documento:");
@@ -144,19 +146,19 @@ public class frmBoleta extends javax.swing.JFrame {
 
         lblFecha.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblFecha.setText("Fecha:");
-        jPanel2.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 180, 50, -1));
+        jPanel2.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 171, 50, 40));
 
         txtVehiculo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtVehiculo.setText("Vehículo:");
-        jPanel2.add(txtVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 240, 210, -1));
+        jPanel2.add(txtVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 210, -1));
 
         lblEstacion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblEstacion.setText("Estación:");
-        jPanel2.add(lblEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 70, -1));
+        jPanel2.add(lblEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, 70, 40));
 
         lblVehiculo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblVehiculo.setText("Vehículo:");
-        jPanel2.add(lblVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 70, -1));
+        jPanel2.add(lblVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 270, 70, -1));
 
         lblUsuario.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblUsuario.setText("Usuario:");
@@ -166,7 +168,15 @@ public class frmBoleta extends javax.swing.JFrame {
         lblRazon.setText("Razón social:");
         jPanel2.add(lblRazon, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 100, -1));
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 490, 330));
+        lblPeaje.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        lblPeaje.setText("Peaje:");
+        jPanel2.add(lblPeaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 200, 50, 40));
+
+        txtPeaje.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        txtPeaje.setText("peaje");
+        jPanel2.add(txtPeaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 210, -1));
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 490, 350));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -238,6 +248,7 @@ public class frmBoleta extends javax.swing.JFrame {
     public javax.swing.JLabel lblMonto;
     private javax.swing.JLabel lblMonto1;
     public javax.swing.JLabel lblNumDoc;
+    public javax.swing.JLabel lblPeaje;
     public javax.swing.JLabel lblRazon;
     public javax.swing.JLabel lblTipoComprobante;
     public javax.swing.JLabel lblUsuario;
@@ -246,6 +257,7 @@ public class frmBoleta extends javax.swing.JFrame {
     public javax.swing.JTextField txtFecha;
     public javax.swing.JTextField txtMonto;
     public javax.swing.JLabel txtNumDoc;
+    public javax.swing.JLabel txtPeaje;
     public javax.swing.JLabel txtRazon;
     public javax.swing.JLabel txtTipoComprobante;
     public javax.swing.JLabel txtUsuario;

@@ -35,10 +35,11 @@ public class ControladorRUC {
                          if(!Configuracion.arrClientes.verificarExistenciaCliente("RUC", vistaRUC.txtRUC.getText())){
                             String contra = String.valueOf(vistaRUC.txtContrasena.getPassword());
                             String contraVerif = String.valueOf(vistaRUC.txtVerifContrasena.getPassword());
-                            if(contra != null && contraVerif !=null){
+                            if(contra != null && contraVerif !=null){ //aqui no usa contraseña creada
                                 if(contra.equalsIgnoreCase(contraVerif)){
                                     Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(), 
-                                                           vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText());
+                                                           vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText(), contra);
+        
                                     JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
                                     ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
                                     ctrlVehiculo.iniciarVehiculo();
@@ -48,9 +49,8 @@ public class ControladorRUC {
                                     JOptionPane.showMessageDialog(null, "Verificación de contraseña incorrecta.");
                                 }
                             }
-                            else{
-                                Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(), 
-                                                           vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText(), contra);
+                            else{ //aqui no usa contraseña creada
+                                Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(),vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText());
                                     JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
                                     ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
                                     ctrlVehiculo.iniciarVehiculo();

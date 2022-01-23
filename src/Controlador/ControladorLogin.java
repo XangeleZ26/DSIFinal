@@ -52,7 +52,7 @@ public class ControladorLogin {
                             ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(cliente);
                             ctrlOpcionesIngreso.iniciar();
                             vista.dispose();
-                            System.out.println(contrasena);
+                            
                         
                     } catch (Exception z) {
                         JOptionPane.showMessageDialog(null, "Datos incorrectos y/o usuario no registrado");
@@ -90,6 +90,13 @@ public class ControladorLogin {
     }
 
     public void iniciar() {
+                 try {
+                      
+                        ArregloClientes prueba=(ArregloClientes)Configuracion.serial.deserializar("archivoUser.txt");
+                        System.out.println(prueba);
+                    } catch (Exception z) {
+                        
+                    }
         vista.OjoCerrado.setVisible(false);
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);

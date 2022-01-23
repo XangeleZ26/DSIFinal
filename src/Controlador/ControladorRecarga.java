@@ -35,7 +35,7 @@ public class ControladorRecarga {
                     if (vista.txtCVV.getText().equals(user.getCuenta().getTarjeta().getCvv())) {
 
                         if (Float.parseFloat(vista.txtMonto.getText()) > 0) {
-                            SimpleDateFormat sdfPago = new SimpleDateFormat("yyyy/MM/dd"); //doy formato
+                            SimpleDateFormat sdfPago = new SimpleDateFormat("dd/MM/yyyy"); //doy formato
                             String fechaPago = sdfPago.format(vista.dcFechaPago.getDate()); //indico a q cosa quiero dar formato y lo almaceno
 
                             //Aún no se contempla el "boleta y factura" en el codigo. Esperando acuerdo grupal xd
@@ -58,7 +58,7 @@ public class ControladorRecarga {
 //                            condicionComprobante = 2;
                             //PARA MOSTRAR COMPROBANTE
                             ControladorBoleta comprobante = new ControladorBoleta(user, vista.txtMonto.getText());
-                            comprobante.iniciarParaRecarga();
+                            comprobante.iniciarParaRecarga(fechaPago);
 //                            vista.dispose();
 
                             //PARA CERRAR COMPROBANTE
