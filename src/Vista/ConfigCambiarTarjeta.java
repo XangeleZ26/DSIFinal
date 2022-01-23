@@ -38,10 +38,11 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
         cbxMedioPago = new javax.swing.JComboBox<>();
         lblCorreo4 = new javax.swing.JLabel();
         lblCorreo5 = new javax.swing.JLabel();
-        dcFechaVencimiento = new com.toedter.calendar.JDateChooser();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         txtCvv = new javax.swing.JTextField();
+        jmcMesVencimiento = new com.toedter.calendar.JMonthChooser();
+        jycAñoVencimiento = new com.toedter.calendar.JYearChooser();
 
         jPanel2.setBackground(new java.awt.Color(159, 162, 178));
 
@@ -118,7 +119,6 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
         lblCorreo5.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblCorreo5.setText("CVV:");
         jPanel1.add(lblCorreo5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 190, -1, -1));
-        jPanel1.add(dcFechaVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, 260, 30));
 
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
@@ -131,6 +131,12 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
         txtCvv.setBackground(new java.awt.Color(121, 127, 139));
         txtCvv.setBorder(null);
         jPanel1.add(txtCvv, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 180, 260, 30));
+
+        jmcMesVencimiento.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel1.add(jmcMesVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 240, -1, 30));
+
+        jycAñoVencimiento.setBackground(new java.awt.Color(121, 127, 139));
+        jPanel1.add(jycAñoVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 240, 80, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -192,12 +198,13 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
     public javax.swing.JButton btnAtras;
     public javax.swing.JButton btnCambiar;
     public javax.swing.JComboBox<String> cbxMedioPago;
-    public com.toedter.calendar.JDateChooser dcFechaVencimiento;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
+    public com.toedter.calendar.JMonthChooser jmcMesVencimiento;
+    public com.toedter.calendar.JYearChooser jycAñoVencimiento;
     private javax.swing.JLabel lblCorreo1;
     private javax.swing.JLabel lblCorreo3;
     private javax.swing.JLabel lblCorreo4;

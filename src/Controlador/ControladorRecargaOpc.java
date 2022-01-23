@@ -75,14 +75,18 @@ public class ControladorRecargaOpc {
             public void actionPerformed(ActionEvent e) {
                 if (verificarBtnCalcular != 0) {
                     if (datosLlenosRecargaOpc()) {
-                        SimpleDateFormat sdfVencimiento = new SimpleDateFormat("yyyy/MM");
-                        String fechaVencimiento = sdfVencimiento.format(vistaRecargaOpc.dcFechaVencimiento.getDate());
+                        int añoVencimiento = vistaRecargaOpc.jycAñoVencimiento.getYear();
+                        int mesVencimiento = vistaRecargaOpc.jmcMesVencimiento.getMonth();
+                        SimpleDateFormat sdfVencimiento = new SimpleDateFormat("MM/yyyy");
+                        Date fechaVencimiento = new Date(añoVencimiento, mesVencimiento, 00);
+                        sdfVencimiento.format(fechaVencimiento);
+                                               
                         TarjetaPotencial = new Tarjeta(
                                 vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString(),
                                 vistaRecargaOpc.txtNumeroTarjeta.getText(),
-                                fechaVencimiento,
+                                sdfVencimiento.format(fechaVencimiento),
                                 vistaRecargaOpc.txtCVV.getText());
-                        if (TarjetaPotencial.verificarVigenciaTarjeta(fechaVencimiento)) {
+                        if (verificarVigenciaTarjeta(sdfVencimiento.format(fechaVencimiento))) {
                             if (TarjetaPotencial.verificarValidezTajeta(vistaRecargaOpc.txtNumeroTarjeta.getText(),
                                     vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString())) {
                                 if (TarjetaPotencial.verificarValidezCVV(vistaRecargaOpc.txtCVV.getText(),
@@ -168,7 +172,18 @@ public class ControladorRecargaOpc {
            }
         });
     }
+    
+    public boolean verificarVigenciaTarjeta(String fechaVencimiento) {
+        boolean result = false;
+        Date fechaActual = new Date();
+        SimpleDateFormat fecha = new SimpleDateFormat("MM/yyyy");
+        if (fechaVencimiento.compareTo(fecha.format(fechaActual)) > 0) {
+            return true;
+        }
 
+        return result;
+    }
+    
     public void iniciarRecargaOpc() {
         vistaRecargaOpc.setTitle("Recarga Opcional");
         vistaRecargaOpc.setLocationRelativeTo(null);
@@ -191,7 +206,8 @@ public class ControladorRecargaOpc {
         vistaRecargaOpc.cbxMedioPago.setSelectedIndex(-1);
         vistaRecargaOpc.txtNumeroTarjeta.setText(null);
         vistaRecargaOpc.txtCVV.setText(null);
-        vistaRecargaOpc.dcFechaVencimiento.setDate(null);
+        vistaRecargaOpc.jycAñoVencimiento.setYear(-1);
+        vistaRecargaOpc.jmcMesVencimiento.setMonth(-1);;
     }
 
     public void limpiarRecargaOpc() {
@@ -201,14 +217,14 @@ public class ControladorRecargaOpc {
         vistaRecargaOpc.txtMontoRecarga.setText(null);
         vistaRecargaOpc.txtTotal.setText(null);
         vistaRecargaOpc.txtCVV.setText(null);
-        vistaRecargaOpc.dcFechaVencimiento.setDate(null);
+        vistaRecargaOpc.jycAñoVencimiento.setYear(-1);
+        vistaRecargaOpc.jmcMesVencimiento.setMonth(-1);;
     }
 
     public boolean datosLlenosRecargaOpc() {
         return (this.vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString().trim().length() != 0
                 && this.vistaRecargaOpc.txtNumeroTarjeta.getText().trim().length() != 0
                 && this.vistaRecargaOpc.txtTotal.getText().trim().length() != 0
-                && this.vistaRecargaOpc.txtCVV.getText().trim().length() != 0
-                && this.vistaRecargaOpc.dcFechaVencimiento.getDate() != null);
+                && this.vistaRecargaOpc.txtCVV.getText().trim().length() != 0);
     }
 }
