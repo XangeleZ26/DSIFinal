@@ -14,6 +14,9 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class Serializacion {
+    
+    //Modificacion de xavier
+    
     private ObjectOutputStream escribir;
     private ObjectInputStream lector;
     public Serializacion(){
