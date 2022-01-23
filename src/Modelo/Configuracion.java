@@ -1,6 +1,9 @@
 
 package Modelo;
 
+import Controlador.Serializacion;
+import java.io.File;
+
 public class Configuracion {
     public static int maxVehiculosXCliente = 10;
     public static int maxClientes = 10;
@@ -10,6 +13,7 @@ public class Configuracion {
     
     public static ArregloClientes arrClientes = new ArregloClientes();
     public static ArregloPeajes arrPeajes = new ArregloPeajes();
+    public static Serializacion serial=new Serializacion();
     
     public static String[] arrPeaje = {"Panamericana Norte","Panamericana Sur","Huaylas","Separadora Industrial"};
     public static String[] arrEstaciones = {"Serpentin de Pasamayo","Variante Pasamayo","El Paraíso","Fortaleza"};
@@ -17,7 +21,7 @@ public class Configuracion {
     public static ArregloClientes getArrClientes(){
         return arrClientes;
     }
-
+    
     public void setArrClientes(ArregloClientes arrClientes) {
         Configuracion.arrClientes = arrClientes;
     }

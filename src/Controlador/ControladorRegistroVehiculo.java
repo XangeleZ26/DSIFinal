@@ -9,6 +9,8 @@ import Modelo.ArregloClientes;
 import Modelo.Configuracion;
 import Modelo.Cliente;
 import Vista.frmRegistroVehiculo;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.DefaultComboBoxModel;
 
@@ -43,6 +45,15 @@ public class ControladorRegistroVehiculo{
         this.ClientePotencial = ClientePotencial;
         this.vistaVehiculo = new frmRegistroVehiculo();
         
+         this.vistaVehiculo.btnAtras.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                ControladorCliente ctrlOpcionesIngreso = new ControladorCliente();
+                ctrlOpcionesIngreso.iniciarCliente();
+                vistaVehiculo.dispose();
+            }
+        });
         this.vistaVehiculo.btnSiguiente2.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -88,6 +99,16 @@ public class ControladorRegistroVehiculo{
     public ControladorRegistroVehiculo(Cliente cliente,frmRegistroVehiculo vista){
         this.vistaVehiculo = vista;
         this.ClientePotencial=cliente;  //aqui el cliente ya existe, solo desea agregar carros
+       
+           this.vistaVehiculo.btnAtras.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                ControladorVehiculos ctrlOpcionesIngreso = new ControladorVehiculos(cliente);
+                ctrlOpcionesIngreso.iniciar();
+                vista.dispose();
+            }
+        });
         this.vistaVehiculo.btnSiguiente2.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
@@ -104,7 +125,13 @@ public class ControladorRegistroVehiculo{
                                                  Float.parseFloat(vistaVehiculo.txtPesoBruto.getText()),
                                                  Integer.parseInt(vistaVehiculo.txtAño.getText()),
                                                  ClientePotencial);
-                    JOptionPane.showMessageDialog(null, "Datos del vehículo registrado, puede continuar.");
+                    try {
+                        Configuracion.serial.serializar("archivoUser.txt",Configuracion.arrClientes);
+                        JOptionPane.showMessageDialog(null, "Datos del vehículo registrado, puede continuar.");
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null,"Fallo en el guardado de archivo");
+                    }
+                    
                     ControladorVehiculos ctrlVehiculos = new ControladorVehiculos(ClientePotencial);
                     ctrlVehiculos.iniciar();
                     vistaVehiculo.dispose();  

@@ -73,8 +73,29 @@ public class ControladorPagar {
                 );
                 //user.getCuenta().getMovimientos().imprimirMovimientoSimple();
                 //user.getCuenta().getSaldoTotal();
-                JOptionPane.showMessageDialog(null, "Pago realizado con éxito");
                 
+                 try {
+                        Configuracion.serial.serializar("archivoUser.txt",Configuracion.arrClientes);
+                        JOptionPane.showMessageDialog(null, "Pago realizado con éxito");
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null,"Fallo en el guardado de archivo");
+                    }
+                 //PARA MOSTRAR COMPROBANTE
+                            ControladorBoleta comprobante = new ControladorBoleta(user,String.valueOf(user.getCuenta().getMonto()));
+                            comprobante.iniciarParaConsumo();
+//                            vista.dispose();
+
+                            //PARA CERRAR COMPROBANTE
+                            comprobante.getVistaBoleta().btnOKBoleta.addActionListener(new ActionListener() {
+                                @Override
+                                public void actionPerformed(ActionEvent e) {
+                                    ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(user);
+                                    ctrlOpcionesIngreso.iniciar();
+                                    comprobante.getVistaBoleta().dispose();
+                                    vista.dispose();
+                                }
+                            });
+      
             }
             else{
                 JOptionPane.showMessageDialog(null, "Debe llenar todos los campos, por favor.");
@@ -108,8 +129,6 @@ public class ControladorPagar {
         }
         }
         });*/
-        
-   
     }
     
    /* public void llenarTabla() {

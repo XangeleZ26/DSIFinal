@@ -1,8 +1,9 @@
 package Modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Cuenta {
+public class Cuenta implements Serializable{
 
     private float saldoTotal;
     private float monto;
@@ -13,7 +14,7 @@ public class Cuenta {
     private Vehiculo vehiculos[];
     private int nv; //Cantidad de vehículos en el arreglo
     private int ov; //Orden en el arreglo del último vehículo agregado
-    private Estacion estacion;
+//    private Estacion estacion;
     
     public Cuenta() {
         this.saldoTotal = 12;
@@ -41,13 +42,13 @@ public class Cuenta {
     //MÉTODOS ACCESORES
     
     //AGREGADO
-    public Estacion getEstacion() {
-        return estacion;
-    }
-
-    public void setEstacion(Estacion estacion) {
-        this.estacion = estacion;
-    }
+//    public Estacion getEstacion() {
+//        return estacion;
+//    }
+//
+//    public void setEstacion(Estacion estacion) {
+//        this.estacion = estacion;
+//    }
     //AGREGADO
     
     //MÉTODOS ACCESORES
@@ -347,15 +348,15 @@ public class Cuenta {
 
     public boolean pagarPeaje(String fecha, Vehiculo vehiculo, Estacion estacion) {
         boolean result = false;
-        float tarifaNeta = estacion.calcularTarifaNeta(vehiculo.getEjes(), vehiculo.getCategoria(), vehiculo.getTipoUso());
-        if (tarifaNeta > 0 && (this.saldoTotal >= tarifaNeta)) {
-            this.saldoTotal = this.saldoTotal - tarifaNeta;
+        this.monto = estacion.calcularTarifaNeta(vehiculo.getEjes(), vehiculo.getCategoria(), vehiculo.getTipoUso());
+        if (this.monto > 0 && (this.saldoTotal >= this.monto)) {
+            this.saldoTotal = this.saldoTotal - this.monto;
             this.saldoTotal = (float) (Math.round((double) this.saldoTotal * 100.0) / 100.0);
             result = true;
         }
         //Registrar movimiento al arreglo
         if (result == true) {
-            registrarMovimiento(fecha, "Consumo", tarifaNeta, vehiculo, estacion);
+            registrarMovimiento(fecha, "Consumo", this.monto, vehiculo, estacion);
         }
         return result;
     }

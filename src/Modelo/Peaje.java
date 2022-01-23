@@ -1,6 +1,8 @@
 package Modelo;
 
-public class Peaje {
+import java.io.Serializable;
+
+public class Peaje implements Serializable{
     private String nombrePeaje;
     private float livianoPublico;
     private float livianoPrivado;

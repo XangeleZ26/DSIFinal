@@ -55,9 +55,9 @@ public class ControladorBoleta {
 //        vistaBoleta.txtFecha.setText(sdf.format(fechaActual));
 //         vistaBoleta.txtRazon.setText(cliente.getRazonSocial());
         comprobarTipoUser();
-//        vistaBoleta.setLocationRelativeTo(null);
-//        vistaBoleta.setVisible(true);
-
+        vistaBoleta.setLocationRelativeTo(null);
+        vistaBoleta.setVisible(true);
+    
     }
 
     public void iniciarParaRecarga() {
@@ -91,7 +91,6 @@ public class ControladorBoleta {
         vistaBoleta.lblBoletaPago.setVisible(true);
         vistaBoleta.lblBoletaRecarga.setVisible(false);
         vistaBoleta.lblBoletaConsumo.setVisible(false);
-        comprobarTipoUser();
         vistaBoleta.lblEstacion.setVisible(false);
         vistaBoleta.lblVehiculo.setVisible(false);
         vistaBoleta.txtEstacion.setVisible(false);
@@ -104,7 +103,6 @@ public class ControladorBoleta {
         vistaBoleta.txtMonto.setText(String.valueOf(cliente.getCuenta().getSaldoTotal() + 8));
         vistaBoleta.txtFecha.setText(sdf.format(fechaActual));
         vistaBoleta.txtRazon.setText(cliente.getRazonSocial());
-
         comprobarTipoUser();
         vistaBoleta.setLocationRelativeTo(null);
         vistaBoleta.setVisible(true);

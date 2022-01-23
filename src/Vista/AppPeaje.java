@@ -14,6 +14,11 @@ import Modelo.Movimiento;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import Controlador.*;
+import java.io.File;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class AppPeaje {
 
@@ -321,14 +326,27 @@ public class AppPeaje {
         
         //cliente = new Cliente("DNI","75720836","ABC","DEF","GHI", "Fem", sdf.format(fechanacimiento2), "abc@gmail.com","1568");
         //System.out.println("Cliente agregado: "+Configuracion.arrClientes.agregarCliente(cliente));
-        Configuracion.arrClientes = clientes;
-        Configuracion.getArrClientes().mostrarClientes();
-        
+//        Configuracion.arrClientes = clientes;
+//        Configuracion.getArrClientes().mostrarClientes();
+        clientes.mostrarClientes();
         
         frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
+        
+        
+//        try {
+//            Configuracion.serial.serializar("archivoUser.txt", Configuracion.arrClientes);
+//        } catch (Exception ex) {
+//            JOptionPane.showMessageDialog(null,"Fallo en el guardado de archivo");
+//        }
+
+//        try { //no se puede usar ObjectInputStream sin haber antes algún archivo existente
+//            Configuracion.arrClientes=(ArregloClientes) Configuracion.serial.deserializar("archivoUser.txt");
+//        } catch (Exception ex) {
+//          JOptionPane.showMessageDialog(null,"Fallo en la recuperación de archivo");
+//        }
+
         ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
         ctrlPrincipal.iniciar();
-        
         
         //INICIO DE PROGRAMAAAA (SEGÚN LA VISTA)
    

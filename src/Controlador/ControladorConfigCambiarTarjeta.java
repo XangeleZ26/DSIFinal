@@ -1,4 +1,3 @@
-
 package Controlador;
 
 import Modelo.Cliente;
@@ -9,57 +8,62 @@ import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
-
 public class ControladorConfigCambiarTarjeta {
+
     private ConfigCambiarTarjeta vista;
     private Cliente user;
 
-    
-    public ControladorConfigCambiarTarjeta(Cliente user){
-        this.vista=new ConfigCambiarTarjeta();
-        this.user=user;
-        
+    public ControladorConfigCambiarTarjeta(Cliente user) {
+        this.vista = new ConfigCambiarTarjeta();
+        this.user = user;
+
         this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(user);
                 ctrlConfiguracion.iniciar();
-                vista.dispose();   
+                vista.dispose();
             }
         });
-        
+
         this.vista.btnCambiar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                if(isValido()){
-                /*Falta implementar la validación para la nueva tarjeta que se va a registrar*/
-                /*Verificar también que esta no sea igual a la tarjeta anterior*/
-                user.getCuenta().getTarjeta().setMedioPago(vista.cbxMedioPago.getSelectedItem().toString());
-                user.getCuenta().getTarjeta().setNumTarjeta(vista.txtNumTarjet.getText());
-                user.getCuenta().getTarjeta().setCvv(vista.txtCvv.getText());
-                
-                SimpleDateFormat sdfVencimiento = new SimpleDateFormat("yyyy/MM");
-                String fechaVencimiento = sdfVencimiento.format(vista.dcFechaVencimiento.getDate());
-                user.getCuenta().getTarjeta().setFechaVencimiento(fechaVencimiento);
-                JOptionPane.showMessageDialog(null,"Cambios registrados.");
-                ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(user);
-                ctrlConfiguracion.iniciar();
-                vista.dispose();   
-                }
-                else{
-                   JOptionPane.showMessageDialog(null,"Debe llenar todos los campos!"); 
+                if (isValido()) {
+                    /*Falta implementar la validación para la nueva tarjeta que se va a registrar*/
+ /*Verificar también que esta no sea igual a la tarjeta anterior*/
+                    user.getCuenta().getTarjeta().setMedioPago(vista.cbxMedioPago.getSelectedItem().toString());
+                    user.getCuenta().getTarjeta().setNumTarjeta(vista.txtNumTarjet.getText());
+                    user.getCuenta().getTarjeta().setCvv(vista.txtCvv.getText());
+
+                    SimpleDateFormat sdfVencimiento = new SimpleDateFormat("yyyy/MM");
+                    String fechaVencimiento = sdfVencimiento.format(vista.dcFechaVencimiento.getDate());
+                    user.getCuenta().getTarjeta().setFechaVencimiento(fechaVencimiento);
+
+                    try {
+                        Configuracion.serial.serializar("archivoUser.txt", Configuracion.arrClientes);
+                        JOptionPane.showMessageDialog(null, "Cambios registrados.");
+                    } catch (Exception ex) {
+                        JOptionPane.showMessageDialog(null, "Fallo en el guardado de archivo");
+                    }
+
+                    ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(user);
+                    ctrlConfiguracion.iniciar();
+                    vista.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Debe llenar todos los campos!");
                 }
             }
         });
     }
-    
+
     private boolean isValido() {
         return (this.vista.cbxMedioPago.getSelectedItem().toString().trim().length() != 0
                 && this.vista.txtNumTarjet.getText().trim().length() != 0
                 && this.vista.txtCvv.getText().trim().length() != 0
-                && this.vista.dcFechaVencimiento.getDate()!=null);
+                && this.vista.dcFechaVencimiento.getDate() != null);
     }
-     
+
     public void iniciar() {
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);

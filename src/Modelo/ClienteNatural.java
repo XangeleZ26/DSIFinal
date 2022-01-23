@@ -1,6 +1,8 @@
 package Modelo;
 
-public class ClienteNatural extends Cliente{
+import java.io.Serializable;
+
+public class ClienteNatural extends Cliente implements Serializable{
     private String nombres;
     private String apPaterno;
     private String apMaterno;

@@ -38,7 +38,14 @@ public class ControladorConfigCambiarCorreo {
                         if((vista.txtCorreo.getText()).compareTo(user.getCredencial().getCorreo())==0){
                             //Este método es boolean, REVISAR
                             user.getCredencial().cambiarCorreo(vista.txtCorreo.getText());
-                            JOptionPane.showMessageDialog(null, "Cambios registrados.");
+                          
+                              try {
+                                Configuracion.serial.serializar("archivoUser.txt", Configuracion.arrClientes);
+                                JOptionPane.showMessageDialog(null, "Cambios registrados.");
+                            } catch (Exception ex) {
+                                JOptionPane.showMessageDialog(null, "Fallo en el guardado de archivo");
+                            }
+                              
                             ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(user);
                             ctrlConfiguracion.iniciar();
                             vista.dispose();

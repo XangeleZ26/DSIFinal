@@ -1,6 +1,8 @@
 package Modelo;
 
-public class ArregloClientes {
+import java.io.Serializable;
+
+public class ArregloClientes implements Serializable {
     private Cliente arregloCliente[];
     private int nc; //Cantidad total de clientes en el arreglo
     private int oc; //Orden en el arreglo del último cliente agregado
@@ -54,7 +56,7 @@ public class ArregloClientes {
     
     public boolean agregarCliente(Cliente cliente){
         boolean result = false;
-   
+            
             if(verificarExistenciaCliente(cliente.getTipoDocumento(),cliente.getNumDocumento())==false){
                 if(estaLleno()){
                     this.crecerArreglo();

@@ -1,9 +1,10 @@
 
 package Modelo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Movimiento {
+public class Movimiento implements Serializable{
 
     private String fecha;
     //private String hora;

@@ -1,6 +1,8 @@
 package Modelo;
 
-public class Estacion {
+import java.io.Serializable;
+
+public class Estacion implements Serializable{
     private String nombreEstacion;
     private String codigoEstacion;
     //private float tarifaNeta;

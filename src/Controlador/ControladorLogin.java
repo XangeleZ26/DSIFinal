@@ -46,6 +46,7 @@ public class ControladorLogin {
                         /*if(cliente!=null){
                             this.indiceCliente = Configuracion.arrClientes.buscarOrdenCliente(vista.txtUsuarioLogin.getText(), contrasena);
                         }*/
+                        Configuracion.arrClientes=(ArregloClientes)Configuracion.serial.deserializar("archivoUser.txt");
                         cliente = Configuracion.arrClientes.buscarCliente(vista.txtUsuarioLogin.getText(), contrasena);
 
                             ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(cliente);
@@ -53,7 +54,7 @@ public class ControladorLogin {
                             vista.dispose();
                             System.out.println(contrasena);
                         
-                    } catch (ArrayIndexOutOfBoundsException z) {
+                    } catch (Exception z) {
                         JOptionPane.showMessageDialog(null, "Datos incorrectos y/o usuario no registrado");
                     }
                 } 

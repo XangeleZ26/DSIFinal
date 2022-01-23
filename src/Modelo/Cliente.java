@@ -1,10 +1,11 @@
 
 package Modelo;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Cliente {
+public class Cliente implements Serializable{
     private String tipoDocumento;
     private String numDocumento;
     private String nombres;
@@ -12,12 +13,12 @@ public class Cliente {
     private String apMaterno;
     private String sexo;
     private String fechaNacimiento;
+    private String razonSocial;
     //private String correo;
     //private String contraseña;
     private Direccion direccion;
     //private Tarjeta tarjeta;
     private Cuenta cuenta;
-    private String razonSocial;
     private Credencial credencial;
     
     //CONSTRUCTORES

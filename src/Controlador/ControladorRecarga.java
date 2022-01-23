@@ -16,7 +16,7 @@ public class ControladorRecarga {
 
     public ControladorRecarga(Cliente user) {
         this.vista = new frmRecarga();
-        this.user=user;
+        this.user = user;
 //        this.condicionComprobante = 0;
         this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
@@ -31,9 +31,9 @@ public class ControladorRecarga {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isValido()) {
-                    
+
                     if (vista.txtCVV.getText().equals(user.getCuenta().getTarjeta().getCvv())) {
-                        
+
                         if (Float.parseFloat(vista.txtMonto.getText()) > 0) {
                             SimpleDateFormat sdfPago = new SimpleDateFormat("yyyy/MM/dd"); //doy formato
                             String fechaPago = sdfPago.format(vista.dcFechaPago.getDate()); //indico a q cosa quiero dar formato y lo almaceno
@@ -43,16 +43,21 @@ public class ControladorRecarga {
                                 case 1: user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()),vista.txtCVV.getText(),fechaPago);
                                 case 2: user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()),vista.txtCVV.getText(),fechaPago);
                             }*/
-                            
                             user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()), vista.txtCVV.getText(), fechaPago);
                             user.getCuenta().mostrarMovimientos();
                             
-                            JOptionPane.showMessageDialog(null, "Recarga realizada con éxito.");
+                            try {
+                                Configuracion.serial.serializar("archivoUser.txt", Configuracion.arrClientes);
+                                JOptionPane.showMessageDialog(null, "Recarga realizada con éxito.");
+                            } catch (Exception ex) {
+                                JOptionPane.showMessageDialog(null, "Fallo en el guardado de archivo");
+                            }
+                            
+                            
 
 //                            condicionComprobante = 2;
-                            
                             //PARA MOSTRAR COMPROBANTE
-                            ControladorBoleta comprobante = new ControladorBoleta(user,vista.txtMonto.getText());
+                            ControladorBoleta comprobante = new ControladorBoleta(user, vista.txtMonto.getText());
                             comprobante.iniciarParaRecarga();
 //                            vista.dispose();
 
@@ -66,19 +71,14 @@ public class ControladorRecarga {
                                     vista.dispose();
                                 }
                             });
-                            //AGREGAR DICHA RECARGA AL HISTORIAL DE MOVIMIENTOS
-                            
-                            
-                        }
-                        else {
+
+                        } else {
                             JOptionPane.showMessageDialog(null, "No puede recargar un monto negativo!");
                         }
-                    }
-                    else {
+                    } else {
                         JOptionPane.showMessageDialog(null, "CVV incorrecto!");
                     }
-                }
-                else {
+                } else {
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos!");
                 }
             }

@@ -13,11 +13,11 @@ public class ControladorConfigCambiarContra {
 
     private ConfigCambiarContra vista;
     private Cliente user;
-    
+
     public ControladorConfigCambiarContra(Cliente user) {
         this.vista = new ConfigCambiarContra();
         this.user = user;
-        
+
         this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -27,7 +27,7 @@ public class ControladorConfigCambiarContra {
 
             }
         });
-        
+
         /*Los métodos de cambiar contraseña son booleanos y su return no se guarda en ninguna variable, REVISAR*/
         this.vista.btnCambiar.addActionListener(new ActionListener() {
             @Override
@@ -39,7 +39,14 @@ public class ControladorConfigCambiarContra {
                             String.valueOf(vista.txtVerifContrasena.getPassword()))) {
                         case 0: {
                             user.getCredencial().cambiarContraseña(String.valueOf(vista.txtNovoContrasena.getPassword()));
-                            JOptionPane.showMessageDialog(null, "Cambios registrados.");
+                            
+                            try {
+                                Configuracion.serial.serializar("archivoUser.txt", Configuracion.arrClientes);
+                                JOptionPane.showMessageDialog(null, "Cambios registrados.");
+                            } catch (Exception ex) {
+                                JOptionPane.showMessageDialog(null, "Fallo en el guardado de archivo");
+                            }
+                            
                             ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(user);
                             ctrlConfiguracion.iniciar();
                             vista.dispose();

@@ -1,6 +1,8 @@
 package Modelo;
 
-public class ClienteJuridico extends Cliente{
+import java.io.Serializable;
+
+public class ClienteJuridico extends Cliente implements Serializable{
     private String razonSocial;
     private Credencial credencial;
 

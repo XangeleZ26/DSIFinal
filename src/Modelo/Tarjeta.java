@@ -1,10 +1,11 @@
 package Modelo;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.util.Date;
 
-public class Tarjeta {
+public class Tarjeta implements Serializable{
 
     private String medioPago;
     private String numTarjeta;

@@ -1,7 +1,9 @@
 
 package Modelo;
 
-public class Vehiculo {
+import java.io.Serializable;
+
+public class Vehiculo implements Serializable{
     private String placa;
     private String marca;
     private String modelo;

@@ -55,6 +55,7 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
         jSeparator8 = new javax.swing.JSeparator();
         jSeparator9 = new javax.swing.JSeparator();
         btnSiguiente2 = new javax.swing.JButton();
+        btnAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -208,36 +209,46 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
         btnSiguiente2.setBorder(null);
         btnSiguiente2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        btnAtras.setBackground(new java.awt.Color(121, 127, 139));
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
+        btnAtras.setBorder(null);
+        btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
         org.jdesktop.layout.GroupLayout PContenidoVehiculoLayout = new org.jdesktop.layout.GroupLayout(PContenidoVehiculo);
         PContenidoVehiculo.setLayout(PContenidoVehiculoLayout);
         PContenidoVehiculoLayout.setHorizontalGroup(
             PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(PContenidoVehiculoLayout.createSequentialGroup()
-                .add(42, 42, 42)
                 .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(PContenidoVehiculoLayout.createSequentialGroup()
+                        .add(42, 42, 42)
                         .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(lblModelo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 89, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(lblPlaca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 65, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(12, 12, 12)
-                        .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                .add(jSeparator2)
-                                .add(txtPlaca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 161, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 160, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(txtModelo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 160, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                            .add(PContenidoVehiculoLayout.createSequentialGroup()
+                                .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(lblModelo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 89, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(lblPlaca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 65, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                .add(12, 12, 12)
+                                .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                                    .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                        .add(jSeparator2)
+                                        .add(txtPlaca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 161, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                    .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 160, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(txtModelo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 160, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
+                            .add(PContenidoVehiculoLayout.createSequentialGroup()
+                                .add(lblEjes)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                    .add(jSeparator9)
+                                    .add(cbxEjes, 0, 61, Short.MAX_VALUE)))
+                            .add(PContenidoVehiculoLayout.createSequentialGroup()
+                                .add(lblCategoria)
+                                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                                .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
+                                    .add(jSeparator5)
+                                    .add(cbxCategoria, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 160, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
                     .add(PContenidoVehiculoLayout.createSequentialGroup()
-                        .add(lblEjes)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
-                        .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                            .add(jSeparator9)
-                            .add(cbxEjes, 0, 61, Short.MAX_VALUE)))
-                    .add(PContenidoVehiculoLayout.createSequentialGroup()
-                        .add(lblCategoria)
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.TRAILING, false)
-                            .add(jSeparator5)
-                            .add(cbxCategoria, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 160, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
+                        .add(56, 56, 56)
+                        .add(btnAtras)))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(PContenidoVehiculoLayout.createSequentialGroup()
@@ -336,9 +347,11 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
                         .add(cbxCategoria, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jSeparator5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 65, Short.MAX_VALUE)
-                .add(btnSiguiente2)
-                .add(20, 20, 20))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 45, Short.MAX_VALUE)
+                .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, btnSiguiente2)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, btnAtras))
+                .add(21, 21, 21))
         );
 
         PGeneral.add(PContenidoVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 105, 770, 460));
@@ -418,6 +431,7 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
     private javax.swing.JPanel PContenidoVehiculo;
     private javax.swing.JPanel PGeneral;
     private javax.swing.JPanel PTituloVehiculo;
+    public javax.swing.JButton btnAtras;
     public javax.swing.JButton btnSiguiente2;
     public javax.swing.JComboBox<String> cbxCategoria;
     public javax.swing.JComboBox<String> cbxEjes;

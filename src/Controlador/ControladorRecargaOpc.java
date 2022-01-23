@@ -17,6 +17,8 @@ import Vista.frmBoleta;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ControladorRecargaOpc {
 
@@ -86,9 +88,18 @@ public class ControladorRecargaOpc {
                                     SimpleDateFormat sdfActual = new SimpleDateFormat("yyyy/MM/dd");
                                     ClientePotencial.getCuenta().recargar(Float.parseFloat(vistaRecargaOpc.txtMontoOpcional.getText()),
                                             TarjetaPotencial, sdfActual.format(fechaActual));
-
+                                            //se registra al cliente
                                     if (Configuracion.arrClientes.agregarCliente(ClientePotencial)) {
-                                        JOptionPane.showMessageDialog(vistaRecargaOpc, "Usted ha sido registrado en el PEX!");
+                                        
+
+                                        try {
+                                            Configuracion.serial.serializar("archivoUser.txt",Configuracion.arrClientes);
+                                            JOptionPane.showMessageDialog(vistaRecargaOpc, "Usted ha sido registrado en el PEX!");
+                                        } catch (Exception ex) {
+                                            JOptionPane.showMessageDialog(null,"Fallo en el guardado de archivo");
+                                        }
+                                        
+                                 
                                         Configuracion.getArrClientes().mostrarClientes();
 
 //                                        condicionComprobante = 1;
