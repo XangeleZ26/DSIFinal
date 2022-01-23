@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
 import Modelo.Cuenta;
@@ -152,6 +154,27 @@ public class ControladorRecargaOpc {
                     JOptionPane.showMessageDialog(vistaRecargaOpc, "Aún no calcula em monto final!");
                 }
             }
+        });
+        this.vistaRecargaOpc.txtMontoOpcional.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
+        });
+        this.vistaRecargaOpc.txtNumeroTarjeta.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
+        });
+        this.vistaRecargaOpc.txtCVV.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
         });
     }
 

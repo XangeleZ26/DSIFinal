@@ -5,6 +5,8 @@ import Modelo.Configuracion;
 import Vista.ConfigCambiarTarjeta;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
@@ -30,8 +32,7 @@ public class ControladorConfigCambiarTarjeta {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isValido()) {
-                    /*Falta implementar la validación para la nueva tarjeta que se va a registrar*/
- /*Verificar también que esta no sea igual a la tarjeta anterior*/
+                    
                     user.getCuenta().getTarjeta().setMedioPago(vista.cbxMedioPago.getSelectedItem().toString());
                     user.getCuenta().getTarjeta().setNumTarjeta(vista.txtNumTarjet.getText());
                     user.getCuenta().getTarjeta().setCvv(vista.txtCvv.getText());
@@ -54,6 +55,22 @@ public class ControladorConfigCambiarTarjeta {
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos!");
                 }
             }
+        });
+        
+        this.vista.txtNumTarjet.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
+        });
+        
+        this.vista.txtCvv.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
         });
     }
 

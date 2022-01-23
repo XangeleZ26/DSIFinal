@@ -8,6 +8,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import Vista.frmRUC;
 
 public class ControladorRUC {
@@ -108,6 +110,14 @@ public class ControladorRUC {
                 vistaRUC.lblOjoCerrado2.setVisible(true);
                 vistaRUC.txtVerifContrasena.setEchoChar((char) 0);
             }
+        });
+        
+        this.vistaRUC.txtRUC.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
         });
     }
     

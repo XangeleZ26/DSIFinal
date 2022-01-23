@@ -4,6 +4,8 @@ import Modelo.Cliente;
 import Modelo.Configuracion;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import Modelo.Vehiculo;
 import Modelo.ArregloClientes;
 import Modelo.Configuracion;
@@ -93,6 +95,22 @@ public class ControladorRegistroVehiculo{
                 }
             }
         });
+        
+        this.vistaVehiculo.txtPesoBruto.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
+        });
+        
+        this.vistaVehiculo.txtAño.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
+        });
     }
  
     //PROVENIENTE DEL CONTROLADOR VEHÍCULOS
@@ -153,6 +171,21 @@ public class ControladorRegistroVehiculo{
                     }
                 }
             }
+        });
+        this.vistaVehiculo.txtPesoBruto.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
+        });
+        
+        this.vistaVehiculo.txtAño.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
         });
     }
     

@@ -5,6 +5,8 @@ import Modelo.Configuracion;
 import Vista.frmRecarga;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 
@@ -82,6 +84,22 @@ public class ControladorRecarga {
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos!");
                 }
             }
+        });
+        
+        this.vista.txtMonto.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
+        });
+        
+        this.vista.txtCVV.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
         });
     }
 

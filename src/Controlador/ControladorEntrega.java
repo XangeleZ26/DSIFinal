@@ -3,6 +3,8 @@ package Controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.MouseEvent;
 import Modelo.Direccion;
@@ -127,6 +129,27 @@ public class ControladorEntrega{
                 ctrlRegistroVehiculo.iniciarVehiculo();
                 vistaEntrega.dispose(); 
             }
+        });
+        this.vistaEntrega.txtNumero.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
+        });
+        this.vistaEntrega.txtTelefono.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
+        });
+        this.vistaEntrega.txtProvincia.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if((c<'a' || c>'z') && (c<'A' || c>'Z')) e.consume();
+           }
         });
     }
         

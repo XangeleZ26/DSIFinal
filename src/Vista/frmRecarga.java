@@ -69,7 +69,7 @@ public class frmRecarga extends javax.swing.JFrame {
             .add(PTituloRecargaLayout.createSequentialGroup()
                 .add(100, 100, 100)
                 .add(lblTituloRecarga, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 343, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(107, Short.MAX_VALUE))
+                .addContainerGap(157, Short.MAX_VALUE))
         );
         PTituloRecargaLayout.setVerticalGroup(
             PTituloRecargaLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -79,40 +79,40 @@ public class frmRecarga extends javax.swing.JFrame {
                 .add(28, 28, 28))
         );
 
-        PGeneralRecarga.add(PTituloRecarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, -1));
+        PGeneralRecarga.add(PTituloRecarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, -1));
 
         PContenidoRecarga.setBackground(new java.awt.Color(121, 127, 139));
         PContenidoRecarga.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblMonto.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblMonto.setText("Monto:");
-        PContenidoRecarga.add(lblMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 42, 87, -1));
+        PContenidoRecarga.add(lblMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 40, 87, -1));
 
         lblSimbolo1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblSimbolo1.setText("S/");
-        PContenidoRecarga.add(lblSimbolo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 48, 20, -1));
+        PContenidoRecarga.add(lblSimbolo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 50, 20, -1));
 
         txtMonto.setBackground(new java.awt.Color(121, 127, 139));
         txtMonto.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtMonto.setBorder(null);
-        PContenidoRecarga.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(266, 48, 150, -1));
+        PContenidoRecarga.add(txtMonto, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 50, 150, -1));
 
         medioPago.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        medioPago.setText("xd");
-        PContenidoRecarga.add(medioPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 220, 170, -1));
+        medioPago.setText(".");
+        PContenidoRecarga.add(medioPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 170, -1));
 
         btnAtras.setBackground(new java.awt.Color(121, 127, 139));
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
         btnAtras.setBorder(null);
         btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        PContenidoRecarga.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(463, 441, -1, -1));
+        PContenidoRecarga.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 490, -1, -1));
 
         lblFecha.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         lblFecha.setText("Fecha:");
-        PContenidoRecarga.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(149, 120, -1, -1));
+        PContenidoRecarga.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, -1, -1));
 
         dcFechaPago.setBackground(new java.awt.Color(121, 127, 139));
-        PContenidoRecarga.add(dcFechaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 180, 30));
+        PContenidoRecarga.add(dcFechaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 180, 30));
 
         jPanel1.setBackground(new java.awt.Color(159, 162, 178));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -124,23 +124,23 @@ public class frmRecarga extends javax.swing.JFrame {
         lblDescripcion4.setFont(new java.awt.Font("Times New Roman", 2, 16)); // NOI18N
         lblDescripcion4.setText("Número de tarjeta:");
         lblDescripcion4.setToolTipText("");
-        jPanel1.add(lblDescripcion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+        jPanel1.add(lblDescripcion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
 
         lblDescripcion5.setFont(new java.awt.Font("Times New Roman", 2, 16)); // NOI18N
         lblDescripcion5.setText("Tarjeta:");
         lblDescripcion5.setToolTipText("");
-        jPanel1.add(lblDescripcion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
+        jPanel1.add(lblDescripcion5, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, -1, -1));
 
         lblTarjeta.setFont(new java.awt.Font("Times New Roman", 2, 16)); // NOI18N
-        jPanel1.add(lblTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, 200, 19));
+        jPanel1.add(lblTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 200, 19));
 
         lblNumberT.setFont(new java.awt.Font("Times New Roman", 2, 16)); // NOI18N
-        jPanel1.add(lblNumberT, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 200, 23));
+        jPanel1.add(lblNumberT, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 80, 200, 23));
 
         lblDescripcion6.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         lblDescripcion6.setText("Ingrese su CVV para confirmar la recarga:");
         lblDescripcion6.setToolTipText("");
-        jPanel1.add(lblDescripcion6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 130, -1, -1));
+        jPanel1.add(lblDescripcion6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
 
         btnPagar.setBackground(new java.awt.Color(22, 38, 46));
         btnPagar.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -161,23 +161,23 @@ public class frmRecarga extends javax.swing.JFrame {
                 txtCVVActionPerformed(evt);
             }
         });
-        jPanel1.add(txtCVV, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 130, 90, 20));
+        jPanel1.add(txtCVV, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, 90, 20));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 150, 90, 10));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 150, 90, 10));
 
-        PContenidoRecarga.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 380, 250));
+        PContenidoRecarga.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 380, 250));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        PContenidoRecarga.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 70, 160, 10));
+        PContenidoRecarga.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 70, 160, 10));
 
         lblComprobante1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblComprobante1.setText("Comprobante de pago:");
-        PContenidoRecarga.add(lblComprobante1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, -1, -1));
+        PContenidoRecarga.add(lblComprobante1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, -1, -1));
 
-        PGeneralRecarga.add(PContenidoRecarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 104, 550, 560));
+        PGeneralRecarga.add(PContenidoRecarga, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 104, 600, 560));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

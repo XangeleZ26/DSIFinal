@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import Modelo.Cliente;
 import Modelo.Configuracion;
@@ -194,6 +196,38 @@ public class ControladorCliente{
                 vistaCliente.lblOjoCerrado2.setVisible(true);
                 vistaCliente.txtVerifContrasena.setEchoChar((char) 0);
             }
+        });
+        
+        this.vistaCliente.txtNumeroDocumento.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
+        });
+        
+        this.vistaCliente.txtNombres.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if((c<'a' || c>'z') && (c<'A' || c>'Z')) e.consume();
+           }
+        });
+        
+        this.vistaCliente.txtApPaterno.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if((c<'a' || c>'z') && (c<'A' || c>'Z')) e.consume();
+           }
+        });
+        
+        this.vistaCliente.txtApMaterno.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if((c<'a' || c>'z') && (c<'A' || c>'Z')) e.consume();
+           }
         });
     }
     
