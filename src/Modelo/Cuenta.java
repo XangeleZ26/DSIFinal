@@ -3,8 +3,8 @@ package Modelo;
 import java.io.Serializable;
 import java.util.Date;
 
-public class Cuenta implements Serializable{
-
+public class Cuenta extends Credencial implements Serializable{
+private static final long serialVersionUID=26L;
     private float saldoTotal;
     private float monto;
     private Tarjeta tarjeta;
@@ -17,6 +17,7 @@ public class Cuenta implements Serializable{
 //    private Estacion estacion;
     
     public Cuenta() {
+        super();
         this.saldoTotal = 12;
         this.tarjeta = null;
         this.nv = 0;

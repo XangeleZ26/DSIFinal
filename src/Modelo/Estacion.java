@@ -3,6 +3,7 @@ package Modelo;
 import java.io.Serializable;
 
 public class Estacion implements Serializable{
+    private static final long serialVersionUID=26L;
     private String nombreEstacion;
     private String codigoEstacion;
     //private float tarifaNeta;

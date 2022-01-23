@@ -3,6 +3,7 @@ package Modelo;
 import java.io.Serializable;
 
 public class ArregloClientes implements Serializable {
+    private static final long serialVersionUID=26L;
     private Cliente arregloCliente[];
     private int nc; //Cantidad total de clientes en el arreglo
     private int oc; //Orden en el arreglo del último cliente agregado

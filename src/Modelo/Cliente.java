@@ -1,11 +1,12 @@
-
 package Modelo;
 
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Cliente implements Serializable{
+public class Cliente implements Serializable {
+    
+private static final long serialVersionUID=26L;
     private String tipoDocumento;
     private String numDocumento;
     private String nombres;
@@ -20,12 +21,13 @@ public class Cliente implements Serializable{
     //private Tarjeta tarjeta;
     private Cuenta cuenta;
     private Credencial credencial;
-    
+
     //CONSTRUCTORES
-    public Cliente(){
-        
+    public Cliente() {
+
     }
-    public Cliente(Cliente cliente){
+
+    public Cliente(Cliente cliente) {
         this.tipoDocumento = cliente.getTipoDocumento();
         this.numDocumento = cliente.getNumDocumento();
         this.nombres = cliente.getNombres();
@@ -33,11 +35,15 @@ public class Cliente implements Serializable{
         this.apMaterno = cliente.getApMaterno();
         this.sexo = cliente.getSexo();
         this.fechaNacimiento = cliente.getFechaNacimiento();
-        this.cuenta = new Cuenta();
-        this.credencial = new Credencial(cliente.getCredencial().getCorreo(),cliente.getCredencial().getContraseña());
+//        this.cuenta = new Cuenta();
+//        this.credencial = new Credencial(cliente.getCredencial().getCorreo(),cliente.getCredencial().getContraseña());
+        Cuenta cuentaPolimorfismo = new Cuenta();
+        Credencial credencialPolimorfismo = new Credencial(cliente.getCredencial().getCorreo(), cliente.getCredencial().getContraseña());
+        guardarAtributos(cuentaPolimorfismo);
+        guardarAtributos(credencialPolimorfismo);
     }
-    
-    public Cliente(String tipoDocumento, String numDocumento, String nombres, String apPaterno, String apMaterno, String sexo, String fechaNacimiento, String correo,String contraseña) {
+
+    public Cliente(String tipoDocumento, String numDocumento, String nombres, String apPaterno, String apMaterno, String sexo, String fechaNacimiento, String correo, String contraseña) {
         this.tipoDocumento = tipoDocumento;
         this.numDocumento = numDocumento;
         this.nombres = nombres;
@@ -45,9 +51,15 @@ public class Cliente implements Serializable{
         this.apMaterno = apMaterno;
         this.sexo = sexo;
         this.fechaNacimiento = fechaNacimiento;
-        this.cuenta = new Cuenta();
-        this.credencial = new Credencial (correo,contraseña);         
+//        this.cuenta = new Cuenta();
+//        this.credencial = new Credencial (correo,contraseña);      
+        Cuenta cuentaPolimorfismo = new Cuenta();
+        Credencial credencialPolimorfismo = new Credencial(correo, contraseña);
+        guardarAtributos(cuentaPolimorfismo);
+        guardarAtributos(credencialPolimorfismo);
+
     }
+
     public Cliente(String tipoDocumento, String numDocumento, String nombres, String apPaterno, String apMaterno, String sexo, String fechaNacimiento, String correo) {
         this.tipoDocumento = tipoDocumento;
         this.numDocumento = numDocumento;
@@ -56,53 +68,82 @@ public class Cliente implements Serializable{
         this.apMaterno = apMaterno;
         this.sexo = sexo;
         this.fechaNacimiento = fechaNacimiento;
-        this.cuenta = new Cuenta();
-        this.credencial = new Credencial(correo,numDocumento);           
+//        this.cuenta = new Cuenta();
+//        this.credencial = new Credencial(correo,numDocumento);  
+        Cuenta cuentaPolimorfismo = new Cuenta();
+        Credencial credencialPolimorfismo = new Credencial(correo,numDocumento);  
+        guardarAtributos(cuentaPolimorfismo);
+        guardarAtributos(credencialPolimorfismo);
     }
-    
-    public Cliente(String tipoDocumento, String numDocumento, String correo, String razonSocial){
+
+    public Cliente(String tipoDocumento, String numDocumento, String correo, String razonSocial) {
         this.tipoDocumento = tipoDocumento;
         this.numDocumento = numDocumento;
         this.razonSocial = razonSocial;
-        this.cuenta = new Cuenta();
-        this.credencial = new Credencial(correo,numDocumento);
+//        this.cuenta = new Cuenta();
+//        this.credencial = new Credencial(correo,numDocumento);
+        Cuenta cuentaPolimorfismo = new Cuenta();
+        Credencial credencialPolimorfismo = new Credencial(correo,numDocumento);
+        guardarAtributos(cuentaPolimorfismo);
+        guardarAtributos(credencialPolimorfismo);
     }
-    
-    public Cliente(String tipoDocumento, String numDocumento, String correo, String razonSocial, String contraseña){
+
+    public Cliente(String tipoDocumento, String numDocumento, String correo, String razonSocial, String contraseña) {
         this.tipoDocumento = tipoDocumento;
         this.numDocumento = numDocumento;
         this.razonSocial = razonSocial;
-        this.cuenta = new Cuenta();
-        this.credencial = new Credencial(correo,contraseña);
+//        this.cuenta = new Cuenta();
+//        this.credencial = new Credencial(correo,contraseña);
+        Cuenta cuentaPolimorfismo = new Cuenta();
+        Credencial credencialPolimorfismo = new Credencial(correo,contraseña);
+        guardarAtributos(cuentaPolimorfismo);
+        guardarAtributos(credencialPolimorfismo);
     }
 
     public Cliente(String numDocumento, String correo) {
         this.numDocumento = numDocumento;
-        this.cuenta = new Cuenta();
-        this.credencial = new Credencial(correo);
+//        this.cuenta = new Cuenta();
+//        this.credencial = new Credencial(correo);
+        Cuenta cuentaPolimorfismo = new Cuenta();
+        Credencial credencialPolimorfismo = new Credencial(correo);
+        guardarAtributos(cuentaPolimorfismo);
+        guardarAtributos(credencialPolimorfismo);
     }
 
     public Cliente(String numDocumento, String correo, String contraseña) {
         this.numDocumento = numDocumento;
-        this.cuenta = new Cuenta();
-        this.credencial = new Credencial(correo,contraseña);
+//        this.cuenta = new Cuenta();
+//        this.credencial = new Credencial(correo,contraseña);
+        Cuenta cuentaPolimorfismo = new Cuenta();
+        Credencial credencialPolimorfismo = new Credencial(correo,contraseña);
+        guardarAtributos(cuentaPolimorfismo);
+        guardarAtributos(credencialPolimorfismo);
     }
-    
+
+    //MÉTODO PARA PROBAR EL POLIMORFISMO EN EL TRABAJO
+    public void guardarAtributos(Credencial atributos) {
+        if (atributos instanceof Cuenta) {
+            this.cuenta = (Cuenta) atributos;
+        } else if (atributos instanceof Credencial) {
+            this.credencial = atributos;
+        }
+    }
+
     //MÉTODO Contraseña
-    public int cambioContrasena(String contraseña,String novoContra,String verifContra){
-        int result=0;
-        if(!(this.credencial.getContraseña().equals(contraseña))){
-            result=1;
+    public int cambioContrasena(String contraseña, String novoContra, String verifContra) {
+        int result = 0;
+        if (!(this.credencial.getContraseña().equals(contraseña))) {
+            result = 1;
         }
-         if(!(novoContra.equals(verifContra))){
-            result=2;
+        if (!(novoContra.equals(verifContra))) {
+            result = 2;
         }
-         if((!(this.credencial.getContraseña().equals(contraseña)))&&(!(novoContra.equals(verifContra)))){
-             result=3;
-         }
-          return result;
+        if ((!(this.credencial.getContraseña().equals(contraseña))) && (!(novoContra.equals(verifContra)))) {
+            result = 3;
+        }
+        return result;
     }
-    
+
     //MÉTODOS ACCESORES
     public String getTipoDocumento() {
         return tipoDocumento;
@@ -175,7 +216,7 @@ public class Cliente implements Serializable{
     public void setCredencial(Credencial credencial) {
         this.credencial = credencial;
     }
-    
+
     /*
     public String getCorreo() {
         return correo;
@@ -192,7 +233,7 @@ public class Cliente implements Serializable{
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
-    */
+     */
     public Direccion getDireccion() { //Se puede usar para registrar dirección
         return direccion;
     }
@@ -200,7 +241,7 @@ public class Cliente implements Serializable{
     public void setDireccion(Direccion direccion) {
         this.direccion = direccion;
     }
-    
+
     /*public Tarjeta getTarjeta() { //Se puede usar para registrar tarjeta
         return tarjeta;
     }
@@ -208,7 +249,6 @@ public class Cliente implements Serializable{
     public void setTarjeta(Tarjeta tarjeta) {
         this.tarjeta = tarjeta;
     }*/
-
     public Cuenta getCuenta() {
         return cuenta;
     }
@@ -216,27 +256,27 @@ public class Cliente implements Serializable{
     public void setCuenta(Cuenta cuenta) {
         this.cuenta = cuenta;
     }
-    
+
     //MÉTODOS DEL FUNCIONAMIENTO DE LA CLASE
-    public void registrarDireccion(String departamento, String provincia, String distrito, String avenida, int numero, String referencia, String telefono){
-        this.direccion = new Direccion(departamento,provincia,distrito,avenida,numero, referencia, telefono);
+    public void registrarDireccion(String departamento, String provincia, String distrito, String avenida, int numero, String referencia, String telefono) {
+        this.direccion = new Direccion(departamento, provincia, distrito, avenida, numero, referencia, telefono);
     }
-    
-    public boolean crearCuenta(Tarjeta tarjeta){
+
+    public boolean crearCuenta(Tarjeta tarjeta) {
         boolean result = false;
-        if(tarjeta.verificarValidezTajeta(tarjeta.getNumTarjeta(), tarjeta.getMedioPago())==true && 
-                tarjeta.verificarVigenciaTarjeta(tarjeta.getFechaVencimiento()) == true && 
-                tarjeta.verificarValidezCVV(tarjeta.getCvv(), tarjeta.getMedioPago())==true){
+        if (tarjeta.verificarValidezTajeta(tarjeta.getNumTarjeta(), tarjeta.getMedioPago()) == true
+                && tarjeta.verificarVigenciaTarjeta(tarjeta.getFechaVencimiento()) == true
+                && tarjeta.verificarValidezCVV(tarjeta.getCvv(), tarjeta.getMedioPago()) == true) {
             this.cuenta.setTarjeta(tarjeta);
             result = true;
         }
-        return result; 
+        return result;
     }
-    
+
     /*public void registrarTarjeta(String medioPago, String numTarjeta, String claveTarjeta, String fechaVencimiento, String cvv){
         this.tarjeta = new Tarjeta(medioPago,numTarjeta,claveTarjeta,fechaVencimiento,cvv);
     }*/
-    /*
+ /*
     public void cambiarCorreo(String nuevoCorreo){
         this.correo = nuevoCorreo;
     }
@@ -244,77 +284,72 @@ public class Cliente implements Serializable{
     public void cambiarContraseña(String nuevaContraseña){
         this.contraseña = nuevaContraseña;
     }*/
-    
-    public boolean verificarValidezRUC(String RUC){
+    public boolean verificarValidezRUC(String RUC) {
         boolean result = false;
-        int suma = (Character.getNumericValue(RUC.charAt(0))*5) +
-                       (Character.getNumericValue(RUC.charAt(1))*4) +
-                       (Character.getNumericValue(RUC.charAt(2))*3) +
-                       (Character.getNumericValue(RUC.charAt(3))*2) +
-                       (Character.getNumericValue(RUC.charAt(4))*7) +
-                       (Character.getNumericValue(RUC.charAt(5))*6) +
-                       (Character.getNumericValue(RUC.charAt(6))*5) +
-                       (Character.getNumericValue(RUC.charAt(7))*4) +
-                       (Character.getNumericValue(RUC.charAt(8))*3) + 
-                       (Character.getNumericValue(RUC.charAt(9))*2);        
-            double division = suma/11;
-            long entero = (long) division;
-            int validacion = (int) (11-(suma - (entero*11)));
-            if(validacion == 10){
-                validacion = 0;
-            }
-            else if(validacion == 11){
-                validacion = 1;
-            }
-        
-        if(RUC.length() == 11){
-            if(RUC.charAt(0) == '2' && RUC.charAt(1) == '0'){
-                if(Character.getNumericValue(RUC.charAt(10)) == validacion){
+        int suma = (Character.getNumericValue(RUC.charAt(0)) * 5)
+                + (Character.getNumericValue(RUC.charAt(1)) * 4)
+                + (Character.getNumericValue(RUC.charAt(2)) * 3)
+                + (Character.getNumericValue(RUC.charAt(3)) * 2)
+                + (Character.getNumericValue(RUC.charAt(4)) * 7)
+                + (Character.getNumericValue(RUC.charAt(5)) * 6)
+                + (Character.getNumericValue(RUC.charAt(6)) * 5)
+                + (Character.getNumericValue(RUC.charAt(7)) * 4)
+                + (Character.getNumericValue(RUC.charAt(8)) * 3)
+                + (Character.getNumericValue(RUC.charAt(9)) * 2);
+        double division = suma / 11;
+        long entero = (long) division;
+        int validacion = (int) (11 - (suma - (entero * 11)));
+        if (validacion == 10) {
+            validacion = 0;
+        } else if (validacion == 11) {
+            validacion = 1;
+        }
+
+        if (RUC.length() == 11) {
+            if (RUC.charAt(0) == '2' && RUC.charAt(1) == '0') {
+                if (Character.getNumericValue(RUC.charAt(10)) == validacion) {
                     result = true;
-                }
-                else{
+                } else {
                     result = false;
                 }
-            }
-            else if(RUC.charAt(0) == '1'){
-                switch(RUC.charAt(1)){
+            } else if (RUC.charAt(0) == '1') {
+                switch (RUC.charAt(1)) {
                     case '0':
                     case '5':
                     case '7':
-                        if(Character.getNumericValue(RUC.charAt(10)) == validacion){
+                        if (Character.getNumericValue(RUC.charAt(10)) == validacion) {
                             result = true;
-                        }
-                        else{
+                        } else {
                             result = false;
                         }
                         break;
-                    default: result = false;
+                    default:
+                        result = false;
                         break;
                 }
-            }           
-        }
-        else{
+            }
+        } else {
             result = false;
         }
         return result;
     }
-    
-    public void mostrarClientes(){
+
+    public void mostrarClientes() {
         Configuracion.arrClientes.mostrarClientes();
     }
-    
+
     @Override
     public String toString() {
-        return "***Datos de Usuario***" + "\n" +
-               "Tipo de Documento: " + tipoDocumento + "\n" +
-               "Numero de Documento: " + numDocumento + "\n" +
-               "Nombres: " + nombres + "\n" +
-               "Ap. Paterno: " + apPaterno + "\n" +
-               "Ap. Materno: " + apMaterno + "\n" +
-               "Sexo: " + sexo + "\n" +
-               "Fecha de nacimiento: " + fechaNacimiento + "\n" +
-               "Correo: " + credencial.getCorreo() + "\n" +
-               "Contraseña: " + credencial.getContraseña();
+        return "***Datos de Usuario***" + "\n"
+                + "Tipo de Documento: " + tipoDocumento + "\n"
+                + "Numero de Documento: " + numDocumento + "\n"
+                + "Nombres: " + nombres + "\n"
+                + "Ap. Paterno: " + apPaterno + "\n"
+                + "Ap. Materno: " + apMaterno + "\n"
+                + "Sexo: " + sexo + "\n"
+                + "Fecha de nacimiento: " + fechaNacimiento + "\n"
+                + "Correo: " + credencial.getCorreo() + "\n"
+                + "Contraseña: " + credencial.getContraseña();
     }
-    
+
 }

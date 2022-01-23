@@ -3,15 +3,18 @@ package Modelo;
 import java.io.Serializable;
 
 public class Credencial implements Serializable{
-    private String correo;
-    private String contraseña;
+    private static final long serialVersionUID=26L;
+    protected String correo;
+    protected String contraseña;
 
     //Método constructor
     public Credencial(String correo,String contraseña) {
         this.contraseña = contraseña;
         this.correo = correo;
     }
-    
+    public Credencial(){
+        
+    }
     public Credencial(String correo) {
         this.correo = correo;
     }

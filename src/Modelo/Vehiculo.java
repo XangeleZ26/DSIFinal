@@ -4,6 +4,7 @@ package Modelo;
 import java.io.Serializable;
 
 public class Vehiculo implements Serializable{
+    private static final long serialVersionUID=26L;
     private String placa;
     private String marca;
     private String modelo;

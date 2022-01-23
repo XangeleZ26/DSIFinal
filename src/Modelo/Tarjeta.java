@@ -6,7 +6,7 @@ import java.time.Instant;
 import java.util.Date;
 
 public class Tarjeta implements Serializable{
-
+private static final long serialVersionUID=26L;
     private String medioPago;
     private String numTarjeta;
     private String fechaVencimiento;

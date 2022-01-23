@@ -48,7 +48,7 @@ public class ControladorLogin {
                         }*/
                         Configuracion.arrClientes=(ArregloClientes)Configuracion.serial.deserializar("archivoUser.txt");
                         cliente = Configuracion.arrClientes.buscarCliente(vista.txtUsuarioLogin.getText(), contrasena);
-
+                        System.out.println(Configuracion.arrClientes);
                             ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(cliente);
                             ctrlOpcionesIngreso.iniciar();
                             vista.dispose();

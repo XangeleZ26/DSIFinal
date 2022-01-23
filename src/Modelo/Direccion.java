@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 
 public class Direccion implements Serializable{
+    private static final long serialVersionUID=26L;
     private String departamento;
     private String provincia;
     private String distrito;

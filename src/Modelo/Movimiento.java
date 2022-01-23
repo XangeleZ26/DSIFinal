@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class Movimiento implements Serializable{
-
+private static final long serialVersionUID=26L;
     private String fecha;
     //private String hora;
     private float monto;

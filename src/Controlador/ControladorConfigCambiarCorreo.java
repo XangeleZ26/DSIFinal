@@ -35,7 +35,7 @@ public class ControladorConfigCambiarCorreo {
                 if (isValido()) {
                     if ((String.valueOf(vista.txtContrasena.getPassword())).equals(user.getCredencial().getContraseña())) {
                         
-                        if((vista.txtCorreo.getText()).compareTo(user.getCredencial().getCorreo())==0){
+                      
                             //Este método es boolean, REVISAR
                             user.getCredencial().cambiarCorreo(vista.txtCorreo.getText());
                           
@@ -49,10 +49,7 @@ public class ControladorConfigCambiarCorreo {
                             ControladorConfiguracion ctrlConfiguracion = new ControladorConfiguracion(user);
                             ctrlConfiguracion.iniciar();
                             vista.dispose();
-                        }
-                        else{
-                            JOptionPane.showMessageDialog(null, "Debe escribir un correo diferente al anterior.");
-                        }
+                        
                     } 
                     else {
                         JOptionPane.showMessageDialog(null, "Contraseña de cuenta incorrecta.");

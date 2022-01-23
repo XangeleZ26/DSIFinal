@@ -3,6 +3,7 @@ package Modelo;
 import java.io.Serializable;
 
 public class Peaje implements Serializable{
+    private static final long serialVersionUID=26L;
     private String nombrePeaje;
     private float livianoPublico;
     private float livianoPrivado;
