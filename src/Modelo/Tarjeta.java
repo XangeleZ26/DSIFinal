@@ -85,10 +85,10 @@ private static final long serialVersionUID=26L;
         boolean result = false;
         String aux;
         if(numTarjeta.length() == 16){
-            if(numTarjeta.charAt(0) == '4' && medioPago.compareTo("VISA")==0){ //VISA
+            if(numTarjeta.charAt(0) == '4' && medioPago.equalsIgnoreCase("VISA")){ //VISA
                 result = true;
             }
-            else if(numTarjeta.charAt(0) == '5' && medioPago.compareTo("MASTER CARD")==0){ //MASTER CARD
+            else if(numTarjeta.charAt(0) == '5' && medioPago.equalsIgnoreCase("MASTER CARD")){ //MASTER CARD
                 switch (numTarjeta.charAt(1)){
                     case '1': 
                     case '2': 
@@ -101,7 +101,7 @@ private static final long serialVersionUID=26L;
                 }
             }
         }
-        else if (numTarjeta.length() == 15 && numTarjeta.charAt(0) == '3' && medioPago.compareTo("AMERICAN EXPRESS")==0) {
+        else if (numTarjeta.length() == 15 && numTarjeta.charAt(0) == '3' && medioPago.equalsIgnoreCase("AMERICAN EXPRESS")) {
             switch(numTarjeta.charAt(1)){ //AMERICAN EXPRESS
                 case '4':
                 case '7': result = true;
@@ -110,7 +110,7 @@ private static final long serialVersionUID=26L;
                     break;
             }
         }
-        else if(numTarjeta.length() == 14 && numTarjeta.charAt(0) == '3' && medioPago.compareTo("DINERS CLUB")==0){
+        else if(numTarjeta.length() == 14 && numTarjeta.charAt(0) == '3' && medioPago.equalsIgnoreCase("DINERS CLUB")){
             switch(numTarjeta.charAt(1)){ //DINERS CLUB
                 case '0':
                 case '6':
@@ -128,18 +128,18 @@ private static final long serialVersionUID=26L;
     public boolean verificarValidezCVV(String cvv, String medioPago){
         boolean result = false;
         if(cvv.length() == 3){
-            if(medioPago.compareTo("VISA")==0){
+            if(medioPago.equalsIgnoreCase("VISA")){
                 result = true;
             }
-            else if(medioPago.compareTo("MASTER CARD")==0){
+            else if(medioPago.equalsIgnoreCase("MASTER CARD")){
                 result = true;
             }
         }
         else if(cvv.length() == 4){
-            if(medioPago.compareTo("AMERICAN EXPRESS")==0){
+            if(medioPago.equalsIgnoreCase("AMERICAN EXPRESS")){
                 result = true;
             }
-            else if(medioPago.compareTo("DINERS CLUB")==0){
+            else if(medioPago.equalsIgnoreCase("DINERS CLUB")){
                 result = true;
             }
         }
@@ -150,7 +150,7 @@ private static final long serialVersionUID=26L;
     public boolean verificarVigenciaTarjeta(String fechaVencimiento) {
         boolean result = false;
         Date fechaActual = new Date();
-        SimpleDateFormat fecha = new SimpleDateFormat("yyyy/MM/dd");
+        SimpleDateFormat fecha = new SimpleDateFormat("MM/yyyy");
         if(fechaVencimiento.compareTo(fecha.format(fechaActual))>0){
             return true;
         }

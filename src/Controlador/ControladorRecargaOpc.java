@@ -68,7 +68,7 @@ public class ControladorRecargaOpc {
                     if (datosLlenosRecargaOpc()) {
                         int añoVencimiento = vistaRecargaOpc.jycAñoVencimiento.getYear();
                         int mesVencimiento = vistaRecargaOpc.jmcMesVencimiento.getMonth();
-                        SimpleDateFormat sdfVencimiento = new SimpleDateFormat("dd/MM/yyyy");
+                        SimpleDateFormat sdfVencimiento = new SimpleDateFormat("MM/yyyy");
                         Date fechaVencimiento = new Date(añoVencimiento, mesVencimiento, 00);
                         TarjetaPotencial = new Tarjeta(
                                 vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString(),
@@ -76,8 +76,7 @@ public class ControladorRecargaOpc {
                                 sdfVencimiento.format(fechaVencimiento),
                                 vistaRecargaOpc.txtCVV.getText());
                         if (TarjetaPotencial.verificarVigenciaTarjeta(sdfVencimiento.format(fechaVencimiento))) {
-                            if (TarjetaPotencial.verificarValidezTajeta(vistaRecargaOpc.txtNumeroTarjeta.getText(),
-                                    vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString())) {
+                            if (TarjetaPotencial.verificarValidezTajeta(vistaRecargaOpc.txtNumeroTarjeta.getText(),vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString())) {
                                 if (TarjetaPotencial.verificarValidezCVV(vistaRecargaOpc.txtCVV.getText(),
                                         vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString())) {
 

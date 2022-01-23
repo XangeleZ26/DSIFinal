@@ -3,6 +3,7 @@ package Controlador;
 import Modelo.Cliente;
 import Modelo.Configuracion;
 import Vista.frmRecarga;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
@@ -33,7 +34,7 @@ public class ControladorRecarga {
                 if (isValido()) {
 
                     if (vista.txtCVV.getText().equals(user.getCuenta().getTarjeta().getCvv())) {
-
+                        try{
                         if (Float.parseFloat(vista.txtMonto.getText()) > 0) {
                             SimpleDateFormat sdfPago = new SimpleDateFormat("dd/MM/yyyy"); //doy formato
                             String fechaPago = sdfPago.format(vista.dcFechaPago.getDate()); //indico a q cosa quiero dar formato y lo almaceno
@@ -74,6 +75,9 @@ public class ControladorRecarga {
 
                         } else {
                             JOptionPane.showMessageDialog(null, "No puede recargar un monto negativo!");
+                        }
+                        }catch(NumberFormatException a){
+                            JOptionPane.showMessageDialog(null, "Solo se permiten números!");
                         }
                     } else {
                         JOptionPane.showMessageDialog(null, "CVV incorrecto!");
