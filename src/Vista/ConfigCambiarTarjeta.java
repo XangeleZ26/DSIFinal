@@ -108,7 +108,6 @@ public class ConfigCambiarTarjeta extends javax.swing.JFrame {
 
         cbxMedioPago.setBackground(new java.awt.Color(121, 127, 139));
         cbxMedioPago.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        cbxMedioPago.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "                                  ", "Visa (Crédito o débito)", "Master Card (Crédito o débito)", "American Express (Crédito)", "Diners Club (Crédito)", " " }));
         cbxMedioPago.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel1.add(cbxMedioPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 80, 280, -1));
 

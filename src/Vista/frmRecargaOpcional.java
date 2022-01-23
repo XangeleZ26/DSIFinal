@@ -68,12 +68,11 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         btnCalcular = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         txtTotal = new javax.swing.JTextField();
-        jycAñoVencimiento = new com.toedter.calendar.JYearChooser();
-        jmcMesVencimiento = new com.toedter.calendar.JMonthChooser();
         btnFactura = new javax.swing.JButton();
         btnBoleta = new javax.swing.JButton();
         txtMontoOpcional = new javax.swing.JTextField();
         btnAtras = new javax.swing.JButton();
+        dcFechaVencimiento = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -291,12 +290,6 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
 
         PContenidoRecargaOpcional.add(PDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 300, 260));
 
-        jycAñoVencimiento.setBackground(new java.awt.Color(121, 127, 139));
-        PContenidoRecargaOpcional.add(jycAñoVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 570, -1, -1));
-
-        jmcMesVencimiento.setForeground(new java.awt.Color(0, 0, 0));
-        PContenidoRecargaOpcional.add(jmcMesVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 570, -1, -1));
-
         btnFactura.setBackground(new java.awt.Color(22, 38, 46));
         btnFactura.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnFactura.setForeground(new java.awt.Color(255, 255, 255));
@@ -340,6 +333,9 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         btnAtras.setBorder(null);
         btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         PContenidoRecargaOpcional.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, -1, -1));
+
+        dcFechaVencimiento.setBackground(new java.awt.Color(121, 127, 139));
+        PContenidoRecargaOpcional.add(dcFechaVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 560, 170, -1));
 
         PGeneralRecargaOpcional.add(PContenidoRecargaOpcional, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 750, 660));
 
@@ -440,14 +436,13 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
     public javax.swing.JButton btnFactura;
     public javax.swing.JButton btnFinalizar;
     public javax.swing.JComboBox<String> cbxMedioPago;
+    public com.toedter.calendar.JDateChooser dcFechaVencimiento;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTextPane jTextPane1;
-    public com.toedter.calendar.JMonthChooser jmcMesVencimiento;
-    public com.toedter.calendar.JYearChooser jycAñoVencimiento;
     private javax.swing.JLabel lblComprobante;
     private javax.swing.JLabel lblDelivery;
     private javax.swing.JLabel lblDescripcion1;

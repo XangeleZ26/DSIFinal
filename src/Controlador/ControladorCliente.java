@@ -11,12 +11,14 @@ import Modelo.Cliente;
 import Modelo.Configuracion;
 import Modelo.ArregloClientes; 
 import Vista.frmCliente;
+import Vista.frmPaginaPrincipal;
 import java.text.SimpleDateFormat;
 import javax.swing.DefaultComboBoxModel;
  
 public class ControladorCliente{
     private frmCliente vistaCliente;
     private Cliente ClientePotencial; 
+    frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
     
     /*En este atributo se guardarán los datos del cliente que 
     posiblemente se registre. El registro se realizará en la clase Controlador Recarga Opcional*/
@@ -227,6 +229,15 @@ public class ControladorCliente{
            public void keyTyped(KeyEvent e){
                char c = e.getKeyChar();
                if((c<'a' || c>'z') && (c<'A' || c>'Z')) e.consume();
+           }
+        });
+        
+        this.vistaCliente.btnAtras.addActionListener(new ActionListener(){
+           @Override
+           public void actionPerformed(ActionEvent e){
+               ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
+                ctrlPrincipal.iniciar();
+                vistaCliente.dispose();
            }
         });
     }
