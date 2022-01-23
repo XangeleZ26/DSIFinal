@@ -333,7 +333,38 @@ private static final long serialVersionUID=26L;
         }
         return result;
     }
-
+    
+    public boolean verificarValidezDNI(String DNI){
+        boolean result = false;
+        if(DNI.length()==8){
+            result = true;
+        }
+        return result;
+    }
+    
+    public boolean verificarValidezExtranjeria(String CarnetExtranjeria){
+        boolean result = false;
+        if(CarnetExtranjeria.length()==9){
+            result = true;
+        }
+        return result;
+    }
+    
+    public boolean verificarEdad(String fechaNacimiento){
+        boolean result = false;
+        Date fechaActual = new Date();
+        SimpleDateFormat fecha = new SimpleDateFormat("yyyy/MM/dd");
+        int mil = Character.getNumericValue(fechaNacimiento.charAt(0)) * 1000;
+        int cien = Character.getNumericValue(fechaNacimiento.charAt(1)) * 100;
+        int diez = Character.getNumericValue(fechaNacimiento.charAt(2)) * 10;
+        int unidad = Character.getNumericValue(fechaNacimiento.charAt(3));
+        int añoNacimiento = mil + cien + diez+ unidad;
+        if(fechaActual.getYear()+ 1900 - añoNacimiento >=18){
+            return true;
+        }
+        
+        return result;
+    }
     public void mostrarClientes() {
         Configuracion.arrClientes.mostrarClientes();
     }

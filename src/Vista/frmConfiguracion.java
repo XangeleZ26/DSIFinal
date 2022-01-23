@@ -142,19 +142,19 @@ public class frmConfiguracion extends javax.swing.JFrame {
         btnCambioContrasena.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnCambioContrasena.setForeground(new java.awt.Color(255, 255, 255));
         btnCambioContrasena.setText("Cambiar contraseña");
-        PContenidoConfiguracion.add(btnCambioContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 390, 180, 30));
+        PContenidoConfiguracion.add(btnCambioContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 190, 30));
 
         btnCambioTarjet.setBackground(new java.awt.Color(22, 38, 46));
         btnCambioTarjet.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnCambioTarjet.setForeground(new java.awt.Color(255, 255, 255));
         btnCambioTarjet.setText("Cambiar tarjeta");
-        PContenidoConfiguracion.add(btnCambioTarjet, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 470, 180, 30));
+        PContenidoConfiguracion.add(btnCambioTarjet, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 190, 30));
 
         btnCambioCorreo.setBackground(new java.awt.Color(22, 38, 46));
         btnCambioCorreo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnCambioCorreo.setForeground(new java.awt.Color(255, 255, 255));
         btnCambioCorreo.setText("Cambiar correo");
-        PContenidoConfiguracion.add(btnCambioCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 430, 180, 30));
+        PContenidoConfiguracion.add(btnCambioCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 190, 30));
 
         txtContrasena.setEditable(false);
         txtContrasena.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N

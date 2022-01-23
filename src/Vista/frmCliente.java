@@ -68,6 +68,7 @@ public class frmCliente extends javax.swing.JFrame {
         lblOjoCerrado2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtDescripcionLogin = new javax.swing.JTextPane();
+        btnAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -382,6 +383,12 @@ public class frmCliente extends javax.swing.JFrame {
 
         PContraseña.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 20, 430, -1));
 
+        btnAtras.setBackground(new java.awt.Color(159, 162, 178));
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
+        btnAtras.setBorder(null);
+        btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContraseña.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+
         PGeneral2.add(PContraseña, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 550, 670, 250));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
@@ -458,6 +465,7 @@ public class frmCliente extends javax.swing.JFrame {
     private javax.swing.JPanel PContraseña;
     private javax.swing.JPanel PGeneral2;
     private javax.swing.JPanel PTituloPeronales;
+    public javax.swing.JButton btnAtras;
     public javax.swing.JButton btnOpcionRUC;
     public javax.swing.JButton btnSiguiente1;
     public javax.swing.JComboBox<String> cbxSexo;

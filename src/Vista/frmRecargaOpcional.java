@@ -68,11 +68,12 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         btnCalcular = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         txtTotal = new javax.swing.JTextField();
-        jycAñoVencimiento = new com.toedter.calendar.JYearChooser();
-        jmcMesVencimiento = new com.toedter.calendar.JMonthChooser();
         btnFactura = new javax.swing.JButton();
         btnBoleta = new javax.swing.JButton();
         txtMontoOpcional = new javax.swing.JTextField();
+        btnAtras = new javax.swing.JButton();
+        jmcMesVencimiento = new com.toedter.calendar.JMonthChooser();
+        jycAñoVencimiento = new com.toedter.calendar.JYearChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -119,11 +120,11 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
 
         lblMontoOpcional.setFont(new java.awt.Font("Times New Roman", 0, 28)); // NOI18N
         lblMontoOpcional.setText("Monto:");
-        PContenidoRecargaOpcional.add(lblMontoOpcional, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 213, 87, -1));
+        PContenidoRecargaOpcional.add(lblMontoOpcional, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 87, -1));
 
         lblSimbolo1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         lblSimbolo1.setText("S/");
-        PContenidoRecargaOpcional.add(lblSimbolo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 222, 20, -1));
+        PContenidoRecargaOpcional.add(lblSimbolo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 210, 20, -1));
 
         txtCVV.setBackground(new java.awt.Color(121, 127, 139));
         txtCVV.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -133,57 +134,57 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
                 txtCVVActionPerformed(evt);
             }
         });
-        PContenidoRecargaOpcional.add(txtCVV, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 600, 120, 30));
+        PContenidoRecargaOpcional.add(txtCVV, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 550, 120, 30));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        PContenidoRecargaOpcional.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 250, 125, 10));
+        PContenidoRecargaOpcional.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 125, 10));
 
         lblComprobante.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblComprobante.setText("Comprobante de pago");
-        PContenidoRecargaOpcional.add(lblComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 280, -1, -1));
+        PContenidoRecargaOpcional.add(lblComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
 
         lblMedioPago.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblMedioPago.setText("Medio de pago");
-        PContenidoRecargaOpcional.add(lblMedioPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 384, 218, -1));
+        PContenidoRecargaOpcional.add(lblMedioPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 218, -1));
 
         lblDescripcion3.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         lblDescripcion3.setText("Elija su medio de pago");
         lblDescripcion3.setToolTipText("");
-        PContenidoRecargaOpcional.add(lblDescripcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 419, 179, -1));
+        PContenidoRecargaOpcional.add(lblDescripcion3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, 179, -1));
 
         cbxMedioPago.setBackground(new java.awt.Color(121, 127, 139));
         cbxMedioPago.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         cbxMedioPago.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        PContenidoRecargaOpcional.add(cbxMedioPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 446, 243, -1));
+        PContenidoRecargaOpcional.add(cbxMedioPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, 243, -1));
 
         lblDescripcion4.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         lblDescripcion4.setText("Digite su número de tarjeta");
         lblDescripcion4.setToolTipText("");
-        PContenidoRecargaOpcional.add(lblDescripcion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 497, 216, -1));
+        PContenidoRecargaOpcional.add(lblDescripcion4, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, 216, -1));
 
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
-        PContenidoRecargaOpcional.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 550, 230, 10));
+        PContenidoRecargaOpcional.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 510, 230, 10));
 
         txtNumeroTarjeta.setBackground(new java.awt.Color(121, 127, 139));
         txtNumeroTarjeta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtNumeroTarjeta.setBorder(null);
-        PContenidoRecargaOpcional.add(txtNumeroTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 524, 240, 30));
+        PContenidoRecargaOpcional.add(txtNumeroTarjeta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 480, 230, 30));
 
         lblDescripcion6.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         lblDescripcion6.setText("Fecha de vencimiento de la tarjeta");
         lblDescripcion6.setToolTipText("");
-        PContenidoRecargaOpcional.add(lblDescripcion6, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 567, -1, -1));
+        PContenidoRecargaOpcional.add(lblDescripcion6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 530, -1, -1));
 
         lblDescripcion7.setFont(new java.awt.Font("Times New Roman", 2, 18)); // NOI18N
         lblDescripcion7.setText("CVV");
         lblDescripcion7.setToolTipText("");
-        PContenidoRecargaOpcional.add(lblDescripcion7, new org.netbeans.lib.awtextra.AbsoluteConstraints(418, 567, 122, -1));
+        PContenidoRecargaOpcional.add(lblDescripcion7, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 530, 122, -1));
 
         jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator5.setForeground(new java.awt.Color(0, 0, 0));
-        PContenidoRecargaOpcional.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 630, 122, 10));
+        PContenidoRecargaOpcional.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 580, 122, 10));
 
         btnFinalizar.setBackground(new java.awt.Color(121, 127, 153));
         btnFinalizar.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -195,7 +196,7 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
                 btnFinalizarActionPerformed(evt);
             }
         });
-        PContenidoRecargaOpcional.add(btnFinalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(622, 606, -1, -1));
+        PContenidoRecargaOpcional.add(btnFinalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 610, -1, -1));
 
         jTextPane1.setEditable(false);
         jTextPane1.setBackground(new java.awt.Color(121, 127, 139));
@@ -204,7 +205,7 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         jTextPane1.setText("Inicialmente cuenta con un saldo de S/ 12.00 en su cuenta PEX.\nSi desea recargar con un monto extra digítelo a continuación. ");
         jScrollPane1.setViewportView(jTextPane1);
 
-        PContenidoRecargaOpcional.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 121, 295, -1));
+        PContenidoRecargaOpcional.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 295, -1));
 
         PDatos.setBackground(new java.awt.Color(121, 127, 153));
         PDatos.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -288,18 +289,13 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         });
         PDatos.add(txtTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 92, -1));
 
-        PContenidoRecargaOpcional.add(PDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(403, 121, 300, 260));
-
-        jycAñoVencimiento.setBackground(new java.awt.Color(121, 127, 139));
-        PContenidoRecargaOpcional.add(jycAñoVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(219, 606, -1, -1));
-
-        jmcMesVencimiento.setForeground(new java.awt.Color(0, 0, 0));
-        PContenidoRecargaOpcional.add(jmcMesVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(74, 606, -1, -1));
+        PContenidoRecargaOpcional.add(PDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 300, 260));
 
         btnFactura.setBackground(new java.awt.Color(22, 38, 46));
         btnFactura.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnFactura.setForeground(new java.awt.Color(255, 255, 255));
         btnFactura.setText("Factura");
+        btnFactura.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnFactura.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnFacturaMouseClicked(evt);
@@ -310,7 +306,7 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
                 btnFacturaActionPerformed(evt);
             }
         });
-        PContenidoRecargaOpcional.add(btnFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 90, 37));
+        PContenidoRecargaOpcional.add(btnFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 90, 37));
 
         btnBoleta.setBackground(new java.awt.Color(22, 38, 46));
         btnBoleta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -326,14 +322,26 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
                 btnBoletaActionPerformed(evt);
             }
         });
-        PContenidoRecargaOpcional.add(btnBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 320, 90, 37));
+        PContenidoRecargaOpcional.add(btnBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 90, 37));
 
         txtMontoOpcional.setBackground(new java.awt.Color(121, 127, 139));
         txtMontoOpcional.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtMontoOpcional.setBorder(null);
-        PContenidoRecargaOpcional.add(txtMontoOpcional, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 220, 100, 20));
+        PContenidoRecargaOpcional.add(txtMontoOpcional, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 210, 100, 20));
 
-        PGeneralRecargaOpcional.add(PContenidoRecargaOpcional, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 750, 670));
+        btnAtras.setBackground(new java.awt.Color(121, 127, 139));
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
+        btnAtras.setBorder(null);
+        btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContenidoRecargaOpcional.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, -1, -1));
+
+        jmcMesVencimiento.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoRecargaOpcional.add(jmcMesVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, -1, 30));
+
+        jycAñoVencimiento.setBackground(new java.awt.Color(121, 127, 139));
+        PContenidoRecargaOpcional.add(jycAñoVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 560, 80, 30));
+
+        PGeneralRecargaOpcional.add(PContenidoRecargaOpcional, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 750, 660));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -426,6 +434,7 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
     private javax.swing.JPanel PDatos;
     private javax.swing.JPanel PGeneralRecargaOpcional;
     private javax.swing.JPanel PTituloRecargaOpcional;
+    public javax.swing.JButton btnAtras;
     public javax.swing.JButton btnBoleta;
     public javax.swing.JButton btnCalcular;
     public javax.swing.JButton btnFactura;

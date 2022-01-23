@@ -20,12 +20,12 @@ public class Serializacion {
     private ObjectOutputStream escribir;
     private ObjectInputStream lector;
     public Serializacion(){
-  try {
-        File archivo=new File("C:/Users/GIGABYTE/Desktop/VS CODES/Java/G04_ProyectoFinal/archivoUser.txt");       
-            archivo.createNewFile();
-        } catch (IOException ex) {
-          JOptionPane.showMessageDialog(null,"No se pudo crear el archivo");
-        }
+//  try {
+//        File archivo=new File("C:/Users/GIGABYTE/Desktop/VS CODES/Java/G04_ProyectoFinal/archivoUser.txt");       
+//            archivo.createNewFile();
+//        } catch (IOException ex) {
+//          JOptionPane.showMessageDialog(null,"No se pudo crear el archivo");
+//        }
     }
     public void serializar(String archivo,Object arreglo) throws Exception{
         try { 

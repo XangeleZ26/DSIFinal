@@ -101,7 +101,7 @@ public class AppPeaje {
         Date fechaVen=new Date();
         Date fechaVencimiento1 = new Date(2025-1900, 12-1, 6);
         Date fechaVencimiento2 = new Date(2020-1900, 7-1, 6);
-        
+
         Tarjeta tarjeta = new Tarjeta("VISA","5040808012345678", fecha.format(fechaVencimiento1),"125");
         System.out.println("Cuenta creada: "+clientes.getArregloCliente(0).crearCuenta(tarjeta));
         tarjeta = new Tarjeta("VISA","4040808012345678", fecha.format(fechaVencimiento2),"123");

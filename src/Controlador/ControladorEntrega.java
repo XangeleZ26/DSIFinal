@@ -3,6 +3,8 @@ package Controlador;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.event.MouseEvent;
 import Modelo.Direccion;
@@ -88,7 +90,7 @@ public class ControladorEntrega{
             @Override
             public void actionPerformed(ActionEvent e){
                 if(vistaEntrega.cbxDepartamento.getSelectedItem().toString().trim().length() != 0){
-                    if(vistaEntrega.cbxDepartamento.getSelectedIndex()>0){
+                    if(vistaEntrega.cbxDepartamento.getSelectedIndex()>-1){
                         if(vistaEntrega.cbxDepartamento.getSelectedItem().toString().equalsIgnoreCase("LIMA")){
                             vistaEntrega.cbxProvinciaLima.setVisible(true);
                             vistaEntrega.txtProvincia.setVisible(false);
@@ -107,7 +109,7 @@ public class ControladorEntrega{
             @Override
             public void actionPerformed(ActionEvent e){
                 if(vistaEntrega.cbxProvinciaLima.getSelectedItem().toString().trim().length() != 0){
-                    if(vistaEntrega.cbxProvinciaLima.getSelectedIndex()>0){
+                    if(vistaEntrega.cbxProvinciaLima.getSelectedIndex()>-1){
                         if(vistaEntrega.cbxProvinciaLima.getSelectedItem().toString().equalsIgnoreCase("LIMA")){
                             vistaEntrega.cbxDistrito.setVisible(true);
                             vistaEntrega.txtDistrito.setVisible(false);
@@ -119,6 +121,35 @@ public class ControladorEntrega{
                     }
                 }
             }
+        });
+        this.vistaEntrega.btnAtras.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                ctrlRegistroVehiculo.iniciarVehiculo();
+                vistaEntrega.dispose(); 
+            }
+        });
+        this.vistaEntrega.txtNumero.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
+        });
+        this.vistaEntrega.txtTelefono.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
+        });
+        this.vistaEntrega.txtProvincia.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if((c<'a' || c>'z') && (c<'A' || c>'Z')) e.consume();
+           }
         });
     }
         

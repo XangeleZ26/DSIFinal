@@ -4,17 +4,21 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 import javax.swing.JOptionPane;
 import Modelo.Cliente;
 import Modelo.Configuracion;
 import Modelo.ArregloClientes; 
 import Vista.frmCliente;
+import Vista.frmPaginaPrincipal;
 import java.text.SimpleDateFormat;
 import javax.swing.DefaultComboBoxModel;
  
 public class ControladorCliente{
     private frmCliente vistaCliente;
     private Cliente ClientePotencial; 
+    frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
     
     /*En este atributo se guardarán los datos del cliente que 
     posiblemente se registre. El registro se realizará en la clase Controlador Recarga Opcional*/
@@ -38,11 +42,15 @@ public class ControladorCliente{
                     if(!Configuracion.arrClientes.verificarExistenciaCliente(
                     vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
                     vistaCliente.txtNumeroDocumento.getText())){
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");    
                         if(!Configuracion.arrClientes.verificarExistenciaCorreo(vistaCliente.txtEmail.getText())){
+                            if(ClientePotencial.verificarEdad(sdf.format(vistaCliente.dcFechaNacimiento.getDate()))){
                             String contra = String.valueOf(vistaCliente.txtContrasena.getPassword());
                             String contraVerif = String.valueOf(vistaCliente.txtVerifContrasena.getPassword());    
-                            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                            if(contra != null && contraVerif !=null){
+                            
+                            if(vistaCliente.cbxTipoDocumento.getSelectedItem().toString().equalsIgnoreCase("DNI")){
+                            if(ClientePotencial.verificarValidezDNI(vistaCliente.txtNumeroDocumento.getText())){
+                                if(contra != null && contraVerif !=null){
                                 if(contra.equalsIgnoreCase(contraVerif)){
                                     ClientePotencial = new Cliente(
                                                     vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
@@ -63,23 +71,81 @@ public class ControladorCliente{
                                 else{
                                     JOptionPane.showMessageDialog(null, "Verificación de contraseña incorrecta.");
                                 }
+                                }
+                                else{
+                                    ClientePotencial = new Cliente(
+                                                    vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
+                                                    vistaCliente.txtNumeroDocumento.getText(),
+                                                    vistaCliente.txtNombres.getText(),
+                                                    vistaCliente.txtApPaterno.getText(),
+                                                    vistaCliente.txtApMaterno.getText(),
+                                                    vistaCliente.cbxSexo.getSelectedItem().toString(),
+                                                    sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
+                                                    vistaCliente.txtEmail.getText(),
+                                                    vistaCliente.txtNumeroDocumento.getText());
+
+                                        JOptionPane.showMessageDialog(vistaCliente, "Datos del cliente registrados, puede continuar con su registro.");        
+                                                    ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                                                    ctrlRegistroVehiculo.iniciarVehiculo();
+                                                    vistaCliente.dispose(); 
+                                }
                             }
                             else{
-                                ClientePotencial = new Cliente(
-                                                vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
-                                                vistaCliente.txtNumeroDocumento.getText(),
-                                                vistaCliente.txtNombres.getText(),
-                                                vistaCliente.txtApPaterno.getText(),
-                                                vistaCliente.txtApMaterno.getText(),
-                                                vistaCliente.cbxSexo.getSelectedItem().toString(),
-                                                sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
-                                                vistaCliente.txtEmail.getText(),
-                                                vistaCliente.txtNumeroDocumento.getText());
-                                
-                                    JOptionPane.showMessageDialog(vistaCliente, "Datos del cliente registrados, puede continuar con su registro.");        
-                                                ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
-                                                ctrlRegistroVehiculo.iniciarVehiculo();
-                                                vistaCliente.dispose(); 
+                                JOptionPane.showMessageDialog(vistaCliente, "Número de DNI inválido.");
+                                vistaCliente.txtNumeroDocumento.setText(null);
+                            }
+                            }
+                            else if(vistaCliente.cbxTipoDocumento.getSelectedItem().toString().equalsIgnoreCase("Carnet Extranjería")){
+                                if(ClientePotencial.verificarValidezExtranjeria(vistaCliente.txtNumeroDocumento.getText())){
+                                    if(contra != null && contraVerif !=null){
+                                if(contra.equalsIgnoreCase(contraVerif)){
+                                    ClientePotencial = new Cliente(
+                                                    vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
+                                                    vistaCliente.txtNumeroDocumento.getText(),
+                                                    vistaCliente.txtNombres.getText(),
+                                                    vistaCliente.txtApPaterno.getText(),
+                                                    vistaCliente.txtApMaterno.getText(),
+                                                    vistaCliente.cbxSexo.getSelectedItem().toString(),
+                                                    sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
+                                                    vistaCliente.txtEmail.getText(),
+                                                    contra);
+                                    
+                                    JOptionPane.showMessageDialog(vistaCliente, "Datos del cliente registrados, puede continuar con su registro.");
+                                                    ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                                                    ctrlRegistroVehiculo.iniciarVehiculo();
+                                                    vistaCliente.dispose(); 
+                                }
+                                else{
+                                    JOptionPane.showMessageDialog(null, "Verificación de contraseña incorrecta.");
+                                }
+                                }
+                                else{
+                                    ClientePotencial = new Cliente(
+                                                    vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
+                                                    vistaCliente.txtNumeroDocumento.getText(),
+                                                    vistaCliente.txtNombres.getText(),
+                                                    vistaCliente.txtApPaterno.getText(),
+                                                    vistaCliente.txtApMaterno.getText(),
+                                                    vistaCliente.cbxSexo.getSelectedItem().toString(),
+                                                    sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
+                                                    vistaCliente.txtEmail.getText(),
+                                                    vistaCliente.txtNumeroDocumento.getText());
+
+                                        JOptionPane.showMessageDialog(vistaCliente, "Datos del cliente registrados, puede continuar con su registro.");        
+                                                    ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                                                    ctrlRegistroVehiculo.iniciarVehiculo();
+                                                    vistaCliente.dispose(); 
+                                }
+                                }
+                                else{
+                                    JOptionPane.showMessageDialog(vistaCliente, "Número de Carnet de extranjería inválido.");
+                                    vistaCliente.txtNumeroDocumento.setText(null);
+                                }
+                            }
+                            }
+                            else{
+                                JOptionPane.showMessageDialog(vistaCliente, "Usted no cuenta con la edad suficiente.");
+                                limpiarDatosCliente();
                             }
                         }
                         else{
@@ -132,6 +198,47 @@ public class ControladorCliente{
                 vistaCliente.lblOjoCerrado2.setVisible(true);
                 vistaCliente.txtVerifContrasena.setEchoChar((char) 0);
             }
+        });
+        
+        this.vistaCliente.txtNumeroDocumento.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if(c<'0' || c>'9') e.consume();
+           }
+        });
+        
+        this.vistaCliente.txtNombres.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if((c<'a' || c>'z') && (c<'A' || c>'Z')) e.consume();
+           }
+        });
+        
+        this.vistaCliente.txtApPaterno.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if((c<'a' || c>'z') && (c<'A' || c>'Z')) e.consume();
+           }
+        });
+        
+        this.vistaCliente.txtApMaterno.addKeyListener(new KeyAdapter(){
+           @Override
+           public void keyTyped(KeyEvent e){
+               char c = e.getKeyChar();
+               if((c<'a' || c>'z') && (c<'A' || c>'Z')) e.consume();
+           }
+        });
+        
+        this.vistaCliente.btnAtras.addActionListener(new ActionListener(){
+           @Override
+           public void actionPerformed(ActionEvent e){
+               ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
+                ctrlPrincipal.iniciar();
+                vistaCliente.dispose();
+           }
         });
     }
     
