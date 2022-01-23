@@ -120,6 +120,14 @@ public class ControladorEntrega{
                 }
             }
         });
+        this.vistaEntrega.btnAtras.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                ctrlRegistroVehiculo.iniciarVehiculo();
+                vistaEntrega.dispose(); 
+            }
+        });
     }
         
     public void iniciarEntrega(){

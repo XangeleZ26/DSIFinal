@@ -59,8 +59,15 @@ public class ControladorRecargaOpc {
                 }
             }
         });
-        /*PUEDE FALLAR DEBIDO A QUE LA TARJETA POTENCIAL AÚN NO SE HA INICIALIZADO
-        REVISAR LA VALIDEZ DE LA FECHA DE VENCIMIENTO ANTES DE REGISTRAR UNA TARJETA*/
+        this.vistaRecargaOpc.btnAtras.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                ControladorEntrega ctrlEntrega = new ControladorEntrega(ClientePotencial);
+                ctrlEntrega.iniciarEntrega();
+                vistaRecargaOpc.dispose(); 
+            }
+        });
+        
         this.vistaRecargaOpc.btnFinalizar.addActionListener(new ActionListener() { //HACER REGISTRO DEL CLIENTE AQUÍ
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -146,7 +153,6 @@ public class ControladorRecargaOpc {
                 }
             }
         });
-
     }
 
     public void iniciarRecargaOpc() {

@@ -38,11 +38,15 @@ public class ControladorCliente{
                     if(!Configuracion.arrClientes.verificarExistenciaCliente(
                     vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
                     vistaCliente.txtNumeroDocumento.getText())){
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");    
                         if(!Configuracion.arrClientes.verificarExistenciaCorreo(vistaCliente.txtEmail.getText())){
+                            if(ClientePotencial.verificarEdad(sdf.format(vistaCliente.dcFechaNacimiento.getDate()))){
                             String contra = String.valueOf(vistaCliente.txtContrasena.getPassword());
                             String contraVerif = String.valueOf(vistaCliente.txtVerifContrasena.getPassword());    
-                            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-                            if(contra != null && contraVerif !=null){
+                            
+                            if(vistaCliente.cbxTipoDocumento.getSelectedItem().toString().equalsIgnoreCase("DNI")){
+                            if(ClientePotencial.verificarValidezDNI(vistaCliente.txtNumeroDocumento.getText())){
+                                if(contra != null && contraVerif !=null){
                                 if(contra.equalsIgnoreCase(contraVerif)){
                                     ClientePotencial = new Cliente(
                                                     vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
@@ -63,23 +67,81 @@ public class ControladorCliente{
                                 else{
                                     JOptionPane.showMessageDialog(null, "Verificación de contraseña incorrecta.");
                                 }
+                                }
+                                else{
+                                    ClientePotencial = new Cliente(
+                                                    vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
+                                                    vistaCliente.txtNumeroDocumento.getText(),
+                                                    vistaCliente.txtNombres.getText(),
+                                                    vistaCliente.txtApPaterno.getText(),
+                                                    vistaCliente.txtApMaterno.getText(),
+                                                    vistaCliente.cbxSexo.getSelectedItem().toString(),
+                                                    sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
+                                                    vistaCliente.txtEmail.getText(),
+                                                    vistaCliente.txtNumeroDocumento.getText());
+
+                                        JOptionPane.showMessageDialog(vistaCliente, "Datos del cliente registrados, puede continuar con su registro.");        
+                                                    ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                                                    ctrlRegistroVehiculo.iniciarVehiculo();
+                                                    vistaCliente.dispose(); 
+                                }
                             }
                             else{
-                                ClientePotencial = new Cliente(
-                                                vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
-                                                vistaCliente.txtNumeroDocumento.getText(),
-                                                vistaCliente.txtNombres.getText(),
-                                                vistaCliente.txtApPaterno.getText(),
-                                                vistaCliente.txtApMaterno.getText(),
-                                                vistaCliente.cbxSexo.getSelectedItem().toString(),
-                                                sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
-                                                vistaCliente.txtEmail.getText(),
-                                                vistaCliente.txtNumeroDocumento.getText());
-                                
-                                    JOptionPane.showMessageDialog(vistaCliente, "Datos del cliente registrados, puede continuar con su registro.");        
-                                                ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
-                                                ctrlRegistroVehiculo.iniciarVehiculo();
-                                                vistaCliente.dispose(); 
+                                JOptionPane.showMessageDialog(vistaCliente, "Número de DNI inválido.");
+                                vistaCliente.txtNumeroDocumento.setText(null);
+                            }
+                            }
+                            else if(vistaCliente.cbxTipoDocumento.getSelectedItem().toString().equalsIgnoreCase("Carnet Extranjería")){
+                                if(ClientePotencial.verificarValidezExtranjeria(vistaCliente.txtNumeroDocumento.getText())){
+                                    if(contra != null && contraVerif !=null){
+                                if(contra.equalsIgnoreCase(contraVerif)){
+                                    ClientePotencial = new Cliente(
+                                                    vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
+                                                    vistaCliente.txtNumeroDocumento.getText(),
+                                                    vistaCliente.txtNombres.getText(),
+                                                    vistaCliente.txtApPaterno.getText(),
+                                                    vistaCliente.txtApMaterno.getText(),
+                                                    vistaCliente.cbxSexo.getSelectedItem().toString(),
+                                                    sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
+                                                    vistaCliente.txtEmail.getText(),
+                                                    contra);
+                                    
+                                    JOptionPane.showMessageDialog(vistaCliente, "Datos del cliente registrados, puede continuar con su registro.");
+                                                    ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                                                    ctrlRegistroVehiculo.iniciarVehiculo();
+                                                    vistaCliente.dispose(); 
+                                }
+                                else{
+                                    JOptionPane.showMessageDialog(null, "Verificación de contraseña incorrecta.");
+                                }
+                                }
+                                else{
+                                    ClientePotencial = new Cliente(
+                                                    vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
+                                                    vistaCliente.txtNumeroDocumento.getText(),
+                                                    vistaCliente.txtNombres.getText(),
+                                                    vistaCliente.txtApPaterno.getText(),
+                                                    vistaCliente.txtApMaterno.getText(),
+                                                    vistaCliente.cbxSexo.getSelectedItem().toString(),
+                                                    sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
+                                                    vistaCliente.txtEmail.getText(),
+                                                    vistaCliente.txtNumeroDocumento.getText());
+
+                                        JOptionPane.showMessageDialog(vistaCliente, "Datos del cliente registrados, puede continuar con su registro.");        
+                                                    ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                                                    ctrlRegistroVehiculo.iniciarVehiculo();
+                                                    vistaCliente.dispose(); 
+                                }
+                                }
+                                else{
+                                    JOptionPane.showMessageDialog(vistaCliente, "Número de Carnet de extranjería inválido.");
+                                    vistaCliente.txtNumeroDocumento.setText(null);
+                                }
+                            }
+                            }
+                            else{
+                                JOptionPane.showMessageDialog(vistaCliente, "Usted no cuenta con la edad suficiente.");
+                                limpiarDatosCliente();
                             }
                         }
                         else{

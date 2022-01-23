@@ -58,6 +58,7 @@ public class frmEntrega extends javax.swing.JFrame {
         txtDistrito = new javax.swing.JTextField();
         cbxProvinciaLima = new javax.swing.JComboBox<>();
         cbxDepartamento = new javax.swing.JComboBox<>();
+        btnAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -232,6 +233,12 @@ public class frmEntrega extends javax.swing.JFrame {
         cbxDepartamento.setBorder(null);
         PContenidoEntrega.add(cbxDepartamento, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 160, 240, -1));
 
+        btnAtras.setBackground(new java.awt.Color(121, 127, 139));
+        btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
+        btnAtras.setBorder(null);
+        btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PContenidoEntrega.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 440, 60, 60));
+
         PGeneralEntrega.add(PContenidoEntrega, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 105, 680, 510));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
@@ -287,6 +294,7 @@ public class frmEntrega extends javax.swing.JFrame {
     private javax.swing.JPanel PContenidoEntrega;
     private javax.swing.JPanel PGeneralEntrega;
     private javax.swing.JPanel PTituloEntrega;
+    public javax.swing.JButton btnAtras;
     public javax.swing.JButton btnSiguiente3;
     public javax.swing.JComboBox<String> cbxDepartamento;
     public javax.swing.JComboBox<String> cbxDistrito;
