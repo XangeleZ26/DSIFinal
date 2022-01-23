@@ -20,28 +20,7 @@ public class ControladorRegistroVehiculo{
     private Cliente ClientePotencial;
     private frmRegistroVehiculo vistaVehiculo;
     
-    public String[] getCategoria(int ejes){
-        String[] categoria = new String[1];
-        if(ejes==2){
-            categoria[0]= "Liviano";
-            categoria[1]= "Pesado";
-        }
-        if(ejes>2){
-            categoria[0]="Pesado";
-        }
-        return categoria;
-    }
-    public String[] getTipoUso(int ejes){
-        String[] tipoUso = new String[1];
-        if(ejes==2){
-            tipoUso[0]= "Privado";
-            tipoUso[1]= "Público";
-        }
-        if(ejes>2){
-            tipoUso[0]="Privado";
-        }
-        return tipoUso;
-    }
+    
     //PROVENIENTE DEL CONTROLADOR ENTREGA
     public ControladorRegistroVehiculo(Cliente ClientePotencial){
         this.ClientePotencial = ClientePotencial;
@@ -85,12 +64,12 @@ public class ControladorRegistroVehiculo{
         this.vistaVehiculo.cbxEjes.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
-                int ejesEntero = Integer.parseInt(ejesCadena);
+                //String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
+                //int ejesEntero = Integer.parseInt(ejesCadena);
                 if(vistaVehiculo.cbxEjes.getSelectedItem().toString().trim().length() != 0){
-                    if(vistaVehiculo.cbxEjes.getSelectedIndex()>0){
-                        vistaVehiculo.cbxCategoria.setModel(new DefaultComboBoxModel(getCategoria(ejesEntero)));
-                        vistaVehiculo.cbxTipoUso.setModel(new DefaultComboBoxModel(getTipoUso(ejesEntero)));
+                    if(vistaVehiculo.cbxEjes.getSelectedIndex()>-1){
+                        vistaVehiculo.cbxCategoria.setModel(new DefaultComboBoxModel(getCategoria(vistaVehiculo.cbxEjes.getSelectedItem().toString())));
+                        vistaVehiculo.cbxTipoUso.setModel(new DefaultComboBoxModel(getTipoUso(vistaVehiculo.cbxEjes.getSelectedItem().toString())));
                     }
                 }
             }
@@ -162,12 +141,12 @@ public class ControladorRegistroVehiculo{
         this.vistaVehiculo.cbxEjes.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
-                int ejesEntero = Integer.parseInt(ejesCadena);
+                //String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
+                //int ejesEntero = Integer.parseInt(ejesCadena);
                 if(vistaVehiculo.cbxEjes.getSelectedItem().toString().trim().length() != 0){
-                    if(vistaVehiculo.cbxEjes.getSelectedIndex()>0){
-                        vistaVehiculo.cbxCategoria.setModel(new DefaultComboBoxModel(getCategoria(ejesEntero)));
-                        vistaVehiculo.cbxTipoUso.setModel(new DefaultComboBoxModel(getTipoUso(ejesEntero)));
+                    if(vistaVehiculo.cbxEjes.getSelectedIndex()>-1){
+                        vistaVehiculo.cbxCategoria.setModel(new DefaultComboBoxModel(getCategoria(vistaVehiculo.cbxEjes.getSelectedItem().toString())));
+                        vistaVehiculo.cbxTipoUso.setModel(new DefaultComboBoxModel(getTipoUso(vistaVehiculo.cbxEjes.getSelectedItem().toString())));
                     }
                 }
             }
@@ -243,5 +222,33 @@ public class ControladorRegistroVehiculo{
         vistaVehiculo.cbxTipoUso.setSelectedIndex(-1);
         vistaVehiculo.cbxEjes.setSelectedIndex(-1);
         vistaVehiculo.txtAño.setText(null);
+    }
+    public String[] getCategoria(String ejes){
+        String[] categoria = new String[2];
+        if(ejes.equalsIgnoreCase("2")){
+            categoria[0]= "Liviano";
+            categoria[1]= "Pesado";
+        }
+        if(ejes.equalsIgnoreCase("3") || ejes.equalsIgnoreCase("4") ||
+           ejes.equalsIgnoreCase("5") || ejes.equalsIgnoreCase("6") ||
+           ejes.equalsIgnoreCase("7") || ejes.equalsIgnoreCase("8") ||
+           ejes.equalsIgnoreCase("9") || ejes.equalsIgnoreCase("10")){
+            categoria[0]="Pesado";
+        }
+        return categoria;
+    }
+    public String[] getTipoUso(String ejes){
+        String[] tipoUso = new String[2];
+        if(ejes.equalsIgnoreCase("2")){
+            tipoUso[0]= "Privado";
+            tipoUso[1]= "Público";
+        }
+        if(ejes.equalsIgnoreCase("3") || ejes.equalsIgnoreCase("4") ||
+           ejes.equalsIgnoreCase("5") || ejes.equalsIgnoreCase("6") ||
+           ejes.equalsIgnoreCase("7") || ejes.equalsIgnoreCase("8") ||
+           ejes.equalsIgnoreCase("9") || ejes.equalsIgnoreCase("10")){
+            tipoUso[0]="Privado";
+        }
+        return tipoUso;
     }
 }

@@ -42,7 +42,7 @@ public class Configuracion {
                                              "SUBARU", "SUDENG", "SUZUKI", "THEURER", "TIANJIN", "TOYOTA", "TRAIL TEK", "TRAILMOBILE" , "TRAINPE",
                                              "TRAMASA", "TRIELHT", "UTILITY", "VALDERRAMA", "VERA", "VOLKSWAGEN", "VOLVO", "VRAMEL", "VW",
                                              "WHITE", "WHUE", "YAMAHA", "YUEJIN", "ZXAUTO"};
-    public static int[] ejesVehiculo = {2, 3, 4, 5, 6, 7, 8, 9, 10};
+    public static String[] ejesVehiculo = {"2", "3", "4", "5", "6", "7", "8", "9", "10"};
     public static String[] categoriasVehiculo = {"Liviano", "Pesado"};
     public static String[] tipoUsoVehiculo = {"Privado", "Público"};
     public static String[] tipoDocumentos = {"DNI", "Carnet Extranjería", "Pasaporte"};
