@@ -10,7 +10,9 @@ import java.util.Date;
 import Controlador.*;
 
 public class AppPeaje {
-
+        
+//MODIFICACION DE XAVIER
+    
     public static void main(String[] args) {
         //DECLARAMOS LOS PEAJES
         Peaje peaje1 = new Peaje ("Panamericana Norte", (float)3, (float)3.5,(float)2.9);

@@ -21,7 +21,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class ControladorRecargaOpc {
-
+    //MODIFICACION DE XAVIER
+    
     private Tarjeta TarjetaPotencial;
     private frmRecargaOpcional vistaRecargaOpc;
     private Cliente ClientePotencial;
@@ -88,9 +89,16 @@ public class ControladorRecargaOpc {
                                     ClientePotencial.getCuenta().recargar(Float.parseFloat(vistaRecargaOpc.txtMontoOpcional.getText()),
                                             TarjetaPotencial, sdfActual.format(fechaActual));
                                             //se registra al cliente
+                                               try {
+                                            ArregloClientes extra=(ArregloClientes)Configuracion.serial.deserializar("archivoUser.txt");
+                                           Configuracion.arrClientes=extra;
+                                        } catch (Exception ex) {
+                                             System.out.println("archivo vacio, primer guardado y/o archivo inexistente");
+                                        }
+                                                
                                     if (Configuracion.arrClientes.agregarCliente(ClientePotencial)) {
                                         
-
+                   
                                         try {
                                             Configuracion.serial.serializar("archivoUser.txt",Configuracion.arrClientes);
                                             JOptionPane.showMessageDialog(vistaRecargaOpc, "Usted ha sido registrado en el PEX!");

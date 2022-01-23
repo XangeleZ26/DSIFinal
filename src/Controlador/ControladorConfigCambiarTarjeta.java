@@ -10,7 +10,9 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 
 public class ControladorConfigCambiarTarjeta {
-
+    
+    //clase de Xavier
+    
     private ConfigCambiarTarjeta vista;
     private Cliente user;
 
@@ -96,41 +98,52 @@ public class ControladorConfigCambiarTarjeta {
     public boolean verificarValidezTarjeta(String numTarjeta, String medioPago) {
         boolean result = false;
         String aux;
-        if(numTarjeta.length() == 16){
-            if(numTarjeta.charAt(0) == '4' && medioPago.equalsIgnoreCase("VISA")){ //VISA
+        System.out.println(numTarjeta);
+        System.out.println(medioPago);
+        if (numTarjeta.length() == 16) {
+            if (numTarjeta.charAt(0) == '4' && medioPago.equalsIgnoreCase("Visa (Crédito o débito)")) { //VISA
                 result = true;
-            }
-            else if(numTarjeta.charAt(0) == '5' && medioPago.equalsIgnoreCase("MASTER CARD")){ //MASTER CARD
-                switch (numTarjeta.charAt(1)){
-                    case '1': 
-                    case '2': 
-                    case '3': 
-                    case '4': 
-                    case '5': result = true;
-                        break;
-                    default: result = false;
-                        break;
+            } else {
+                if (numTarjeta.charAt(0) == '5' && medioPago.equalsIgnoreCase("Master Card (Crédito o débito)")) { //MASTER CARD
+                    switch (numTarjeta.charAt(1)) {
+                        case '1':
+                        case '2':
+                        case '3':
+                        case '4':
+                        case '5':
+                            result = true;
+                            break;
+                        default:
+                            result = false;
+                            break;
+                    }
                 }
             }
-        }
-        else if (numTarjeta.length() == 15 && numTarjeta.charAt(0) == '3' && medioPago.equalsIgnoreCase("AMERICAN EXPRESS")) {
-            switch(numTarjeta.charAt(1)){ //AMERICAN EXPRESS
-                case '4':
-                case '7': result = true;
-                    break;
-                default: result = false;
-                    break;
-            }
-        }
-        else if(numTarjeta.length() == 14 && numTarjeta.charAt(0) == '3' && medioPago.equalsIgnoreCase("DINERS CLUB")){
-            switch(numTarjeta.charAt(1)){ //DINERS CLUB
-                case '0':
-                case '6':
-                case '8':
-                case '9': result = true;
-                    break;
-                default: result = false;
-                    break;
+        } else {
+            if (numTarjeta.length() == 15 && numTarjeta.charAt(0) == '3' && medioPago.equalsIgnoreCase("American Express (Crédito)")) {
+                switch (numTarjeta.charAt(1)) { //AMERICAN EXPRESS
+                    case '4':
+                    case '7':
+                        result = true;
+                        break;
+                    default:
+                        result = false;
+                        break;
+                }
+            } else {
+                if (numTarjeta.length() == 14 && numTarjeta.charAt(0) == '3' && medioPago.equalsIgnoreCase("Diners Club (Crédito)")) {
+                    switch (numTarjeta.charAt(1)) { //DINERS CLUB
+                        case '0':
+                        case '6':
+                        case '8':
+                        case '9':
+                            result = true;
+                            break;
+                        default:
+                            result = false;
+                            break;
+                    }
+                }
             }
         }
         return result;
@@ -140,7 +153,7 @@ public class ControladorConfigCambiarTarjeta {
         boolean result = false;
         Date fechaActual = new Date();
         SimpleDateFormat fecha = new SimpleDateFormat("MM/yyyy");
-        if (fechaVencimiento.compareTo(fecha.format(fechaActual)) > 0) {
+        if (fechaVencimiento.compareTo(fecha.format(fechaActual))==1) {
             return true;
         }
 
@@ -150,15 +163,15 @@ public class ControladorConfigCambiarTarjeta {
     public boolean verificarValidezCVV(String cvv, String medioPago) {
         boolean result = false;
         if (cvv.length() == 3) {
-            if (medioPago.equalsIgnoreCase("VISA")) {
+            if (medioPago.equalsIgnoreCase("Visa (Crédito o débito)")) {
                 result = true;
-            } else if (medioPago.equalsIgnoreCase("MASTER CARD")) {
+            } else if (medioPago.equalsIgnoreCase("Master Card (Crédito o débito)")) {
                 result = true;
             }
         } else if (cvv.length() == 4) {
-            if (medioPago.equalsIgnoreCase("AMERICAN EXPRESS") ) {
+            if (medioPago.equalsIgnoreCase("American Express (Crédito)")) {
                 result = true;
-            } else if (medioPago.equalsIgnoreCase("DINERS CLUB") ) {
+            } else if (medioPago.equalsIgnoreCase("Diners Club (Crédito)")) {
                 result = true;
             }
         }

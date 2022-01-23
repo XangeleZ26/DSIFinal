@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.event.AncestorListener;
 
 public class ControladorLogin {
-
+    //MODIFICACION DE XAVIER
     private frmLogin vista;
     private Cliente cliente;
     private ArregloClientes clientes;
@@ -46,7 +46,8 @@ public class ControladorLogin {
                         /*if(cliente!=null){
                             this.indiceCliente = Configuracion.arrClientes.buscarOrdenCliente(vista.txtUsuarioLogin.getText(), contrasena);
                         }*/
-                        Configuracion.arrClientes=(ArregloClientes)Configuracion.serial.deserializar("archivoUser.txt");
+                        ArregloClientes extra=(ArregloClientes)Configuracion.serial.deserializar("archivoUser.txt");
+                        Configuracion.arrClientes=extra;
                         cliente = Configuracion.arrClientes.buscarCliente(vista.txtUsuarioLogin.getText(), contrasena);
                         System.out.println(Configuracion.arrClientes);
                             ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(cliente);
