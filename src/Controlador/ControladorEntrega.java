@@ -90,7 +90,7 @@ public class ControladorEntrega{
             @Override
             public void actionPerformed(ActionEvent e){
                 if(vistaEntrega.cbxDepartamento.getSelectedItem().toString().trim().length() != 0){
-                    if(vistaEntrega.cbxDepartamento.getSelectedIndex()>0){
+                    if(vistaEntrega.cbxDepartamento.getSelectedIndex()>-1){
                         if(vistaEntrega.cbxDepartamento.getSelectedItem().toString().equalsIgnoreCase("LIMA")){
                             vistaEntrega.cbxProvinciaLima.setVisible(true);
                             vistaEntrega.txtProvincia.setVisible(false);
@@ -109,7 +109,7 @@ public class ControladorEntrega{
             @Override
             public void actionPerformed(ActionEvent e){
                 if(vistaEntrega.cbxProvinciaLima.getSelectedItem().toString().trim().length() != 0){
-                    if(vistaEntrega.cbxProvinciaLima.getSelectedIndex()>0){
+                    if(vistaEntrega.cbxProvinciaLima.getSelectedIndex()>-1){
                         if(vistaEntrega.cbxProvinciaLima.getSelectedItem().toString().equalsIgnoreCase("LIMA")){
                             vistaEntrega.cbxDistrito.setVisible(true);
                             vistaEntrega.txtDistrito.setVisible(false);

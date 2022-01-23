@@ -64,8 +64,6 @@ public class ControladorRegistroVehiculo{
         this.vistaVehiculo.cbxEjes.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                //String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
-                //int ejesEntero = Integer.parseInt(ejesCadena);
                 if(vistaVehiculo.cbxEjes.getSelectedItem().toString().trim().length() != 0){
                     if(vistaVehiculo.cbxEjes.getSelectedIndex()>-1){
                         vistaVehiculo.cbxCategoria.setModel(new DefaultComboBoxModel(getCategoria(vistaVehiculo.cbxEjes.getSelectedItem().toString())));
@@ -141,8 +139,6 @@ public class ControladorRegistroVehiculo{
         this.vistaVehiculo.cbxEjes.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e){
-                //String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
-                //int ejesEntero = Integer.parseInt(ejesCadena);
                 if(vistaVehiculo.cbxEjes.getSelectedItem().toString().trim().length() != 0){
                     if(vistaVehiculo.cbxEjes.getSelectedIndex()>-1){
                         vistaVehiculo.cbxCategoria.setModel(new DefaultComboBoxModel(getCategoria(vistaVehiculo.cbxEjes.getSelectedItem().toString())));
