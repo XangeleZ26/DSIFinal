@@ -11,6 +11,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
 import javax.swing.event.AncestorListener;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ControladorLogin {
     //MODIFICACION DE XAVIER

@@ -22,6 +22,20 @@ public class ControladorVehiculos {
         this.user = user;
         this.vista = new frmVehiculos();
 
+        this.vista.btnAZ.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                llenarTabla();
+            }
+        });
+        
+        this.vista.btnZA.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                llenarTablaZA();
+            }
+        });
+        
         this.vista.btnOrdenarPlaca.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -66,10 +80,11 @@ public class ControladorVehiculos {
         this.vista.btnEliminarVehiculo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int filaSeleccionada = vista.jTable1.getSelectedRow(); //Guardo el orden de la fila seleccionada
-                String placa = vista.jTable1.getValueAt(filaSeleccionada, 0).toString();
+                int filaSeleccionada = -1;
+                filaSeleccionada = vista.tblTabla.getSelectedRow();//Guardo el orden de la fila seleccionada
 
                 if (filaSeleccionada >= 0) {
+                    String placa = vista.tblTabla.getValueAt(filaSeleccionada, 0).toString();
                     user.getCuenta().eliminarVehiculo(placa);
                     try {
                         Configuracion.serial.serializar("archivoUser.txt", Configuracion.arrClientes);
@@ -95,15 +110,36 @@ public class ControladorVehiculos {
         });
     }
 
-    public void llenarTabla() {
+    public void llenarTabla() { //De menor a mayor
         DefaultTableModel TablaUser = new DefaultTableModel();
         String informacion[] = new String[8];
         for (Object o : Modelo.Configuracion.datosVehiculos) {
             TablaUser.addColumn(o);
         }
-        this.vista.jTable1.setModel(TablaUser);
+        this.vista.tblTabla.setModel(TablaUser);
 
         for (int i = 0; i < user.getCuenta().getNv(); i++) {
+            informacion[0] = user.getCuenta().getVehiculos(i).getPlaca();
+            informacion[1] = user.getCuenta().getVehiculos(i).getMarca();
+            informacion[2] = user.getCuenta().getVehiculos(i).getModelo();
+            informacion[3] = user.getCuenta().getVehiculos(i).getCategoria();
+            informacion[4] = String.valueOf(user.getCuenta().getVehiculos(i).getEjes());
+            informacion[5] = user.getCuenta().getVehiculos(i).getTipoUso();
+            informacion[6] = String.valueOf(user.getCuenta().getVehiculos(i).getPesoBruto());
+            informacion[7] = String.valueOf(user.getCuenta().getVehiculos(i).getAño());
+            TablaUser.addRow(informacion);
+        }
+    }
+    
+    public void llenarTablaZA() { //De mayor a menor
+        DefaultTableModel TablaUser = new DefaultTableModel();
+        String informacion[] = new String[8];
+        for (Object o : Modelo.Configuracion.datosVehiculos) {
+            TablaUser.addColumn(o);
+        }
+        this.vista.tblTabla.setModel(TablaUser);
+
+        for (int i = user.getCuenta().getNv()-1; i >=0; i--) {
             informacion[0] = user.getCuenta().getVehiculos(i).getPlaca();
             informacion[1] = user.getCuenta().getVehiculos(i).getMarca();
             informacion[2] = user.getCuenta().getVehiculos(i).getModelo();
