@@ -36,7 +36,7 @@ public class ControladorConfigCambiarTarjeta {
                 if (isValido()) {
                     
                     if(!seUsoAnteriormente(user.getCuenta().getTarjeta().getNumTarjeta(),user.getCuenta().getTarjeta().getCvv(),user.getCuenta().getTarjeta().getMedioPago())){
-                        if(!tarjetaEnUso(vista.txtNumTarjet.getText(),vista.cbxMedioPago.getSelectedItem().toString())){
+//                        if(!tarjetaEnUso(vista.txtNumTarjet.getText(),vista.cbxMedioPago.getSelectedItem().toString())){
                     try {
                         /*Falta implementar la validación para la nueva tarjeta que se va a registrar*/
  /*Verificar también que esta no sea igual a la tarjeta anterior*/
@@ -87,8 +87,8 @@ public class ControladorConfigCambiarTarjeta {
                     } catch (NumberFormatException a) {
                         JOptionPane.showMessageDialog(null, "Solo se admiten datos numéricos!");
                     }
-                        }else{
-                    JOptionPane.showMessageDialog(null,"Esta tarjeta está registrada en otra cuenta");}
+//                        }else{
+//                    JOptionPane.showMessageDialog(null,"Esta tarjeta está registrada en otra cuenta");}
                 }else{
                     JOptionPane.showMessageDialog(null,"Esta tarjeta está en uso actualmente");}
                 } else {
@@ -113,17 +113,17 @@ public class ControladorConfigCambiarTarjeta {
     }
     return result;
 }
-    public boolean tarjetaEnUso(String numeroCambio,String medioTarjetaCambio){
-        boolean result=false;
-        for(int i=0;i<Configuracion.arrClientes.getNc();i++){
-             if(Configuracion.arrClientes.getArregloCliente(i).getCuenta().getTarjeta().getMedioPago().equalsIgnoreCase(medioTarjetaCambio)){
-                 if(Configuracion.arrClientes.getArregloCliente(i).getCuenta().getTarjeta().getNumTarjeta().equalsIgnoreCase(numeroCambio)){
-                     result=true;
-                 }
-             }
-        }
-         return result;
-    }
+//    public boolean tarjetaEnUso(String numeroCambio,String medioTarjetaCambio){
+//        boolean result=false;
+//        for(int i=0;i<Configuracion.arrClientes.getNc();i++){
+//             if(Configuracion.arrClientes.getArregloCliente(i).getCuenta().getTarjeta().getMedioPago().equalsIgnoreCase(medioTarjetaCambio)){
+//                 if(Configuracion.arrClientes.getArregloCliente(i).getCuenta().getTarjeta().getNumTarjeta().equalsIgnoreCase(numeroCambio)){
+//                     result=true;
+//                 }
+//             }
+//        }
+//         return result;
+//    }
     public boolean verificarValidezTarjeta(String numTarjeta, String medioPago) {
         boolean result = false;
         String aux;
