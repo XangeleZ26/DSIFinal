@@ -87,7 +87,7 @@ public class ControladorRecargaOpc {
                                 vistaRecargaOpc.txtNumeroTarjeta.getText(),
                                 sdfVencimiento.format(fechaVencimiento),
                                 vistaRecargaOpc.txtCVV.getText());
-                        if (verificarVigenciaTarjeta(sdfVencimiento.format(fechaVencimiento))) {
+                        if (verificarVigenciaTarjeta()) {
                             if (TarjetaPotencial.verificarValidezTajeta(vistaRecargaOpc.txtNumeroTarjeta.getText(),
                                     vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString())) {
                                 if (TarjetaPotencial.verificarValidezCVV(vistaRecargaOpc.txtCVV.getText(),
@@ -101,12 +101,12 @@ public class ControladorRecargaOpc {
                                     ClientePotencial.getCuenta().recargar(Float.parseFloat(vistaRecargaOpc.txtMontoOpcional.getText()),
                                             TarjetaPotencial, sdfActual.format(fechaActual));
                                             //se registra al cliente
-                                               try {
-                                            ArregloClientes extra=(ArregloClientes)Configuracion.serial.deserializar("archivoUser.txt");
-                                           Configuracion.arrClientes=extra;
-                                        } catch (Exception ex) {
-                                             System.out.println("archivo vacio, primer guardado y/o archivo inexistente");
-                                        }
+//                                               try {
+//                                            ArregloClientes extra=(ArregloClientes)Configuracion.serial.deserializar("archivoUser.txt");
+//                                           Configuracion.arrClientes=extra;
+//                                        } catch (Exception ex) {
+//                                             System.out.println("archivo vacio, primer guardado y/o archivo inexistente");
+//                                        }
                                                 
                                     if (Configuracion.arrClientes.agregarCliente(ClientePotencial)) {
                                         
@@ -181,12 +181,30 @@ public class ControladorRecargaOpc {
         });
     }
     
-    public boolean verificarVigenciaTarjeta(String fechaVencimiento) {
-        boolean result = false;
+    public boolean verificarVigenciaTarjeta() {
+       boolean result = false;
+        int mesTarjet=vistaRecargaOpc.jmcMesVencimiento.getMonth(); //enero = 0
+        int anioTarjet=vistaRecargaOpc.jycAñoVencimiento.getYear();//2025 = 2025
         Date fechaActual = new Date();
-        SimpleDateFormat fecha = new SimpleDateFormat("MM/yyyy");
-        if (fechaVencimiento.compareTo(fecha.format(fechaActual)) > 0) {
-            return true;
+        SimpleDateFormat fechaMesActual = new SimpleDateFormat("MM");
+        SimpleDateFormat fechaAnioActual=new SimpleDateFormat("yyyy");
+        int mesActual=((Integer.parseInt(fechaMesActual.format(fechaActual)))-1);
+        int anioActual=Integer.parseInt(fechaAnioActual.format(fechaActual));
+        
+        if (anioTarjet==anioActual) {
+            if(mesTarjet>mesActual){
+                result=true;
+            }
+            if(mesTarjet<=mesActual){
+                result=false;
+            }
+        }else{
+            if(anioTarjet>anioActual){
+                    result=true; 
+            }
+            if(anioTarjet<anioActual){
+                result=false;
+            }
         }
 
         return result;
@@ -214,7 +232,6 @@ public class ControladorRecargaOpc {
         vistaRecargaOpc.cbxMedioPago.setSelectedIndex(-1);
         vistaRecargaOpc.txtNumeroTarjeta.setText(null);
         vistaRecargaOpc.txtCVV.setText(null);
-        vistaRecargaOpc.jycAñoVencimiento.setYear(-1);
         vistaRecargaOpc.jmcMesVencimiento.setMonth(-1);;
     }
 

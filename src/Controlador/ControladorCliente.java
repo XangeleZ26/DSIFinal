@@ -45,7 +45,7 @@ public class ControladorCliente{
                     vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
                     vistaCliente.txtNumeroDocumento.getText())){
                         
-                        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd"); 
+                        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); 
                         Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                                                           + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
                         Matcher mather = pattern.matcher(vistaCliente.txtEmail.getText());

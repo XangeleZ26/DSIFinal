@@ -33,6 +33,7 @@ public class ControladorConfigCambiarContra {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isValido()) {
+                    if(!(seUsoAnteriormente(user.getCredencial().getContraseña()))){
                     switch (user.cambioContrasena(
                             String.valueOf(vista.txtContrasena.getPassword()),
                             String.valueOf(vista.txtNovoContrasena.getPassword()),
@@ -62,6 +63,9 @@ public class ControladorConfigCambiarContra {
                             JOptionPane.showMessageDialog(null, "1. Contraseña de cuenta incorrecta\n2. Tu nueva contraseña no coincide ");
                             break;
                     }
+                   } else {
+                    JOptionPane.showMessageDialog(null, "Esta contraseña está en uso actualmente");
+                } 
                 } else {
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos!");
                 }
@@ -109,7 +113,13 @@ public class ControladorConfigCambiarContra {
                 && String.valueOf(this.vista.txtNovoContrasena.getPassword()).trim().length() != 0
                 && String.valueOf(this.vista.txtVerifContrasena.getPassword()).trim().length() != 0);
     }
-
+      public boolean seUsoAnteriormente(String contraActual){
+    boolean result=false;
+    if(contraActual.equalsIgnoreCase(String.valueOf(vista.txtNovoContrasena.getPassword()))){
+     result=true;
+    }
+    return result;
+}
     public void iniciar() {
         vista.OjoCerrado1.setVisible(false);
         vista.OjoCerrado2.setVisible(false);

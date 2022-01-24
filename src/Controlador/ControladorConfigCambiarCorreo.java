@@ -37,7 +37,9 @@ public class ControladorConfigCambiarCorreo {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isValido()) {
-                    
+                    if(!correoEnUso(vista.txtCorreo.getText())){
+//                    if(!seUsoAnteriormente(vista.txtCorreo.getText())){
+                        
                     Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                                                           + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
                     Matcher mather = pattern.matcher(vista.txtCorreo.getText());
@@ -69,6 +71,13 @@ public class ControladorConfigCambiarCorreo {
                     else{
                         JOptionPane.showMessageDialog(null, "Correo inválido. Ingrese otra dirección de correo.");
                     }
+//                    } else{
+//                             JOptionPane.showMessageDialog(null, "Este correo está en uso actualmente");
+//                            }
+                    
+                }else {
+                    JOptionPane.showMessageDialog(null, "Correo registrado en otra cuenta o en uso actual");
+                }
                 } 
                 else {
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos!");
@@ -93,8 +102,28 @@ public class ControladorConfigCambiarCorreo {
                 vista.txtContrasena.setEchoChar((char) 0);
             }
         });
+        
+        
     }
-
+    
+//    public boolean seUsoAnteriormente(String correo){
+//     boolean result=false;
+//    if(correo.equalsIgnoreCase(user.getCredencial().getCorreo())){
+//     result=true;
+//    }
+//    return result;
+//    }
+    
+        public boolean correoEnUso(String correo){
+        boolean result=false;
+        for(int i=0;i<Configuracion.arrClientes.getNc();i++){
+             if(Configuracion.arrClientes.getArregloCliente(i).getCredencial().getCorreo().equalsIgnoreCase(correo)){
+                 result=true;
+             }
+        }
+         return result;
+    }
+        
     private boolean isValido() {
         return (this.vista.txtCorreo.getText().trim().length() != 0
                 && String.valueOf(this.vista.txtContrasena.getPassword()).trim().length() != 0);

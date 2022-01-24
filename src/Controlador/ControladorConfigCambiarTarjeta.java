@@ -34,6 +34,9 @@ public class ControladorConfigCambiarTarjeta {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (isValido()) {
+                    
+                    if(!seUsoAnteriormente(user.getCuenta().getTarjeta().getNumTarjeta(),user.getCuenta().getTarjeta().getCvv(),user.getCuenta().getTarjeta().getMedioPago())){
+                        if(!tarjetaEnUso(vista.txtNumTarjet.getText(),vista.cbxMedioPago.getSelectedItem().toString())){
                     try {
                         /*Falta implementar la validación para la nueva tarjeta que se va a registrar*/
  /*Verificar también que esta no sea igual a la tarjeta anterior*/
@@ -42,11 +45,13 @@ public class ControladorConfigCambiarTarjeta {
 
                         int añoVencimiento = vista.jycAñoVencimiento.getYear();
                         int mesVencimiento = vista.jmcMesVencimiento.getMonth();
-
+                        System.out.println("xd");
+                        System.out.println(añoVencimiento+" "+mesVencimiento);
+                        System.out.println("xd");
                         SimpleDateFormat sdfVencimiento = new SimpleDateFormat("MM/yyyy");
                         Date fechaVencimiento = new Date(añoVencimiento, mesVencimiento, 00);
                         sdfVencimiento.format(fechaVencimiento);
-                        if (verificarVigenciaTarjeta(sdfVencimiento.format(fechaVencimiento))) {
+                        if (verificarVigenciaTarjeta()) {
                             if (verificarValidezTarjeta(vista.txtNumTarjet.getText(), vista.cbxMedioPago.getSelectedItem().toString())) {
                                 if (verificarValidezCVV(vista.txtCvv.getText(), vista.cbxMedioPago.getSelectedItem().toString())) {
 
@@ -82,6 +87,10 @@ public class ControladorConfigCambiarTarjeta {
                     } catch (NumberFormatException a) {
                         JOptionPane.showMessageDialog(null, "Solo se admiten datos numéricos!");
                     }
+                        }else{
+                    JOptionPane.showMessageDialog(null,"Esta tarjeta está registrada en otra cuenta");}
+                }else{
+                    JOptionPane.showMessageDialog(null,"Esta tarjeta está en uso actualmente");}
                 } else {
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos!");
                 }
@@ -95,7 +104,26 @@ public class ControladorConfigCambiarTarjeta {
                 && this.vista.txtCvv.getText().trim().length() != 0);
 
     }
-
+    public boolean seUsoAnteriormente(String numeroActual,String cvvActual,String medioTarjetaActual){
+    boolean result=false;
+    if(medioTarjetaActual.equalsIgnoreCase(vista.cbxMedioPago.getSelectedItem().toString())){
+       if(numeroActual.equalsIgnoreCase(vista.txtNumTarjet.getText())&&cvvActual.equalsIgnoreCase(vista.txtCvv.getText())) {
+           result=true;
+       }
+    }
+    return result;
+}
+    public boolean tarjetaEnUso(String numeroCambio,String medioTarjetaCambio){
+        boolean result=false;
+        for(int i=0;i<Configuracion.arrClientes.getNc();i++){
+             if(Configuracion.arrClientes.getArregloCliente(i).getCuenta().getTarjeta().getMedioPago().equalsIgnoreCase(medioTarjetaCambio)){
+                 if(Configuracion.arrClientes.getArregloCliente(i).getCuenta().getTarjeta().getNumTarjeta().equalsIgnoreCase(numeroCambio)){
+                     result=true;
+                 }
+             }
+        }
+         return result;
+    }
     public boolean verificarValidezTarjeta(String numTarjeta, String medioPago) {
         boolean result = false;
         String aux;
@@ -150,12 +178,30 @@ public class ControladorConfigCambiarTarjeta {
         return result;
     }
 
-    public boolean verificarVigenciaTarjeta(String fechaVencimiento) {
+    public boolean verificarVigenciaTarjeta() {
         boolean result = false;
+        int mesTarjet=vista.jmcMesVencimiento.getMonth(); //enero = 0
+        int anioTarjet=vista.jycAñoVencimiento.getYear();//2025 = 2025
         Date fechaActual = new Date();
-        SimpleDateFormat fecha = new SimpleDateFormat("MM/yyyy");
-        if (fechaVencimiento.compareTo(fecha.format(fechaActual))==1) {
-            return true;
+        SimpleDateFormat fechaMesActual = new SimpleDateFormat("MM");
+        SimpleDateFormat fechaAnioActual=new SimpleDateFormat("yyyy");
+        int mesActual=((Integer.parseInt(fechaMesActual.format(fechaActual)))-1);
+        int anioActual=Integer.parseInt(fechaAnioActual.format(fechaActual));
+        
+        if (anioTarjet==anioActual) {
+            if(mesTarjet>mesActual){
+                result=true;
+            }
+            if(mesTarjet<=mesActual){
+                result=false;
+            }
+        }else{
+            if(anioTarjet>anioActual){
+                    result=true; 
+            }
+            if(anioTarjet<anioActual){
+                result=false;
+            }
         }
 
         return result;
@@ -181,12 +227,12 @@ public class ControladorConfigCambiarTarjeta {
     public void limpiarDatosTarjeta() {
         vista.cbxMedioPago.setSelectedIndex(-1);
         vista.txtNumTarjet.setText(null);
-        vista.jycAñoVencimiento.setYear(-1);
         vista.jmcMesVencimiento.setMonth(-1);;
         vista.txtCvv.setText(null);
     }
 
     public void iniciar() {
+            
         DefaultComboBoxModel medioPagoComboBox = new DefaultComboBoxModel();
         for (Object o : Configuracion.medioPago) {
             medioPagoComboBox.addElement(o);
