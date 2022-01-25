@@ -81,7 +81,7 @@ public class ControladorRecargaOpc {
                         SimpleDateFormat sdfVencimiento = new SimpleDateFormat("MM/yyyy");
                         Date fechaVencimiento = new Date(añoVencimiento, mesVencimiento, 00);
                         sdfVencimiento.format(fechaVencimiento);
-                                               
+                           
                         TarjetaPotencial = new Tarjeta(
                                 vistaRecargaOpc.cbxMedioPago.getSelectedItem().toString(),
                                 vistaRecargaOpc.txtNumeroTarjeta.getText(),
@@ -162,7 +162,9 @@ public class ControladorRecargaOpc {
            @Override
            public void keyTyped(KeyEvent e){
                char c = e.getKeyChar();
-               if(c<'0' || c>'9') e.consume();
+                if(((c<'0')||(c>'9')) && (c != KeyEvent.VK_BACK_SPACE) && (c != '.' || vistaRecargaOpc.txtMontoOpcional.getText().contains("."))){
+                    e.consume();
+                }   
            }
         });
         this.vistaRecargaOpc.txtNumeroTarjeta.addKeyListener(new KeyAdapter(){
@@ -182,9 +184,9 @@ public class ControladorRecargaOpc {
     }
     
     public boolean verificarVigenciaTarjeta() {
-       boolean result = false;
-        int mesTarjet=vistaRecargaOpc.jmcMesVencimiento.getMonth(); //enero = 0
-        int anioTarjet=vistaRecargaOpc.jycAñoVencimiento.getYear();//2025 = 2025
+        boolean result = false;
+        int mesTarjet=vistaRecargaOpc.jmcMesVencimiento.getMonth(); 
+        int anioTarjet=vistaRecargaOpc.jycAñoVencimiento.getYear();
         Date fechaActual = new Date();
         SimpleDateFormat fechaMesActual = new SimpleDateFormat("MM");
         SimpleDateFormat fechaAnioActual=new SimpleDateFormat("yyyy");

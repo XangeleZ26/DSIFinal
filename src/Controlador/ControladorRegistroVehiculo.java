@@ -15,11 +15,12 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.DefaultComboBoxModel;
+import java.util.Date;
 
 public class ControladorRegistroVehiculo{
     private Cliente ClientePotencial;
     private frmRegistroVehiculo vistaVehiculo;
-    
+
     
     //PROVENIENTE DEL CONTROLADOR ENTREGA
     public ControladorRegistroVehiculo(Cliente ClientePotencial){
@@ -33,32 +34,6 @@ public class ControladorRegistroVehiculo{
                 ControladorCliente ctrlOpcionesIngreso = new ControladorCliente();
                 ctrlOpcionesIngreso.iniciarCliente();
                 vistaVehiculo.dispose();
-            }
-        });
-        this.vistaVehiculo.btnSiguiente2.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e){
-                if(datosLlenosVehiculo()){
-                    String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
-                    int ejesEntero = Integer.parseInt(ejesCadena);
-                    ClientePotencial.getCuenta().registrarVehiculo(
-                                                 vistaVehiculo.txtPlaca.getText(),
-                                                 vistaVehiculo.cbxMarca.getSelectedItem().toString(),
-                                                 vistaVehiculo.txtModelo.getText(),
-                                                 vistaVehiculo.cbxCategoria.getSelectedItem().toString(),
-                                                 ejesEntero,
-                                                 vistaVehiculo.cbxTipoUso.getSelectedItem().toString(),
-                                                 Float.parseFloat(vistaVehiculo.txtPesoBruto.getText()),
-                                                 Integer.parseInt(vistaVehiculo.txtAño.getText()),
-                                                 ClientePotencial);
-                    JOptionPane.showMessageDialog(null, "Datos del vehículo registrado, puede continuar.");
-                    ControladorEntrega ctrlEntrega = new ControladorEntrega(ClientePotencial);
-                    ctrlEntrega.iniciarEntrega();
-                    vistaVehiculo.dispose();  
-                }
-                else{
-                    JOptionPane.showMessageDialog(null, "Debe llenar todos los campos, por favor.");
-                }   
             }
         });
         this.vistaVehiculo.cbxEjes.addActionListener(new ActionListener(){
@@ -77,7 +52,9 @@ public class ControladorRegistroVehiculo{
            @Override
            public void keyTyped(KeyEvent e){
                char c = e.getKeyChar();
-               if(c<'0' || c>'9') e.consume();
+                if(((c<'0')||(c>'9')) && (c != KeyEvent.VK_BACK_SPACE) && (c != '.' || vistaVehiculo.txtPesoBruto.getText().contains("."))){
+                    e.consume();
+                } 
            }
         });
         
@@ -87,7 +64,46 @@ public class ControladorRegistroVehiculo{
                char c = e.getKeyChar();
                if(c<'0' || c>'9') e.consume();
            }
+        }); 
+        this.vistaVehiculo.btnSiguiente2.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e){
+                if(datosLlenosVehiculo()){
+                    if(!ClientePotencial.getCuenta().verificarExistenciaVehiculo(vistaVehiculo.txtPlaca.getText())){
+                        Date fecha = new Date();
+                        int año = Integer.parseInt(vistaVehiculo.txtAño.getText());
+                        if((fecha.getYear()+1900< año) || (año<1900)){
+                            JOptionPane.showMessageDialog(null, "Año no válido, digite nuevamente.");
+                            vistaVehiculo.txtAño.setText(null);
+                        }
+                        String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
+                        int ejesEntero = Integer.parseInt(ejesCadena);
+                        ClientePotencial.getCuenta().registrarVehiculo(
+                                                     vistaVehiculo.txtPlaca.getText(),
+                                                     vistaVehiculo.cbxMarca.getSelectedItem().toString(),
+                                                     vistaVehiculo.txtModelo.getText(),
+                                                     vistaVehiculo.cbxCategoria.getSelectedItem().toString(),
+                                                     ejesEntero,
+                                                     vistaVehiculo.cbxTipoUso.getSelectedItem().toString(),
+                                                     Float.parseFloat(vistaVehiculo.txtPesoBruto.getText()),
+                                                     Integer.parseInt(vistaVehiculo.txtAño.getText()),
+                                                     ClientePotencial);
+                        JOptionPane.showMessageDialog(null, "Datos del vehículo registrado, puede continuar.");
+                        ControladorEntrega ctrlEntrega = new ControladorEntrega(ClientePotencial);
+                        ctrlEntrega.iniciarEntrega();
+                        vistaVehiculo.dispose();      
+                    }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Vehículo ya registrado, ingrese nuevos datos por favor.");
+                        limpiarDatosVehiculo();
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "Debe llenar todos los campos, por favor.");
+                }   
+            }
         });
+        
     }
  
     //PROVENIENTE DEL CONTROLADOR VEHÍCULOS
@@ -108,6 +124,13 @@ public class ControladorRegistroVehiculo{
             @Override
             public void actionPerformed(ActionEvent e){
                 if(datosLlenosVehiculo()){
+                    if(!ClientePotencial.getCuenta().verificarExistenciaVehiculo(vistaVehiculo.txtPlaca.getText())){
+                        Date fecha = new Date();
+                        int año = Integer.parseInt(vistaVehiculo.txtAño.getText());
+                        if((fecha.getYear()+1900< año) || (año<1900)){
+                            JOptionPane.showMessageDialog(null, "Año no válido, digite nuevamente.");
+                            vistaVehiculo.txtAño.setText(null);
+                        }
                     String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
                     int ejesEntero = Integer.parseInt(ejesCadena);
                    ClientePotencial.getCuenta().registrarVehiculo(
@@ -131,6 +154,11 @@ public class ControladorRegistroVehiculo{
                     ctrlVehiculos.iniciar();
                     vistaVehiculo.dispose();  
                 }
+                    else{
+                        JOptionPane.showMessageDialog(null, "Vehículo ya registrado, ingrese nuevos datos por favor.");
+                        limpiarDatosVehiculo();
+                    }
+                }
                 else{
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos, por favor.");
                 }   
@@ -150,8 +178,10 @@ public class ControladorRegistroVehiculo{
         this.vistaVehiculo.txtPesoBruto.addKeyListener(new KeyAdapter(){
            @Override
            public void keyTyped(KeyEvent e){
-               char c = e.getKeyChar();
-               if(c<'0' || c>'9') e.consume();
+                char c = e.getKeyChar();
+                if(((c<'0')||(c>'9')) && (c != KeyEvent.VK_BACK_SPACE) && (c != '.' || vistaVehiculo.txtPesoBruto.getText().contains("."))){
+                    e.consume();
+                }   
            }
         });
         

@@ -336,10 +336,10 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         PContenidoRecargaOpcional.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 590, -1, -1));
 
         jmcMesVencimiento.setForeground(new java.awt.Color(0, 0, 0));
-        PContenidoRecargaOpcional.add(jmcMesVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 560, -1, 30));
+        PContenidoRecargaOpcional.add(jmcMesVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 570, -1, 30));
 
         jycAñoVencimiento.setBackground(new java.awt.Color(121, 127, 139));
-        PContenidoRecargaOpcional.add(jycAñoVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 560, 80, 30));
+        PContenidoRecargaOpcional.add(jycAñoVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 570, 80, 30));
 
         PGeneralRecargaOpcional.add(PContenidoRecargaOpcional, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 750, 660));
 

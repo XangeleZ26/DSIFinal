@@ -44,8 +44,8 @@ public class ControladorCliente{
                     if(!Configuracion.arrClientes.verificarExistenciaCliente(
                     vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
                     vistaCliente.txtNumeroDocumento.getText())){
-                        
                         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); 
+                        SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy/MMM/dd"); 
                         Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
                                                           + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
                         Matcher mather = pattern.matcher(vistaCliente.txtEmail.getText());
@@ -54,7 +54,7 @@ public class ControladorCliente{
                             
                             if(!Configuracion.arrClientes.verificarExistenciaCorreo(vistaCliente.txtEmail.getText())){
 
-                                if(ClientePotencial.verificarEdad(sdf.format(vistaCliente.dcFechaNacimiento.getDate()))){
+                                if(ClientePotencial.verificarEdad(sdf2.format(vistaCliente.dcFechaNacimiento.getDate()))){
                                 String contra = String.valueOf(vistaCliente.txtContrasena.getPassword());
                                 String contraVerif = String.valueOf(vistaCliente.txtVerifContrasena.getPassword());    
 
@@ -230,24 +230,24 @@ public class ControladorCliente{
         this.vistaCliente.txtNombres.addKeyListener(new KeyAdapter(){
            @Override
            public void keyTyped(KeyEvent e){
-               char c = e.getKeyChar();
-               if((c<'a' || c>'z') && (c<'A' || c>'Z')) e.consume();
+               Character c = e.getKeyChar();
+               if(!Character.isLetter(c) && c != KeyEvent.VK_SPACE) e.consume();
            }
         });
         
         this.vistaCliente.txtApPaterno.addKeyListener(new KeyAdapter(){
            @Override
            public void keyTyped(KeyEvent e){
-               char c = e.getKeyChar();
-               if((c<'a' || c>'z') && (c<'A' || c>'Z')) e.consume();
+               Character c = e.getKeyChar();
+               if(!Character.isLetter(c) && c != KeyEvent.VK_SPACE) e.consume();
            }
         });
         
         this.vistaCliente.txtApMaterno.addKeyListener(new KeyAdapter(){
            @Override
            public void keyTyped(KeyEvent e){
-               char c = e.getKeyChar();
-               if((c<'a' || c>'z') && (c<'A' || c>'Z')) e.consume();
+               Character c = e.getKeyChar();
+               if(!Character.isLetter(c) && c != KeyEvent.VK_SPACE) e.consume();
            }
         });
         
