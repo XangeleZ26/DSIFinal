@@ -40,8 +40,8 @@ public class frmVehiculos extends javax.swing.JFrame {
         btnAñadirVehiculo = new javax.swing.JButton();
         btnEliminarVehiculo = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
-        btnAZ = new javax.swing.JToggleButton();
-        btnZA = new javax.swing.JToggleButton();
+        btnZA = new javax.swing.JButton();
+        btnAZ = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -174,23 +174,23 @@ public class frmVehiculos extends javax.swing.JFrame {
             }
         });
 
-        btnAZ.setBackground(new java.awt.Color(159, 162, 178));
-        btnAZ.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        btnAZ.setForeground(new java.awt.Color(0, 0, 0));
-        btnAZ.setText("A->Z");
-        btnAZ.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnAZActionPerformed(evt);
-            }
-        });
-
         btnZA.setBackground(new java.awt.Color(159, 162, 178));
-        btnZA.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         btnZA.setForeground(new java.awt.Color(0, 0, 0));
         btnZA.setText("Z->A");
+        btnZA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnZA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnZAActionPerformed(evt);
+            }
+        });
+
+        btnAZ.setBackground(new java.awt.Color(159, 162, 178));
+        btnAZ.setForeground(new java.awt.Color(0, 0, 0));
+        btnAZ.setText("A->Z");
+        btnAZ.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAZ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAZActionPerformed(evt);
             }
         });
 
@@ -219,8 +219,8 @@ public class frmVehiculos extends javax.swing.JFrame {
                     .add(PContenidoVehiculosLayout.createSequentialGroup()
                         .add(38, 38, 38)
                         .add(PContenidoVehiculosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(btnAZ)
-                            .add(btnZA))))
+                            .add(btnAZ, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 54, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                            .add(btnZA, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 54, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
                 .add(15, 15, 15))
         );
         PContenidoVehiculosLayout.setVerticalGroup(
@@ -290,13 +290,13 @@ public class frmVehiculos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAtrasActionPerformed
 
-    private void btnAZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAZActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAZActionPerformed
-
     private void btnZAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnZAActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnZAActionPerformed
+
+    private void btnAZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAZActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAZActionPerformed
 
     /**
      * @param args the command line arguments
@@ -337,7 +337,7 @@ public class frmVehiculos extends javax.swing.JFrame {
     private javax.swing.JPanel PContenidoVehiculos;
     private javax.swing.JPanel PGeneralVehiculo;
     private javax.swing.JPanel PTituloVehiculos;
-    public javax.swing.JToggleButton btnAZ;
+    private javax.swing.JButton btnAZ;
     public javax.swing.JButton btnAtras;
     public javax.swing.JButton btnAñadirVehiculo;
     public javax.swing.JButton btnEliminarVehiculo;
@@ -345,7 +345,7 @@ public class frmVehiculos extends javax.swing.JFrame {
     public javax.swing.JButton btnOrdenarEjes;
     public javax.swing.JButton btnOrdenarPeso;
     public javax.swing.JButton btnOrdenarPlaca;
-    public javax.swing.JToggleButton btnZA;
+    private javax.swing.JButton btnZA;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblVehiculo;
