@@ -297,7 +297,8 @@ public class AppPeaje {
 //        Configuracion.arrClientes = clientes;
 //        Configuracion.getArrClientes().mostrarClientes();
         clientes.mostrarClientes();
-
+        System.out.println("");
+        
         try {
             ArregloClientes extra = (ArregloClientes) Configuracion.serial.deserializar("archivoUser.txt");
             Configuracion.arrClientes = extra;

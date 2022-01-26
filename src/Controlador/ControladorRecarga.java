@@ -37,47 +37,47 @@ public class ControladorRecarga {
 
                     if (vista.txtCVV.getText().equals(user.getCuenta().getTarjeta().getCvv())) {
                         try{
-                        if (Float.parseFloat(vista.txtMonto.getText()) > 0) {
-                            SimpleDateFormat sdfPago = new SimpleDateFormat("dd/MM/yyyy"); //doy formato
-                            String fechaPago = sdfPago.format(vista.dcFechaPago.getDate()); //indico a q cosa quiero dar formato y lo almaceno
+                            if (Float.parseFloat(vista.txtMonto.getText()) > 0) {
+                                SimpleDateFormat sdfPago = new SimpleDateFormat("dd/MM/yyyy"); //doy formato
+                                String fechaPago = sdfPago.format(vista.dcFechaPago.getDate()); //indico a q cosa quiero dar formato y lo almaceno
 
-                            //Aún no se contempla el "boleta y factura" en el codigo. Esperando acuerdo grupal xd
-                            /*switch(vista.getOpcionComprobante()){
-                                case 1: user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()),vista.txtCVV.getText(),fechaPago);
-                                case 2: user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()),vista.txtCVV.getText(),fechaPago);
-                            }*/
-                            user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()), vista.txtCVV.getText(), fechaPago);
-                            user.getCuenta().mostrarMovimientos();
-                            
-                            try {
-                                Configuracion.serial.serializar("archivoUser.txt", Configuracion.arrClientes);
-                                JOptionPane.showMessageDialog(null, "Recarga realizada con éxito.");
-                            } catch (Exception ex) {
-                                JOptionPane.showMessageDialog(null, "Fallo en el guardado de archivo");
-                            }
-                            
-                            
+                                //Aún no se contempla el "boleta y factura" en el codigo. Esperando acuerdo grupal xd
+                                /*switch(vista.getOpcionComprobante()){
+                                    case 1: user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()),vista.txtCVV.getText(),fechaPago);
+                                    case 2: user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()),vista.txtCVV.getText(),fechaPago);
+                                }*/
+                                user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()), vista.txtCVV.getText(), fechaPago);
+                                user.getCuenta().mostrarMovimientos();
 
-//                            condicionComprobante = 2;
-                            //PARA MOSTRAR COMPROBANTE
-                            ControladorBoleta comprobante = new ControladorBoleta(user, vista.txtMonto.getText());
-                            comprobante.iniciarParaRecarga(fechaPago);
-//                            vista.dispose();
-
-                            //PARA CERRAR COMPROBANTE
-                            comprobante.getVistaBoleta().btnOKBoleta.addActionListener(new ActionListener() {
-                                @Override
-                                public void actionPerformed(ActionEvent e) {
-                                    ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(user);
-                                    ctrlOpcionesIngreso.iniciar();
-                                    comprobante.getVistaBoleta().dispose();
-                                    vista.dispose();
+                                try {
+                                    Configuracion.serial.serializar("archivoUser.txt", Configuracion.arrClientes);
+                                    JOptionPane.showMessageDialog(null, "Recarga realizada con éxito.");
+                                } catch (Exception ex) {
+                                    JOptionPane.showMessageDialog(null, "Fallo en el guardado de archivo");
                                 }
-                            });
 
-                        } else {
-                            JOptionPane.showMessageDialog(null, "No puede recargar un monto negativo!");
-                        }
+
+
+    //                            condicionComprobante = 2;
+                                //PARA MOSTRAR COMPROBANTE
+                                ControladorBoleta comprobante = new ControladorBoleta(user, vista.txtMonto.getText());
+                                comprobante.iniciarParaRecarga(fechaPago);
+    //                            vista.dispose();
+
+                                //PARA CERRAR COMPROBANTE
+                                comprobante.getVistaBoleta().btnOKBoleta.addActionListener(new ActionListener() {
+                                    @Override
+                                    public void actionPerformed(ActionEvent e) {
+                                        ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(user);
+                                        ctrlOpcionesIngreso.iniciar();
+                                        comprobante.getVistaBoleta().dispose();
+                                        vista.dispose();
+                                    }
+                                });
+
+                            } else {
+                                JOptionPane.showMessageDialog(null, "No puede recargar un monto negativo!");
+                            }
                         }catch(NumberFormatException a){
                             JOptionPane.showMessageDialog(null, "Solo se permiten números!");
                         }

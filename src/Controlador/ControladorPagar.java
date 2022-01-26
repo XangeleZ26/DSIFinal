@@ -66,6 +66,7 @@ public class ControladorPagar {
             SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
             if(datosLlenosPagar()){
+                int x = vista.cbxVehiculo.getSelectedIndex();
                 user.getCuenta().pagarPeaje(
                 sdf.format(vista.dcFechaPago.getDate()),
                 user.getCuenta().getVehiculos(x),
@@ -116,7 +117,7 @@ public class ControladorPagar {
         
         for (int i = 0; i < user.getCuenta().getNv(); i++){  
         vista.cbxVehiculo.addItem(user.getCuenta().getVehiculos(i).getPlaca());
-        x = i;
+        //x = i;
         }
      
         
