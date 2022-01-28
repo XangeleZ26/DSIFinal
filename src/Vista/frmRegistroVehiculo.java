@@ -56,6 +56,7 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
         jSeparator9 = new javax.swing.JSeparator();
         btnSiguiente2 = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
+        lblPesoBruto1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -214,6 +215,9 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
         btnAtras.setBorder(null);
         btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
+        lblPesoBruto1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        lblPesoBruto1.setText("Kg.");
+
         org.jdesktop.layout.GroupLayout PContenidoVehiculoLayout = new org.jdesktop.layout.GroupLayout(PContenidoVehiculo);
         PContenidoVehiculo.setLayout(PContenidoVehiculoLayout);
         PContenidoVehiculoLayout.setHorizontalGroup(
@@ -279,10 +283,12 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
                                     .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
                                         .add(jSeparator7)
                                         .add(txtAño, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 109, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                                    .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
-                                        .add(txtPesoBruto)
-                                        .add(jSeparator4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 164, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                                .add(105, 105, 105))
+                                    .add(PContenidoVehiculoLayout.createSequentialGroup()
+                                        .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                                            .add(txtPesoBruto)
+                                            .add(jSeparator4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 164, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
+                                        .add(lblPesoBruto1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 49, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
                             .add(PContenidoVehiculoLayout.createSequentialGroup()
                                 .add(0, 0, Short.MAX_VALUE)
                                 .add(btnSiguiente2)))
@@ -315,10 +321,12 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(jSeparator8, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(lblMarca, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 39, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                        .add(44, 44, 44)
+                        .add(41, 41, 41)
                         .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(PContenidoVehiculoLayout.createSequentialGroup()
-                                .add(txtPesoBruto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                                    .add(txtPesoBruto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                                    .add(lblPesoBruto1))
                                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                                 .add(jSeparator4, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
                             .add(lblPesoBruto))))
@@ -347,7 +355,7 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
                         .add(cbxCategoria, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                         .add(jSeparator5, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 54, Short.MAX_VALUE)
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 45, Short.MAX_VALUE)
                 .add(PContenidoVehiculoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, btnSiguiente2)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, btnAtras))
@@ -452,6 +460,7 @@ public class frmRegistroVehiculo extends javax.swing.JFrame {
     private javax.swing.JLabel lblMarca;
     private javax.swing.JLabel lblModelo;
     private javax.swing.JLabel lblPesoBruto;
+    private javax.swing.JLabel lblPesoBruto1;
     private javax.swing.JLabel lblPlaca;
     private javax.swing.JLabel lblTipoUso;
     public javax.swing.JTextField txtAño;
