@@ -36,12 +36,17 @@ public class frmPagar extends javax.swing.JFrame {
         cbxEstacion = new javax.swing.JComboBox<>();
         btnPagar = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
-        lblFecha = new javax.swing.JLabel();
+        txtCosto = new javax.swing.JLabel();
         dcFechaPago = new com.toedter.calendar.JDateChooser();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
         lblFecha1 = new javax.swing.JLabel();
         cbxVehiculo = new javax.swing.JComboBox<>();
+        jSeparator3 = new javax.swing.JSeparator();
+        jSeparator4 = new javax.swing.JSeparator();
+        lblFecha2 = new javax.swing.JLabel();
+        lblFecha3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,7 +85,7 @@ public class frmPagar extends javax.swing.JFrame {
 
         lblPeaje.setFont(new java.awt.Font("Times New Roman", 0, 28)); // NOI18N
         lblPeaje.setText("Peaje:");
-        PContenidoPagar.add(lblPeaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 77, -1));
+        PContenidoPagar.add(lblPeaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 77, -1));
 
         cbxPeaje.setBackground(new java.awt.Color(121, 127, 139));
         cbxPeaje.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -91,11 +96,11 @@ public class frmPagar extends javax.swing.JFrame {
                 cbxPeajeActionPerformed(evt);
             }
         });
-        PContenidoPagar.add(cbxPeaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 60, 239, -1));
+        PContenidoPagar.add(cbxPeaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 239, -1));
 
         lblEstacion.setFont(new java.awt.Font("Times New Roman", 0, 28)); // NOI18N
         lblEstacion.setText("Estación:");
-        PContenidoPagar.add(lblEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 116, -1));
+        PContenidoPagar.add(lblEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 100, 116, -1));
 
         cbxEstacion.setBackground(new java.awt.Color(121, 127, 139));
         cbxEstacion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -106,39 +111,39 @@ public class frmPagar extends javax.swing.JFrame {
                 cbxEstacionActionPerformed(evt);
             }
         });
-        PContenidoPagar.add(cbxEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 140, 240, -1));
+        PContenidoPagar.add(cbxEstacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 100, 240, -1));
 
         btnPagar.setBackground(new java.awt.Color(121, 127, 139));
         btnPagar.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         btnPagar.setText("Realizar pago");
         btnPagar.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnPagar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        PContenidoPagar.add(btnPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(189, 390, 150, 45));
+        PContenidoPagar.add(btnPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 440, 150, 45));
 
         btnAtras.setBackground(new java.awt.Color(121, 127, 139));
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
         btnAtras.setBorder(null);
         btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        PContenidoPagar.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(422, 387, -1, -1));
+        PContenidoPagar.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 430, -1, -1));
 
-        lblFecha.setFont(new java.awt.Font("Times New Roman", 0, 28)); // NOI18N
-        lblFecha.setText("Fecha:");
-        PContenidoPagar.add(lblFecha, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 80, 20));
+        txtCosto.setFont(new java.awt.Font("Times New Roman", 0, 28)); // NOI18N
+        txtCosto.setText("1.5");
+        PContenidoPagar.add(txtCosto, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 300, 60, 30));
 
         dcFechaPago.setBackground(new java.awt.Color(121, 127, 139));
-        PContenidoPagar.add(dcFechaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 280, 240, 30));
+        PContenidoPagar.add(dcFechaPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 220, 240, 30));
 
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
-        PContenidoPagar.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 80, 239, 10));
+        PContenidoPagar.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(209, 60, 240, 20));
 
         jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator2.setForeground(new java.awt.Color(0, 0, 0));
-        PContenidoPagar.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 170, 225, 10));
+        PContenidoPagar.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 250, 240, 10));
 
         lblFecha1.setFont(new java.awt.Font("Times New Roman", 0, 28)); // NOI18N
         lblFecha1.setText("Vehiculos:");
-        PContenidoPagar.add(lblFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 210, 127, -1));
+        PContenidoPagar.add(lblFecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 127, -1));
 
         cbxVehiculo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         cbxVehiculo.addActionListener(new java.awt.event.ActionListener() {
@@ -146,9 +151,38 @@ public class frmPagar extends javax.swing.JFrame {
                 cbxVehiculoActionPerformed(evt);
             }
         });
-        PContenidoPagar.add(cbxVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 210, 240, 30));
+        PContenidoPagar.add(cbxVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 160, 240, 30));
 
-        PGeneralPagar.add(PContenidoPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 99, 510, 470));
+        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoPagar.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 130, 240, 10));
+
+        jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator4.setForeground(new java.awt.Color(0, 0, 0));
+        PContenidoPagar.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 190, 240, 10));
+
+        lblFecha2.setFont(new java.awt.Font("Times New Roman", 0, 28)); // NOI18N
+        lblFecha2.setText("Fecha:");
+        PContenidoPagar.add(lblFecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 80, 20));
+
+        lblFecha3.setFont(new java.awt.Font("Times New Roman", 0, 28)); // NOI18N
+        lblFecha3.setText("Costo: S/.");
+        PContenidoPagar.add(lblFecha3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 300, 120, 30));
+
+        org.jdesktop.layout.GroupLayout jPanel1Layout = new org.jdesktop.layout.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 100, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+            .add(0, 30, Short.MAX_VALUE)
+        );
+
+        PContenidoPagar.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 300, 100, 30));
+
+        PGeneralPagar.add(PContenidoPagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 99, 510, 540));
 
         org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -221,13 +255,18 @@ public class frmPagar extends javax.swing.JFrame {
     public javax.swing.JComboBox<String> cbxPeaje;
     public javax.swing.JComboBox<String> cbxVehiculo;
     public com.toedter.calendar.JDateChooser dcFechaPago;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
     private javax.swing.JLabel lblEstacion;
-    private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblFecha1;
+    private javax.swing.JLabel lblFecha2;
+    private javax.swing.JLabel lblFecha3;
     private javax.swing.JLabel lblPagar;
     private javax.swing.JLabel lblPeaje;
+    public javax.swing.JLabel txtCosto;
     // End of variables declaration//GEN-END:variables
 
 }

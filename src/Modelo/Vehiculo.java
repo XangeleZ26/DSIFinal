@@ -14,7 +14,9 @@ public class Vehiculo implements Serializable{
     private float pesoBruto;
     private int año;
     private Cliente dueño;
-    
+    public Vehiculo(){
+        
+    }
     //MÉTODOS ACCESORES 
     public String getPlaca() {
         return placa;

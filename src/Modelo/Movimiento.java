@@ -25,8 +25,7 @@ private static final long serialVersionUID=26L;
         this.monto = monto;
         this.tipo = tipo;
         this.fecha = fecha;
-        /*this.vehiculo = null;
-        this.estacion = null;*/
+       
     }
 
     public String getFecha() {

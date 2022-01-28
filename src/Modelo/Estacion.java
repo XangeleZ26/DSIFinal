@@ -56,7 +56,9 @@ public class Estacion implements Serializable{
         this.codigoEstacion = codigoEstacion;
         this.peaje = peaje;
     }
-    
+    public Estacion(){
+        
+    }
     //Calcular la tarifa neta
     
     public float calcularTarifaNeta(int ejes, String categoria, String tipoUso){

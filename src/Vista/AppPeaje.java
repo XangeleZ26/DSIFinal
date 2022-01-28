@@ -8,6 +8,7 @@ import Modelo.Tarjeta;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import Controlador.*;
+import java.io.File;
 
 public class AppPeaje {
 
@@ -298,16 +299,18 @@ public class AppPeaje {
 //        Configuracion.getArrClientes().mostrarClientes();
         clientes.mostrarClientes();
         System.out.println("");
-        
+        File archivo=new File("archivoUser.txt");
+        if(archivo.exists()){
         try {
             ArregloClientes extra = (ArregloClientes) Configuracion.serial.deserializar("archivoUser.txt");
             Configuracion.arrClientes = extra;
         } catch (Exception ex) {
             System.out.println("archivo vacio, primer guardado y/o archivo inexistente");
-        }
+        }}
         System.out.println(Configuracion.arrClientes);
         frmPaginaPrincipal fPrincipal = new frmPaginaPrincipal();
-
+        
+          
 //        try {
 //            Configuracion.serial.serializar("archivoUser.txt", Configuracion.arrClientes);
 //        } catch (Exception ex) {

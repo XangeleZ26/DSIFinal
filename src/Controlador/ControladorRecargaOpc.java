@@ -98,8 +98,12 @@ public class ControladorRecargaOpc {
 
                                     Date fechaActual = new Date();
                                     SimpleDateFormat sdfActual = new SimpleDateFormat("dd/MM/yyyy");
-                                    ClientePotencial.getCuenta().recargar(Float.parseFloat(vistaRecargaOpc.txtMontoOpcional.getText()),
+                                    
+                                    if(vistaRecargaOpc.txtMontoOpcional.getText().equalsIgnoreCase("")){
+                                        float numeroExtra=0;
+                                    ClientePotencial.getCuenta().recargar(numeroExtra,
                                             TarjetaPotencial, sdfActual.format(fechaActual));
+                                    }
                                             //se registra al cliente
 //                                               try {
 //                                            ArregloClientes extra=(ArregloClientes)Configuracion.serial.deserializar("archivoUser.txt");
@@ -154,7 +158,7 @@ public class ControladorRecargaOpc {
                         JOptionPane.showMessageDialog(vistaRecargaOpc, "Debe rellenar todos los campos, por favor.");
                     }
                 } else {
-                    JOptionPane.showMessageDialog(vistaRecargaOpc, "Aún no calcula em monto final!");
+                    JOptionPane.showMessageDialog(vistaRecargaOpc, "Aún no calcula el monto final!");
                 }
             }
         });
@@ -217,11 +221,10 @@ public class ControladorRecargaOpc {
         vistaRecargaOpc.setLocationRelativeTo(null);
         vistaRecargaOpc.setVisible(true);
         if (ClientePotencial.getTipoDocumento().compareTo("RUC") == 0) {
-            vistaRecargaOpc.btnFactura.setVisible(true);
-            vistaRecargaOpc.btnBoleta.setVisible(false);
+            vistaRecargaOpc.txtComprobante.setText("Factura");
+           
         } else {
-            vistaRecargaOpc.btnFactura.setVisible(false);
-            vistaRecargaOpc.btnBoleta.setVisible(true);
+               vistaRecargaOpc.txtComprobante.setText("Boleta");
         }
         DefaultComboBoxModel medioPagoComboBox = new DefaultComboBoxModel();
         for (Object o : Modelo.Configuracion.medioPago) {

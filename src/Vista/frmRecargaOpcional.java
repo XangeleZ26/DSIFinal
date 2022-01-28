@@ -40,7 +40,6 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         lblSimbolo1 = new javax.swing.JLabel();
         txtCVV = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        lblComprobante = new javax.swing.JLabel();
         lblMedioPago = new javax.swing.JLabel();
         lblDescripcion3 = new javax.swing.JLabel();
         cbxMedioPago = new javax.swing.JComboBox<>();
@@ -68,12 +67,12 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         btnCalcular = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JSeparator();
         txtTotal = new javax.swing.JTextField();
-        btnFactura = new javax.swing.JButton();
-        btnBoleta = new javax.swing.JButton();
         txtMontoOpcional = new javax.swing.JTextField();
         btnAtras = new javax.swing.JButton();
         jmcMesVencimiento = new com.toedter.calendar.JMonthChooser();
         jycAñoVencimiento = new com.toedter.calendar.JYearChooser();
+        lblComprobante1 = new javax.swing.JLabel();
+        txtComprobante = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -140,10 +139,6 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
         jSeparator1.setForeground(new java.awt.Color(0, 0, 0));
         PContenidoRecargaOpcional.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 125, 10));
 
-        lblComprobante.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        lblComprobante.setText("Comprobante de pago");
-        PContenidoRecargaOpcional.add(lblComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, -1, -1));
-
         lblMedioPago.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         lblMedioPago.setText("Medio de pago");
         PContenidoRecargaOpcional.add(lblMedioPago, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, 218, -1));
@@ -196,7 +191,7 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
                 btnFinalizarActionPerformed(evt);
             }
         });
-        PContenidoRecargaOpcional.add(btnFinalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 610, -1, -1));
+        PContenidoRecargaOpcional.add(btnFinalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(613, 599, 110, 40));
 
         jTextPane1.setEditable(false);
         jTextPane1.setBackground(new java.awt.Color(121, 127, 139));
@@ -291,39 +286,6 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
 
         PContenidoRecargaOpcional.add(PDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 300, 260));
 
-        btnFactura.setBackground(new java.awt.Color(22, 38, 46));
-        btnFactura.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnFactura.setForeground(new java.awt.Color(255, 255, 255));
-        btnFactura.setText("Factura");
-        btnFactura.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        btnFactura.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnFacturaMouseClicked(evt);
-            }
-        });
-        btnFactura.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnFacturaActionPerformed(evt);
-            }
-        });
-        PContenidoRecargaOpcional.add(btnFactura, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 90, 37));
-
-        btnBoleta.setBackground(new java.awt.Color(22, 38, 46));
-        btnBoleta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnBoleta.setForeground(new java.awt.Color(255, 255, 255));
-        btnBoleta.setText("Boleta");
-        btnBoleta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btnBoletaMouseClicked(evt);
-            }
-        });
-        btnBoleta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBoletaActionPerformed(evt);
-            }
-        });
-        PContenidoRecargaOpcional.add(btnBoleta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 310, 90, 37));
-
         txtMontoOpcional.setBackground(new java.awt.Color(121, 127, 139));
         txtMontoOpcional.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtMontoOpcional.setBorder(null);
@@ -340,6 +302,14 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
 
         jycAñoVencimiento.setBackground(new java.awt.Color(121, 127, 139));
         PContenidoRecargaOpcional.add(jycAñoVencimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 570, 80, 30));
+
+        lblComprobante1.setFont(new java.awt.Font("Times New Roman", 1, 22)); // NOI18N
+        lblComprobante1.setText("Comprobante de pago:");
+        PContenidoRecargaOpcional.add(lblComprobante1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, -1, 30));
+
+        txtComprobante.setFont(new java.awt.Font("Times New Roman", 1, 22)); // NOI18N
+        txtComprobante.setText("Boleta");
+        PContenidoRecargaOpcional.add(txtComprobante, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 286, 80, 40));
 
         PGeneralRecargaOpcional.add(PContenidoRecargaOpcional, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 750, 660));
 
@@ -372,22 +342,6 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
     private void txtTotalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTotalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTotalActionPerformed
-
-    private void btnFacturaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnFacturaMouseClicked
-
-    }//GEN-LAST:event_btnFacturaMouseClicked
-
-    private void btnFacturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFacturaActionPerformed
-        
-    }//GEN-LAST:event_btnFacturaActionPerformed
-
-    private void btnBoletaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBoletaMouseClicked
-        
-    }//GEN-LAST:event_btnBoletaMouseClicked
-
-    private void btnBoletaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBoletaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnBoletaActionPerformed
 
     private void txtCVVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCVVActionPerformed
         // TODO add your handling code here:
@@ -435,9 +389,7 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
     private javax.swing.JPanel PGeneralRecargaOpcional;
     private javax.swing.JPanel PTituloRecargaOpcional;
     public javax.swing.JButton btnAtras;
-    public javax.swing.JButton btnBoleta;
     public javax.swing.JButton btnCalcular;
-    public javax.swing.JButton btnFactura;
     public javax.swing.JButton btnFinalizar;
     public javax.swing.JComboBox<String> cbxMedioPago;
     private javax.swing.JScrollPane jScrollPane1;
@@ -448,7 +400,7 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
     private javax.swing.JTextPane jTextPane1;
     public com.toedter.calendar.JMonthChooser jmcMesVencimiento;
     public com.toedter.calendar.JYearChooser jycAñoVencimiento;
-    private javax.swing.JLabel lblComprobante;
+    private javax.swing.JLabel lblComprobante1;
     private javax.swing.JLabel lblDelivery;
     private javax.swing.JLabel lblDescripcion1;
     private javax.swing.JLabel lblDescripcion2;
@@ -471,6 +423,7 @@ public class frmRecargaOpcional extends javax.swing.JFrame {
     private javax.swing.JLabel lblTituloRecargaAdicional;
     private javax.swing.JLabel lblTotal;
     public javax.swing.JTextField txtCVV;
+    public javax.swing.JLabel txtComprobante;
     public javax.swing.JTextField txtMontoOpcional;
     public javax.swing.JTextField txtMontoRecarga;
     public javax.swing.JTextField txtNumeroTarjeta;

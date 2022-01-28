@@ -66,7 +66,8 @@ public class ControladorMovimientos {
         
         
     }
-
+    //MOVER ESTO AL MODELO DONDE PERTENEZCA
+    
     public void DatosTabla(){
         
         DefaultTableModel TablaUser = new DefaultTableModel();
