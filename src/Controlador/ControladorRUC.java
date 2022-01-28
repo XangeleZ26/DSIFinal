@@ -33,42 +33,46 @@ public class ControladorRUC {
             @Override
             public void actionPerformed(ActionEvent e){
                 if(datosLlenosCliente()){
-                    if(ClientePotencial.verificarValidezRUC(vistaRUC.txtRUC.getText())){
-                         if(!Configuracion.arrClientes.verificarExistenciaCliente("RUC", vistaRUC.txtRUC.getText())){
-                            String contra = String.valueOf(vistaRUC.txtContrasena.getPassword());
-                            String contraVerif = String.valueOf(vistaRUC.txtVerifContrasena.getPassword());
-                            if(contra != null && contraVerif !=null){ //aqui no usa contraseña creada
-                                if(contra.equalsIgnoreCase(contraVerif)){
-                                    Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(), 
-                                                           vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText(), contra);
-        
-                                    JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
-                                    ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
-                                    ctrlVehiculo.iniciarVehiculo();
-                                    vistaRUC.dispose();
+                    try{
+                        if(ClientePotencial.verificarValidezRUC(vistaRUC.txtRUC.getText())){
+                             if(!Configuracion.arrClientes.verificarExistenciaCliente("RUC", vistaRUC.txtRUC.getText())){
+                                String contra = String.valueOf(vistaRUC.txtContrasena.getPassword());
+                                String contraVerif = String.valueOf(vistaRUC.txtVerifContrasena.getPassword());
+                                if(contra != null && contraVerif !=null){ //aqui no usa contraseña creada
+                                    if(contra.equalsIgnoreCase(contraVerif)){
+                                        Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(), 
+                                                               vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText(), contra);
+
+                                        JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
+                                        ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                                        ctrlVehiculo.iniciarVehiculo();
+                                        vistaRUC.dispose();
+                                    }
+                                    else{
+                                        JOptionPane.showMessageDialog(null, "Verificación de contraseña incorrecta.");
+                                    }
                                 }
-                                else{
-                                    JOptionPane.showMessageDialog(null, "Verificación de contraseña incorrecta.");
+                                else{ //aqui no usa contraseña creada
+                                    Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(),vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText());
+                                        JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
+                                        ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                                        ctrlVehiculo.iniciarVehiculo();
+                                        vistaRUC.dispose();
                                 }
-                            }
-                            else{ //aqui no usa contraseña creada
-                                Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(),vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText());
-                                    JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
-                                    ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
-                                    ctrlVehiculo.iniciarVehiculo();
-                                    vistaRUC.dispose();
-                            }
-                         }
-                         else{
-                            limpiarDatosRUC();
-                            JOptionPane.showMessageDialog(vistaRUC, "Cliente ya registrado. Ingrese nuevos datos.");
-                         }
-                    }
-                    else{
-                        vistaRUC.txtRUC.setText(null);
+                             }
+                             else{
+                                limpiarDatosRUC();
+                                JOptionPane.showMessageDialog(vistaRUC, "Cliente ya registrado. Ingrese nuevos datos.");
+                             }
+                        }
+                        else{
+                            JOptionPane.showMessageDialog(vistaRUC, "RUC inválido, digite nuevamente");
+                            vistaRUC.txtRUC.setText(null);
+                        }    
+                    }catch(StringIndexOutOfBoundsException ex){
                         JOptionPane.showMessageDialog(vistaRUC, "RUC inválido, digite nuevamente");
+                        vistaRUC.txtRUC.setText(null);
                     }
-      
                 }
                 else{
                     JOptionPane.showMessageDialog(vistaRUC, "Debe llenar todos los campos, por favor.");
