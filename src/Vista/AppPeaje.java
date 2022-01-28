@@ -51,7 +51,7 @@ public class AppPeaje {
         System.out.println("***Estaciones del peaje 4***");
         peaje4.mostrarEstaciones();
         System.out.println("");
-
+//xd
         //AGREGAMOS CLIENTES
         ArregloClientes clientes = new ArregloClientes();
         Date fechanacimiento1 = new Date(2000 - 1900, 11 - 1, 14);
