@@ -179,7 +179,8 @@ public class ControladorPagar {
         vista.cbxVehiculo.setSelectedItem(-1);
         vista.dcFechaPago.setDate(null);
     }
-
+    
+    //PASAR AL MODELO 
     public String[] getEstacion(String Peaje) {
         String[] estaciones = new String[4];
         if (Peaje.equalsIgnoreCase("Panamericana Norte")) {

@@ -50,6 +50,7 @@ public class frmVehiculos extends javax.swing.JFrame {
         PTituloVehiculos.setBackground(new java.awt.Color(159, 162, 178));
 
         lblVehiculo.setFont(new java.awt.Font("Britannic Bold", 0, 48)); // NOI18N
+        lblVehiculo.setForeground(new java.awt.Color(0, 0, 0));
         lblVehiculo.setText("Vehiculos de la cuenta");
 
         org.jdesktop.layout.GroupLayout PTituloVehiculosLayout = new org.jdesktop.layout.GroupLayout(PTituloVehiculos);
@@ -98,12 +99,14 @@ public class frmVehiculos extends javax.swing.JFrame {
 
         btnOrdenarPlaca.setBackground(new java.awt.Color(159, 162, 178));
         btnOrdenarPlaca.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btnOrdenarPlaca.setForeground(new java.awt.Color(0, 0, 0));
         btnOrdenarPlaca.setText("Ordenar por Placa");
         btnOrdenarPlaca.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnOrdenarPlaca.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
         btnOrdenarAño.setBackground(new java.awt.Color(159, 162, 178));
         btnOrdenarAño.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btnOrdenarAño.setForeground(new java.awt.Color(0, 0, 0));
         btnOrdenarAño.setText("Ordenar por Año");
         btnOrdenarAño.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnOrdenarAño.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -115,6 +118,7 @@ public class frmVehiculos extends javax.swing.JFrame {
 
         btnOrdenarEjes.setBackground(new java.awt.Color(159, 162, 178));
         btnOrdenarEjes.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btnOrdenarEjes.setForeground(new java.awt.Color(0, 0, 0));
         btnOrdenarEjes.setText("Ordenar por Ejes");
         btnOrdenarEjes.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnOrdenarEjes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -126,6 +130,7 @@ public class frmVehiculos extends javax.swing.JFrame {
 
         btnOrdenarPeso.setBackground(new java.awt.Color(159, 162, 178));
         btnOrdenarPeso.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btnOrdenarPeso.setForeground(new java.awt.Color(0, 0, 0));
         btnOrdenarPeso.setText("Ordenar por Peso");
         btnOrdenarPeso.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnOrdenarPeso.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -137,6 +142,7 @@ public class frmVehiculos extends javax.swing.JFrame {
 
         btnAñadirVehiculo.setBackground(new java.awt.Color(159, 162, 178));
         btnAñadirVehiculo.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btnAñadirVehiculo.setForeground(new java.awt.Color(0, 0, 0));
         btnAñadirVehiculo.setText("Añadir Vehículo");
         btnAñadirVehiculo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAñadirVehiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -148,6 +154,7 @@ public class frmVehiculos extends javax.swing.JFrame {
 
         btnEliminarVehiculo.setBackground(new java.awt.Color(159, 162, 178));
         btnEliminarVehiculo.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
+        btnEliminarVehiculo.setForeground(new java.awt.Color(0, 0, 0));
         btnEliminarVehiculo.setText("Eliminar Vehículo");
         btnEliminarVehiculo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnEliminarVehiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -168,6 +175,7 @@ public class frmVehiculos extends javax.swing.JFrame {
         });
 
         btnZA.setBackground(new java.awt.Color(159, 162, 178));
+        btnZA.setForeground(new java.awt.Color(0, 0, 0));
         btnZA.setText("Z->A");
         btnZA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnZA.addActionListener(new java.awt.event.ActionListener() {
@@ -177,6 +185,7 @@ public class frmVehiculos extends javax.swing.JFrame {
         });
 
         btnAZ.setBackground(new java.awt.Color(159, 162, 178));
+        btnAZ.setForeground(new java.awt.Color(0, 0, 0));
         btnAZ.setText("A->Z");
         btnAZ.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAZ.addActionListener(new java.awt.event.ActionListener() {

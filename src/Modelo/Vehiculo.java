@@ -147,5 +147,18 @@ public class Vehiculo implements Serializable{
                "Año: " + año;
     }
     
-    
+    public Object[] datosVehiculo(){
+        Object datos[] = new Object[8];
+        
+        datos[0] = this.placa;
+        datos[1] = this.marca;
+        datos[2] = this.modelo;
+        datos[3] = this.categoria;
+        datos[4] = this.ejes;
+        datos[5] = this.tipoUso;
+        datos[6] = this.pesoBruto;
+        datos[7] = this.año;
+        
+        return datos;
+    }
 }

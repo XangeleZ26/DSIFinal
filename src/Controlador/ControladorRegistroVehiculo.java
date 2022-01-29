@@ -249,6 +249,8 @@ public class ControladorRegistroVehiculo{
         vistaVehiculo.cbxEjes.setSelectedIndex(-1);
         vistaVehiculo.txtAño.setText(null);
     }
+    
+    //PASAR AL MODELO
     public String[] getCategoria(String ejes){
         String[] categoria = new String[2];
         if(ejes.equalsIgnoreCase("2")){
@@ -263,6 +265,8 @@ public class ControladorRegistroVehiculo{
         }
         return categoria;
     }
+    
+    //PASAR AL MODELO
     public String[] getTipoUso(String ejes){
         String[] tipoUso = new String[2];
         if(ejes.equalsIgnoreCase("2")){

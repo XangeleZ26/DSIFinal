@@ -438,9 +438,29 @@ private static final long serialVersionUID=26L;
                     aux = movimientos[j];
                     movimientos[j] = movimientos[j+1];
                     movimientos[j+1] = aux;
+                }
             }
-        }
 
+        }
     }
+    
+    public Object[][] datosVehiculosAZ(){
+        Object datosVehiculos[][] = new Object[this.nv][8];
+        
+        for(int i=0;i<this.nv;i++){
+            datosVehiculos[i] = vehiculos[i].datosVehiculo();
+        }
+        
+        return datosVehiculos;
+    }
+    
+    public Object[][] datosVehiculosZA(){
+        Object datosVehiculos[][] = new Object[this.nv][8];
+        
+        for(int i=0;i<this.nv;i++){
+            datosVehiculos[i] = vehiculos[this.ov-i].datosVehiculo();
+        }
+        
+        return datosVehiculos;
     }
 }

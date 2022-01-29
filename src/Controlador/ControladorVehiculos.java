@@ -25,7 +25,7 @@ public class ControladorVehiculos {
         this.vista.btnAZ.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                llenarTabla();
+                llenarTablaAZ();
             }
         });
         
@@ -40,7 +40,7 @@ public class ControladorVehiculos {
             @Override
             public void actionPerformed(ActionEvent e) {
                 user.getCuenta().ordenarVehiculosXPlaca();
-                llenarTabla();
+                llenarTablaAZ();
             }
         });
 
@@ -48,7 +48,7 @@ public class ControladorVehiculos {
             @Override
             public void actionPerformed(ActionEvent e) {
                 user.getCuenta().ordenarVehiculosXAño();
-                llenarTabla();
+                llenarTablaAZ();
             }
         });
 
@@ -56,7 +56,7 @@ public class ControladorVehiculos {
             @Override
             public void actionPerformed(ActionEvent e) {
                 user.getCuenta().ordenarVehiculosXEjes();
-                llenarTabla();
+                llenarTablaAZ();
             }
         });
 
@@ -64,7 +64,7 @@ public class ControladorVehiculos {
             @Override
             public void actionPerformed(ActionEvent e) {
                 user.getCuenta().ordenarVehiculosXPesoBruto();
-                llenarTabla();
+                llenarTablaAZ();
             }
         });
 
@@ -96,7 +96,7 @@ public class ControladorVehiculos {
                 } else {
                     JOptionPane.showMessageDialog(null, "Debe seleccionar un vehículo.");
                 }
-                llenarTabla();
+                llenarTablaAZ();
             }
         });
 
@@ -110,9 +110,17 @@ public class ControladorVehiculos {
         });
     }
 
-    public void llenarTabla() { //De menor a mayor
-        DefaultTableModel TablaUser = new DefaultTableModel();
-        String informacion[] = new String[8];
+    public void llenarTablaAZ() { //De menor a mayor
+        
+        Object nombresColumnas[] = new Object[8];
+        nombresColumnas = Modelo.Configuracion.datosVehiculos;
+        
+        /*El primer parámetro es para pasar los datos de la tabla, el segundo parámetro es 
+        para los nombres de las columnas*/
+        DefaultTableModel TablaUser = new DefaultTableModel(this.user.getCuenta().datosVehiculosAZ(),
+                                                            nombresColumnas);
+        
+        /*String informacion[] = new String[8];
         for (Object o : Modelo.Configuracion.datosVehiculos) {
             TablaUser.addColumn(o);
         }
@@ -128,33 +136,19 @@ public class ControladorVehiculos {
             informacion[6] = String.valueOf(user.getCuenta().getVehiculos(i).getPesoBruto());
             informacion[7] = String.valueOf(user.getCuenta().getVehiculos(i).getAño());
             TablaUser.addRow(informacion);
-        }
+        }*/
     }
     
     public void llenarTablaZA() { //De mayor a menor
-        DefaultTableModel TablaUser = new DefaultTableModel();
-        String informacion[] = new String[8];
-        for (Object o : Modelo.Configuracion.datosVehiculos) {
-            TablaUser.addColumn(o);
-        }
-        this.vista.tblTabla.setModel(TablaUser);
-
-        for (int i = user.getCuenta().getNv()-1; i >=0; i--) {
-            informacion[0] = user.getCuenta().getVehiculos(i).getPlaca();
-            informacion[1] = user.getCuenta().getVehiculos(i).getMarca();
-            informacion[2] = user.getCuenta().getVehiculos(i).getModelo();
-            informacion[3] = user.getCuenta().getVehiculos(i).getCategoria();
-            informacion[4] = String.valueOf(user.getCuenta().getVehiculos(i).getEjes());
-            informacion[5] = user.getCuenta().getVehiculos(i).getTipoUso();
-            informacion[6] = String.valueOf(user.getCuenta().getVehiculos(i).getPesoBruto());
-            informacion[7] = String.valueOf(user.getCuenta().getVehiculos(i).getAño());
-            TablaUser.addRow(informacion);
-        }
+        Object nombresColumnas[] = new Object[8];
+        nombresColumnas = Modelo.Configuracion.datosVehiculos;
+        DefaultTableModel TablaUser = new DefaultTableModel(this.user.getCuenta().datosVehiculosZA(),
+                                                            nombresColumnas);
     }
 
     public void iniciar() {
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
-        llenarTabla();
+        llenarTablaAZ();
     }
 }
