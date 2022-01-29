@@ -11,11 +11,13 @@ import java.awt.event.MouseEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import Vista.frmRUC;
+import Vista.frmExplicacion;
 
 public class ControladorRUC {
     private frmRUC vistaRUC;
-    private Cliente ClientePotencial;
-        
+    private Cliente ClientePotencial; 
+    frmExplicacion fExplicacion = new frmExplicacion();
+    
     public ControladorRUC(Cliente ClientePotencial){
         this.vistaRUC = new frmRUC();
         this.ClientePotencial = ClientePotencial;
@@ -25,6 +27,15 @@ public class ControladorRUC {
             public void actionPerformed(ActionEvent e){
                ControladorCliente ctrlCliente = new ControladorCliente();
                ctrlCliente.iniciarCliente();
+               //vistaRUC.dispose(); 
+           }
+        });
+        
+        this.vistaRUC.btnExplicacion.addActionListener(new ActionListener(){
+           @Override
+           public void actionPerformed(ActionEvent e){
+               ControladorExplicacionRUC ctrlExplicacion = new ControladorExplicacionRUC(fExplicacion, ClientePotencial);
+               ctrlExplicacion.iniciar();
                vistaRUC.dispose(); 
            }
         });

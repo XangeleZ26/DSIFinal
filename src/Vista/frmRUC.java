@@ -39,6 +39,7 @@ public class frmRUC extends javax.swing.JFrame {
         lblCorreo = new javax.swing.JLabel();
         txtCorreo = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
+        btnExplicacion = new javax.swing.JButton();
         PContraseña = new javax.swing.JPanel();
         btnVolverCliente = new javax.swing.JButton();
         btnNext = new javax.swing.JButton();
@@ -120,6 +121,11 @@ public class frmRUC extends javax.swing.JFrame {
         jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
         jSeparator3.setForeground(new java.awt.Color(0, 0, 0));
 
+        btnExplicacion.setBackground(new java.awt.Color(121, 127, 139));
+        btnExplicacion.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/exclamacion.png"))); // NOI18N
+        btnExplicacion.setBorder(null);
+        btnExplicacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+
         org.jdesktop.layout.GroupLayout PContenidoLayout = new org.jdesktop.layout.GroupLayout(PContenido);
         PContenido.setLayout(PContenidoLayout);
         PContenidoLayout.setHorizontalGroup(
@@ -138,18 +144,22 @@ public class frmRUC extends javax.swing.JFrame {
                     .add(jSeparator1)
                     .add(txtCorreo)
                     .add(jSeparator3, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 261, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
+                .add(btnExplicacion)
+                .addContainerGap(85, Short.MAX_VALUE))
         );
         PContenidoLayout.setVerticalGroup(
             PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
             .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoLayout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
-                    .add(lblRUC)
-                    .add(txtRUC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(27, Short.MAX_VALUE)
+                .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
+                        .add(lblRUC)
+                        .add(txtRUC, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 28, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
+                    .add(org.jdesktop.layout.GroupLayout.TRAILING, btnExplicacion))
                 .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED)
                 .add(jSeparator1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 10, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(33, 33, 33)
+                .add(39, 39, 39)
                 .add(PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.BASELINE)
                     .add(lblRazonSocial)
                     .add(txtRazonSocial, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 27, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
@@ -179,7 +189,7 @@ public class frmRUC extends javax.swing.JFrame {
         btnNext.setBackground(new java.awt.Color(159, 162, 178));
         btnNext.setForeground(new java.awt.Color(0, 0, 0));
         btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/siguienteBoton.png"))); // NOI18N
-        btnNext.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        btnNext.setBorder(null);
         btnNext.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         PContraseña.add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(516, 188, -1, -1));
 
@@ -283,6 +293,7 @@ public class frmRUC extends javax.swing.JFrame {
     private javax.swing.JPanel PContraseña;
     private javax.swing.JPanel PGeneral;
     private javax.swing.JPanel PTitulo;
+    public javax.swing.JButton btnExplicacion;
     public javax.swing.JButton btnNext;
     public javax.swing.JButton btnVolverCliente;
     private javax.swing.JScrollPane jScrollPane1;
