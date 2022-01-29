@@ -57,9 +57,9 @@ public class ControladorCliente{
                                 if(ClientePotencial.verificarEdad(sdf2.format(vistaCliente.dcFechaNacimiento.getDate()))){
                                 String contra = String.valueOf(vistaCliente.txtContrasena.getPassword());
                                 String contraVerif = String.valueOf(vistaCliente.txtVerifContrasena.getPassword());    
-
+                                    try{
                                     if(vistaCliente.cbxTipoDocumento.getSelectedItem().toString().equalsIgnoreCase("DNI")){
-
+                                        
                                         if(ClientePotencial.verificarValidezDNI(vistaCliente.txtNumeroDocumento.getText())){
 
                                             if(contra != null && contraVerif !=null){
@@ -156,6 +156,10 @@ public class ControladorCliente{
                                             vistaCliente.txtNumeroDocumento.setText(null);
                                         }//Validez num carnet
                                     }//Carnet
+                                    }catch(StringIndexOutOfBoundsException ex){
+                                        JOptionPane.showMessageDialog(vistaCliente, "Carácteres insuficientes en el documento de identidad. Digite nuevamente.");
+                                        vistaCliente.txtNumeroDocumento.setText(null);
+                                    }
                                 }
                                 else{
                                     JOptionPane.showMessageDialog(vistaCliente, "Usted no cuenta con la edad suficiente.");
