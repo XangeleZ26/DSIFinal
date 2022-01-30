@@ -39,7 +39,7 @@ public class ControladorVehiculos {
         this.vista.btnOrdenarPlaca.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                user.getCuenta().ordenarVehiculosXPlaca();
+                user.getCuenta().getVehiculos().ordenarVehiculosXPlaca();
                 llenarTablaAZ();
             }
         });
@@ -47,7 +47,7 @@ public class ControladorVehiculos {
         this.vista.btnOrdenarAño.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                user.getCuenta().ordenarVehiculosXAño();
+                user.getCuenta().getVehiculos().ordenarVehiculosXAño();
                 llenarTablaAZ();
             }
         });
@@ -55,7 +55,7 @@ public class ControladorVehiculos {
         this.vista.btnOrdenarEjes.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                user.getCuenta().ordenarVehiculosXEjes();
+                user.getCuenta().getVehiculos().ordenarVehiculosXEjes();
                 llenarTablaAZ();
             }
         });
@@ -63,7 +63,7 @@ public class ControladorVehiculos {
         this.vista.btnOrdenarPeso.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                user.getCuenta().ordenarVehiculosXPesoBruto();
+                user.getCuenta().getVehiculos().ordenarVehiculosXPesoBruto();
                 llenarTablaAZ();
             }
         });
@@ -85,7 +85,7 @@ public class ControladorVehiculos {
 
                 if (filaSeleccionada >= 0) {
                     String placa = vista.tblTabla.getValueAt(filaSeleccionada, 0).toString();
-                    user.getCuenta().eliminarVehiculo(placa);
+                    user.getCuenta().getVehiculos().eliminarVehiculo(placa);
                     try {
                         Configuracion.serial.serializar("archivoUser.txt", Configuracion.arrClientes);
                         JOptionPane.showMessageDialog(null, "Vehículo eliminado.");
@@ -117,9 +117,8 @@ public class ControladorVehiculos {
         
         /*El primer parámetro es para pasar los datos de la tabla, el segundo parámetro es 
         para los nombres de las columnas*/
-        DefaultTableModel TablaUser = new DefaultTableModel(this.user.getCuenta().datosVehiculosAZ(),
-                                                            nombresColumnas);
-        
+        DefaultTableModel TablaUser = new DefaultTableModel(this.user.getCuenta().getVehiculos().datosVehiculosAZ(),nombresColumnas);
+        vista.tblTabla.setModel(TablaUser);
         /*String informacion[] = new String[8];
         for (Object o : Modelo.Configuracion.datosVehiculos) {
             TablaUser.addColumn(o);
@@ -142,8 +141,8 @@ public class ControladorVehiculos {
     public void llenarTablaZA() { //De mayor a menor
         Object nombresColumnas[] = new Object[8];
         nombresColumnas = Modelo.Configuracion.datosVehiculos;
-        DefaultTableModel TablaUser = new DefaultTableModel(this.user.getCuenta().datosVehiculosZA(),
-                                                            nombresColumnas);
+        DefaultTableModel TablaUser = new DefaultTableModel(this.user.getCuenta().getVehiculos().datosVehiculosZA(),nombresColumnas);
+        vista.tblTabla.setModel(TablaUser);
     }
 
     public void iniciar() {

@@ -47,7 +47,7 @@ public class ControladorRecarga {
                                     case 2: user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()),vista.txtCVV.getText(),fechaPago);
                                 }*/
                                 user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()), vista.txtCVV.getText(), fechaPago);
-                                user.getCuenta().mostrarMovimientos();
+                                user.getCuenta().getMovimientos().mostrarMovimientos();
 
                                 try {
                                     Configuracion.serial.serializar("archivoUser.txt", Configuracion.arrClientes);

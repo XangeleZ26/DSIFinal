@@ -36,7 +36,6 @@ public class ControladorRUC {
            public void actionPerformed(ActionEvent e){
                ControladorExplicacionRUC ctrlExplicacion = new ControladorExplicacionRUC(fExplicacion, ClientePotencial);
                ctrlExplicacion.iniciar();
-               vistaRUC.dispose(); 
            }
         });
         

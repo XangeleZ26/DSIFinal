@@ -120,6 +120,7 @@ public class ControladorRecargaOpc {
                                             JOptionPane.showMessageDialog(vistaRecargaOpc, "Usted ha sido registrado en el PEX!");
                                         } catch (Exception ex) {
                                             JOptionPane.showMessageDialog(null,"Fallo en el guardado de archivo");
+                                            
                                         }
                                         
                                  

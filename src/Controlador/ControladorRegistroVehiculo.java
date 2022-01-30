@@ -69,7 +69,7 @@ public class ControladorRegistroVehiculo{
             @Override
             public void actionPerformed(ActionEvent e){
                 if(datosLlenosVehiculo()){
-                    if(!ClientePotencial.getCuenta().verificarExistenciaVehiculo(vistaVehiculo.txtPlaca.getText())){
+                    if(!ClientePotencial.getCuenta().getVehiculos().verificarExistenciaVehiculo(vistaVehiculo.txtPlaca.getText())){
                         Date fecha = new Date();
                         int año = Integer.parseInt(vistaVehiculo.txtAño.getText());
                         if((fecha.getYear()+1900< año) || (año<1900)){
@@ -78,7 +78,7 @@ public class ControladorRegistroVehiculo{
                         }
                         String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
                         int ejesEntero = Integer.parseInt(ejesCadena);
-                        ClientePotencial.getCuenta().registrarVehiculo(
+                        ClientePotencial.getCuenta().getVehiculos().registrarVehiculo(
                                                      vistaVehiculo.txtPlaca.getText(),
                                                      vistaVehiculo.cbxMarca.getSelectedItem().toString(),
                                                      vistaVehiculo.txtModelo.getText(),
@@ -124,7 +124,7 @@ public class ControladorRegistroVehiculo{
             @Override
             public void actionPerformed(ActionEvent e){
                 if(datosLlenosVehiculo()){
-                    if(!ClientePotencial.getCuenta().verificarExistenciaVehiculo(vistaVehiculo.txtPlaca.getText())){
+                    if(!ClientePotencial.getCuenta().getVehiculos().verificarExistenciaVehiculo(vistaVehiculo.txtPlaca.getText())){
                         Date fecha = new Date();
                         int año = Integer.parseInt(vistaVehiculo.txtAño.getText());
                         if((fecha.getYear()+1900< año) || (año<1900)){
@@ -133,7 +133,7 @@ public class ControladorRegistroVehiculo{
                         }
                     String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
                     int ejesEntero = Integer.parseInt(ejesCadena);
-                   ClientePotencial.getCuenta().registrarVehiculo(
+                   ClientePotencial.getCuenta().getVehiculos().registrarVehiculo(
                                                  vistaVehiculo.txtPlaca.getText(),
                                                  vistaVehiculo.cbxMarca.getSelectedItem().toString(),
                                                  vistaVehiculo.txtModelo.getText(),

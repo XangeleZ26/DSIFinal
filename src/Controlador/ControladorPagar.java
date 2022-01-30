@@ -65,7 +65,7 @@ public class ControladorPagar {
 
                 if (datosLlenosPagar()) {
                     int x = vista.cbxVehiculo.getSelectedIndex();
-                    if (user.getCuenta().pagarPeaje(sdf.format(vista.dcFechaPago.getDate()), user.getCuenta().getVehiculos(x), Configuracion.arrPeajes.getArregloPeajes(vista.cbxPeaje.getSelectedIndex()).getEstaciones(vista.cbxEstacion.getSelectedIndex())
+                    if (user.getCuenta().pagarPeaje(sdf.format(vista.dcFechaPago.getDate()), user.getCuenta().getVehiculos().getVehiculo(x), Configuracion.arrPeajes.getArregloPeajes(vista.cbxPeaje.getSelectedIndex()).getEstaciones(vista.cbxEstacion.getSelectedIndex())
                     )) {
                         //user.getCuenta().getMovimientos().imprimirMovimientoSimple();
                         //user.getCuenta().getSaldoTotal();
@@ -106,25 +106,25 @@ public class ControladorPagar {
             public void actionPerformed(ActionEvent e) {
                 if (vista.cbxPeaje.getSelectedItem().toString().trim().length() != 0) {
                         vista.cbxEstacion.setModel(new DefaultComboBoxModel(getEstacion(vista.cbxPeaje.getSelectedItem().toString())));
-                   vista.txtCosto.setText(user.getCuenta().verCostoPeaje(user.getCuenta().getVehiculos(vista.cbxVehiculo.getSelectedIndex()), Configuracion.arrPeajes.getArregloPeajes(vista.cbxPeaje.getSelectedIndex()).getEstaciones(vista.cbxEstacion.getSelectedIndex())));
+                   vista.txtCosto.setText(user.getCuenta().verCostoPeaje(user.getCuenta().getVehiculos().getVehiculo(vista.cbxVehiculo.getSelectedIndex()), Configuracion.arrPeajes.getArregloPeajes(vista.cbxPeaje.getSelectedIndex()).getEstaciones(vista.cbxEstacion.getSelectedIndex())));
                 }
             }
         });
         this.vista.cbxEstacion.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                   vista.txtCosto.setText(user.getCuenta().verCostoPeaje(user.getCuenta().getVehiculos(vista.cbxVehiculo.getSelectedIndex()), Configuracion.arrPeajes.getArregloPeajes(vista.cbxPeaje.getSelectedIndex()).getEstaciones(vista.cbxEstacion.getSelectedIndex())));
+                   vista.txtCosto.setText(user.getCuenta().verCostoPeaje(user.getCuenta().getVehiculos().getVehiculo(vista.cbxVehiculo.getSelectedIndex()), Configuracion.arrPeajes.getArregloPeajes(vista.cbxPeaje.getSelectedIndex()).getEstaciones(vista.cbxEstacion.getSelectedIndex())));
             }
         });
     
-        for (int i = 0; i < user.getCuenta().getNv(); i++) {
-            vista.cbxVehiculo.addItem(user.getCuenta().getVehiculos(i).getPlaca());
+        for (int i = 0; i < user.getCuenta().getVehiculos().getNv(); i++) {
+            vista.cbxVehiculo.addItem(user.getCuenta().getVehiculos().getVehiculo(i).getPlaca());
             //x = i;
         }
             this.vista.cbxVehiculo.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                   vista.txtCosto.setText(user.getCuenta().verCostoPeaje(user.getCuenta().getVehiculos(vista.cbxVehiculo.getSelectedIndex()), Configuracion.arrPeajes.getArregloPeajes(vista.cbxPeaje.getSelectedIndex()).getEstaciones(vista.cbxEstacion.getSelectedIndex())));
+                   vista.txtCosto.setText(user.getCuenta().verCostoPeaje(user.getCuenta().getVehiculos().getVehiculo(vista.cbxVehiculo.getSelectedIndex()), Configuracion.arrPeajes.getArregloPeajes(vista.cbxPeaje.getSelectedIndex()).getEstaciones(vista.cbxEstacion.getSelectedIndex())));
             }
         });
 
@@ -163,7 +163,7 @@ public class ControladorPagar {
             estacionesComboBox.addElement(o);
         }
         vista.cbxEstacion.setModel(estacionesComboBox);
-        vista.txtCosto.setText(user.getCuenta().verCostoPeaje(user.getCuenta().getVehiculos(vista.cbxVehiculo.getSelectedIndex()), Configuracion.arrPeajes.getArregloPeajes(vista.cbxPeaje.getSelectedIndex()).getEstaciones(vista.cbxEstacion.getSelectedIndex())));
+        vista.txtCosto.setText(user.getCuenta().verCostoPeaje(user.getCuenta().getVehiculos().getVehiculo(vista.cbxVehiculo.getSelectedIndex()), Configuracion.arrPeajes.getArregloPeajes(vista.cbxPeaje.getSelectedIndex()).getEstaciones(vista.cbxEstacion.getSelectedIndex())));
     }
 
     public boolean datosLlenosPagar() {

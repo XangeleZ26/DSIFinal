@@ -61,7 +61,6 @@ public class Configuracion {
                                                "ICA", "JUNÍN", "LA LIBERTAD", "LAMBAYEQUE", "LORETO", "MADRE DE DIOS", "MOQUEGUA", "PASCO", "PIURA", "PUNO", 
                                                "SAN MARTÍN", "TACNA", "TUMBES", "UCAYALI"};
     public static String[] provinciasLima = {"LIMA", "BARRANCA", "CAJATAMBO", "CANTA", "CAÑETE", "HUARAL", "HUAROCHIRÍ", "HUAURA", "OYÓN", "YAUYOS"};
-    public static String[] datosMovimiento={"FECHA","TIPO","MONTO","VEHICULO","PEAJE","ESTACION"};
             
            
 }

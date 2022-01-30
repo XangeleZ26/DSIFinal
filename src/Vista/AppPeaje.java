@@ -115,162 +115,162 @@ public class AppPeaje {
         System.out.println("");
 
         //REGISTRAMOS VEHÍCULOS AL CLIENTE
-        System.out.println("Vehículo 'FALL1N1 Tesla Elon' registrado: " + clientes.getArregloCliente(0).getCuenta().registrarVehiculo("FALL1N1", "Tesla", "Elon", "Liviano", 2, "Privado", 2000, 2018, clientes.getArregloCliente(0)));
-        System.out.println("Vehículo 'MESSI10 Chevrolet Camaro' registrado: " + clientes.getArregloCliente(0).getCuenta().registrarVehiculo("MESSI10", "Chevrolet", "Camaro", "Pesado", 2, "Público", 1500, 2015, clientes.getArregloCliente(0)));
-        System.out.println("Vehículo 'MARIOKT Hyundai H100' registrado: " + clientes.getArregloCliente(0).getCuenta().registrarVehiculo("MARIOKT", "Hyundai", "H100", 6, 8500, 2010, clientes.getArregloCliente(0)));
-        System.out.println("Vehículo 'J20G15GY Susuki Grand' registrado: " + clientes.getArregloCliente(0).getCuenta().registrarVehiculo("J20G15GY", "Susuki", "Grand", "Liviano", 2, "Público", 2100, 2007, clientes.getArregloCliente(0)));
+        System.out.println("Vehículo 'FALL1N1 Tesla Elon' registrado: " + clientes.getArregloCliente(0).getCuenta().getVehiculos().registrarVehiculo("FALL1N1", "Tesla", "Elon", "Liviano", 2, "Privado", 2000, 2018, clientes.getArregloCliente(0)));
+        System.out.println("Vehículo 'MESSI10 Chevrolet Camaro' registrado: " + clientes.getArregloCliente(0).getCuenta().getVehiculos().registrarVehiculo("MESSI10", "Chevrolet", "Camaro", "Pesado", 2, "Público", 1500, 2015, clientes.getArregloCliente(0)));
+        System.out.println("Vehículo 'MARIOKT Hyundai H100' registrado: " + clientes.getArregloCliente(0).getCuenta().getVehiculos().registrarVehiculo("MARIOKT", "Hyundai", "H100", 6, 8500, 2010, clientes.getArregloCliente(0)));
+        System.out.println("Vehículo 'J20G15GY Susuki Grand' registrado: " + clientes.getArregloCliente(0).getCuenta().getVehiculos().registrarVehiculo("J20G15GY", "Susuki", "Grand", "Liviano", 2, "Público", 2100, 2007, clientes.getArregloCliente(0)));
         System.out.println("");
         System.out.println("***Vehículos del cliente***");
-        clientes.getArregloCliente(0).getCuenta().mostrarVehiculos();
+        clientes.getArregloCliente(0).getCuenta().getVehiculos().mostrarVehiculos();
         System.out.println("");
 
         //VERIFICAMOS EXISTENCIA DE VEHÍCULOS
-        System.out.println("Vehículo 'FALL1N1' existe: " + clientes.getArregloCliente(0).getCuenta().verificarExistenciaVehiculo("FALL1N1"));
-        System.out.println("Vehículo '122SSNH' existe: " + clientes.getArregloCliente(0).getCuenta().verificarExistenciaVehiculo("122SSNH"));
+        System.out.println("Vehículo 'FALL1N1' existe: " + clientes.getArregloCliente(0).getCuenta().getVehiculos().verificarExistenciaVehiculo("FALL1N1"));
+        System.out.println("Vehículo '122SSNH' existe: " + clientes.getArregloCliente(0).getCuenta().getVehiculos().verificarExistenciaVehiculo("122SSNH"));
         System.out.println("");
 
         //ORDENAR VEHÍCULOS POR AÑO
         System.out.println("***Vehículos del cliente ordenados por año***");
-        clientes.getArregloCliente(0).getCuenta().ordenarVehiculosXAño();
-        clientes.getArregloCliente(0).getCuenta().mostrarVehiculos();
+        clientes.getArregloCliente(0).getCuenta().getVehiculos().ordenarVehiculosXAño();
+        clientes.getArregloCliente(0).getCuenta().getVehiculos().mostrarVehiculos();
         System.out.println("");
 
         //ORDENAR VEHÍCULOS POR PLACA
         System.out.println("***Vehículos del cliente ordenados por placa***");
-        clientes.getArregloCliente(0).getCuenta().ordenarVehiculosXPlaca();
-        clientes.getArregloCliente(0).getCuenta().mostrarVehiculos();
+        clientes.getArregloCliente(0).getCuenta().getVehiculos().ordenarVehiculosXPlaca();
+        clientes.getArregloCliente(0).getCuenta().getVehiculos().mostrarVehiculos();
         System.out.println("");
 
         //ORDENAR VEHÍCULOS POR PESO
         System.out.println("***Vehículos del cliente ordenados por peso***");
-        clientes.getArregloCliente(0).getCuenta().ordenarVehiculosXPesoBruto();
-        clientes.getArregloCliente(0).getCuenta().mostrarVehiculos();
+        clientes.getArregloCliente(0).getCuenta().getVehiculos().ordenarVehiculosXPesoBruto();
+        clientes.getArregloCliente(0).getCuenta().getVehiculos().mostrarVehiculos();
         System.out.println("");
 
         //ORDENAR VEHÍCULOS POR EJES
         System.out.println("***Vehículos del cliente ordenados por ejes***");
-        clientes.getArregloCliente(0).getCuenta().ordenarVehiculosXEjes();
-        clientes.getArregloCliente(0).getCuenta().mostrarVehiculos();
+        clientes.getArregloCliente(0).getCuenta().getVehiculos().ordenarVehiculosXEjes();
+        clientes.getArregloCliente(0).getCuenta().getVehiculos().mostrarVehiculos();
         System.out.println("");
 
         //ELIMINAR VEHÍCULO
-        System.out.println("Vehículo 'J20G15GY Susuki Grand' eliminado: " + clientes.getArregloCliente(0).getCuenta().eliminarVehiculo("J20G15GY"));
+        System.out.println("Vehículo 'J20G15GY Susuki Grand' eliminado: " + clientes.getArregloCliente(0).getCuenta().getVehiculos().eliminarVehiculo("J20G15GY"));
         System.out.println("");
-        clientes.getArregloCliente(0).getCuenta().mostrarVehiculos();
+        clientes.getArregloCliente(0).getCuenta().getVehiculos().mostrarVehiculos();
         System.out.println("");
 
         //MOVIMIENTOS: RECARGAS Y CONSUMOS
         System.out.println("Recarga de 0 soles exitosa: " + clientes.getArregloCliente(0).getCuenta().recargar(0, "124", "2021/12/28"));
         System.out.println("Recarga de 30 soles exitosa: " + clientes.getArregloCliente(0).getCuenta().recargar(30, "124", "2021/12/28"));
         System.out.println("Recarga de 100 soles exitosa: " + clientes.getArregloCliente(0).getCuenta().recargar(100, "124", "2021/12/28"));
-        System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos(0).imprimirMovimientoSimple());
+        System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos().getMovimiento(0).imprimirMovimientoSimple());
         System.out.println("Saldo total: " + clientes.getArregloCliente(0).getCuenta().getSaldoTotal());
         System.out.println("");
 
-        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos(0).getPlaca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(0).getMarca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(0).getModelo() + "' en la estación '"
+        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(0).getPlaca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(0).getMarca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(0).getModelo() + "' en la estación '"
                 + peaje1.getEstaciones(0).getNombreEstacion() + "' pagado: "
-                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/29", clientes.getArregloCliente(0).getCuenta().getVehiculos(0), peaje1.getEstaciones(0)));
+                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/29", clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(0), peaje1.getEstaciones(0)));
         System.out.println("Saldo total: " + clientes.getArregloCliente(0).getCuenta().getSaldoTotal());
-        System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos(2).imprimirMovimientoSimple());
+        System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos().getMovimiento(2).imprimirMovimientoSimple());
         System.out.println("");
 
-        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos(1).getPlaca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(1).getMarca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(1).getModelo() + "' en la estación '"
+        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(1).getPlaca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(1).getMarca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(1).getModelo() + "' en la estación '"
                 + peaje1.getEstaciones(1).getNombreEstacion() + "' pagado: "
-                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/27", clientes.getArregloCliente(0).getCuenta().getVehiculos(1), peaje1.getEstaciones(1)));
+                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/27", clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(1), peaje1.getEstaciones(1)));
         System.out.println("Saldo total: " + clientes.getArregloCliente(0).getCuenta().getSaldoTotal());
         //System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos(3).imprimirMovimientoSimple());
         System.out.println("");
 
-        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getPlaca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getMarca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getModelo() + "' en la estación '"
+        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2).getPlaca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2).getMarca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2).getModelo() + "' en la estación '"
                 + peaje1.getEstaciones(2).getNombreEstacion() + "' pagado: "
-                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/31", clientes.getArregloCliente(0).getCuenta().getVehiculos(2), peaje1.getEstaciones(2)));
+                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/31", clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2), peaje1.getEstaciones(2)));
         System.out.println("Saldo total: " + clientes.getArregloCliente(0).getCuenta().getSaldoTotal());
         //System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos(4).imprimirMovimientoSimple());
         System.out.println("");
 
-        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos(0).getPlaca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(0).getMarca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(0).getModelo() + "' en la estación '"
+        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(0).getPlaca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(0).getMarca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(0).getModelo() + "' en la estación '"
                 + peaje1.getEstaciones(3).getNombreEstacion() + "' pagado: "
-                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2022/01/01", clientes.getArregloCliente(0).getCuenta().getVehiculos(0), peaje1.getEstaciones(3)));
+                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2022/01/01", clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(0), peaje1.getEstaciones(3)));
         System.out.println("Saldo total: " + clientes.getArregloCliente(0).getCuenta().getSaldoTotal());
         //System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos(5).imprimirMovimientoSimple());
         System.out.println("");
 
-        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos(1).getPlaca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(1).getMarca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(1).getModelo() + "' en la estación '"
+        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(1).getPlaca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(1).getMarca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(1).getModelo() + "' en la estación '"
                 + peaje2.getEstaciones(0).getNombreEstacion() + "' pagado: "
-                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/28", clientes.getArregloCliente(0).getCuenta().getVehiculos(1), peaje2.getEstaciones(0)));
+                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/28", clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(1), peaje2.getEstaciones(0)));
         System.out.println("Saldo total: " + clientes.getArregloCliente(0).getCuenta().getSaldoTotal());
         //System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos(6).imprimirMovimientoSimple());
         System.out.println("");
 
-        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getPlaca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getMarca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getModelo() + "' en la estación '"
+        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2).getPlaca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2).getMarca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2).getModelo() + "' en la estación '"
                 + peaje1.getEstaciones(0).getNombreEstacion() + "' pagado: "
-                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/31", clientes.getArregloCliente(0).getCuenta().getVehiculos(2), peaje1.getEstaciones(0)));
+                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/31", clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2), peaje1.getEstaciones(0)));
         System.out.println("Saldo total: " + clientes.getArregloCliente(0).getCuenta().getSaldoTotal());
         //System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos(7).imprimirMovimientoSimple());
         System.out.println("");
 
-        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getPlaca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getMarca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getModelo() + "' en la estación '"
+        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2).getPlaca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2).getMarca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2).getModelo() + "' en la estación '"
                 + peaje3.getEstaciones(1).getNombreEstacion() + "' pagado: "
-                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/31", clientes.getArregloCliente(0).getCuenta().getVehiculos(2), peaje3.getEstaciones(1)));
+                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/31", clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2), peaje3.getEstaciones(1)));
         System.out.println("Saldo total: " + clientes.getArregloCliente(0).getCuenta().getSaldoTotal());
         //System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos(8).imprimirMovimientoSimple());
         System.out.println("");
 
-        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getPlaca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getMarca()
-                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos(2).getModelo() + "' en la estación '"
+        System.out.println("Peaje del vehículo '" + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2).getPlaca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2).getMarca()
+                + " " + clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2).getModelo() + "' en la estación '"
                 + peaje4.getEstaciones(2).getNombreEstacion() + "' pagado: "
-                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/31", clientes.getArregloCliente(0).getCuenta().getVehiculos(2), peaje4.getEstaciones(2)));
+                + clientes.getArregloCliente(0).getCuenta().pagarPeaje("2021/12/31", clientes.getArregloCliente(0).getCuenta().getVehiculos().getVehiculo(2), peaje4.getEstaciones(2)));
         System.out.println("Saldo total: " + clientes.getArregloCliente(0).getCuenta().getSaldoTotal());
         //System.out.println(clientes.getArregloCliente(0).getCuenta().getMovimientos(9).imprimirMovimientoSimple());
         System.out.println("");
 
         //MOSTRAR VEHÍCULOS
         System.out.println("***Vehículos del cliente***");
-        clientes.getArregloCliente(0).getCuenta().mostrarVehiculos();
+        clientes.getArregloCliente(0).getCuenta().getVehiculos().mostrarVehiculos();
         System.out.println("");
 
         //MOSTRAR MOVIMIENTOS
         System.out.println("***Movimientos del cliente***");
-        clientes.getArregloCliente(0).getCuenta().mostrarMovimientos();
+        clientes.getArregloCliente(0).getCuenta().getMovimientos().mostrarMovimientos();
         System.out.println("");
 
         //ORDENAR MOVIMIENTOS POR FECHA
         System.out.println("***Movimientos del cliente ordenados por fecha***");
-        clientes.getArregloCliente(0).getCuenta().ordenarMovimientosXFecha();
-        clientes.getArregloCliente(0).getCuenta().mostrarMovimientos();
+        clientes.getArregloCliente(0).getCuenta().getMovimientos().ordenarMovimientosXFecha();
+        clientes.getArregloCliente(0).getCuenta().getMovimientos().mostrarMovimientos();
         System.out.println("");
 
         //ORDENAR MOVIMIENTOS POR MONTO
         System.out.println("***Movimientos del cliente ordenados por monto***");
-        clientes.getArregloCliente(0).getCuenta().ordenarMovimientosXMonto();
-        clientes.getArregloCliente(0).getCuenta().mostrarMovimientos();
+        clientes.getArregloCliente(0).getCuenta().getMovimientos().ordenarMovimientosXMonto();
+        clientes.getArregloCliente(0).getCuenta().getMovimientos().mostrarMovimientos();
         System.out.println("");
 
         //ODENAR MOVIMIENTOS POR PLACA DEL VEHÍCULO
         System.out.println("***Movimientos del cliente ordenados por vehículo***");
 //        clientes.getArregloCliente(0).getCuenta().ordenarMovimientosXPlacaVehiculo();
-        clientes.getArregloCliente(0).getCuenta().mostrarMovimientos();
+        clientes.getArregloCliente(0).getCuenta().getMovimientos().mostrarMovimientos();
         System.out.println("");
 
         //ORDENAR MOVIMIENTOS POR ESTACIÓN
         System.out.println("***Movimientos del cliente ordenados por estación***");
 //        clientes.getArregloCliente(0).getCuenta().ordenarMovimientosXEstacion();
-        clientes.getArregloCliente(0).getCuenta().mostrarMovimientos();
+        clientes.getArregloCliente(0).getCuenta().getMovimientos().mostrarMovimientos();
         System.out.println("");
 
         //Ingreso a la cuenta.
