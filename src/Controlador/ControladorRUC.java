@@ -12,6 +12,8 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import Vista.frmRUC;
 import Vista.frmExplicacion;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ControladorRUC {
     private frmRUC vistaRUC;
@@ -47,30 +49,38 @@ public class ControladorRUC {
                         if(ClientePotencial.verificarValidezRUC(vistaRUC.txtRUC.getText())){
                              if(!Configuracion.arrClientes.verificarExistenciaCliente("RUC", vistaRUC.txtRUC.getText())){
                                 if(!Configuracion.arrClientes.verificarExistenciaCorreo(vistaRUC.txtCorreo.getText())){
-                                String contra = String.valueOf(vistaRUC.txtContrasena.getPassword());
-                                String contraVerif = String.valueOf(vistaRUC.txtVerifContrasena.getPassword());
-                                if(contra != null && contraVerif !=null){ //aqui no usa contraseña creada
-                                    if(contra.equalsIgnoreCase(contraVerif)){
-                                        Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(), 
-                                                               vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText(), contra);
+                                    Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                                                          + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+                                    Matcher mather = pattern.matcher(vistaRUC.txtCorreo.getText());
+                                    if(mather.find() == true){ //Verificador de validez de correo
+                                        String contra = String.valueOf(vistaRUC.txtContrasena.getPassword());
+                                        String contraVerif = String.valueOf(vistaRUC.txtVerifContrasena.getPassword());
+                                        if(contra != null && contraVerif !=null){ //aqui no usa contraseña creada
+                                            if(contra.equalsIgnoreCase(contraVerif)){
+                                                Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(), 
+                                                                       vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText(), contra);
 
-                                        JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
-                                        ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
-                                        ctrlVehiculo.iniciarVehiculo();
-                                        vistaRUC.dispose();
+                                                JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
+                                                ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                                                ctrlVehiculo.iniciarVehiculo();
+                                                vistaRUC.dispose();
+                                            }
+                                            else{
+                                                JOptionPane.showMessageDialog(null, "Verificación de contraseña incorrecta.");
+                                            }
+                                        }
+                                        else{ //aqui no usa contraseña creada
+                                            Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(),vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText());
+                                                JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
+                                                ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                                                ctrlVehiculo.iniciarVehiculo();
+                                                vistaRUC.dispose();
+                                        }
                                     }
                                     else{
-                                        JOptionPane.showMessageDialog(null, "Verificación de contraseña incorrecta.");
+                                        JOptionPane.showMessageDialog(null, "Correo inválido. Ingrese otra dirección de correo.");
                                     }
                                 }
-                                else{ //aqui no usa contraseña creada
-                                    Cliente ClientePotencial = new Cliente("RUC", vistaRUC.txtRUC.getText(),vistaRUC.txtCorreo.getText(), vistaRUC.txtRazonSocial.getText());
-                                        JOptionPane.showMessageDialog(vistaRUC, "Datos de RUC registrados, puede continuar con su registro.");
-                                        ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
-                                        ctrlVehiculo.iniciarVehiculo();
-                                        vistaRUC.dispose();
-                                }
-                             }
                                 else{
                                 JOptionPane.showMessageDialog(vistaRUC, "Correo ya registrado. Ingrese otra dirección de correo.");
                                 vistaRUC.txtCorreo.setText(null);
