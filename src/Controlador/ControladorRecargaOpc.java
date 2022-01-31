@@ -99,10 +99,10 @@ public class ControladorRecargaOpc {
                                     Date fechaActual = new Date();
                                     SimpleDateFormat sdfActual = new SimpleDateFormat("dd/MM/yyyy");
                                     
-                                    if(vistaRecargaOpc.txtMontoOpcional.getText().equalsIgnoreCase("")){
-                                        float numeroExtra=0;
-                                    ClientePotencial.getCuenta().recargar(numeroExtra,
-                                            TarjetaPotencial, sdfActual.format(fechaActual));
+                                    if(!vistaRecargaOpc.txtMontoOpcional.getText().equalsIgnoreCase("")){
+                                        //float numeroExtra=0;
+                                        ClientePotencial.getCuenta().recargar(Float.valueOf(vistaRecargaOpc.txtMontoOpcional.getText()),
+                                                TarjetaPotencial, sdfActual.format(fechaActual));
                                     }
                                             //se registra al cliente
 //                                               try {
@@ -125,8 +125,19 @@ public class ControladorRecargaOpc {
                                         
                                  
                                         Configuracion.getArrClientes().mostrarClientes();
-                                        ControladorBoleta ctrlComprobante = new ControladorBoleta(ClientePotencial);
-                                        ctrlComprobante.iniciarParaOpc();
+                                        ControladorBoleta ctrlComprobante;
+                                        
+                                        if(!vistaRecargaOpc.txtMontoOpcional.getText().equalsIgnoreCase("")){
+                                            ctrlComprobante = new ControladorBoleta(ClientePotencial,
+                                                                                    vistaRecargaOpc.txtMontoOpcional.getText());
+                                            Date fechaRegistro = new Date();
+                                            SimpleDateFormat sdfFechaRegistro = new SimpleDateFormat("dd/MM/yyyy");
+                                            ctrlComprobante.iniciarParaRecarga(sdfFechaRegistro.format(fechaRegistro));
+                                        }
+                                        else{
+                                            ctrlComprobante = new ControladorBoleta(ClientePotencial);
+                                            ctrlComprobante.iniciarParaOpc();
+                                        }
 
                                         //PARA CERRAR COMPROBANTE
                                         ctrlComprobante.getVistaBoleta().btnOKBoleta.addActionListener(new ActionListener() {
