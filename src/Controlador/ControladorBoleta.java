@@ -8,6 +8,13 @@ import Modelo.Cliente;
 import Modelo.Tarjeta;
 import Vista.frmBoleta;
 import Vista.frmPaginaPrincipal;
+import java.awt.image.BufferedImage;
+import javax.swing.ImageIcon;
+import net.sourceforge.jbarcodebean.BarcodeException;
+import net.sourceforge.jbarcodebean.JBarcodeBean;
+import net.sourceforge.jbarcodebean.model.Interleaved25;
+import java.awt.Color;
+import java.util.Random;
 
 public class ControladorBoleta {
 
@@ -15,7 +22,9 @@ public class ControladorBoleta {
     private frmBoleta vistaBoleta;
     private String monto; //Es el monto previo que se digitó para recargar/pagar y/o consumir
 //    private int condicionComprobante; //1 si es Pago , 2 si es recarga , 3 para pagar peaje
-
+    JBarcodeBean barcode = new JBarcodeBean();   
+    public static BufferedImage imagen = null;
+    
     public ControladorBoleta(Cliente cliente) {
         this.vistaBoleta = new frmBoleta();
         this.cliente = cliente;
@@ -40,7 +49,6 @@ public class ControladorBoleta {
     }
 
     public void iniciarParaConsumo(String peaje,String estacion,String vehiculo,String fecha) {
-        
         vistaBoleta.lblBoletaPago.setVisible(false);
         vistaBoleta.lblBoletaRecarga.setVisible(false);
         vistaBoleta.lblBoletaConsumo.setVisible(true);
@@ -56,7 +64,7 @@ public class ControladorBoleta {
         comprobarTipoUser();
         vistaBoleta.setLocationRelativeTo(null);
         vistaBoleta.setVisible(true);
-    
+        generarBarrasPeaje();
     }
 
     public void iniciarParaRecarga(String fecha) {
@@ -81,7 +89,7 @@ public class ControladorBoleta {
         comprobarTipoUser();
         vistaBoleta.setLocationRelativeTo(null);
         vistaBoleta.setVisible(true);
-
+        generarBarras();
     }
 
     public void iniciarParaOpc() {
@@ -107,7 +115,7 @@ public class ControladorBoleta {
         comprobarTipoUser();
         vistaBoleta.setLocationRelativeTo(null);
         vistaBoleta.setVisible(true);
-
+        generarBarras();
     }
 
     public void comprobarTipoUser() {
@@ -131,5 +139,38 @@ public class ControladorBoleta {
     public void setVistaBoleta(frmBoleta vistaBoleta) {
         this.vistaBoleta = vistaBoleta;
     }
-
+    
+    public void generarBarras(){
+        int aleatorio = 0;
+        Random r = new Random();
+        aleatorio = (int)(r.nextInt());
+        int codigoPosi = Math.abs(aleatorio);
+        String codigoCadena = String.valueOf(codigoPosi);
+        barcode.setCodeType(new Interleaved25());
+        barcode.setCode(codigoCadena);
+        barcode.setCheckDigit(true);
+        barcode.setBackground(new Color(121, 127, 139));
+        barcode.setBarcodeBackground(new Color(121, 127, 139));
+        imagen = barcode.draw(new BufferedImage(180, 230, BufferedImage.TYPE_INT_RGB));
+         
+        ImageIcon barras = new ImageIcon(imagen);
+        vistaBoleta.lblCodigoBarras.setIcon(barras);
+    }
+    
+    public void generarBarrasPeaje(){
+        int aleatorio = 0;
+        Random r = new Random();
+        aleatorio = (int)(r.nextInt());
+        int codigoPosi = Math.abs(aleatorio);
+        String codigoCadena = String.valueOf(codigoPosi);
+        barcode.setCodeType(new Interleaved25());
+        barcode.setCode(codigoCadena);
+        barcode.setCheckDigit(true);
+        barcode.setBackground(new Color(121, 127, 139));
+        barcode.setBarcodeBackground(new Color(121, 127, 139));
+        imagen = barcode.draw(new BufferedImage(160, 300, BufferedImage.TYPE_INT_RGB));
+         
+        ImageIcon barras = new ImageIcon(imagen);
+        vistaBoleta.lblCodigoBarrasP.setIcon(barras);
+    }
 }
