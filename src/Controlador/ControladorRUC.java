@@ -46,6 +46,7 @@ public class ControladorRUC {
                     try{
                         if(ClientePotencial.verificarValidezRUC(vistaRUC.txtRUC.getText())){
                              if(!Configuracion.arrClientes.verificarExistenciaCliente("RUC", vistaRUC.txtRUC.getText())){
+                                if(!Configuracion.arrClientes.verificarExistenciaCorreo(vistaRUC.txtCorreo.getText())){
                                 String contra = String.valueOf(vistaRUC.txtContrasena.getPassword());
                                 String contraVerif = String.valueOf(vistaRUC.txtVerifContrasena.getPassword());
                                 if(contra != null && contraVerif !=null){ //aqui no usa contraseña creada
@@ -68,6 +69,11 @@ public class ControladorRUC {
                                         ControladorRegistroVehiculo ctrlVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
                                         ctrlVehiculo.iniciarVehiculo();
                                         vistaRUC.dispose();
+                                }
+                             }
+                                else{
+                                JOptionPane.showMessageDialog(vistaRUC, "Correo ya registrado. Ingrese otra dirección de correo.");
+                                vistaRUC.txtCorreo.setText(null);
                                 }
                              }
                              else{
