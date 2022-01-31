@@ -61,7 +61,59 @@ public class Configuracion {
                                                "ICA", "JUNÍN", "LA LIBERTAD", "LAMBAYEQUE", "LORETO", "MADRE DE DIOS", "MOQUEGUA", "PASCO", "PIURA", "PUNO", 
                                                "SAN MARTÍN", "TACNA", "TUMBES", "UCAYALI"};
     public static String[] provinciasLima = {"LIMA", "BARRANCA", "CAJATAMBO", "CANTA", "CAÑETE", "HUARAL", "HUAROCHIRÍ", "HUAURA", "OYÓN", "YAUYOS"};
-            
-           
+
+    public static String[] getCategoria(String ejes){
+        String[] categoria = new String[2];
+        if(ejes.equalsIgnoreCase("2")){
+            categoria[0]= "Liviano";
+            categoria[1]= "Pesado";
+        }
+        if(ejes.equalsIgnoreCase("3") || ejes.equalsIgnoreCase("4") ||
+           ejes.equalsIgnoreCase("5") || ejes.equalsIgnoreCase("6") ||
+           ejes.equalsIgnoreCase("7") || ejes.equalsIgnoreCase("8") ||
+           ejes.equalsIgnoreCase("9") || ejes.equalsIgnoreCase("10")){
+            categoria[0]="Pesado";
+        }
+        return categoria;
+    }
+    
+  
+    public static String[] getTipoUso(String ejes){
+        String[] tipoUso = new String[2];
+        if(ejes.equalsIgnoreCase("2")){
+            tipoUso[0]= "Privado";
+            tipoUso[1]= "Público";
+        }
+        if(ejes.equalsIgnoreCase("3") || ejes.equalsIgnoreCase("4") ||
+           ejes.equalsIgnoreCase("5") || ejes.equalsIgnoreCase("6") ||
+           ejes.equalsIgnoreCase("7") || ejes.equalsIgnoreCase("8") ||
+           ejes.equalsIgnoreCase("9") || ejes.equalsIgnoreCase("10")){
+            tipoUso[0]="Privado";
+        }
+        return tipoUso;
+    }     
+   
+    public static String[] getEstacion(String Peaje) {
+        String[] estaciones = new String[4];
+        if (Peaje.equalsIgnoreCase("Panamericana Norte")) {
+            estaciones[0] = "Serpentin de Pasamayo";
+            estaciones[1] = "Variante Pasamayo";
+            estaciones[2] = "El Paraíso";
+            estaciones[3] = "Fortaleza";
+        }
+        if (Peaje.equalsIgnoreCase("Panamericana Sur")) {
+            estaciones[0] = "Chilca";
+        }
+        if (Peaje.equalsIgnoreCase("Huaylas")) {
+            estaciones[0] = "Alto Lampas";
+            estaciones[1] = "Cahuish";
+        }
+        if (Peaje.equalsIgnoreCase("Separadora Industrial")) {
+            estaciones[0] = "Mayorazgo";
+            estaciones[1] = "Parque industrial";
+            estaciones[2] = "Central industrial";
+        }
+        return estaciones;
+    }      
 }
         

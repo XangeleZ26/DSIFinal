@@ -105,7 +105,7 @@ public class ControladorPagar {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (vista.cbxPeaje.getSelectedItem().toString().trim().length() != 0) {
-                        vista.cbxEstacion.setModel(new DefaultComboBoxModel(getEstacion(vista.cbxPeaje.getSelectedItem().toString())));
+                        vista.cbxEstacion.setModel(new DefaultComboBoxModel(Configuracion.getEstacion(vista.cbxPeaje.getSelectedItem().toString())));
                    vista.txtCosto.setText(user.getCuenta().verCostoPeaje(user.getCuenta().getVehiculos().getVehiculo(vista.cbxVehiculo.getSelectedIndex()), Configuracion.arrPeajes.getArregloPeajes(vista.cbxPeaje.getSelectedIndex()).getEstaciones(vista.cbxEstacion.getSelectedIndex())));
                 }
             }
@@ -180,28 +180,6 @@ public class ControladorPagar {
         vista.dcFechaPago.setDate(null);
     }
     
-    //PASAR AL MODELO 
-    public String[] getEstacion(String Peaje) {
-        String[] estaciones = new String[4];
-        if (Peaje.equalsIgnoreCase("Panamericana Norte")) {
-            estaciones[0] = "Serpentin de Pasamayo";
-            estaciones[1] = "Variante Pasamayo";
-            estaciones[2] = "El Paraíso";
-            estaciones[3] = "Fortaleza";
-        }
-        if (Peaje.equalsIgnoreCase("Panamericana Sur")) {
-            estaciones[0] = "Chilca";
-        }
-        if (Peaje.equalsIgnoreCase("Huaylas")) {
-            estaciones[0] = "Alto Lampas";
-            estaciones[1] = "Cahuish";
-        }
-        if (Peaje.equalsIgnoreCase("Separadora Industrial")) {
-            estaciones[0] = "Mayorazgo";
-            estaciones[1] = "Parque industrial";
-            estaciones[2] = "Central industrial";
-        }
-        return estaciones;
-    }
+   
 
 }
