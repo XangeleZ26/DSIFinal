@@ -14,7 +14,7 @@ private static final long serialVersionUID=26L;
         this.om = this.nm - 1;
     }
 
-    public Object[][] datosMovimientos() {
+    public Object[][] datosMovimientosAZ() {
         Object datos[][] = new Object[this.nm][6];
         for (int i = 0; i < this.nm; i++) {
             if (this.movimientos[i].getTipo().compareTo("Recarga") == 0) {
@@ -34,6 +34,32 @@ private static final long serialVersionUID=26L;
                 datos[i][3] = this.movimientos[i].getVehiculo().getPlaca();
                 datos[i][4] = this.movimientos[i].getEstacion().getPeaje().getNombrePeaje();
                 datos[i][5] = this.movimientos[i].getEstacion().getNombreEstacion();
+
+            }
+        }
+        return datos;
+    }
+    
+    public Object[][] datosMovimientosZA() {
+        Object datos[][] = new Object[this.nm][6];
+        for (int i = 0; i < this.nm; i++) {
+            if (this.movimientos[this.om-i].getTipo().compareTo("Recarga") == 0) {
+
+                datos[i][0] = this.movimientos[this.om-i].getFecha();
+                datos[i][1] = this.movimientos[this.om-i].getTipo();
+                datos[i][2] = Float.toString(this.movimientos[this.om-i].getMonto());
+                datos[i][3] = "";
+                datos[i][4] = "";
+                datos[i][5] = "";
+
+            } else if (this.movimientos[this.om-i].getTipo().compareTo("Consumo") == 0) {
+
+                datos[i][0] = this.movimientos[this.om-i].getFecha();
+                datos[i][1] = this.movimientos[this.om-i].getTipo();
+                datos[i][2] = Float.toString(this.movimientos[this.om-i].getMonto());
+                datos[i][3] = this.movimientos[this.om-i].getVehiculo().getPlaca();
+                datos[i][4] = this.movimientos[this.om-i].getEstacion().getPeaje().getNombrePeaje();
+                datos[i][5] = this.movimientos[this.om-i].getEstacion().getNombreEstacion();
 
             }
         }

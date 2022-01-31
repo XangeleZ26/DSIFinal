@@ -32,52 +32,73 @@ public class ControladorMovimientos {
         this.vista.btnOrdenarFecha.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-            user.getCuenta().getMovimientos().ordenarMovimientosXFecha();
+                user.getCuenta().getMovimientos().ordenarMovimientosXFecha();
             
-            DatosTabla();
+                DatosTablaAZ();
             }
         });
         
         this.vista.btnOrdenarMonto.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-            user.getCuenta().getMovimientos().ordenarMovimientosXMonto();
+                user.getCuenta().getMovimientos().ordenarMovimientosXMonto();
             
-            DatosTabla();
+                DatosTablaAZ();
             }  
         });
         
         this.vista.btnOrdenarEstacion.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-             user.getCuenta().getMovimientos().ordenarMovimientosXEstacion();
+                user.getCuenta().getMovimientos().ordenarMovimientosXEstacion();
 
-            DatosTabla();
+                DatosTablaAZ();
             }  
         });
         
         this.vista.btnOrdenarVehiculo.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-             user.getCuenta().getMovimientos().ordenarMovimientosXPlacaVehiculo();
-            DatosTabla();
+                user.getCuenta().getMovimientos().ordenarMovimientosXPlacaVehiculo();
+                DatosTablaAZ();
             }  
         });
         
+        this.vista.btnAZ.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DatosTablaAZ();
+            }  
+        });
+        
+        this.vista.btnZA.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                DatosTablaZA();
+            }  
+        });
         
     }
     
     //MOVER ESTO AL MODELO DONDE PERTENEZCA
-    public void DatosTabla(){
+    public void DatosTablaAZ(){ //Menor a mayor
         DefaultTableModel TablaUser;
-        TablaUser = new DefaultTableModel(user.getCuenta().getMovimientos().datosMovimientos(),user.getCuenta().getMovimientos().cabecera());
+        TablaUser = new DefaultTableModel(user.getCuenta().getMovimientos().datosMovimientosAZ(),user.getCuenta().getMovimientos().cabecera());
         this.vista.jMovimientos.setModel(TablaUser);
 
     }
+    
+    public void DatosTablaZA(){ //Mayor a menor
+        DefaultTableModel TablaUser;
+        TablaUser = new DefaultTableModel(user.getCuenta().getMovimientos().datosMovimientosZA(),user.getCuenta().getMovimientos().cabecera());
+        this.vista.jMovimientos.setModel(TablaUser);
+
+    }
+    
     public void iniciar() {
     vista.setLocationRelativeTo(null);
     vista.setVisible(true);
-    DatosTabla();
+    DatosTablaAZ();
     }
 
 }
