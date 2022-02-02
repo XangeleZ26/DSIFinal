@@ -156,6 +156,47 @@ public class ControladorCliente{
                                             vistaCliente.txtNumeroDocumento.setText(null);
                                         }//Validez num carnet
                                     }//Carnet
+                                    else if(vistaCliente.cbxTipoDocumento.getSelectedItem().toString().equalsIgnoreCase("Pasaporte")){
+                                        if(contra != null && contraVerif !=null){
+                                                if(contra.equalsIgnoreCase(contraVerif)){
+                                                    ClientePotencial = new Cliente(
+                                                                    vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
+                                                                    vistaCliente.txtNumeroDocumento.getText(),
+                                                                    vistaCliente.txtNombres.getText(),
+                                                                    vistaCliente.txtApPaterno.getText(),
+                                                                    vistaCliente.txtApMaterno.getText(),
+                                                                    vistaCliente.cbxSexo.getSelectedItem().toString(),
+                                                                    sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
+                                                                    vistaCliente.txtEmail.getText(),
+                                                                    contra);
+
+                                                    JOptionPane.showMessageDialog(vistaCliente, "Datos del cliente registrados, puede continuar con su registro.");
+                                                                    ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                                                                    ctrlRegistroVehiculo.iniciarVehiculo();
+                                                                    vistaCliente.dispose(); 
+                                                }
+                                                else{
+                                                    JOptionPane.showMessageDialog(null, "Verificación de contraseña incorrecta.");
+                                                }
+                                            }
+                                            else{
+                                                ClientePotencial = new Cliente(
+                                                                vistaCliente.cbxTipoDocumento.getSelectedItem().toString(),
+                                                                vistaCliente.txtNumeroDocumento.getText(),
+                                                                vistaCliente.txtNombres.getText(),
+                                                                vistaCliente.txtApPaterno.getText(),
+                                                                vistaCliente.txtApMaterno.getText(),
+                                                                vistaCliente.cbxSexo.getSelectedItem().toString(),
+                                                                sdf.format(vistaCliente.dcFechaNacimiento.getDate()),
+                                                                vistaCliente.txtEmail.getText(),
+                                                                vistaCliente.txtNumeroDocumento.getText());
+
+                                                JOptionPane.showMessageDialog(vistaCliente, "Datos del cliente registrados, puede continuar con su registro.");        
+                                                            ControladorRegistroVehiculo ctrlRegistroVehiculo = new ControladorRegistroVehiculo(ClientePotencial);
+                                                            ctrlRegistroVehiculo.iniciarVehiculo();
+                                                            vistaCliente.dispose(); 
+                                            }   
+                                    }
                                     }catch(StringIndexOutOfBoundsException ex){
                                         JOptionPane.showMessageDialog(vistaCliente, "Carácteres insuficientes en el documento de identidad. Digite nuevamente.");
                                         vistaCliente.txtNumeroDocumento.setText(null);
