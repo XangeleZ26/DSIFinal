@@ -29,8 +29,8 @@ public class ControladorEntrega{
             @Override
             public void actionPerformed(ActionEvent e){ 
                 if(ClientePotencial.verificarValidezTelefono(vistaEntrega.txtTelefono.getText())){
-                    
-                
+                    if(ClientePotencial.verificarValidezNumero(vistaEntrega.txtNumero.getText())){
+                        
                     if(vistaEntrega.cbxDepartamento.getSelectedItem().toString().equalsIgnoreCase("LIMA")){
                         if(vistaEntrega.cbxProvinciaLima.getSelectedItem().toString().equalsIgnoreCase("LIMA")){
                             if(datosLlenosDireccionLima()){
@@ -86,7 +86,11 @@ public class ControladorEntrega{
                         else{
                             JOptionPane.showMessageDialog(null, "Debe llenar todos los campos, por favor.");
                         }  
-                    }   
+                    }
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Número de dirección inválido. Digite nuevamente.");
+                        vistaEntrega.txtNumero.setText(null);
+                    }
                 }else{
                     JOptionPane.showMessageDialog(null, "Número de telefono inválido. Digite nuevamente.");
                     vistaEntrega.txtTelefono.setText(null);
