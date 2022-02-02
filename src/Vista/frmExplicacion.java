@@ -38,7 +38,6 @@ public class frmExplicacion extends javax.swing.JFrame {
         PTitulo.setBackground(new java.awt.Color(159, 162, 178));
 
         lblTitulo.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
-        lblTitulo.setForeground(new java.awt.Color(0, 0, 0));
         lblTitulo.setText("¡Tener en cuenta!");
 
         org.jdesktop.layout.GroupLayout PTituloLayout = new org.jdesktop.layout.GroupLayout(PTitulo);
@@ -65,11 +64,11 @@ public class frmExplicacion extends javax.swing.JFrame {
         jTextPane1.setBorder(null);
         jTextPane1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jTextPane1.setText("Tener en cuenta que un RUC válido cuenta con 11 caracteres de los cuales los dos primeros dígitos solo pueden ser 10, 15, 17 y 20. Además, para que su número de RUC sea válido deberá ser operado por el siguiente algoritmo: \n“Los diez primeros dígitos se multiplicarán respectivamente por los números 5, 4, 3, 2, 7, 6, 5, 4, 3, 2; cada producto se sumará para posteriormente ser dividido entre 11. De dicho resultado se tomará la parte entera y se hará el cálculo de 11 – (suma total – parte entera x 11) finalmente este valor deberá coincidir con el último dígito de nuestro RUC. En caso de que el resultado sea 10 u 11, se tomarán los valores 0 o 1 respectivamente y se comparará. Ejemplo: 10164120517\n");
+        jTextPane1.setDisabledTextColor(new java.awt.Color(109, 206, 57));
         jScrollPane1.setViewportView(jTextPane1);
 
         btnOK.setBackground(new java.awt.Color(159, 162, 178));
         btnOK.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnOK.setForeground(new java.awt.Color(0, 0, 0));
         btnOK.setText("OK");
         btnOK.setToolTipText("");
         btnOK.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -87,7 +86,7 @@ public class frmExplicacion extends javax.swing.JFrame {
                     .add(PContenidoLayout.createSequentialGroup()
                         .add(191, 191, 191)
                         .add(btnOK, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 52, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PContenidoLayout.setVerticalGroup(
             PContenidoLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -103,25 +102,20 @@ public class frmExplicacion extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 440, Short.MAX_VALUE)
-            .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                .add(layout.createSequentialGroup()
-                    .add(0, 0, Short.MAX_VALUE)
-                    .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                        .add(PTitulo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(PContenido, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(0, 0, Short.MAX_VALUE)))
+            .add(layout.createSequentialGroup()
+                .add(0, 0, Short.MAX_VALUE)
+                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING, false)
+                    .add(PTitulo, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .add(PContenido, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(0, 350, Short.MAX_VALUE)
-            .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                .add(layout.createSequentialGroup()
-                    .add(0, 0, Short.MAX_VALUE)
-                    .add(PTitulo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(0, 0, 0)
-                    .add(PContenido, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                    .add(0, 0, Short.MAX_VALUE)))
+            .add(layout.createSequentialGroup()
+                .add(0, 0, Short.MAX_VALUE)
+                .add(PTitulo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(0, 0, 0)
+                .add(PContenido, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
+                .add(0, 0, Short.MAX_VALUE))
         );
 
         pack();

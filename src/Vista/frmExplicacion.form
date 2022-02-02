@@ -23,30 +23,23 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="440" max="32767" attributes="0"/>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="PTitulo" min="-2" max="-2" attributes="0"/>
-                      <Component id="PContenido" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="PTitulo" max="32767" attributes="0"/>
+                  <Component id="PContenido" max="32767" attributes="0"/>
               </Group>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="350" max="32767" attributes="0"/>
-          <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Component id="PTitulo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
-                  <Component id="PContenido" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-              </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+              <Component id="PTitulo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+              <Component id="PContenido" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -85,9 +78,6 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="24" style="1"/>
             </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
-            </Property>
             <Property name="text" type="java.lang.String" value="&#xa1;Tener en cuenta!"/>
           </Properties>
         </Component>
@@ -114,7 +104,7 @@
                           <Component id="btnOK" min="-2" pref="52" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="30" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -151,6 +141,9 @@
                   <Font name="Times New Roman" size="14" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tener en cuenta que un RUC v&#xe1;lido cuenta con 11 caracteres de los cuales los dos primeros d&#xed;gitos solo pueden ser 10, 15, 17 y 20. Adem&#xe1;s, para que su n&#xfa;mero de RUC sea v&#xe1;lido deber&#xe1; ser operado por el siguiente algoritmo: &#xa;&#x201c;Los diez primeros d&#xed;gitos se multiplicar&#xe1;n respectivamente por los n&#xfa;meros 5, 4, 3, 2, 7, 6, 5, 4, 3, 2; cada producto se sumar&#xe1; para posteriormente ser dividido entre 11. De dicho resultado se tomar&#xe1; la parte entera y se har&#xe1; el c&#xe1;lculo de 11 &#x2013; (suma total &#x2013; parte entera x 11) finalmente este valor deber&#xe1; coincidir con el &#xfa;ltimo d&#xed;gito de nuestro RUC. En caso de que el resultado sea 10 u 11, se tomar&#xe1;n los valores 0 o 1 respectivamente y se comparar&#xe1;. Ejemplo: 10164120517&#xa;"/>
+                <Property name="disabledTextColor" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="39" green="ce" red="6d" type="rgb"/>
+                </Property>
               </Properties>
             </Component>
           </SubComponents>
@@ -162,9 +155,6 @@
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Times New Roman" size="18" style="0"/>
-            </Property>
-            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="OK"/>
             <Property name="toolTipText" type="java.lang.String" value=""/>

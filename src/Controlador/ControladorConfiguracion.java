@@ -10,6 +10,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JOptionPane;
 
 public class ControladorConfiguracion {
 
@@ -32,7 +33,7 @@ public class ControladorConfiguracion {
             }
         });
 
-        this.vista.btnCambioContrasena.addActionListener(new ActionListener() {
+        this.vista.btnEliminarCuenta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -68,7 +69,17 @@ public class ControladorConfiguracion {
                 vista.dispose();
             }
         });
-
+        this.vista.btnEliminarCuenta.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                
+                String duda=JOptionPane.showInputDialog(null,"Al eliminar tu cuenta, su etiqueta PEX\nno tendrá validez para ser usado\nen los peajes autorizados.\nNo se contemplan reembolsos.\nSi desea continuar, introduzca su contraseña.");
+                
+                ControladorConfigCambiarTarjeta ctrlConfigCambiarTarjeta = new ControladorConfigCambiarTarjeta(user);
+                ctrlConfigCambiarTarjeta.iniciar();
+                vista.dispose();
+            }
+        });
         this.vista.OjoCerrado.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {

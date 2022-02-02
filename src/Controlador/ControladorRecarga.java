@@ -40,8 +40,15 @@ public class ControladorRecarga {
                             if (Float.parseFloat(vista.txtMonto.getText()) > 0) {
                                 SimpleDateFormat sdfPago = new SimpleDateFormat("dd/MM/yyyy"); //doy formato
                                 String fechaPago = sdfPago.format(vista.dcFechaPago.getDate()); //indico a q cosa quiero dar formato y lo almaceno
-
-                                //Aún no se contempla el "boleta y factura" en el codigo. Esperando acuerdo grupal xd
+                                
+                                //para comparar fechas de validez
+                                SimpleDateFormat diaPago=new SimpleDateFormat("dd");
+                                SimpleDateFormat mesPago=new SimpleDateFormat("MM");
+                                SimpleDateFormat anioPago=new SimpleDateFormat("yyyy");
+                                
+                                if(user.getCuenta().compararFechas(Integer.parseInt(diaPago.format(vista.dcFechaPago.getDate())),Integer.parseInt(mesPago.format(vista.dcFechaPago.getDate())),Integer.parseInt(anioPago.format(vista.dcFechaPago.getDate())))){
+                                
+                                  //Aún no se contempla el "boleta y factura" en el codigo. Esperando acuerdo grupal xd
                                 /*switch(vista.getOpcionComprobante()){
                                     case 1: user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()),vista.txtCVV.getText(),fechaPago);
                                     case 2: user.getCuenta().recargar(Float.parseFloat(vista.txtMonto.getText()),vista.txtCVV.getText(),fechaPago);
@@ -74,7 +81,9 @@ public class ControladorRecarga {
                                         vista.dispose();
                                     }
                                 });
-
+                            }else{
+                            JOptionPane.showMessageDialog(null, "No puede seleccionar una fecha anterior de la fecha de creación de la cuenta!");         
+                                }
                             } else {
                                 JOptionPane.showMessageDialog(null, "No puede recargar un monto negativo!");
                             }

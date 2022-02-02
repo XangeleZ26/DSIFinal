@@ -38,7 +38,7 @@ public class frmConfiguracion extends javax.swing.JFrame {
         OjoCerrado = new javax.swing.JLabel();
         OjoAbierto = new javax.swing.JLabel();
         btnCerrar = new javax.swing.JButton();
-        btnCambioContrasena = new javax.swing.JButton();
+        btnEliminarCuenta = new javax.swing.JButton();
         btnCambioTarjet = new javax.swing.JButton();
         btnCambioCorreo = new javax.swing.JButton();
         txtContrasena = new javax.swing.JTextField();
@@ -50,6 +50,7 @@ public class frmConfiguracion extends javax.swing.JFrame {
         txtCorreo = new javax.swing.JTextField();
         lblRazon = new javax.swing.JLabel();
         txtRazon = new javax.swing.JTextField();
+        btnCambioContrasena = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -136,25 +137,25 @@ public class frmConfiguracion extends javax.swing.JFrame {
         btnCerrar.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnCerrar.setForeground(new java.awt.Color(255, 255, 255));
         btnCerrar.setText("Cerrar sesión");
-        PContenidoConfiguracion.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 400, 180, 80));
+        PContenidoConfiguracion.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 440, 180, 80));
 
-        btnCambioContrasena.setBackground(new java.awt.Color(22, 38, 46));
-        btnCambioContrasena.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnCambioContrasena.setForeground(new java.awt.Color(255, 255, 255));
-        btnCambioContrasena.setText("Cambiar contraseña");
-        PContenidoConfiguracion.add(btnCambioContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 190, 30));
+        btnEliminarCuenta.setBackground(new java.awt.Color(22, 38, 46));
+        btnEliminarCuenta.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnEliminarCuenta.setForeground(new java.awt.Color(255, 255, 255));
+        btnEliminarCuenta.setText("Eliminar cuenta");
+        PContenidoConfiguracion.add(btnEliminarCuenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 390, 180, 30));
 
         btnCambioTarjet.setBackground(new java.awt.Color(22, 38, 46));
         btnCambioTarjet.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnCambioTarjet.setForeground(new java.awt.Color(255, 255, 255));
         btnCambioTarjet.setText("Cambiar tarjeta");
-        PContenidoConfiguracion.add(btnCambioTarjet, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 470, 190, 30));
+        PContenidoConfiguracion.add(btnCambioTarjet, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 490, 190, 30));
 
         btnCambioCorreo.setBackground(new java.awt.Color(22, 38, 46));
         btnCambioCorreo.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnCambioCorreo.setForeground(new java.awt.Color(255, 255, 255));
         btnCambioCorreo.setText("Cambiar correo");
-        PContenidoConfiguracion.add(btnCambioCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 430, 190, 30));
+        PContenidoConfiguracion.add(btnCambioCorreo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 440, 190, 30));
 
         txtContrasena.setEditable(false);
         txtContrasena.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -191,6 +192,12 @@ public class frmConfiguracion extends javax.swing.JFrame {
         txtRazon.setEditable(false);
         txtRazon.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         PContenidoConfiguracion.add(txtRazon, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 100, 280, 30));
+
+        btnCambioContrasena.setBackground(new java.awt.Color(22, 38, 46));
+        btnCambioContrasena.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnCambioContrasena.setForeground(new java.awt.Color(255, 255, 255));
+        btnCambioContrasena.setText("Cambiar contraseña");
+        PContenidoConfiguracion.add(btnCambioContrasena, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 390, 190, 30));
 
         PGeneralConfiguracion.add(PContenidoConfiguracion, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 690, 550));
 
@@ -242,6 +249,7 @@ public class frmConfiguracion extends javax.swing.JFrame {
     public javax.swing.JButton btnCambioCorreo;
     public javax.swing.JButton btnCambioTarjet;
     public javax.swing.JButton btnCerrar;
+    public javax.swing.JButton btnEliminarCuenta;
     private javax.swing.JLabel lblConfiguracion;
     private javax.swing.JLabel lblCorreo;
     private javax.swing.JLabel lblCorreo1;

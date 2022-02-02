@@ -23,8 +23,6 @@ public class ControladorExplicacionRUC implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         if(e.getSource() == vistaExplicacionRUC.btnOK){
-            ControladorRUC ctrlRUC = new ControladorRUC(ClientePotencial); 
-            ctrlRUC.iniciarRUC();
             vistaExplicacionRUC.dispose(); 
         }
     }

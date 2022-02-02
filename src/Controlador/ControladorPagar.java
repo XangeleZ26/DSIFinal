@@ -67,6 +67,12 @@ public class ControladorPagar {
                     int x = vista.cbxVehiculo.getSelectedIndex();
                     if (user.getCuenta().pagarPeaje(sdf.format(vista.dcFechaPago.getDate()), user.getCuenta().getVehiculos().getVehiculo(x), Configuracion.arrPeajes.getArregloPeajes(vista.cbxPeaje.getSelectedIndex()).getEstaciones(vista.cbxEstacion.getSelectedIndex())
                     )) {
+                        //para comparar fechas de validez
+                                SimpleDateFormat diaPago=new SimpleDateFormat("dd");
+                                SimpleDateFormat mesPago=new SimpleDateFormat("MM");
+                                SimpleDateFormat anioPago=new SimpleDateFormat("yyyy");
+                                
+                                if(user.getCuenta().compararFechas(Integer.parseInt(diaPago.format(vista.dcFechaPago.getDate())),Integer.parseInt(mesPago.format(vista.dcFechaPago.getDate())),Integer.parseInt(anioPago.format(vista.dcFechaPago.getDate())))){
                         //user.getCuenta().getMovimientos().imprimirMovimientoSimple();
                         //user.getCuenta().getSaldoTotal();
 
@@ -92,6 +98,9 @@ public class ControladorPagar {
                             vista.dispose();
                         }
                     });
+                    }else{
+                        JOptionPane.showMessageDialog(null, "No puede seleccionar una fecha anterior de la fecha de creación de la cuenta!");
+                                }
                     } else {
                         JOptionPane.showMessageDialog(null, "No tiene suficiente saldo para pagar!");
                     }

@@ -97,8 +97,14 @@ public class ControladorRecargaOpc {
                                     ClientePotencial.getCuenta().setTarjeta(TarjetaPotencial);
 
                                     Date fechaActual = new Date();
+                                    //esto es para el historial de recarga
                                     SimpleDateFormat sdfActual = new SimpleDateFormat("dd/MM/yyyy");
                                     
+                                    //esto es para enviar como fecha de creacion a Cuenta
+                                    SimpleDateFormat diaAct=new SimpleDateFormat("dd");
+                                    SimpleDateFormat mesAct=new SimpleDateFormat("MM");
+                                    SimpleDateFormat anioAct=new SimpleDateFormat("yyyy");
+                                    ClientePotencial.getCuenta().guardarFechaCreacion(diaAct.format(fechaActual),mesAct.format(fechaActual),anioAct.format(fechaActual));
                                     if(!vistaRecargaOpc.txtMontoOpcional.getText().equalsIgnoreCase("")){
                                         //float numeroExtra=0;
                                         ClientePotencial.getCuenta().recargar(Float.valueOf(vistaRecargaOpc.txtMontoOpcional.getText()),

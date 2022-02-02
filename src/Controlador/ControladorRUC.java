@@ -29,7 +29,7 @@ public class ControladorRUC {
             public void actionPerformed(ActionEvent e){
                ControladorCliente ctrlCliente = new ControladorCliente();
                ctrlCliente.iniciarCliente();
-               //vistaRUC.dispose(); 
+               vistaRUC.dispose(); 
            }
         });
         
