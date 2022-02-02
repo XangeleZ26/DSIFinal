@@ -6,6 +6,9 @@
 
 package Vista;
 
+import javax.swing.JFrame;
+import javax.swing.JRootPane;
+
 /**
  *
  * @author Yesenia
@@ -14,6 +17,7 @@ public class frmBoleta extends javax.swing.JFrame {
 
     /** Creates new form frmBoleta */
     public frmBoleta() {
+       
         initComponents();
     }
 
@@ -55,7 +59,7 @@ public class frmBoleta extends javax.swing.JFrame {
         lblCodigoBarras = new javax.swing.JLabel();
         lblCodigoBarrasP = new javax.swing.JLabel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

@@ -323,7 +323,7 @@ public class AppPeaje {
 //        }
         ControladorPrincipal ctrlPrincipal = new ControladorPrincipal(fPrincipal);
         ctrlPrincipal.iniciar();
-
+        Configuracion.arrClientes.mostrarClientes();
         //INICIO DE PROGRAMAAAA (SEGÚN LA VISTA)
         //ZONA EXPERIMENTAL********************************
         //esto es para prueba, debido a que el cliente 0 registró dirección,tarjeta y carros,

@@ -111,7 +111,7 @@ public class ControladorConfiguracion {
 
     public void ocultar() {
         String contraOculta = "•";
-        for (int i = 1; i < 4; i++) {
+        for (int i = 1; i <user.getCredencial().getContraseña().length(); i++) {
             contraOculta += "•";
         }
         vista.txtContrasena.setText(contraOculta);
