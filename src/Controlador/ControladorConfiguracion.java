@@ -33,7 +33,7 @@ public class ControladorConfiguracion {
             }
         });
 
-        this.vista.btnEliminarCuenta.addActionListener(new ActionListener() {
+        this.vista.btnCambioContrasena.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
 
@@ -72,12 +72,8 @@ public class ControladorConfiguracion {
         this.vista.btnEliminarCuenta.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                
-                String duda=JOptionPane.showInputDialog(null,"Al eliminar tu cuenta, su etiqueta PEX\nno tendrá validez para ser usado\nen los peajes autorizados.\nNo se contemplan reembolsos.\nSi desea continuar, introduzca su contraseña.");
-                
-                ControladorConfigCambiarTarjeta ctrlConfigCambiarTarjeta = new ControladorConfigCambiarTarjeta(user);
-                ctrlConfigCambiarTarjeta.iniciar();
-                vista.dispose();
+                ControladorEliminarCuenta controller = new ControladorEliminarCuenta(user,vista);
+                controller.iniciar();
             }
         });
         this.vista.OjoCerrado.addMouseListener(new MouseAdapter() {

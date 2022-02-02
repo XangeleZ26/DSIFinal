@@ -50,8 +50,8 @@ public class frmEliminarCuenta extends javax.swing.JFrame {
         jTextPane1.setDisabledTextColor(new java.awt.Color(240, 240, 240));
         jScrollPane1.setViewportView(jTextPane1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 11, 328, -1));
-        jPanel1.add(JPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(97, 87, 190, -1));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 328, 70));
+        jPanel1.add(JPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 190, -1));
 
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -59,7 +59,7 @@ public class frmEliminarCuenta extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 120, 80, 30));
+        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 80, 30));
 
         btnAceptar.setText("Aceptar");
         btnAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -67,13 +67,13 @@ public class frmEliminarCuenta extends javax.swing.JFrame {
                 btnAceptarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 80, 30));
+        jPanel1.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 80, 30));
 
         ojoCerrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
-        jPanel1.add(ojoCerrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, 30));
+        jPanel1.add(ojoCerrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, -1, 40));
 
         OjoAbierto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ver_32px.png"))); // NOI18N
-        jPanel1.add(OjoAbierto, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 80, -1, 30));
+        jPanel1.add(OjoAbierto, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, -1, 40));
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 

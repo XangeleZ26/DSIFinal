@@ -124,7 +124,7 @@ public class ArregloClientes implements Serializable {
         if(result==true){
         for(int i=orden; i<nc-1; i++){
             this.arregloCliente[i] = this.arregloCliente[i+1];
-        }
+        } 
         //Se borra el espacio en memoria sobrante y se modifica la cantidad y el orden de objetos
         this.arregloCliente[this.nc-1] = null;
         this.nc--;

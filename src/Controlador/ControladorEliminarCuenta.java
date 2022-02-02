@@ -2,19 +2,27 @@
 package Controlador;
 
 import Modelo.Cliente;
+import Modelo.Configuracion;
+import Vista.frmConfiguracion;
 import Vista.frmEliminarCuenta;
+import Vista.frmPaginaPrincipal;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class ControladorEliminarCuenta {
     private Cliente user;
     private frmEliminarCuenta vista;
-    
-    public ControladorEliminarCuenta(Cliente user){
+    private frmConfiguracion vista2;
+    public ControladorEliminarCuenta(Cliente user,frmConfiguracion vista2){
         this.user=user;
+        this.vista2=vista2;
         this.vista=new frmEliminarCuenta();
+        
        this.vista.ojoCerrado.addMouseListener(new MouseAdapter() {
         @Override
         public void mouseClicked(MouseEvent e){
@@ -41,10 +49,28 @@ public class ControladorEliminarCuenta {
         this.vista.btnAceptar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-             vista.dispose();
+             if(vista.JPassword.getPassword().equals(user.getCredencial().getContraseña())){
+                 Configuracion.arrClientes.eliminarCliente(user);
+                 try {
+                     Configuracion.serial.serializar("archivoUser.txt",Configuracion.arrClientes);
+                      JOptionPane.showMessageDialog(null,"Cuenta eliminada con éxito.");
+                      ControladorPrincipal controller=new ControladorPrincipal(new frmPaginaPrincipal());
+                      controller.iniciar();
+                      vista.dispose();
+                      vista2.dispose();
+                 } catch (Exception ex) {
+                     JOptionPane.showMessageDialog(null,"Fallo en el guardado de archivo");
+                 }
+             }else{
+                 JOptionPane.showMessageDialog(null,"Contraseña incorrecta");
+             }
             }
         });
     }
-    
+    public void iniciar(){
+        vista.ojoCerrado.setVisible(false);
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+    }
    
 }
