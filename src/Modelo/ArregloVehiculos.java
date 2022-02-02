@@ -216,6 +216,12 @@ public Vehiculo getVehiculo(int i) { //Se puede usar para llamar a un vehículo 
         return vehiculos[i];
     }
 
+    public void setVehiculos(int i, Vehiculo vehiculo) { //solo se usa al registrar el primer vehículo
+        this.vehiculos[i] = vehiculo;
+        this.nv = 1;
+        this.ov = this.nv - 1;
+    }
+
     public int getNv() {
         return nv;
     }

@@ -78,8 +78,7 @@ public class ControladorRegistroVehiculo{
                         }
                         String ejesCadena = vistaVehiculo.cbxEjes.getSelectedItem().toString();
                         int ejesEntero = Integer.parseInt(ejesCadena);
-                        ClientePotencial.getCuenta().getVehiculos().registrarVehiculo(
-                                                     vistaVehiculo.txtPlaca.getText(),
+                        Vehiculo vehiculo = new Vehiculo(vistaVehiculo.txtPlaca.getText(),
                                                      vistaVehiculo.cbxMarca.getSelectedItem().toString(),
                                                      vistaVehiculo.txtModelo.getText(),
                                                      vistaVehiculo.cbxCategoria.getSelectedItem().toString(),
@@ -88,6 +87,17 @@ public class ControladorRegistroVehiculo{
                                                      Float.parseFloat(vistaVehiculo.txtPesoBruto.getText()),
                                                      Integer.parseInt(vistaVehiculo.txtAño.getText()),
                                                      ClientePotencial);
+                        ClientePotencial.getCuenta().getVehiculos().setVehiculos(0, vehiculo);
+                        //ClientePotencial.getCuenta().getVehiculos().registrarVehiculo(
+                         //                            vistaVehiculo.txtPlaca.getText(),
+                         //                            vistaVehiculo.cbxMarca.getSelectedItem().toString(),
+                         //                            vistaVehiculo.txtModelo.getText(),
+                         //                            vistaVehiculo.cbxCategoria.getSelectedItem().toString(),
+                         //                            ejesEntero,
+                         //                            vistaVehiculo.cbxTipoUso.getSelectedItem().toString(),
+                         //                            Float.parseFloat(vistaVehiculo.txtPesoBruto.getText()),
+                         //                            Integer.parseInt(vistaVehiculo.txtAño.getText()),
+                         //                            ClientePotencial);
                         JOptionPane.showMessageDialog(null, "Datos del vehículo registrado, puede continuar.");
                         ControladorEntrega ctrlEntrega = new ControladorEntrega(ClientePotencial);
                         ctrlEntrega.iniciarEntrega();
