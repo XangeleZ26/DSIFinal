@@ -350,6 +350,14 @@ private static final long serialVersionUID=26L;
         return result;
     }
     
+    public boolean verificarValidezTelefono(String telefono){
+        boolean result = false;
+        if((telefono.length()>=7)&&(telefono.length()<=9)){
+            result = true;
+        }
+        return result;
+    }
+    
     public boolean verificarEdad(String fechaNacimiento){
         boolean result = false;
         Date fechaActual = new Date();
