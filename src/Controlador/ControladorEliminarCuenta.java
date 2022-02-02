@@ -49,14 +49,16 @@ public class ControladorEliminarCuenta {
         this.vista.btnAceptar.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-             if(vista.JPassword.getPassword().equals(user.getCredencial().getContraseña())){
+             if(String.valueOf(vista.JPassword.getPassword()).equals(String.valueOf(user.getCredencial().getContraseña()))){
+                 System.out.println(String.valueOf(user.getCredencial().getContraseña()));
+                 System.out.println(String.valueOf(vista.JPassword.getPassword()));
                  Configuracion.arrClientes.eliminarCliente(user);
                  try {
                      Configuracion.serial.serializar("archivoUser.txt",Configuracion.arrClientes);
-                      JOptionPane.showMessageDialog(null,"Cuenta eliminada con éxito.");
+                      vista.dispose();
+                     JOptionPane.showMessageDialog(null,"Cuenta eliminada con éxito.");
                       ControladorPrincipal controller=new ControladorPrincipal(new frmPaginaPrincipal());
                       controller.iniciar();
-                      vista.dispose();
                       vista2.dispose();
                  } catch (Exception ex) {
                      JOptionPane.showMessageDialog(null,"Fallo en el guardado de archivo");

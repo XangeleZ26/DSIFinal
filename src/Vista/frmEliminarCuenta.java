@@ -38,8 +38,9 @@ public class frmEliminarCuenta extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setLayout(null);
 
         jScrollPane1.setBorder(null);
 
@@ -50,8 +51,10 @@ public class frmEliminarCuenta extends javax.swing.JFrame {
         jTextPane1.setDisabledTextColor(new java.awt.Color(240, 240, 240));
         jScrollPane1.setViewportView(jTextPane1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, 328, 70));
-        jPanel1.add(JPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, 190, -1));
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(20, 10, 420, 80);
+        jPanel1.add(JPassword);
+        JPassword.setBounds(100, 100, 190, 20);
 
         btnCancelar.setText("Cancelar");
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
@@ -59,7 +62,8 @@ public class frmEliminarCuenta extends javax.swing.JFrame {
                 btnCancelarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 160, 80, 30));
+        jPanel1.add(btnCancelar);
+        btnCancelar.setBounds(270, 150, 100, 30);
 
         btnAceptar.setText("Aceptar");
         btnAceptar.addActionListener(new java.awt.event.ActionListener() {
@@ -67,38 +71,26 @@ public class frmEliminarCuenta extends javax.swing.JFrame {
                 btnAceptarActionPerformed(evt);
             }
         });
-        jPanel1.add(btnAceptar, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 160, 80, 30));
+        jPanel1.add(btnAceptar);
+        btnAceptar.setBounds(80, 150, 100, 30);
 
         ojoCerrado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ocultar_32px.png"))); // NOI18N
-        jPanel1.add(ojoCerrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, -1, 40));
+        jPanel1.add(ojoCerrado);
+        ojoCerrado.setBounds(320, 90, 32, 40);
 
         OjoAbierto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/ver_32px.png"))); // NOI18N
-        jPanel1.add(OjoAbierto, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, -1, 40));
+        jPanel1.add(OjoAbierto);
+        OjoAbierto.setBounds(320, 90, 32, 40);
 
-        getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 34, 459, 200));
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Message");
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addContainerGap(325, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap())
-        );
-
-        getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_START);
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 459, 30));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
