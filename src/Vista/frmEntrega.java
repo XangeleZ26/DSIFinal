@@ -103,6 +103,7 @@ public class frmEntrega extends javax.swing.JFrame {
         txtDescripcion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         txtDescripcion.setForeground(new java.awt.Color(0, 0, 0));
         txtDescripcion.setText("La entrega de tu PEX es gratuita y dentro de los 7 días hábiles. Recuerda que debe recibirlo una persona que pueda firmar un cargo de recepción. ");
+        txtDescripcion.setToolTipText("");
         txtDescripcion.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jScrollPane1.setViewportView(txtDescripcion);
 

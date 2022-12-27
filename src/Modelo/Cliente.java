@@ -21,7 +21,7 @@ private static final long serialVersionUID=26L;
     //private Tarjeta tarjeta;
     private Cuenta cuenta;
     private Credencial credencial;
-
+    
     //CONSTRUCTORES
     public Cliente() {
 

@@ -83,12 +83,22 @@ public class frmLogin extends javax.swing.JFrame {
         btnIniciarSesion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         btnIniciarSesion.setForeground(new java.awt.Color(255, 255, 255));
         btnIniciarSesion.setText("Iniciar sesión");
+        btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIniciarSesionActionPerformed(evt);
+            }
+        });
         PContenidoLogin.add(btnIniciarSesion, new org.netbeans.lib.awtextra.AbsoluteConstraints(192, 316, -1, 37));
 
         btnAtras.setBackground(new java.awt.Color(121, 127, 139));
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
         btnAtras.setBorder(null);
         btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAtras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAtrasActionPerformed(evt);
+            }
+        });
         PContenidoLogin.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(457, 316, -1, -1));
 
         txtContrasena.addActionListener(new java.awt.event.ActionListener() {
@@ -148,6 +158,14 @@ public class frmLogin extends javax.swing.JFrame {
     private void txtContrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContrasenaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtContrasenaActionPerformed
+
+    private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnIniciarSesionActionPerformed
+
+    private void btnAtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAtrasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAtrasActionPerformed
 
     /**
      * @param args the command line arguments

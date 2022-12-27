@@ -41,7 +41,7 @@ public class Serializacion {
     }
     public Object deserializar(String archivo) throws Exception{
         Object  arreglo = null;
- 
+
         try {
             this.lector = new ObjectInputStream(new FileInputStream(archivo));
             arreglo = (Object)lector.readObject();

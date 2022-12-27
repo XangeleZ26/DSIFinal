@@ -22,12 +22,15 @@ public class frmPaginaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jTextField1 = new javax.swing.JTextField();
         PGeneral = new javax.swing.JPanel();
         lblCarretera = new javax.swing.JLabel();
         lblLogo = new javax.swing.JLabel();
         PContenido = new javax.swing.JPanel();
         btnAfiliate = new javax.swing.JButton();
         btnIngresa = new javax.swing.JButton();
+
+        jTextField1.setText("jTextField1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -153,6 +156,7 @@ public class frmPaginaPrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel PGeneral;
     public javax.swing.JButton btnAfiliate;
     public javax.swing.JButton btnIngresa;
+    private javax.swing.JTextField jTextField1;
     private javax.swing.JLabel lblCarretera;
     private javax.swing.JLabel lblLogo;
     // End of variables declaration//GEN-END:variables
