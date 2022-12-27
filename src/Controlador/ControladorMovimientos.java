@@ -1,5 +1,6 @@
 package Controlador;
 
+import CarpetaDesign.AdministrarMostradores;
 import Modelo.Cliente;
 import Modelo.Configuracion;
 import Modelo.Estacion;
@@ -15,12 +16,13 @@ public class ControladorMovimientos {
 
     private Cliente user;
     private frmMovimientos vista;
-
+    private AdministrarMostradores managerButtons;
+    
     public ControladorMovimientos(Cliente user) {
         this.vista = new frmMovimientos();
         this.user = user;
-        
-        this.vista.btnAtras.addActionListener(new ActionListener(){
+        this.managerButtons=new AdministrarMostradores();
+        this.vista.btnAtras.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ControladorOpcionesIngreso ctrlOpcionesIngreso = new ControladorOpcionesIngreso(user);
@@ -28,77 +30,32 @@ public class ControladorMovimientos {
                 vista.dispose();
             }
         });
-        
-        this.vista.btnOrdenarFecha.addActionListener(new ActionListener(){
+
+        this.vista.btnAZ.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                user.getCuenta().getMovimientos().ordenarMovimientosXFecha();
-            
-                DatosTablaAZ();
+                managerButtons.OrderMode1(user.getCuenta().getMovimientos(), vista); 
             }
         });
-        
-        this.vista.btnOrdenarMonto.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                user.getCuenta().getMovimientos().ordenarMovimientosXMonto();
-            
-                DatosTablaAZ();
-            }  
-        });
-        
-        this.vista.btnOrdenarEstacion.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                user.getCuenta().getMovimientos().ordenarMovimientosXEstacion();
 
-                DatosTablaAZ();
-            }  
-        });
-        
-        this.vista.btnOrdenarVehiculo.addActionListener(new ActionListener(){
+        this.vista.btnZA.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                user.getCuenta().getMovimientos().ordenarMovimientosXPlacaVehiculo();
-                DatosTablaAZ();
-            }  
+                managerButtons.OrderMode2(user.getCuenta().getMovimientos(), vista);
+               
+            }
         });
-        
-        this.vista.btnAZ.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                DatosTablaAZ();
-            }  
-        });
-        
-        this.vista.btnZA.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                DatosTablaZA();
-            }  
-        });
-        
-    }
-    
-    //MOVER ESTO AL MODELO DONDE PERTENEZCA
-    public void DatosTablaAZ(){ //Menor a mayor
-        DefaultTableModel TablaUser;
-        TablaUser = new DefaultTableModel(user.getCuenta().getMovimientos().datosMovimientosAZ(),user.getCuenta().getMovimientos().cabecera());
-        this.vista.jMovimientos.setModel(TablaUser);
 
     }
-    
-    public void DatosTablaZA(){ //Mayor a menor
-        DefaultTableModel TablaUser;
-        TablaUser = new DefaultTableModel(user.getCuenta().getMovimientos().datosMovimientosZA(),user.getCuenta().getMovimientos().cabecera());
-        this.vista.jMovimientos.setModel(TablaUser);
 
-    }
-    
     public void iniciar() {
-    vista.setLocationRelativeTo(null);
-    vista.setVisible(true);
-    DatosTablaAZ();
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+        
+        DefaultTableModel TablaUser;
+        TablaUser = new DefaultTableModel(user.getCuenta().getMovimientos().datosMovimientosAZ(), user.getCuenta().getMovimientos().cabecera());
+        this.vista.jMovimientos.setModel(TablaUser);
+
     }
 
 }

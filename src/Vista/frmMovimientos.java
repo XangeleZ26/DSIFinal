@@ -32,10 +32,6 @@ public class frmMovimientos extends javax.swing.JFrame {
         PContenidoMovimientos = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jMovimientos = new javax.swing.JTable();
-        btnOrdenarEstacion = new javax.swing.JButton();
-        btnOrdenarFecha = new javax.swing.JButton();
-        btnOrdenarMonto = new javax.swing.JButton();
-        btnOrdenarVehiculo = new javax.swing.JButton();
         btnAtras = new javax.swing.JButton();
         btnAZ = new javax.swing.JButton();
         btnZA = new javax.swing.JButton();
@@ -47,7 +43,6 @@ public class frmMovimientos extends javax.swing.JFrame {
         PTituloMovimientos.setBackground(new java.awt.Color(159, 162, 178));
 
         jLabel2.setFont(new java.awt.Font("Britannic Bold", 0, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Movimientos de cuenta");
 
         org.jdesktop.layout.GroupLayout PTituloMovimientosLayout = new org.jdesktop.layout.GroupLayout(PTituloMovimientos);
@@ -98,58 +93,6 @@ public class frmMovimientos extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jMovimientos);
 
-        btnOrdenarEstacion.setBackground(new java.awt.Color(159, 162, 178));
-        btnOrdenarEstacion.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        btnOrdenarEstacion.setForeground(new java.awt.Color(0, 0, 0));
-        btnOrdenarEstacion.setText("Ordenar por Estación");
-        btnOrdenarEstacion.setToolTipText("");
-        btnOrdenarEstacion.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnOrdenarEstacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOrdenarEstacion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOrdenarEstacionActionPerformed(evt);
-            }
-        });
-
-        btnOrdenarFecha.setBackground(new java.awt.Color(159, 162, 178));
-        btnOrdenarFecha.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        btnOrdenarFecha.setForeground(new java.awt.Color(0, 0, 0));
-        btnOrdenarFecha.setText("Ordenar por Fecha");
-        btnOrdenarFecha.setToolTipText("");
-        btnOrdenarFecha.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnOrdenarFecha.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOrdenarFecha.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOrdenarFechaActionPerformed(evt);
-            }
-        });
-
-        btnOrdenarMonto.setBackground(new java.awt.Color(159, 162, 178));
-        btnOrdenarMonto.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        btnOrdenarMonto.setForeground(new java.awt.Color(0, 0, 0));
-        btnOrdenarMonto.setText("Ordenar por Monto");
-        btnOrdenarMonto.setToolTipText("");
-        btnOrdenarMonto.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnOrdenarMonto.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOrdenarMonto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOrdenarMontoActionPerformed(evt);
-            }
-        });
-
-        btnOrdenarVehiculo.setBackground(new java.awt.Color(159, 162, 178));
-        btnOrdenarVehiculo.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        btnOrdenarVehiculo.setForeground(new java.awt.Color(0, 0, 0));
-        btnOrdenarVehiculo.setText("Ordenar por Placa");
-        btnOrdenarVehiculo.setToolTipText("");
-        btnOrdenarVehiculo.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        btnOrdenarVehiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        btnOrdenarVehiculo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnOrdenarVehiculoActionPerformed(evt);
-            }
-        });
-
         btnAtras.setBackground(new java.awt.Color(121, 127, 139));
         btnAtras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/atrasBoton.png"))); // NOI18N
         btnAtras.setBorder(null);
@@ -157,10 +100,9 @@ public class frmMovimientos extends javax.swing.JFrame {
 
         btnAZ.setBackground(new java.awt.Color(159, 162, 178));
         btnAZ.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        btnAZ.setForeground(new java.awt.Color(0, 0, 0));
         btnAZ.setText("A->Z");
         btnAZ.setToolTipText("");
-        btnAZ.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnAZ.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnAZ.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnAZ.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,10 +112,9 @@ public class frmMovimientos extends javax.swing.JFrame {
 
         btnZA.setBackground(new java.awt.Color(159, 162, 178));
         btnZA.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        btnZA.setForeground(new java.awt.Color(0, 0, 0));
-        btnZA.setText("A->Z");
+        btnZA.setText("Z->A");
         btnZA.setToolTipText("");
-        btnZA.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnZA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         btnZA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnZA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,18 +134,11 @@ public class frmMovimientos extends javax.swing.JFrame {
                         .add(43, 43, 43)
                         .add(btnAtras))
                     .add(PContenidoMovimientosLayout.createSequentialGroup()
-                        .addPreferredGap(org.jdesktop.layout.LayoutStyle.UNRELATED)
-                        .add(PContenidoMovimientosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(btnOrdenarVehiculo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 127, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(btnOrdenarEstacion)
-                            .add(btnOrdenarMonto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 125, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(btnOrdenarFecha, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 125, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                    .add(PContenidoMovimientosLayout.createSequentialGroup()
                         .add(46, 46, 46)
                         .add(PContenidoMovimientosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                             .add(btnAZ, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 56, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
                             .add(btnZA, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 56, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         PContenidoMovimientosLayout.setVerticalGroup(
             PContenidoMovimientosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
@@ -213,17 +147,9 @@ public class frmMovimientos extends javax.swing.JFrame {
                 .add(PContenidoMovimientosLayout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoMovimientosLayout.createSequentialGroup()
                         .add(btnAZ)
-                        .add(18, 18, 18)
+                        .add(56, 56, 56)
                         .add(btnZA)
-                        .add(18, 18, 18)
-                        .add(btnOrdenarFecha, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(btnOrdenarMonto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(btnOrdenarVehiculo, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(18, 18, 18)
-                        .add(btnOrdenarEstacion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 33, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                        .add(30, 30, 30)
+                        .add(125, 125, 125)
                         .add(btnAtras)
                         .add(26, 26, 26))
                     .add(org.jdesktop.layout.GroupLayout.TRAILING, PContenidoMovimientosLayout.createSequentialGroup()
@@ -246,22 +172,6 @@ public class frmMovimientos extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnOrdenarEstacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarEstacionActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnOrdenarEstacionActionPerformed
-
-    private void btnOrdenarFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarFechaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnOrdenarFechaActionPerformed
-
-    private void btnOrdenarMontoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarMontoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnOrdenarMontoActionPerformed
-
-    private void btnOrdenarVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnOrdenarVehiculoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnOrdenarVehiculoActionPerformed
 
     private void btnAZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAZActionPerformed
         // TODO add your handling code here:
@@ -312,10 +222,6 @@ public class frmMovimientos extends javax.swing.JFrame {
     private javax.swing.JPanel PTituloMovimientos;
     public javax.swing.JButton btnAZ;
     public javax.swing.JButton btnAtras;
-    public javax.swing.JButton btnOrdenarEstacion;
-    public javax.swing.JButton btnOrdenarFecha;
-    public javax.swing.JButton btnOrdenarMonto;
-    public javax.swing.JButton btnOrdenarVehiculo;
     public javax.swing.JButton btnZA;
     private javax.swing.JLabel jLabel2;
     public javax.swing.JTable jMovimientos;

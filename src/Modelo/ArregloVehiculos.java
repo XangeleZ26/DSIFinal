@@ -1,9 +1,14 @@
 package Modelo;
 
+import CarpetaDesign.ITipoMostrador;
+import Vista.frmVehiculos;
 import java.io.Serializable;
+import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
 
-public class ArregloVehiculos implements Serializable{
-    private static final long serialVersionUID=26L;
+public class ArregloVehiculos implements Serializable, ITipoMostrador {
+
+    private static final long serialVersionUID = 26L;
     private int nv; //Cantidad de vehículos en el arreglo
     private int ov; //Orden en el arreglo del último vehículo agregado
     private Vehiculo[] vehiculos;
@@ -13,26 +18,24 @@ public class ArregloVehiculos implements Serializable{
         this.ov = nv - 1;
         this.vehiculos = new Vehiculo[Configuracion.maxVehiculosXCliente];
     }
-    
-    
 
     //MÉTODOS DEL FUNCIONAMIENTO DE LA CLASE
     public boolean registrarVehiculo(String placa, String marca, String modelo, String categoria, int ejes, String tipoUso, float pesoBruto, int año, Cliente dueño) {
         boolean result = false;
-        if(nv != Configuracion.maxVehiculosXCliente){
+        if (nv != Configuracion.maxVehiculosXCliente) {
             if (verificarExistenciaVehiculo(placa) == false) {
-            this.nv++;
-            this.ov = this.nv - 1;
-            this.vehiculos[ov] = new Vehiculo(placa, marca, modelo, categoria, ejes, tipoUso, pesoBruto, año, dueño);
-            result = true;
-            //Verificar si el registro fue correcto
-            if (result == false) {
-                this.nv--;
+                this.nv++;
                 this.ov = this.nv - 1;
-            }
+                this.vehiculos[ov] = new Vehiculo(placa, marca, modelo, categoria, ejes, tipoUso, pesoBruto, año, dueño);
+                result = true;
+                //Verificar si el registro fue correcto
+                if (result == false) {
+                    this.nv--;
+                    this.ov = this.nv - 1;
+                }
             }
         }
-        
+
         return result;
     }
 
@@ -77,7 +80,7 @@ public class ArregloVehiculos implements Serializable{
         }
         return result;
     }
-    
+
     //Nuevo método de Eliminar Vehículo
     public void eliminarVehiculo(int orden) {
         //Se borra copiándose todos los objetos desde adelante hacia atrás
@@ -89,15 +92,15 @@ public class ArregloVehiculos implements Serializable{
         this.nv--;
         this.ov = this.nv - 1;
     }
-    
+
     //Nuevo método de Eliminar Vehículo usando la placa
     public boolean eliminarVehiculo(String placa) {
         boolean result = false;
         //Se buscael vehículo en el arreglo y se almacena su orden
-        int orden=-1;
+        int orden = -1;
         orden = buscarOrdenVehiculo(placa);
-        
-        if(orden>=0){
+
+        if (orden >= 0) {
             //Se borra copiándose todos los objetos desde adelante hacia atrás
             for (int i = orden; i < nv; i++) {
                 this.vehiculos[i] = this.vehiculos[i + 1];
@@ -110,7 +113,7 @@ public class ArregloVehiculos implements Serializable{
         }
         return result;
     }
-    
+
     //Método que devuelve el orden de un vehículo en el arreglo
     public int buscarOrdenVehiculo(String placa) {
         int orden = -1;
@@ -118,10 +121,10 @@ public class ArregloVehiculos implements Serializable{
             if (placa.equals(this.vehiculos[i].getPlaca())) {
                 orden = i;
             }
-        } 
+        }
         return orden;
     }
-    
+
     public boolean verificarExistenciaVehiculo(String placa) {
         boolean result = false;
         for (int i = 0; i < nv; i++) {
@@ -132,58 +135,6 @@ public class ArregloVehiculos implements Serializable{
         return result;
     }
 
-    public void ordenarVehiculosXEjes() {
-        Vehiculo aux;
-        for (int i = 0; i < (this.nv); i++) {
-            for (int j = i + 1; j < (this.nv); j++) {
-                if (vehiculos[i].getEjes() > vehiculos[j].getEjes()) {
-                    aux = vehiculos[i];
-                    vehiculos[i] = vehiculos[j];
-                    vehiculos[j] = aux;
-                }
-            }
-        }
-    }
-
-    public void ordenarVehiculosXPesoBruto() {
-        Vehiculo aux;
-        for (int i = 0; i < (this.nv); i++) {
-            for (int j = i + 1; j < (this.nv); j++) {
-                if (vehiculos[i].getPesoBruto() > vehiculos[j].getPesoBruto()) {
-                    aux = vehiculos[i];
-                    vehiculos[i] = vehiculos[j];
-                    vehiculos[j] = aux;
-                }
-            }
-        }
-    }
-
-    public void ordenarVehiculosXAño() {
-        Vehiculo aux;
-        for (int i = 0; i < (this.nv); i++) {
-            for (int j = i + 1; j < (this.nv); j++) {
-                if (vehiculos[i].getAño() > vehiculos[j].getAño()) {
-                    aux = vehiculos[i];
-                    vehiculos[i] = vehiculos[j];
-                    vehiculos[j] = aux;
-                }
-            }
-        }
-    }
-
-    public void ordenarVehiculosXPlaca() {
-        Vehiculo aux;
-        for (int i = 0; i < (this.nv); i++) {
-            for (int j = i + 1; j < (this.nv); j++) {
-                if (vehiculos[i].getPlaca().compareTo(vehiculos[j].getPlaca()) > 0) {
-                    aux = vehiculos[i];
-                    vehiculos[i] = vehiculos[j];
-                    vehiculos[j] = aux;
-                }
-            }
-        }
-    }
-
     public void mostrarVehiculos() {
         System.out.format("%-15s%-15s%-15s%-12s%-8s%-10s%-10s%-6s\n", "Placa", "Marca", "Modelo", "Categoría", "Ejes", "Uso", "Peso", "Año");
         System.out.format("%-15s%-15s%-15s%-12s%-8s%-10s%-10s%-6s\n", "=====", "=====", "======", "=========", "====", "===", "====", "===");
@@ -192,27 +143,28 @@ public class ArregloVehiculos implements Serializable{
         }
     }
 
-    public Object[][] datosVehiculosAZ(){
+    public Object[][] datosVehiculosAZ() {
         Object datosVehiculos[][] = new Object[this.nv][8];
-        
-        for(int i=0;i<this.nv;i++){
+
+        for (int i = 0; i < this.nv; i++) {
             datosVehiculos[i] = vehiculos[i].datosVehiculo();
 
         }
-        
+
         return datosVehiculos;
     }
-    
-    public Object[][] datosVehiculosZA(){
+
+    public Object[][] datosVehiculosZA() {
         Object datosVehiculos[][] = new Object[this.nv][8];
-        
-        for(int i=0;i<this.nv;i++){
-            datosVehiculos[i] = vehiculos[this.ov-i].datosVehiculo();
+
+        for (int i = 0; i < this.nv; i++) {
+            datosVehiculos[i] = vehiculos[this.ov - i].datosVehiculo();
         }
-        
+
         return datosVehiculos;
     }
-public Vehiculo getVehiculo(int i) { //Se puede usar para llamar a un vehículo del arreglo
+
+    public Vehiculo getVehiculo(int i) { //Se puede usar para llamar a un vehículo del arreglo
         return vehiculos[i];
     }
 
@@ -236,6 +188,28 @@ public Vehiculo getVehiculo(int i) { //Se puede usar para llamar a un vehículo 
 
     public void setOv(int ov) {
         this.ov = ov;
+    }
+
+    @Override
+    public void ordenarAZ(JFrame vista) {
+        if (vista != null) {
+            frmVehiculos vistaVehiculos = (frmVehiculos) vista;
+            Object nombresColumnas[] = new Object[8];
+            nombresColumnas = Modelo.Configuracion.datosVehiculos;
+            DefaultTableModel TablaUser = new DefaultTableModel(datosVehiculosAZ(), nombresColumnas);
+            vistaVehiculos.tblTabla.setModel(TablaUser);
+        }
+    }
+
+    @Override
+    public void ordenarZA(JFrame vista) {
+        if (vista != null) {
+            frmVehiculos vistaVehiculos = (frmVehiculos) vista;
+            Object nombresColumnas[] = new Object[8];
+            nombresColumnas = Modelo.Configuracion.datosVehiculos;
+            DefaultTableModel TablaUser = new DefaultTableModel(datosVehiculosZA(), nombresColumnas);
+            vistaVehiculos.tblTabla.setModel(TablaUser);
+        }
     }
 
 }

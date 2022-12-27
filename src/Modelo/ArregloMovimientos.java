@@ -1,8 +1,12 @@
 package Modelo;
 
+import CarpetaDesign.ITipoMostrador;
+import Vista.frmMovimientos;
 import java.io.Serializable;
+import javax.swing.JFrame;
+import javax.swing.table.DefaultTableModel;
 
-public class ArregloMovimientos implements Serializable {
+public class ArregloMovimientos implements Serializable,ITipoMostrador {
 private static final long serialVersionUID=26L;
     private Movimiento[] movimientos;
     private int nm;//Cantidad de movimientos en el arreglo
@@ -122,76 +126,29 @@ private static final long serialVersionUID=26L;
             }
         }
     }
-
-    //ORDENAR MOVIMIENTOS
-    public void ordenarMovimientosXFecha() {
-        Movimiento aux;
-        for (int i = 0; i < nm; i++) {
-            for (int j = 0; j < (this.nm - 1); j++) {
-                if (movimientos[j].getFecha().compareTo(movimientos[j + 1].getFecha()) > 0) {
-                    aux = movimientos[j];
-                    movimientos[j] = movimientos[j + 1];
-                    movimientos[j + 1] = aux;
-                }
-            }
-        }
-    }
-
-    public void ordenarMovimientosXMonto() {
-        Movimiento aux;
-        for (int i = 0; i < (this.nm); i++) {
-            for (int j = 0; j < (this.nm - 1); j++) {
-                if (movimientos[j].getMonto() > movimientos[j + 1].getMonto()) {
-                    aux = movimientos[j];
-                    movimientos[j] = movimientos[j + 1];
-                    movimientos[j + 1] = aux;
-                }
-            }
-        }
-    }
-
-    public void ordenarMovimientosXEstacion() {
-        Movimiento aux;
-        for (int z = 0; z < this.nm; z++) {
-            if (this.movimientos[z].getEstacion() == null) {
-                this.movimientos[z].setEstacion(new Estacion());
-                this.movimientos[z].getEstacion().setNombreEstacion("¯");
-            }
-        }
-
-        for (int i = 0; i < (this.nm); i++) {
-            for (int j = 0; j < (this.nm - 1); j++) {
-                if (movimientos[j].getEstacion().getNombreEstacion().compareTo(movimientos[j + 1].getEstacion().getNombreEstacion()) > 0) {
-                    aux = movimientos[j];
-                    movimientos[j] = movimientos[j + 1];
-                    movimientos[j + 1] = aux;
-                }
-
-            }
-        }
-    }
-
-    public void ordenarMovimientosXPlacaVehiculo() {
-        Movimiento aux;
-        for (int z = 0; z < this.nm; z++) {
-            if (this.movimientos[z].getVehiculo() == null) {
-                this.movimientos[z].setVehiculo(new Vehiculo());
-                this.movimientos[z].getVehiculo().setPlaca("¯");
-            }
-        }
-        for (int i = 0; i < (this.nm); i++) {
-            for (int j = 0; j < (this.nm - 1); j++) {
-                if (this.movimientos[j].getVehiculo().getPlaca().compareTo(this.movimientos[j + 1].getVehiculo().getPlaca()) > 0) {
-                    aux = movimientos[j];
-                    movimientos[j] = movimientos[j + 1];
-                    movimientos[j + 1] = aux;
-                }
-            }
-
-        }
-    }
-
     public Movimiento getMovimiento(int i) { //Se puede usar para llamar a un movimeento del arreglo
         return movimientos[i];
     }
+
+    @Override
+    public void ordenarAZ(JFrame vista) {
+         
+        if(vista!=null){
+        frmMovimientos vistaMovimientos=(frmMovimientos) vista;
+        DefaultTableModel TablaUser;
+        TablaUser = new DefaultTableModel(datosMovimientosAZ(),cabecera());
+        vistaMovimientos.jMovimientos.setModel(TablaUser);
+        }
+    }
+
+    @Override
+    public void ordenarZA(JFrame vista) {
+          if(vista!=null){
+        frmMovimientos vistaMovimientos=(frmMovimientos) vista;
+        DefaultTableModel TablaUser;
+        TablaUser = new DefaultTableModel(datosMovimientosZA(),cabecera());
+        vistaMovimientos.jMovimientos.setModel(TablaUser);
+        }
+    }
+
 }
